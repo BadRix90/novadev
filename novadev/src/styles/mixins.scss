@@ -30,13 +30,11 @@
   }
 }
 
-// Custom breakpoint
 @mixin respond-to($breakpoint) {
   @media (min-width: #{$breakpoint}) {
     @content;
   }
 }
-
 
 @mixin container {
   max-width: $max-width-7xl;
@@ -55,8 +53,6 @@
   padding-bottom: $spacing-16;
 }
 
-// Flexbox Utilities
-// ----------------------------------------------------------------------------
 @mixin flex-center {
   display: flex;
   align-items: center;
@@ -93,8 +89,6 @@
   justify-content: center;
 }
 
-// Grid Layout
-// ----------------------------------------------------------------------------
 @mixin grid-responsive($min-width: 300px, $gap: $spacing-6) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
@@ -107,36 +101,32 @@
   gap: $gap;
 }
 
-// Typography
-// ----------------------------------------------------------------------------
 @mixin heading-xl {
   font-family: $font-family-primary;
-  font-size: $font-size-4xl;
+  font-size: clamp(1.75rem, 3.5vw + 0.5rem, 4rem);
   font-weight: $font-weight-extrabold;
   line-height: $line-height-tight;
   letter-spacing: -0.025em;
-  
-  @include tablet-up {
-    font-size: $font-size-6xl;
-  }
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 @mixin heading-lg {
   font-family: $font-family-primary;
-  font-size: $font-size-3xl;
+  font-size: clamp(1.5rem, 2.5vw + 0.5rem, 3rem);
   font-weight: $font-weight-bold;
   line-height: $line-height-tight;
-  
-  @include tablet-up {
-    font-size: $font-size-4xl;
-  }
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 @mixin heading-md {
   font-family: $font-family-primary;
-  font-size: $font-size-2xl;
+  font-size: clamp(1.25rem, 2vw + 0.5rem, 2.25rem);
   font-weight: $font-weight-bold;
   line-height: $line-height-snug;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 @mixin heading-sm {
@@ -173,8 +163,6 @@
   -webkit-text-fill-color: transparent;
 }
 
-// Buttons & Interactive Elements
-// ----------------------------------------------------------------------------
 @mixin button-base {
   display: inline-flex;
   align-items: center;
@@ -248,8 +236,6 @@
   }
 }
 
-// Cards & Surfaces
-// ----------------------------------------------------------------------------
 @mixin card-base {
   background: var(--brand-card);
   border: 1px solid var(--brand-border);
@@ -286,7 +272,6 @@
   border: 1px solid var(--brand-border);
 }
 
-
 @mixin input-base {
   width: 100%;
   height: $input-height;
@@ -319,8 +304,6 @@
   line-height: $line-height-normal;
 }
 
-// Animations & Effects
-// ----------------------------------------------------------------------------
 @mixin fade-in($duration: $transition-base) {
   opacity: 0;
   animation: fadeIn $duration $easing-out forwards;
@@ -358,8 +341,6 @@
   }
 }
 
-// Utility Mixins
-// ----------------------------------------------------------------------------
 @mixin visually-hidden {
   position: absolute;
   width: 1px;
@@ -388,7 +369,6 @@
 @mixin aspect-ratio($width, $height) {
   aspect-ratio: $width / $height;
   
-  // Fallback for older browsers
   @supports not (aspect-ratio: 1) {
     &::before {
       content: '';
@@ -398,8 +378,6 @@
   }
 }
 
-// Background Utilities
-// ----------------------------------------------------------------------------
 @mixin gradient-bg {
   background: var(--brand-bg);
   position: relative;

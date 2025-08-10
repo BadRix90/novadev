@@ -12,7 +12,7 @@
 }
 
 .legal-page__container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 $spacing-4;
 
@@ -75,6 +75,7 @@
     @include body-base;
     color: var(--brand-text);
     margin: 0 0 $spacing-4 0;
+    text-align: justify;
   }
 
   ul, ol {
@@ -85,6 +86,7 @@
       @include body-base;
       color: var(--brand-text);
       margin-bottom: $spacing-2;
+      text-align: justify;
 
       strong {
         color: var(--brand-tech-blue);
@@ -111,6 +113,7 @@
 
     p {
       margin-bottom: $spacing-5;
+      text-align: center;
     }
   }
 }
