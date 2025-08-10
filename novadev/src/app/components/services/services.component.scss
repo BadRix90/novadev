@@ -1,0 +1,135 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.services {
+  @include section-padding;
+  position: relative;
+}
+
+.services__container {
+  @include container;
+}
+
+.services__header {
+  margin-bottom: $spacing-8;
+  @include flex-between;
+  align-items: flex-end;
+  
+  @include mobile-only {
+    @include flex-column;
+    align-items: flex-start;
+    gap: $spacing-2;
+  }
+}
+
+.services__title {
+  @include heading-lg;
+  margin: 0;
+}
+
+.services__subtitle {
+  @include body-sm;
+  margin: 0;
+  font-style: italic;
+  
+  @include mobile-only {
+    margin-top: $spacing-2;
+  }
+}
+
+.services__grid {
+  @include grid-responsive(300px, $spacing-6);
+  
+  @include tablet-up {
+    @include grid-columns(3, $spacing-6);
+  }
+}
+
+.services__card {
+  @include card-base;
+  @include card-hover;
+  cursor: pointer;
+  transition: all $transition-base;
+  
+  &:hover {
+    transform: translateY(-6px);
+    border-color: var(--brand-tech-blue);
+    
+    .services__card-link {
+      color: var(--brand-text);
+      transform: translateX($spacing-1);
+    }
+  }
+  
+  &[data-index="0"] {
+    border-color: var(--brand-tech-blue);
+    
+    &:hover {
+      box-shadow: 0 20px 60px rgba(107, 182, 255, 0.15);
+    }
+  }
+  
+  &[data-index="1"] {
+    border-color: var(--brand-mocha);
+    
+    &:hover {
+      box-shadow: 0 20px 60px rgba(176, 138, 122, 0.15);
+    }
+  }
+  
+  &[data-index="2"] {
+    border-color: var(--brand-eclipsia);
+    
+    &:hover {
+      box-shadow: 0 20px 60px rgba(255, 106, 61, 0.15);
+    }
+  }
+}
+
+.services__card-number {
+  @include body-sm;
+  color: var(--brand-mocha);
+  margin-bottom: $spacing-3;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-xs;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.services__card-title {
+  @include heading-sm;
+  margin: 0 0 $spacing-2 0;
+  color: var(--brand-text);
+}
+
+.services__card-description {
+  @include body-sm;
+  margin: 0 0 $spacing-6 0;
+  line-height: $line-height-relaxed;
+}
+
+.services__card-link {
+  @include body-sm;
+  color: var(--brand-tech-blue);
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  transition: all $transition-fast;
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-1;
+  
+  &:hover {
+    color: var(--brand-text);
+  }
+}
+
+@include mobile-only {
+  .services__grid {
+    grid-template-columns: 1fr;
+    gap: $spacing-4;
+  }
+  
+  .services__card {
+    padding: $spacing-5;
+  }
+}
