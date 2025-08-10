@@ -157,6 +157,7 @@
   padding: $spacing-10;
   box-shadow: var(--glow-shadow);
   overflow: hidden;
+  animation: float 6s ease-in-out infinite;
 }
 
 .hero__card-glow {
@@ -180,17 +181,30 @@
 .hero__logo {
   width: 7rem;
   height: 7rem;
-  border-radius: $radius-2xl;
-  background: var(--brand-bg);
-  border: 1px solid var(--brand-border);
   @include flex-center;
+  transition: all $transition-base;
+  
+  &:hover {
+    transform: scale(1.05);
+    border-color: var(--brand-tech-blue);
+    
+    .hero__logo-image {
+      filter: drop-shadow(0 8px 30px rgba(107, 182, 255, 0.4))
+              drop-shadow(0 4px 15px rgba(107, 182, 255, 0.6));
+    }
+  }
 }
 
-.hero__logo-text {
-  font-family: $font-family-primary;
-  font-weight: $font-weight-black;
-  font-size: $font-size-4xl;
-  color: var(--brand-text);
+.hero__logo-image {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  transition: all $transition-base;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+  
+  .hero__logo:hover & {
+    transform: scale(1.1);
+  }
 }
 
 .hero__brand {
@@ -216,10 +230,6 @@
   50% {
     transform: translateY(-10px);
   }
-}
-
-.hero__card {
-  animation: float 6s ease-in-out infinite;
 }
 
 @include mobile-only {
