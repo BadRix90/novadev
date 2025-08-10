@@ -6,7 +6,6 @@
   min-height: 100vh;
   @include flex-center;
   @include section-padding;
-  padding-top: calc($nav-height + $spacing-16);
   padding-bottom: $spacing-16;
 }
 
