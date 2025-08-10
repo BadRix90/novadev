@@ -3,7 +3,6 @@
 
 .hero {
   position: relative;
-  min-height: 100vh;
   @include flex-center;
   @include section-padding;
   padding-bottom: $spacing-16;
