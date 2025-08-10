@@ -1,58 +1,37 @@
 <header class="header" [class.header--mobile-open]="isMobileMenuOpen" role="banner">
   <div class="header__container">
     <div class="header__brand">
-      <div class="header__logo" aria-hidden="true">
-        <img 
-          src="assets/logo/novaDev.webp" 
-          alt="NovaDev Logo"
-          class="header__logo-image"
-          loading="lazy">
+      <div class="header__logo" (click)="goToHome()" style="cursor: pointer;" aria-label="NovaDev - Zur Startseite">
+        <img src="assets/logo/novaDev.webp" alt="NovaDev Logo" class="header__logo-image" loading="eager">
       </div>
     </div>
 
-    <!-- Desktop Navigation -->
     <nav class="header__nav" aria-label="Hauptnavigation">
-      <a href="#services" class="header__nav-link" (click)="scrollToSection('services')">Leistungen</a>
-      <a href="#portfolio" class="header__nav-link" (click)="scrollToSection('portfolio')">Portfolio</a>
-      <a href="#pricing" class="header__nav-link" (click)="scrollToSection('pricing')">Preise</a>
-      <a href="#contact" class="header__nav-link" (click)="scrollToSection('contact')">Kontakt</a>
+      <a class="header__nav-link" href="/#services" (click)="onNavClick($event, 'services')">Leistungen</a>
+      <a class="header__nav-link" href="/#portfolio" (click)="onNavClick($event, 'portfolio')">Portfolio</a>
+      <a class="header__nav-link" href="/#pricing" (click)="onNavClick($event, 'pricing')">Preise</a>
+      <a class="header__nav-link" href="/#contact" (click)="onNavClick($event, 'contact')">Kontakt</a>
     </nav>
 
-    <!-- Desktop CTA -->
-    <a href="#contact" class="header__cta" (click)="scrollToSection('contact')">
-      Erstgespräch
-    </a>
+    <a class="header__cta" href="/#contact" (click)="onNavClick($event, 'contact')">Erstgespräch</a>
 
-    <!-- Mobile Toggle Button with WebP Icons -->
-    <button 
-      class="header__mobile-toggle" 
-      [attr.aria-label]="isMobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'"
-      [attr.aria-expanded]="isMobileMenuOpen"
-      (click)="toggleMobileMenu()"
-    >
-      <img 
-        src="assets/img/icons/menu.webp" 
-        alt="Menu" 
-        class="header__menu-icon"
-        [class.header__menu-icon--hidden]="isMobileMenuOpen"
-        loading="lazy">
-      <img 
-        src="assets/img/icons/close.webp" 
-        alt="Close" 
-        class="header__close-icon"
-        [class.header__close-icon--visible]="isMobileMenuOpen"
-        loading="lazy">
+
+    <button class="header__mobile-toggle" [attr.aria-label]="isMobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'"
+      [attr.aria-expanded]="isMobileMenuOpen" (click)="toggleMobileMenu()">
+      <img src="assets/img/icons/menu.webp" alt="Menu" class="header__menu-icon"
+        [class.header__menu-icon--hidden]="isMobileMenuOpen" loading="eager">
+      <img src="assets/img/icons/close.webp" alt="Close" class="header__close-icon"
+        [class.header__close-icon--visible]="isMobileMenuOpen" loading="eager">
     </button>
   </div>
 
-  <!-- Mobile Navigation Menu -->
   <div class="header__mobile-menu" [class.header__mobile-menu--open]="isMobileMenuOpen">
     <nav class="header__mobile-nav" aria-label="Mobile Navigation">
-      <a href="#services" class="header__mobile-link" (click)="scrollToSection('services')">Leistungen</a>
-      <a href="#portfolio" class="header__mobile-link" (click)="scrollToSection('portfolio')">Portfolio</a>
-      <a href="#pricing" class="header__mobile-link" (click)="scrollToSection('pricing')">Preise</a>
-      <a href="#contact" class="header__mobile-link" (click)="scrollToSection('contact')">Kontakt</a>
-      <a href="#contact" class="header__mobile-cta" (click)="scrollToSection('contact')">Erstgespräch</a>
+      <a class="header__mobile-link" href="/#services" (click)="onNavClick($event, 'services')">Leistungen</a>
+      <a class="header__mobile-link" href="/#portfolio" (click)="onNavClick($event, 'portfolio')">Portfolio</a>
+      <a class="header__mobile-link" href="/#pricing" (click)="onNavClick($event, 'pricing')">Preise</a>
+      <a class="header__mobile-link" href="/#contact" (click)="onNavClick($event, 'contact')">Kontakt</a>
+      <a class="header__mobile-cta" href="/#contact" (click)="onNavClick($event, 'contact')">Erstgespräch</a>
     </nav>
   </div>
 </header>

@@ -78,7 +78,8 @@
     text-align: justify;
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin: $spacing-3 0;
     padding-left: $spacing-5;
 
@@ -96,9 +97,9 @@
   }
 
   &--contact {
-    background: linear-gradient(135deg, 
-      rgba(107, 182, 255, 0.1) 0%, 
-      rgba(107, 182, 255, 0.05) 100%);
+    background: linear-gradient(135deg,
+        rgba(107, 182, 255, 0.1) 0%,
+        rgba(107, 182, 255, 0.05) 100%);
     border: 1px solid rgba(107, 182, 255, 0.2);
     border-radius: $radius-lg;
     padding: $spacing-6;
@@ -178,5 +179,31 @@
   @include mobile-only {
     padding: $spacing-4 $spacing-5;
     font-size: $font-size-sm;
+  }
+}
+
+.legal-page__back {
+  margin-bottom: $spacing-6;
+}
+
+.legal-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-1;
+  color: var(--brand-sub);
+  text-decoration: none;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: var(--brand-tech-blue);
+    transform: translateX(-2px);
+  }
+
+  &:focus {
+    outline: 2px solid var(--brand-tech-blue);
+    outline-offset: 2px;
+    border-radius: $radius-sm;
   }
 }
