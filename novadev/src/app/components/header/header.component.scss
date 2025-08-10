@@ -1,0 +1,186 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: $z-index-sticky;
+  @include glassmorphism;
+  
+  @supports (backdrop-filter: blur(20px)) {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+  }
+  
+  @supports not (backdrop-filter: blur(20px)) {
+    background: rgba(12, 15, 18, 0.95);
+  }
+}
+
+.header__container {
+  @include container;
+  @include flex-between;
+  padding-top: $spacing-4;
+  padding-bottom: $spacing-4;
+  min-height: $nav-height-mobile;
+  
+  @include tablet-up {
+    min-height: $nav-height;
+  }
+}
+
+.header__brand {
+  @include flex-start;
+  gap: $spacing-3;
+}
+
+.header__logo {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: $radius-xl;
+  background: var(--brand-card);
+  border: 1px solid var(--brand-border);
+  @include flex-center;
+  
+  &:hover {
+    background: var(--brand-card2);
+    transition: background $transition-fast;
+  }
+}
+
+.header__logo-text {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-black;
+  font-size: $font-size-lg;
+  color: var(--brand-text);
+}
+
+.header__brand-name {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-base;
+  letter-spacing: 0.05em;
+  color: var(--brand-text);
+}
+
+.header__nav {
+  @include flex-center;
+  gap: $spacing-6;
+  display: none;
+  
+  @include tablet-up {
+    display: flex;
+  }
+}
+
+.header__nav-link {
+  @include body-sm;
+  color: var(--brand-sub);
+  font-weight: $font-weight-medium;
+  transition: color $transition-fast;
+  padding: $spacing-2 0;
+  position: relative;
+  
+  &:hover {
+    color: var(--brand-text);
+  }
+  
+  &:focus,
+  &.active {
+    color: var(--brand-tech-blue);
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gradient-eclipsia);
+      border-radius: $radius-full;
+    }
+  }
+}
+
+.header__cta {
+  @include button-primary;
+  font-size: $font-size-sm;
+  padding: $spacing-2 $spacing-4;
+  height: 2.25rem;
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(255, 106, 61, 0.4);
+  }
+}
+
+.header__mobile-toggle {
+  @include flex-column;
+  justify-content: center;
+  gap: 3px;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  
+  @include tablet-up {
+    display: none;
+  }
+}
+
+.header__burger-line {
+  width: 100%;
+  height: 2px;
+  background: var(--brand-text);
+  border-radius: $radius-full;
+  transition: all $transition-base;
+  
+  .header__mobile-toggle:hover & {
+    background: var(--brand-tech-blue);
+  }
+}
+
+.header--mobile-open {
+  .header__burger-line {
+    &:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    
+    &:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+  }
+}
+
+.header--scrolled {
+  background: rgba(12, 15, 18, 0.98);
+  border-bottom: 1px solid var(--brand-border);
+  
+  .header__logo {
+    transform: scale(0.9);
+  }
+}
+
+.header {
+  animation: slideDown 0.6s $easing-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header__nav-link:focus,
+.header__cta:focus {
+  outline: 2px solid var(--brand-tech-blue);
+  outline-offset: 2px;
+}

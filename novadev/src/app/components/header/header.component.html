@@ -1,1 +1,31 @@
-<p>header works!</p>
+<header class="header" role="banner">
+  <div class="header__container">
+    <div class="header__brand">
+      <div class="header__logo" aria-hidden="true">
+        <span class="header__logo-text">A</span>
+      </div>
+      <div class="header__brand-name">NOVADEV</div>
+    </div>
+
+    <nav class="header__nav" aria-label="Hauptnavigation">
+      <a href="#services" class="header__nav-link">Leistungen</a>
+      <a href="#portfolio" class="header__nav-link">Portfolio</a>
+      <a href="#pricing" class="header__nav-link">Preise</a>
+      <a href="#contact" class="header__nav-link">Kontakt</a>
+    </nav>
+
+    <a href="#contact" class="header__cta">
+      Erstgespräch
+    </a>
+
+    <button 
+      class="header__mobile-toggle mobile-only" 
+      aria-label="Menü öffnen"
+      (click)="toggleMobileMenu()"
+    >
+      <span class="header__burger-line"></span>
+      <span class="header__burger-line"></span>
+      <span class="header__burger-line"></span>
+    </button>
+  </div>
+</header>
