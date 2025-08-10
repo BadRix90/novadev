@@ -1,1 +1,59 @@
-<p>portfolio works!</p>
+<section id="portfolio" class="portfolio">
+  <div class="portfolio__container">
+    <div class="portfolio__header">
+      <h2 class="portfolio__title">Portfolio</h2>
+      
+      <div class="portfolio__filters">
+        <button 
+          *ngFor="let filter of filters"
+          class="portfolio__filter"
+          [class.portfolio__filter--active]="activeFilter === filter.key"
+          (click)="setFilter(filter.key)"
+          [attr.aria-pressed]="activeFilter === filter.key">
+          {{ filter.label }}
+        </button>
+      </div>
+    </div>
+
+    <div class="portfolio__grid">
+      <div 
+        *ngFor="let project of visibleProjects; trackBy: trackByProject"
+        class="portfolio__card"
+        [attr.data-category]="project.category">
+        
+        <div 
+          class="portfolio__card-header"
+          [style.background]="getProjectGradient(project.category)">
+        </div>
+        
+        <div class="portfolio__card-content">
+          <div class="portfolio__card-info">
+            <h3 class="portfolio__card-title">{{ project.title }}</h3>
+            <p class="portfolio__card-description">{{ project.description }}</p>
+            <div class="portfolio__card-category">
+              {{ project.category.toUpperCase() }}
+            </div>
+          </div>
+          
+          <a 
+            [href]="project.url" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="portfolio__card-link"
+            (click)="trackProjectClick(project.title)">
+            Live ansehen →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio__cta">
+      <p class="portfolio__cta-text">
+        Interesse an einem ähnlichen Projekt?
+      </p>
+      <a href="#contact" class="portfolio__cta-button">
+        Projekt besprechen
+      </a>
+    </div>
+  </div>
+</section>
