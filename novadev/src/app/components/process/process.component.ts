@@ -6,6 +6,7 @@ interface ProcessStep {
   description: string;
   details?: string[];
   duration?: string;
+  icon: string; // Icon-Pfad hinzugefügt
 }
 
 @Component({
@@ -26,7 +27,8 @@ export class ProcessComponent {
         'Tech Stack Definition',
         'Timeline & Budget'
       ],
-      duration: '1-2 Wochen'
+      duration: '1-2 Wochen',
+      icon: 'assets/img/icons/rocket.webp'
     },
     {
       title: 'Umsetzung',
@@ -37,7 +39,8 @@ export class ProcessComponent {
         'Continuous Integration',
         'Quality Assurance'
       ],
-      duration: '4-12 Wochen'
+      duration: '4-12 Wochen',
+      icon: 'assets/img/icons/flash.webp'
     },
     {
       title: 'Launch',
@@ -48,7 +51,8 @@ export class ProcessComponent {
         'User Acceptance Tests',
         'Documentation'
       ],
-      duration: '1 Woche'
+      duration: '1 Woche',
+      icon: 'assets/img/icons/dart.webp'
     },
     {
       title: 'Support',
@@ -59,14 +63,12 @@ export class ProcessComponent {
         'Feature Erweiterungen',
         '24/7 Support'
       ],
-      duration: 'Ongoing'
+      duration: 'Ongoing',
+      icon: 'assets/img/icons/shield.webp'
     }
   ];
 
-  getStepIcon(stepIndex: number): string {
-    const icons = ['🚀', '⚡', '🎯', '🛡️'];
-    return icons[stepIndex] || '📋';
-  }
+  // Alte getStepIcon Methode nicht mehr nötig, da Icons jetzt in den Daten sind
 
   trackCTAClick(): void {
     console.log('Process CTA clicked: Projekt starten');

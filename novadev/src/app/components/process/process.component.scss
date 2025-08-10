@@ -201,10 +201,32 @@
   border: 2px solid var(--brand-border);
   @include flex-center;
   transition: all $transition-base;
+  padding: $spacing-2;
 }
 
-.process__step-icon-text {
-  font-size: $font-size-lg;
+// NEU: WebP Icon Styles
+.process__step-icon-image {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+  transition: all $transition-base;
+  
+  // Icons werden auf Hover weiß
+  .process__step[data-step="1"]:hover & {
+    filter: brightness(0) saturate(100%) invert(100%);
+  }
+  
+  .process__step[data-step="2"]:hover & {
+    filter: brightness(0) saturate(100%) invert(100%);
+  }
+  
+  .process__step[data-step="3"]:hover & {
+    filter: brightness(0) saturate(100%) invert(100%);
+  }
+  
+  .process__step[data-step="4"]:hover & {
+    filter: brightness(0) saturate(100%) invert(100%);
+  }
 }
 
 .process__cta {

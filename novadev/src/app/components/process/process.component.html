@@ -34,7 +34,11 @@
         </div>
 
         <div class="process__step-icon">
-          <span class="process__step-icon-text">{{ getStepIcon(i) }}</span>
+          <img 
+            [src]="step.icon" 
+            [alt]="step.title" 
+            class="process__step-icon-image"
+            loading="lazy">
         </div>
       </div>
     </div>
