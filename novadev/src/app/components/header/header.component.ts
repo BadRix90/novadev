@@ -11,10 +11,12 @@ export class HeaderComponent {
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    this.updateBodyScrollLock();
   }
 
   closeMobileMenu(): void {
     this.isMobileMenuOpen = false;
+    this.updateBodyScrollLock();
   }
 
   scrollToSection(sectionId: string): void {
@@ -26,5 +28,30 @@ export class HeaderComponent {
       });
     }
     this.closeMobileMenu();
+  }
+
+  private updateBodyScrollLock(): void {
+    const body = document.body;
+    const html = document.documentElement;
+    
+    if (this.isMobileMenuOpen) {
+      // Scroll komplett sperren
+      body.style.overflow = 'hidden';
+      body.style.position = 'fixed';
+      body.style.width = '100%';
+      body.style.height = '100%';
+      html.style.overflow = 'hidden';
+      
+      body.classList.add('mobile-menu-open');
+    } else {
+      // Scroll freigeben
+      body.style.overflow = '';
+      body.style.position = '';
+      body.style.width = '';
+      body.style.height = '';
+      html.style.overflow = '';
+      
+      body.classList.remove('mobile-menu-open');
+    }
   }
 }
