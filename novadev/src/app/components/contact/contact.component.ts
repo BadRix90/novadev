@@ -16,7 +16,7 @@ export class ContactComponent {
   submitMessage = '';
   submitSuccess = false;
 
-  private readonly mailEndpoint = 'https://your-domain.com/sendMail.php';
+  private readonly mailEndpoint = 'https://novadev-solutions.com/sendMail.php';
 
   constructor(
     private fb: FormBuilder,
@@ -40,7 +40,7 @@ export class ContactComponent {
         message: this.contactForm.value.message.trim()
       };
 
-      this.http.post<{success: boolean}>(this.mailEndpoint, formData)
+      this.http.post<{success: boolean; message?: string; error?: string}>(this.mailEndpoint, formData)
         .subscribe({
           next: (response) => {
             this.isSubmitting = false;
@@ -51,7 +51,9 @@ export class ContactComponent {
               this.contactForm.reset();
               this.trackFormSubmission('success');
             } else {
-              this.handleSubmissionError();
+              this.submitSuccess = false;
+              this.submitMessage = response.error || 'Fehler beim Senden der Nachricht.';
+              this.trackFormSubmission('error');
             }
           },
           error: (error) => {
@@ -72,7 +74,7 @@ export class ContactComponent {
   private handleSubmissionError(): void {
     this.isSubmitting = false;
     this.submitSuccess = false;
-    this.submitMessage = 'Entschuldigung, beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut.';
+    this.submitMessage = 'Entschuldigung, beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut oder kontaktiere mich direkt.';
     this.trackFormSubmission('error');
   }
 
