@@ -1,1 +1,60 @@
-<p>tech-stack works!</p>
+<section class="tech-stack">
+  <div class="tech-stack__container">
+    <div class="tech-stack__header">
+      <h2 class="tech-stack__title">Tech‑Stack</h2>
+      <p class="tech-stack__subtitle">
+        Moderne Technologien für zukunftssichere Lösungen
+      </p>
+    </div>
+
+    <div class="tech-stack__grid">
+      <div 
+        *ngFor="let tech of techStack; let i = index"
+        class="tech-stack__item"
+        [attr.data-tech]="getTechSlug(tech.name)"
+        (mouseenter)="onTechHover(tech.name)"
+        (mouseleave)="onTechLeave()">
+        
+        <div class="tech-stack__icon">
+          <img 
+            [src]="tech.icon" 
+            [alt]="tech.name + ' Logo'"
+            class="tech-stack__image"
+            loading="lazy">
+        </div>
+        
+        <div class="tech-stack__content">
+          <h3 class="tech-stack__name">{{ tech.name }}</h3>
+          <p class="tech-stack__description">{{ tech.description }}</p>
+          
+          <div class="tech-stack__category" *ngIf="tech.category">
+            {{ tech.category }}
+          </div>
+        </div>
+
+        <div class="tech-stack__hover-effect"></div>
+      </div>
+    </div>
+
+    <div class="tech-stack__footer">
+      <div class="tech-stack__experience">
+        <div class="tech-stack__experience-item">
+          <span class="tech-stack__experience-number">5+</span>
+          <span class="tech-stack__experience-label">Jahre Angular</span>
+        </div>
+        <div class="tech-stack__experience-item">
+          <span class="tech-stack__experience-number">3+</span>
+          <span class="tech-stack__experience-label">Jahre Material Design</span>
+        </div>
+        <div class="tech-stack__experience-item">
+          <span class="tech-stack__experience-number">100+</span>
+          <span class="tech-stack__experience-label">Projekte</span>
+        </div>
+      </div>
+      
+      <p class="tech-stack__note">
+        Kontinuierliche Weiterbildung und bleeding-edge Updates für optimale Performance.
+      </p>
+    </div>
+  </div>
+</section>
