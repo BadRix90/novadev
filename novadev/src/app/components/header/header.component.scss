@@ -194,3 +194,123 @@
   outline: 2px solid var(--brand-tech-blue);
   outline-offset: 2px;
 }
+
+// Mobile Toggle Button mit WebP Icons
+.header__mobile-toggle {
+  @include flex-center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-2;
+  z-index: 51;
+  position: relative;
+  
+  @include tablet-up {
+    display: none;
+  }
+  
+  &:hover {
+    .header__menu-icon,
+    .header__close-icon {
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Menu Icon (Burger)
+.header__menu-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  transition: all $transition-base;
+  position: absolute;
+  opacity: 1;
+  
+  &--hidden {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.8);
+  }
+}
+
+// Close Icon (X)
+.header__close-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  transition: all $transition-base;
+  position: absolute;
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.8);
+  
+  &--visible {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+// Mobile Menu Container
+.header__mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--brand-card);
+  border-top: 1px solid var(--brand-border);
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all $transition-base;
+  z-index: 50;
+  
+  @include tablet-up {
+    display: none;
+  }
+  
+  &--open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Mobile Navigation
+.header__mobile-nav {
+  @include flex-column;
+  padding: $spacing-6 $spacing-4;
+  gap: $spacing-2;
+}
+
+.header__mobile-link {
+  @include body-base;
+  color: var(--brand-sub);
+  font-weight: $font-weight-medium;
+  padding: $spacing-3 $spacing-4;
+  border-radius: $radius-lg;
+  transition: all $transition-fast;
+  text-align: center;
+  
+  &:hover {
+    color: var(--brand-text);
+    background: var(--brand-bg);
+  }
+  
+  &:focus {
+    color: var(--brand-tech-blue);
+    background: var(--brand-bg);
+    outline: 2px solid var(--brand-tech-blue);
+    outline-offset: 2px;
+  }
+}
+
+.header__mobile-cta {
+  @include button-primary;
+  margin-top: $spacing-4;
+  text-align: center;
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(255, 106, 61, 0.4);
+  }
+}

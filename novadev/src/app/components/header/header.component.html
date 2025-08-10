@@ -1,4 +1,4 @@
-<header class="header" role="banner">
+<header class="header" [class.header--mobile-open]="isMobileMenuOpen" role="banner">
   <div class="header__container">
     <div class="header__brand">
       <div class="header__logo" aria-hidden="true">
@@ -10,25 +10,49 @@
       </div>
     </div>
 
+    <!-- Desktop Navigation -->
     <nav class="header__nav" aria-label="Hauptnavigation">
-      <a href="#services" class="header__nav-link">Leistungen</a>
-      <a href="#portfolio" class="header__nav-link">Portfolio</a>
-      <a href="#pricing" class="header__nav-link">Preise</a>
-      <a href="#contact" class="header__nav-link">Kontakt</a>
+      <a href="#services" class="header__nav-link" (click)="scrollToSection('services')">Leistungen</a>
+      <a href="#portfolio" class="header__nav-link" (click)="scrollToSection('portfolio')">Portfolio</a>
+      <a href="#pricing" class="header__nav-link" (click)="scrollToSection('pricing')">Preise</a>
+      <a href="#contact" class="header__nav-link" (click)="scrollToSection('contact')">Kontakt</a>
     </nav>
 
-    <a href="#contact" class="header__cta">
+    <!-- Desktop CTA -->
+    <a href="#contact" class="header__cta" (click)="scrollToSection('contact')">
       Erstgespräch
     </a>
 
+    <!-- Mobile Toggle Button with WebP Icons -->
     <button 
-      class="header__mobile-toggle mobile-only" 
-      aria-label="Menü öffnen"
+      class="header__mobile-toggle" 
+      [attr.aria-label]="isMobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'"
+      [attr.aria-expanded]="isMobileMenuOpen"
       (click)="toggleMobileMenu()"
     >
-      <span class="header__burger-line"></span>
-      <span class="header__burger-line"></span>
-      <span class="header__burger-line"></span>
+      <img 
+        src="assets/img/icons/menu.webp" 
+        alt="Menu" 
+        class="header__menu-icon"
+        [class.header__menu-icon--hidden]="isMobileMenuOpen"
+        loading="lazy">
+      <img 
+        src="assets/img/icons/close.webp" 
+        alt="Close" 
+        class="header__close-icon"
+        [class.header__close-icon--visible]="isMobileMenuOpen"
+        loading="lazy">
     </button>
+  </div>
+
+  <!-- Mobile Navigation Menu -->
+  <div class="header__mobile-menu" [class.header__mobile-menu--open]="isMobileMenuOpen">
+    <nav class="header__mobile-nav" aria-label="Mobile Navigation">
+      <a href="#services" class="header__mobile-link" (click)="scrollToSection('services')">Leistungen</a>
+      <a href="#portfolio" class="header__mobile-link" (click)="scrollToSection('portfolio')">Portfolio</a>
+      <a href="#pricing" class="header__mobile-link" (click)="scrollToSection('pricing')">Preise</a>
+      <a href="#contact" class="header__mobile-link" (click)="scrollToSection('contact')">Kontakt</a>
+      <a href="#contact" class="header__mobile-cta" (click)="scrollToSection('contact')">Erstgespräch</a>
+    </nav>
   </div>
 </header>
