@@ -1,1 +1,157 @@
-<p>contact works!</p>
+<section id="contact" class="contact">
+  <div class="contact__container">
+    <div class="contact__header">
+      <h2 class="contact__title">Lass uns sprechen</h2>
+      <p class="contact__subtitle">
+        Bereit für dein nächstes Projekt? Kostenlose Erstberatung & unverbindliches Angebot.
+      </p>
+    </div>
+
+    <div class="contact__content">
+      <div class="contact__form-section">
+        <form 
+          class="contact__form" 
+          [formGroup]="contactForm" 
+          (ngSubmit)="onSubmit()"
+          novalidate>
+          
+          <div class="contact__form-group">
+            <label for="name" class="contact__label">
+              Name *
+            </label>
+            <input
+              id="name"
+              type="text"
+              class="contact__input"
+              [class.contact__input--error]="isFieldInvalid('name')"
+              formControlName="name"
+              placeholder="Dein vollständiger Name"
+              autocomplete="name">
+            
+            <div 
+              *ngIf="isFieldInvalid('name')" 
+              class="contact__error"
+              role="alert">
+              Name ist erforderlich
+            </div>
+          </div>
+
+          <div class="contact__form-group">
+            <label for="email" class="contact__label">
+              E-Mail *
+            </label>
+            <input
+              id="email"
+              type="email"
+              class="contact__input"
+              [class.contact__input--error]="isFieldInvalid('email')"
+              formControlName="email"
+              placeholder="deine@email.de"
+              autocomplete="email">
+            
+            <div 
+              *ngIf="isFieldInvalid('email')" 
+              class="contact__error"
+              role="alert">
+              <span *ngIf="contactForm.get('email')?.errors?.['required']">
+                E-Mail ist erforderlich
+              </span>
+              <span *ngIf="contactForm.get('email')?.errors?.['email']">
+                Bitte gültige E-Mail eingeben
+              </span>
+            </div>
+          </div>
+
+          <div class="contact__form-group">
+            <label for="message" class="contact__label">
+              Nachricht *
+            </label>
+            <textarea
+              id="message"
+              class="contact__textarea"
+              [class.contact__input--error]="isFieldInvalid('message')"
+              formControlName="message"
+              placeholder="Erzähl mir von deinem Projekt: Was soll entwickelt werden? Welche Ziele verfolgst du? Welcher Zeitrahmen schwebt dir vor?"
+              rows="6">
+            </textarea>
+            
+            <div 
+              *ngIf="isFieldInvalid('message')" 
+              class="contact__error"
+              role="alert">
+              Nachricht ist erforderlich
+            </div>
+          </div>
+
+          <button 
+            type="submit" 
+            class="contact__submit"
+            [disabled]="isSubmitting || contactForm.invalid"
+            [class.contact__submit--loading]="isSubmitting">
+            
+            <span *ngIf="!isSubmitting">Nachricht senden</span>
+            <span *ngIf="isSubmitting">Wird gesendet...</span>
+          </button>
+
+          <div 
+            *ngIf="submitMessage" 
+            class="contact__message"
+            [class.contact__message--success]="submitSuccess"
+            [class.contact__message--error]="!submitSuccess"
+            role="alert">
+            {{ submitMessage }}
+          </div>
+        </form>
+      </div>
+
+      <div class="contact__info-section">
+        <div class="contact__info-card">
+          <h3 class="contact__info-title">Projekt Informationen</h3>
+          
+          <div class="contact__info-items">
+            <div class="contact__info-item">
+              <div class="contact__info-icon">⚡</div>
+              <div class="contact__info-content">
+                <span class="contact__info-label">Response Zeit</span>
+                <span class="contact__info-text">< 24 Stunden</span>
+              </div>
+            </div>
+
+            <div class="contact__info-item">
+              <div class="contact__info-icon">🎯</div>
+              <div class="contact__info-content">
+                <span class="contact__info-label">Erstberatung</span>
+                <span class="contact__info-text">Kostenlos & unverbindlich</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact__info-footer">
+            <p class="contact__info-note">
+              Alle Anfragen werden vertraulich behandelt. 
+              <strong>DSGVO-konform</strong> und keine Weitergabe an Dritte.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact__cta-cards">
+          <div class="contact__cta-card">
+            <div class="contact__cta-icon">🚀</div>
+            <h4 class="contact__cta-title">Projekt starten</h4>
+            <p class="contact__cta-text">
+              Bereit für die Umsetzung? Lass uns dein Projekt besprechen.
+            </p>
+          </div>
+
+          <div class="contact__cta-card">
+            <div class="contact__cta-icon">🛠️</div>
+            <h4 class="contact__cta-title">Wartung anfragen</h4>
+            <p class="contact__cta-text">
+              Bestehende App optimieren? Wartungspaket ab 149€/Monat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
