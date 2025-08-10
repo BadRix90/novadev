@@ -113,10 +113,17 @@
   font-size: $font-size-sm;
   padding: $spacing-2 $spacing-4;
   height: 2.25rem;
+  transition: all $transition-base;
 
   &:hover {
     transform: translateY(-1px);
     box-shadow: 0 8px 25px rgba(255, 106, 61, 0.4);
+  }
+
+  .header--mobile-open & {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
   }
 }
 
