@@ -1,1 +1,73 @@
-<p>pricing works!</p>
+<section id="pricing" class="pricing">
+  <div class="pricing__container">
+    <div class="pricing__header">
+      <h2 class="pricing__title">Preise</h2>
+      <p class="pricing__subtitle">
+        Transparente Wartungspreise für langfristigen Erfolg
+      </p>
+    </div>
+
+    <div class="pricing__grid">
+      <div 
+        *ngFor="let plan of pricingPlans; let i = index"
+        class="pricing__card"
+        [class.pricing__card--featured]="plan.featured"
+        [attr.data-plan]="plan.name.toLowerCase()">
+        
+        <div class="pricing__card-header">
+          <div class="pricing__card-category">{{ plan.category }}</div>
+          <h3 class="pricing__card-name">{{ plan.name }}</h3>
+          <div class="pricing__card-price">
+            <span class="pricing__card-amount">{{ plan.price }}</span>
+            <span class="pricing__card-period">{{ plan.period }}</span>
+          </div>
+          <p class="pricing__card-description">{{ plan.description }}</p>
+        </div>
+
+        <div class="pricing__card-features">
+          <ul class="pricing__card-list">
+            <li 
+              *ngFor="let feature of plan.features"
+              class="pricing__card-feature">
+              <span class="pricing__card-feature-icon">✓</span>
+              <span class="pricing__card-feature-text">{{ feature }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pricing__card-footer">
+          <a 
+            href="#contact" 
+            class="pricing__card-button"
+            [class.pricing__card-button--primary]="plan.featured"
+            (click)="trackPricingClick(plan.name)">
+            {{ plan.buttonText }}
+          </a>
+        </div>
+
+        <div *ngIf="plan.featured" class="pricing__card-badge">
+          Beliebt
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing__footer">
+      <div class="pricing__custom">
+        <h3 class="pricing__custom-title">Projektentwicklung</h3>
+        <div class="pricing__custom-content">
+          <div class="pricing__custom-rate">
+            <span class="pricing__custom-label">Stundensatz:</span>
+            <span class="pricing__custom-price">65 €</span>
+            <span class="pricing__custom-note">(Einstieg, skalierend)</span>
+          </div>
+          <p class="pricing__custom-description">
+            Festpreise für Landingpages, Dashboards & Business‑Portale.
+          </p>
+        </div>
+        <a href="#contact" class="pricing__custom-button">
+          Projekt anfragen
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
