@@ -1,13 +1,6 @@
-// ============================================================================
-// NOVADEV - GLOBAL STYLES (SCHRITT 1)
-// ============================================================================
+@use './styles/variables' as *;
+@use './styles/mixins' as *;
 
-// Import design system files
-@import './styles/variables';
-@import './styles/mixins';
-
-// Font Face Declarations - Inter & Open Sans
-// ----------------------------------------------------------------------------
 @font-face {
   font-family: 'Inter';
   src: url('./assets/fonts/Inter/Inter_18pt-Regular.woff2') format('woff2');
@@ -83,7 +76,12 @@ body {
 
 // Typography Base
 // ----------------------------------------------------------------------------
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 700;
   line-height: 1.25;
@@ -99,20 +97,24 @@ a {
   color: inherit;
   text-decoration: none;
   transition: color 0.3s ease;
-  
+
   &:hover {
     color: #6bb6ff;
   }
 }
 
 // Lists & Forms
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-input, textarea, select, button {
+input,
+textarea,
+select,
+button {
   font: inherit;
   color: inherit;
 }
@@ -124,7 +126,8 @@ button {
 }
 
 // Media
-img, video {
+img,
+video {
   display: block;
   max-width: 100%;
   height: auto;

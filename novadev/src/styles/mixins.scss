@@ -1,3 +1,5 @@
+@use './variables.scss' as *;
+
 @mixin mobile-only {
   @media (max-width: #{$breakpoint-sm - 1px}) {
     @content;
@@ -35,8 +37,7 @@
   }
 }
 
-// Container Layout
-// ----------------------------------------------------------------------------
+
 @mixin container {
   max-width: $max-width-7xl;
   margin: 0 auto;
