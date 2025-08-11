@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://novadev-solutions.com/sitemap.xml
+
+# Wichtige Seiten crawlen lassen
+Allow: /#services
+Allow: /#portfolio
+Allow: /#pricing
+Allow: /#contact
+Allow: /#faq
+Allow: /impressum
+Allow: /datenschutz
+
+# Keine technischen Dateien crawlen
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /assets/img/
+Disallow: /*.json$
+Disallow: /chunk-*.js
+Disallow: /main-*.js
+Disallow: /polyfills-*.js
+
+# Angular spezifische Dateien ausschließen
+Disallow: /ng-state
+Disallow: /*.map$
+
+# Crawl-delay für bessere Performance
+Crawl-delay: 1
