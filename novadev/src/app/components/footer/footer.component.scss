@@ -91,36 +91,21 @@
   transition: all $transition-fast;
   
   &--angular {
-    background: rgba(221, 0, 49, 0.1);
-    color: #dd0031;
+    background: var(--brand-eclipsia);
+    color: var(--brand-bg);
     border-color: rgba(221, 0, 49, 0.2);
-    
-    &:hover {
-      background: rgba(221, 0, 49, 0.2);
-      transform: translateY(-1px);
-    }
   }
   
   &--django {
-    background: rgba(9, 46, 32, 0.1);
-    color: #092e20;
+    background: var(--brand-eclipsia);
+    color: var(--brand-bg);
     border-color: rgba(9, 46, 32, 0.2);
-    
-    &:hover {
-      background: rgba(9, 46, 32, 0.2);
-      transform: translateY(-1px);
-    }
   }
   
   &--typescript {
-    background: rgba(49, 120, 198, 0.1);
-    color: #3178c6;
+    background: var(--brand-eclipsia);
+    color: var(--brand-bg);
     border-color: rgba(49, 120, 198, 0.2);
-    
-    &:hover {
-      background: rgba(49, 120, 198, 0.2);
-      transform: translateY(-1px);
-    }
   }
 }
 

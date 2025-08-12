@@ -35,6 +35,16 @@
                 "glob": "robots.txt",
                 "input": "src",
                 "output": "/"
+              },
+              {
+                "glob": "google*.html",
+                "input": "src",
+                "output": "/"
+              },
+              {
+                "glob": "sitemap.xml",
+                "input": "src",
+                "output": "/"
               }
             ],
             "styles": [
@@ -103,6 +113,16 @@
               },
               {
                 "glob": "robots.txt",
+                "input": "src",
+                "output": "/"
+              },
+              {
+                "glob": "google*.html",
+                "input": "src",
+                "output": "/"
+              },
+              {
+                "glob": "sitemap.xml",
                 "input": "src",
                 "output": "/"
               }
