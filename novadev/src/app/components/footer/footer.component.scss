@@ -15,7 +15,7 @@
   padding: $spacing-12 0 $spacing-8 0;
   display: grid;
   gap: $spacing-8;
-  
+
   @include tablet-up {
     grid-template-columns: 1.5fr 1fr;
     gap: $spacing-12;
@@ -37,10 +37,10 @@
   height: 2.5rem;
   @include flex-center;
   transition: all $transition-fast;
-  
+
   &:hover {
     transform: scale(1.05);
-    
+
     .footer__logo-image {
       filter: drop-shadow(0 4px 12px rgba(192, 169, 122, 0.4));
     }
@@ -83,7 +83,7 @@
   border-radius: $radius-base;
   color: var(--brand-sub);
   transition: all $transition-fast;
-  
+
   &:hover {
     background: var(--brand-rust-gold);
     border-color: var(--brand-rust-gold);
@@ -101,7 +101,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: $spacing-8;
-  
+
   @include tablet-up {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -133,7 +133,7 @@
   color: var(--brand-sub);
   transition: color $transition-fast;
   padding: $spacing-1 0;
-  
+
   &:hover {
     color: var(--brand-rust-gold);
   }
@@ -147,7 +147,7 @@
   align-items: center;
   gap: $spacing-2;
   text-align: center;
-  
+
   @include tablet-up {
     flex-direction: row;
     justify-content: space-between;
@@ -171,8 +171,42 @@
   .footer__content {
     grid-template-columns: 1fr;
   }
-  
+
   .footer__links {
     grid-template-columns: 1fr;
+  }
+}
+
+.footer__back-to-top {
+  @include body-sm;
+  color: var(--brand-rust-gold);
+  font-weight: $font-weight-medium;
+  transition: all $transition-fast;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--brand-text);
+    transform: translateY(-2px);
+  }
+
+  @include mobile-only {
+    order: -1; 
+    margin-bottom: $spacing-2;
+  }
+}
+
+.footer__bottom {
+  padding: $spacing-6 0;
+  border-top: 1px solid var(--brand-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-2;
+  text-align: center;
+
+  @include tablet-up {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: $spacing-4;
   }
 }

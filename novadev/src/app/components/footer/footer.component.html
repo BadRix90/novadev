@@ -45,6 +45,7 @@
             <a href="/#portfolio" (click)="scrollToSection('portfolio', $event)" class="footer__link">Projekte</a>
             <a href="/#faq" (click)="scrollToSection('faq', $event)" class="footer__link">FAQ</a>
             <a href="/#contact" (click)="scrollToSection('contact', $event)" class="footer__link">Kontakt</a>
+
           </nav>
         </div>
 
@@ -62,6 +63,11 @@
       <p class="footer__copyright">
         © {{ currentYear }} SaltCity Web. Alle Rechte vorbehalten.
       </p>
+
+      <a href="#start" (click)="scrollToTop($event)" class="footer__back-to-top" aria-label="Zum Seitenanfang">
+        ↑ Zum Seitenanfang
+      </a>
+
       <p class="footer__made-with">
         Made with Angular 20 in Lüneburg
       </p>

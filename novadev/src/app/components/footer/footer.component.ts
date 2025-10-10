@@ -11,16 +11,16 @@ import { isPlatformBrowser } from '@angular/common';
 export class FooterComponent {
   currentYear = new Date().getFullYear();
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   scrollToSection(sectionId: string, event?: Event): void {
     if (event) {
       event.preventDefault();
     }
-    
+
     if (isPlatformBrowser(this.platformId)) {
       const element = document.getElementById(sectionId);
-      
+
       if (element) {
         const headerOffset = 80;
         const elementPosition = element.getBoundingClientRect().top;
@@ -31,6 +31,19 @@ export class FooterComponent {
           behavior: 'smooth'
         });
       }
+    }
+  }
+
+  scrollToTop(event?: Event): void {
+    if (event) {
+      event.preventDefault();
+    }
+
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     }
   }
 }
