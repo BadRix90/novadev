@@ -61,6 +61,14 @@
 
 html {
   scroll-behavior: smooth;
+  /* Hide scrollbar but keep scroll functionality */
+  &::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;    /* Firefox */
 }
 
 body {

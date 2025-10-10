@@ -35,18 +35,10 @@
 }
 
 .header__logo {
-  width: 4.5rem;
-  height: 2.5rem;
+  width: 6rem;
+  height: 6rem;
   @include flex-center;
   transition: all $transition-base;
-
-  &:hover {
-    transform: scale(1.05);
-
-    .header__logo-image {
-      filter: drop-shadow(0 8px 30px rgba(107, 182, 255, 0.4)) drop-shadow(0 4px 15px rgba(107, 182, 255, 0.6));
-    }
-  }
 }
 
 .header__logo-image {
@@ -55,10 +47,6 @@
   object-fit: contain;
   transition: all $transition-base;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
-
-  .header__logo:hover & {
-    transform: scale(1.1);
-  }
 }
 
 .header__brand-name {

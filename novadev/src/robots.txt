@@ -2,12 +2,11 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://novadev-solutions.com/sitemap.xml
+Sitemap: https://saltcity-web.com/sitemap.xml
 
 # Wichtige Seiten crawlen lassen
 Allow: /#services
 Allow: /#portfolio
-Allow: /#pricing
 Allow: /#contact
 Allow: /#faq
 Allow: /impressum
