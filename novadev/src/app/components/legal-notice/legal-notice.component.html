@@ -29,7 +29,7 @@
         <h2>Kontaktmöglichkeiten</h2>
         <p>
           <strong>E-Mail-Adresse:</strong>
-          Über das <a routerLink="/" fragment="contact" class="legal-link">Kontaktformular</a>
+          Über das <a href="/#contact" (click)="navigateToContact($event)" class="legal-link">Kontaktformular</a>
         </p>
         <p>
           <strong>Telefon:</strong> Auf Anfrage über das Kontaktformular
@@ -177,7 +177,7 @@
           Bei rechtlichen Fragen oder Anmerkungen zu diesem Impressum stehe ich Ihnen
           gerne zur Verfügung.
         </p>
-        <a routerLink="/" fragment="contact" class="legal-cta">
+        <a href="/#contact" (click)="navigateToContact($event)" class="legal-cta">
           Kontakt aufnehmen
         </a>
       </div>

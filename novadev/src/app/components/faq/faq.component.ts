@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 
 interface FAQ {
   question: string;
@@ -15,6 +16,8 @@ interface FAQ {
   styleUrl: './faq.component.scss'
 })
 export class FaqComponent {
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   faqs: FAQ[] = [
     {
@@ -73,4 +76,24 @@ export class FaqComponent {
     this.faqs[index].isOpen = !this.faqs[index].isOpen;
   }
 
+  scrollToSection(sectionId: string, event?: Event): void {
+    if (event) {
+      event.preventDefault();
+    }
+    
+    if (isPlatformBrowser(this.platformId)) {
+      const element = document.getElementById(sectionId);
+      
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  }
 }

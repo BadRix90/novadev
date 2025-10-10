@@ -9,7 +9,7 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class HeroComponent implements OnInit {
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -20,11 +20,11 @@ export class HeroComponent implements OnInit {
   private animateOnLoad(): void {
     const heroContent = document.querySelector('.hero__content');
     const heroSpotlight = document.querySelector('.hero__spotlight');
-    
+
     if (heroContent) {
       heroContent.classList.add('hero__content--animate');
     }
-    
+
     if (heroSpotlight) {
       setTimeout(() => {
         heroSpotlight.classList.add('hero__spotlight--animate');
@@ -32,13 +32,22 @@ export class HeroComponent implements OnInit {
     }
   }
 
-  scrollToSection(sectionId: string): void {
+  scrollToSection(sectionId: string, event?: Event): void {
+    if (event) {
+      event.preventDefault();
+    }
+
     if (isPlatformBrowser(this.platformId)) {
       const element = document.getElementById(sectionId.replace('#', ''));
+
       if (element) {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
         });
       }
     }
