@@ -1,36 +1,40 @@
-
 :root {
-  // Background Colors
-  --brand-bg: #0c0f12;
-  --brand-card: #12161b;
-  --brand-card2: #161c22;
+  // Background Colors - Industrial Style
+  --brand-bg: #0E0E0E;           // Tiefschwarz
+  --brand-card: #1F1F1F;         // Anthrazit
+  --brand-card2: #252525;        // Leicht heller für Tiefe
   
   // Text Colors
-  --brand-text: #e8ecf1;
-  --brand-sub: #9aa6b2;
+  --brand-text: #D9D9D9;         // Betonhell
+  --brand-sub: #9a9a9a;          // Grau für Sekundärtext
   
-  // Accent Colors
-  --brand-mocha: #b08a7a;
-  --brand-tech-blue: #6bb6ff;
-  --brand-tech-blue-deep: #2f87ff;
-  --brand-eclipsia: #ff6a3d;
-  --brand-eclipsia-deep: #e34911;
-  --brand-success: #39d98a;
+  // Accent Colors - Industrial
+  --brand-rust-gold: #C0A97A;    // Rostgold (Hauptakzent)
+  --brand-rust-brown: #8C3B1A;   // Rostbraun (Hover)
+  --brand-metal-grey: #5C5C5C;   // Metallgrau (Linien)
+  
+  // Legacy colors (für Kompatibilität)
+  --brand-mocha: #C0A97A;        // Mapped zu Rustgold
+  --brand-tech-blue: #C0A97A;    // Mapped zu Rustgold
+  --brand-tech-blue-deep: #8C3B1A; // Mapped zu Rustbraun
+  --brand-eclipsia: #C0A97A;     // Mapped zu Rustgold
+  --brand-eclipsia-deep: #8C3B1A; // Mapped zu Rustbraun
+  --brand-success: #7a9c6f;      // Industrial Green
   
   // UI Elements
-  --brand-border: #24303a;
+  --brand-border: #5C5C5C;       // Metallgrau
   
-  // Gradients
-  --gradient-eclipsia: linear-gradient(90deg, var(--brand-eclipsia), var(--brand-eclipsia-deep));
-  --gradient-tech: linear-gradient(140deg, var(--brand-tech-blue-deep), var(--brand-mocha));
-  --gradient-bg-accent: radial-gradient(40% 40% at 50% 50%, var(--brand-tech-blue), transparent);
-  --gradient-bg-mocha: radial-gradient(40% 40% at 50% 50%, var(--brand-mocha), transparent);
+  // Gradients - Industrial Style
+  --gradient-eclipsia: linear-gradient(90deg, var(--brand-rust-gold), var(--brand-rust-brown));
+  --gradient-tech: linear-gradient(140deg, var(--brand-rust-gold), var(--brand-rust-brown));
+  --gradient-bg-accent: radial-gradient(40% 40% at 50% 50%, var(--brand-rust-gold), transparent);
+  --gradient-bg-mocha: radial-gradient(40% 40% at 50% 50%, var(--brand-rust-gold), transparent);
   
-  // Shadows & Effects
+  // Shadows & Effects - Industrial
   --glow-shadow: 0 0 0 1px var(--brand-border) inset, 
-                 0 20px 60px rgba(0,0,0,.6), 
-                 0 0 60px -20px var(--brand-tech-blue-deep);
-  --card-shadow: 0 10px 30px rgba(255,106,61,.35);
+                 0 20px 60px rgba(0,0,0,.7), 
+                 0 0 60px -20px rgba(192, 169, 122, 0.3);
+  --card-shadow: 0 10px 30px rgba(192, 169, 122, .25);
   --backdrop-blur: blur(20px);
 }
 
@@ -38,6 +42,7 @@
 // ----------------------------------------------------------------------------
 $font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 $font-family-secondary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-family-accent: 'Oswald', 'Inter', sans-serif; // Für Headlines
 
 // Font Sizes (rem-based for scalability)
 $font-size-xs: 0.75rem;    // 12px
