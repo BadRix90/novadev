@@ -7,6 +7,7 @@ import { PricingComponent } from '../pricing/pricing.component';
 import { TechStackComponent } from '../tech-stack/tech-stack.component';
 import { FaqComponent } from '../faq/faq.component';
 import { ContactComponent } from '../contact/contact.component';
+import { AboutComponent } from '../about/about.component';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ import { ContactComponent } from '../contact/contact.component';
     PricingComponent,
     TechStackComponent,
     FaqComponent,
-    ContactComponent
+    ContactComponent,
+    AboutComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
