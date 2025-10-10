@@ -1,19 +1,17 @@
 <header class="header" [class.header--mobile-open]="isMobileMenuOpen" role="banner">
   <div class="header__container">
     <div class="header__brand">
-      <div class="header__logo" (click)="goToHome()" style="cursor: pointer;" aria-label="NovaDev - Zur Startseite">
-        <img src="assets/logo/novaDev.webp" alt="NovaDev Logo" class="header__logo-image" loading="eager">
+      <div class="header__logo" (click)="goToHome()" style="cursor: pointer;" aria-label="SaltCity Web - Zur Startseite">
+        <img src="assets/logo/scw_logo.png" alt="SaltCity Web Logo" class="header__logo-image" loading="eager">
       </div>
     </div>
 
     <nav class="header__nav" aria-label="Hauptnavigation">
       <a class="header__nav-link" href="/#services" (click)="onNavClick($event, 'services')">Leistungen</a>
-      <a class="header__nav-link" href="/#portfolio" (click)="onNavClick($event, 'portfolio')">Portfolio</a>
-      <a class="header__nav-link" href="/#pricing" (click)="onNavClick($event, 'pricing')">Preise</a>
+      <a class="header__nav-link" href="/#about" (click)="onNavClick($event, 'about')">Über uns</a>
+      <a class="header__nav-link" href="/#portfolio" (click)="onNavClick($event, 'portfolio')">Projekte</a>
       <a class="header__nav-link" href="/#contact" (click)="onNavClick($event, 'contact')">Kontakt</a>
     </nav>
-
-    <a class="header__cta" href="/#contact" (click)="onNavClick($event, 'contact')">Erstgespräch</a>
 
 
     <button class="header__mobile-toggle" [attr.aria-label]="isMobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'"
@@ -28,10 +26,10 @@
   <div class="header__mobile-menu" [class.header__mobile-menu--open]="isMobileMenuOpen">
     <nav class="header__mobile-nav" aria-label="Mobile Navigation">
       <a class="header__mobile-link" href="/#services" (click)="onNavClick($event, 'services')">Leistungen</a>
-      <a class="header__mobile-link" href="/#portfolio" (click)="onNavClick($event, 'portfolio')">Portfolio</a>
-      <a class="header__mobile-link" href="/#pricing" (click)="onNavClick($event, 'pricing')">Preise</a>
+      <a class="header__mobile-link" href="/#about" (click)="onNavClick($event, 'about')">Über uns</a>
+      <a class="header__mobile-link" href="/#portfolio" (click)="onNavClick($event, 'portfolio')">Projekte</a>
       <a class="header__mobile-link" href="/#contact" (click)="onNavClick($event, 'contact')">Kontakt</a>
-      <a class="header__mobile-cta" href="/#contact" (click)="onNavClick($event, 'contact')">Erstgespräch</a>
+      <a class="header__mobile-cta" href="/#contact" (click)="onNavClick($event, 'contact')">Projekt anfragen</a>
     </nav>
   </div>
 </header>
