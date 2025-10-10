@@ -15,13 +15,13 @@ import { AboutComponent } from '../about/about.component';
   imports: [
     HeroComponent,
     ServicesComponent,
+    AboutComponent,
     PortfolioComponent,
     ProcessComponent,
     PricingComponent,
     TechStackComponent,
     FaqComponent,
-    ContactComponent,
-    AboutComponent
+    ContactComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
