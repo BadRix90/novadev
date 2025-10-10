@@ -3,7 +3,7 @@
 
 .contact {
   @include section-padding;
-  background: var(--brand-bg);
+  background: var(--brand-card);
 }
 
 .contact__container {
@@ -13,7 +13,7 @@
 .contact__header {
   text-align: center;
   margin-bottom: $spacing-12;
-  max-width: 600px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -32,27 +32,23 @@
 
 .contact__content {
   display: grid;
-  gap: $spacing-8;
-  max-width: 1200px;
-  margin: 0 auto;
-
+  gap: $spacing-10;
+  
   @include tablet-up {
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     gap: $spacing-12;
   }
 }
 
-.contact__form-section {
-  order: 2;
-
-  @include tablet-up {
-    order: 1;
-  }
+// Formular
+.contact__form-wrapper {
+  background: var(--brand-bg);
+  border: 1px solid var(--brand-border);
+  border-radius: $radius-xl;
+  padding: $spacing-8;
 }
 
 .contact__form {
-  @include card-base;
-  padding: $spacing-8;
   display: flex;
   flex-direction: column;
   gap: $spacing-6;
@@ -66,165 +62,101 @@
 
 .contact__label {
   @include body-sm;
-  font-weight: $font-weight-medium;
   color: var(--brand-text);
-  margin-bottom: $spacing-1;
+  font-weight: $font-weight-medium;
 }
 
 .contact__input,
-.contact__textarea {
+.contact__textarea,
+.contact__select {
   @include body-base;
-  padding: $spacing-3 $spacing-4;
+  background: var(--brand-card);
   border: 1px solid var(--brand-border);
-  border-radius: $radius-lg;
-  background: var(--brand-bg);
+  border-radius: $radius-base;
+  padding: $spacing-3 $spacing-4;
   color: var(--brand-text);
   transition: all $transition-fast;
-  font-family: $font-family-primary;
-
-  &::placeholder {
-    color: var(--brand-sub);
-  }
-
+  
   &:focus {
     outline: none;
-    border-color: var(--brand-tech-blue);
-    box-shadow: 0 0 0 3px rgba(107, 182, 255, 0.1);
+    border-color: var(--brand-rust-gold);
+    box-shadow: 0 0 0 3px rgba(192, 169, 122, 0.1);
   }
-
-  &:hover:not(:focus) {
-    border-color: var(--brand-mocha);
-  }
-
-  &--error {
-    border-color: var(--brand-danger);
-
-    &:focus {
-      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
-    }
+  
+  &::placeholder {
+    color: var(--brand-sub);
   }
 }
 
 .contact__textarea {
   resize: vertical;
-  min-height: 120px;
-  line-height: $line-height-relaxed;
+  min-height: $textarea-min-height;
+  font-family: inherit;
 }
 
-.contact__error {
-  @include body-sm;
-  color: var(--brand-danger);
-  margin-top: $spacing-1;
+.contact__select {
+  cursor: pointer;
 }
 
 .contact__submit {
   @include button-primary;
-  padding: $spacing-4 $spacing-6;
   border-radius: $radius-xl;
-  font-weight: $font-weight-semibold;
-  transition: all $transition-base;
-
-  &:not(:disabled):hover {
+  padding: $spacing-3 $spacing-6;
+  margin-top: $spacing-2;
+  
+  &:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(255, 106, 61, 0.4);
+    box-shadow: 0 12px 40px rgba(192, 169, 122, 0.4);
   }
-
+  
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
-    transform: none;
-  }
-
-  &--loading {
-    position: relative;
-
-    &::after {
-      content: '';
-      position: absolute;
-      right: $spacing-4;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 1rem;
-      height: 1rem;
-      border: 2px solid transparent;
-      border-top: 2px solid currentColor;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
   }
 }
 
 .contact__message {
-  @include body-sm;
-  padding: $spacing-3 $spacing-4;
-  border-radius: $radius-lg;
+  padding: $spacing-4;
+  border-radius: $radius-base;
   text-align: center;
-  font-weight: $font-weight-medium;
-
+  font-size: $font-size-sm;
+  background: var(--brand-card);
+  border: 1px solid var(--brand-border);
+  color: var(--brand-sub);
+  
   &--success {
-    background: rgba(57, 217, 138, 0.1);
-    color: var(--brand-success);
-    border: 1px solid rgba(57, 217, 138, 0.2);
-  }
-
-  &--error {
-    background: rgba(239, 68, 68, 0.1);
-    color: var(--brand-danger);
-    border: 1px solid rgba(239, 68, 68, 0.2);
+    background: rgba(122, 156, 111, 0.1);
+    border-color: #7a9c6f;
+    color: #7a9c6f;
   }
 }
 
-.contact__info-section {
-  order: 1;
+// Direktkontakt
+.contact__info {
   display: flex;
   flex-direction: column;
   gap: $spacing-6;
-
-  @include tablet-up {
-    order: 2;
-  }
 }
 
 .contact__info-card {
-  @include card-base;
+  background: var(--brand-bg);
+  border: 1px solid var(--brand-border);
+  border-radius: $radius-xl;
   padding: $spacing-8;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
 }
 
 .contact__info-title {
-  @include heading-md;
-  margin: 0 0 $spacing-6 0;
-  color: var(--brand-text);
-}
-
-.contact__info-items {
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-4;
-  margin-bottom: $spacing-6;
+  @include heading-sm;
+  margin: 0;
+  color: var(--brand-rust-gold);
+  padding-bottom: $spacing-3;
+  border-bottom: 2px solid var(--brand-border);
 }
 
 .contact__info-item {
-  display: flex;
-  gap: $spacing-3;
-  align-items: flex-start;
-}
-
-.contact__info-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  flex-shrink: 0;
-}
-
-.contact__info-icon-image {
-  width: 1.75rem;
-  height: 1.75rem;
-  object-fit: contain;
-}
-
-.contact__info-content {
   display: flex;
   flex-direction: column;
   gap: $spacing-1;
@@ -233,96 +165,49 @@
 .contact__info-label {
   @include body-sm;
   color: var(--brand-sub);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: $font-size-xs;
+}
+
+.contact__info-link {
+  @include body-base;
+  color: var(--brand-rust-gold);
   font-weight: $font-weight-medium;
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: var(--brand-rust-brown);
+  }
 }
 
 .contact__info-text {
   @include body-base;
   color: var(--brand-text);
-  font-weight: $font-weight-medium;
-}
-
-.contact__info-footer {
-  padding-top: $spacing-4;
-  border-top: 1px solid var(--brand-border);
 }
 
 .contact__info-note {
-  @include body-sm;
-  margin: 0;
-  color: var(--brand-sub);
-  line-height: $line-height-relaxed;
-
-  strong {
-    color: var(--brand-tech-blue);
-    font-weight: $font-weight-semibold;
-  }
-}
-
-.contact__cta-cards {
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-4;
-}
-
-.contact__cta-card {
-  @include card-base;
+  background: var(--brand-bg);
+  border: 1px solid var(--brand-border);
+  border-radius: $radius-xl;
   padding: $spacing-6;
-  text-align: center;
-  transition: all $transition-base;
-
-  &:hover {
-    transform: translateY(-2px);
-    border-color: var(--brand-eclipsia);
-    box-shadow: 0 8px 30px rgba(255, 106, 61, 0.15);
-  }
 }
 
-.contact__cta-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3rem;
-  height: 3rem;
-  margin: 0 auto $spacing-3 auto;
-}
-
-.contact__cta-icon-image {
-  width: 2rem;
-  height: 2rem;
-  object-fit: contain;
-}
-
-.contact__cta-title {
-  @include heading-sm;
-  font-size: $font-size-lg;
-  margin: 0 0 $spacing-2 0;
-  color: var(--brand-text);
-}
-
-.contact__cta-text {
+.contact__note-text {
   @include body-sm;
-  margin: 0;
   color: var(--brand-sub);
+  margin: 0;
   line-height: $line-height-relaxed;
-}
-
-@keyframes spin {
-  to {
-    transform: translateY(-50%) rotate(360deg);
-  }
 }
 
 @include mobile-only {
-  .contact__form {
-    padding: $spacing-6;
+  .contact__content {
+    grid-template-columns: 1fr;
   }
-
-  .contact__info-card {
+  
+  .contact__form-wrapper,
+  .contact__info-card,
+  .contact__info-note {
     padding: $spacing-6;
-  }
-
-  .contact__cta-card {
-    padding: $spacing-4;
   }
 }

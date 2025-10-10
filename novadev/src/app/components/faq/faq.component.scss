@@ -44,16 +44,16 @@
   transition: all $transition-base;
   
   &:hover {
-    border-color: var(--brand-tech-blue);
+    border-color: var(--brand-rust-gold);
   }
   
   &--open {
-    border-color: var(--brand-tech-blue);
-    box-shadow: 0 8px 30px rgba(107, 182, 255, 0.1);
+    border-color: var(--brand-rust-gold);
+    box-shadow: 0 8px 30px rgba(192, 169, 122, 0.1);
     
     .faq__question-icon {
       transform: rotate(180deg);
-      color: var(--brand-tech-blue);
+      color: var(--brand-rust-gold);
     }
     
     .faq__answer {
@@ -76,20 +76,20 @@
   transition: all $transition-fast;
   
   &:hover {
-    background: rgba(107, 182, 255, 0.02);
+    background: rgba(192, 169, 122, 0.02);
     
     .faq__question-text {
       color: var(--brand-text);
     }
     
     .faq__question-icon {
-      color: var(--brand-tech-blue);
+      color: var(--brand-rust-gold);
       transform: scale(1.1);
     }
   }
   
   &:focus {
-    outline: 2px solid var(--brand-tech-blue);
+    outline: 2px solid var(--brand-rust-gold);
     outline-offset: -2px;
   }
 }
@@ -163,7 +163,7 @@
     content: '•';
     position: absolute;
     left: 0;
-    color: var(--brand-tech-blue);
+    color: var(--brand-rust-gold);
     font-weight: $font-weight-bold;
   }
 }
@@ -192,7 +192,7 @@
   
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(255, 106, 61, 0.4);
+    box-shadow: 0 12px 40px rgba(192, 169, 122, 0.4);
   }
 }
 

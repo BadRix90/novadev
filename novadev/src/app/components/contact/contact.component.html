@@ -1,148 +1,117 @@
-<section id="contact" class="contact">
-    <div class="contact__container">
-        <div class="contact__header">
-            <h2 class="contact__title">Lass uns sprechen</h2>
-            <p class="contact__subtitle">
-                Bereit für dein nächstes Projekt? Kostenlose Erstberatung & unverbindliches Angebot.
-            </p>
-        </div>
-
-        <div class="contact__content">
-            <div class="contact__form-section">
-                <form class="contact__form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
-
-                    <div class="contact__form-group">
-                        <label for="name" class="contact__label">
-                            Name *
-                        </label>
-                        <input id="name" type="text" class="contact__input"
-                            [class.contact__input--error]="isFieldInvalid('name')" formControlName="name"
-                            placeholder="Dein vollständiger Name" autocomplete="name">
-
-                        <div *ngIf="isFieldInvalid('name')" class="contact__error" role="alert">
-                            Name ist erforderlich
-                        </div>
-                    </div>
-
-                    <div class="contact__form-group">
-                        <label for="email" class="contact__label">
-                            E-Mail *
-                        </label>
-                        <input id="email" type="email" class="contact__input"
-                            [class.contact__input--error]="isFieldInvalid('email')" formControlName="email"
-                            placeholder="deine@email.de" autocomplete="email">
-
-                        <div *ngIf="isFieldInvalid('email')" class="contact__error" role="alert">
-                            <span *ngIf="contactForm.get('email')?.errors?.['required']">
-                                E-Mail ist erforderlich
-                            </span>
-                            <span *ngIf="contactForm.get('email')?.errors?.['email']">
-                                Bitte gültige E-Mail eingeben
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="contact__form-group">
-                        <label for="message" class="contact__label">
-                            Nachricht *
-                        </label>
-                        <textarea id="message" class="contact__textarea"
-                            [class.contact__input--error]="isFieldInvalid('message')" formControlName="message"
-                            placeholder="Erzähl mir von deinem Projekt: Was soll entwickelt werden? Welche Ziele verfolgst du? Welcher Zeitrahmen schwebt dir vor?"
-                            rows="6"></textarea>
-
-                        <div *ngIf="isFieldInvalid('message')" class="contact__error" role="alert">
-                            Nachricht ist erforderlich
-                        </div>
-                    </div>
-
-                    <button type="submit" class="contact__submit" [disabled]="isSubmitting || contactForm.invalid"
-                        [class.contact__submit--loading]="isSubmitting">
-
-                        <span *ngIf="!isSubmitting">Nachricht senden</span>
-                        <span *ngIf="isSubmitting">Wird gesendet...</span>
-                    </button>
-
-                    <div *ngIf="submitMessage" class="contact__message"
-                        [class.contact__message--success]="submitSuccess"
-                        [class.contact__message--error]="!submitSuccess" role="alert">
-                        {{ submitMessage }}
-                    </div>
-                </form>
-            </div>
-
-            <div class="contact__info-section">
-                <div class="contact__info-card">
-                    <h3 class="contact__info-title">Projekt Informationen</h3>
-
-                    <div class="contact__info-items">
-                        <div class="contact__info-item">
-                            <div class="contact__info-icon">
-                                <img 
-                                    src="assets/img/icons/flash.webp" 
-                                    alt="Response Zeit" 
-                                    class="contact__info-icon-image"
-                                    loading="lazy">
-                            </div>
-                            <div class="contact__info-content">
-                                <span class="contact__info-label">Response Zeit</span>
-                                <span class="contact__info-text">< 24 Stunden</span>
-                            </div>
-                        </div>
-
-                        <div class="contact__info-item">
-                            <div class="contact__info-icon">
-                                <img 
-                                    src="assets/img/icons/dart.webp" 
-                                    alt="Erstberatung" 
-                                    class="contact__info-icon-image"
-                                    loading="lazy">
-                            </div>
-                            <div class="contact__info-content">
-                                <span class="contact__info-label">Erstberatung</span>
-                                <span class="contact__info-text">Kostenlos & unverbindlich</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact__info-footer">
-                        <p class="contact__info-note">
-                            Alle Anfragen werden vertraulich behandelt.
-                            <strong>DSGVO-konform</strong> und keine Weitergabe an Dritte.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="contact__cta-cards">
-                    <div class="contact__cta-card">
-                        <div class="contact__cta-icon">
-                            <img 
-                                src="assets/img/icons/rocket.webp" 
-                                alt="Projekt starten" 
-                                class="contact__cta-icon-image"
-                                loading="lazy">
-                        </div>
-                        <h4 class="contact__cta-title">Projekt starten</h4>
-                        <p class="contact__cta-text">
-                            Bereit für die Umsetzung? Lass uns dein Projekt besprechen.
-                        </p>
-                    </div>
-
-                    <div class="contact__cta-card">
-                        <div class="contact__cta-icon">
-                            <img 
-                                src="assets/img/icons/maintenance.webp" 
-                                alt="Wartung anfragen" 
-                                class="contact__cta-icon-image"
-                                loading="lazy">
-                        </div>
-                        <h4 class="contact__cta-title">Wartung anfragen</h4>
-                        <p class="contact__cta-text">
-                            Bestehende App optimieren? Wartungspaket ab 149€/Monat.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section class="contact" id="contact">
+  <div class="contact__container">
+    <div class="contact__header">
+      <h2 class="contact__title">Kontakt</h2>
+      <p class="contact__subtitle">
+        Lass uns über dein Projekt sprechen
+      </p>
     </div>
+
+    <div class="contact__content">
+      <!-- Formular Links -->
+      <div class="contact__form-wrapper">
+        <form class="contact__form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="contact__form-group">
+            <label for="company" class="contact__label">Unternehmen</label>
+            <input 
+              type="text" 
+              id="company" 
+              formControlName="company"
+              class="contact__input"
+              placeholder="Deine Firma">
+          </div>
+
+          <div class="contact__form-group">
+            <label for="name" class="contact__label">Name *</label>
+            <input 
+              type="text" 
+              id="name" 
+              formControlName="name"
+              class="contact__input"
+              placeholder="Dein Name"
+              required>
+          </div>
+
+          <div class="contact__form-group">
+            <label for="email" class="contact__label">E-Mail *</label>
+            <input 
+              type="email" 
+              id="email" 
+              formControlName="email"
+              class="contact__input"
+              placeholder="deine@email.de"
+              required>
+          </div>
+
+          <div class="contact__form-group">
+            <label for="project" class="contact__label">Projekt *</label>
+            <textarea 
+              id="project" 
+              formControlName="project"
+              class="contact__textarea"
+              placeholder="Beschreibe kurz dein Projekt..."
+              rows="5"
+              required></textarea>
+          </div>
+
+          <div class="contact__form-group">
+            <label for="budget" class="contact__label">Budget-Rahmen</label>
+            <select 
+              id="budget" 
+              formControlName="budget"
+              class="contact__select">
+              <option value="">Bitte waehlen</option>
+              <option value="< 2.000€">< 2.000€</option>
+              <option value="2.000€ - 5.000€">2.000€ - 5.000€</option>
+              <option value="5.000€ - 10.000€">5.000€ - 10.000€</option>
+              <option value="> 10.000€">> 10.000€</option>
+            </select>
+          </div>
+
+          <button 
+            type="submit" 
+            class="contact__submit"
+            [disabled]="!contactForm.valid || isSubmitting">
+            {{ isSubmitting ? 'Wird gesendet...' : 'Anfrage senden' }}
+          </button>
+
+          @if (submitMessage) {
+            <div class="contact__message" [class.contact__message--success]="submitSuccess">
+              {{ submitMessage }}
+            </div>
+          }
+        </form>
+      </div>
+
+      <!-- Direktkontakt Rechts -->
+      <div class="contact__info">
+        <div class="contact__info-card">
+          <h3 class="contact__info-title">Direktkontakt</h3>
+          
+          <div class="contact__info-item">
+            <span class="contact__info-label">E-Mail</span>
+            <a href="mailto:kontakt@saltcity-web.de" class="contact__info-link">
+              kontakt&#64;saltcity-web.de
+            </a>
+          </div>
+
+          <div class="contact__info-item">
+            <span class="contact__info-label">Standort</span>
+            <span class="contact__info-text">Lüneburg, Niedersachsen</span>
+          </div>
+
+          <div class="contact__info-item">
+            <span class="contact__info-label">Antwortzeit</span>
+            <span class="contact__info-text">In der Regel innerhalb von 24 Stunden</span>
+          </div>
+        </div>
+
+        <div class="contact__info-note">
+          <p class="contact__note-text">
+            Ich arbeite remote, persönliche Termine in Lüneburg sind nach Absprache möglich.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

@@ -1,55 +1,57 @@
 <section id="faq" class="faq">
   <div class="faq__container">
     <div class="faq__header">
-      <h2 class="faq__title">Häufige Fragen</h2>
+      <h2 class="faq__title">Haeufige Fragen</h2>
       <p class="faq__subtitle">
         Antworten auf die wichtigsten Fragen zu Entwicklung und Wartung
       </p>
     </div>
 
     <div class="faq__list">
-      <div 
-        *ngFor="let item of faqItems; let i = index"
-        class="faq__item"
-        [class.faq__item--open]="openItems.has(i)"
-        [attr.data-index]="i">
-        
-        <button 
-          class="faq__question"
-          (click)="toggleItem(i)"
-          [attr.aria-expanded]="openItems.has(i)"
-          [attr.aria-controls]="'faq-answer-' + i">
-          
-          <span class="faq__question-text">{{ item.question }}</span>
-          
-          <span class="faq__question-icon" aria-hidden="true">
-            <svg 
-              class="faq__icon" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor">
-              <path d="M6 9l6 6 6-6"/>
-            </svg>
-          </span>
-        </button>
-
+      @for (faq of faqs; track $index) {
         <div 
-          class="faq__answer"
-          [id]="'faq-answer-' + i"
-          [attr.aria-hidden]="!openItems.has(i)">
-          <div class="faq__answer-content">
-            <p class="faq__answer-text">{{ item.answer }}</p>
+          class="faq__item"
+          [class.faq__item--open]="faq.isOpen">
+          
+          <button 
+            class="faq__question"
+            (click)="toggleFaq($index)"
+            [attr.aria-expanded]="faq.isOpen"
+            [attr.aria-controls]="'faq-answer-' + $index">
             
-            <div *ngIf="item.details" class="faq__answer-details">
-              <ul class="faq__details-list">
-                <li *ngFor="let detail of item.details" class="faq__details-item">
-                  {{ detail }}
-                </li>
-              </ul>
+            <span class="faq__question-text">{{ faq.question }}</span>
+            
+            <span class="faq__question-icon" aria-hidden="true">
+              <svg 
+                class="faq__icon" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </span>
+          </button>
+
+          <div 
+            class="faq__answer"
+            [id]="'faq-answer-' + $index"
+            [attr.aria-hidden]="!faq.isOpen">
+            <div class="faq__answer-content">
+              <p class="faq__answer-text">{{ faq.answer }}</p>
+              
+              @if (faq.details) {
+                <div class="faq__answer-details">
+                  <ul class="faq__details-list">
+                    @for (detail of faq.details; track detail) {
+                      <li class="faq__details-item">{{ detail }}</li>
+                    }
+                  </ul>
+                </div>
+              }
             </div>
           </div>
         </div>
-      </div>
+      }
     </div>
 
     <div class="faq__footer">
