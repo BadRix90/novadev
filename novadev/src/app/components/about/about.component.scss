@@ -59,6 +59,7 @@
 .about__image {
   width: 100%;
   max-width: 300px;
+  max-height: 400px; 
   aspect-ratio: 3 / 4;
   background: var(--brand-card2);
   border: 2px solid var(--brand-border);
@@ -68,6 +69,7 @@
   
   @include desktop-up {
     max-width: 350px;
+    max-height: 450px; 
   }
   
   &::before {
