@@ -4,6 +4,7 @@
 .services {
   @include section-padding;
   position: relative;
+  background: var(--brand-bg);
 }
 
 .services__container {
@@ -11,125 +12,138 @@
 }
 
 .services__header {
-  margin-bottom: $spacing-8;
-  @include flex-between;
-  align-items: flex-end;
-  
-  @include mobile-only {
-    @include flex-column;
-    align-items: flex-start;
-    gap: $spacing-2;
-  }
+  text-align: center;
+  margin-bottom: $spacing-12;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .services__title {
   @include heading-lg;
-  margin: 0;
+  margin: 0 0 $spacing-4 0;
+  color: var(--brand-text);
 }
 
 .services__subtitle {
-  @include body-sm;
+  @include body-lg;
   margin: 0;
-  font-style: italic;
-  
-  @include mobile-only {
-    margin-top: $spacing-2;
-  }
+  color: var(--brand-sub);
 }
 
 .services__grid {
-  @include grid-responsive(300px, $spacing-6);
+  display: grid;
+  gap: $spacing-6;
+  margin-bottom: $spacing-12;
   
   @include tablet-up {
-    @include grid-columns(3, $spacing-6);
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-8;
+  }
+  
+  @include desktop-up {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-8;
   }
 }
 
 .services__card {
-  @include card-base;
-  @include card-hover;
-  cursor: pointer;
+  background: var(--brand-card);
+  border: 1px solid var(--brand-border);
+  border-radius: $radius-xl;
+  padding: $spacing-8;
   transition: all $transition-base;
   
   &:hover {
-    transform: translateY(-6px);
-    border-color: var(--brand-tech-blue);
-    
-    .services__card-link {
-      color: var(--brand-text);
-      transform: translateX($spacing-1);
-    }
+    border-color: var(--brand-rust-gold);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(192, 169, 122, 0.15);
   }
-  
-  &[data-index="0"] {
-    border-color: var(--brand-tech-blue);
-    
-    &:hover {
-      box-shadow: 0 20px 60px rgba(107, 182, 255, 0.15);
-    }
-  }
-  
-  &[data-index="1"] {
-    border-color: var(--brand-mocha);
-    
-    &:hover {
-      box-shadow: 0 20px 60px rgba(176, 138, 122, 0.15);
-    }
-  }
-  
-  &[data-index="2"] {
-    border-color: var(--brand-eclipsia);
-    
-    &:hover {
-      box-shadow: 0 20px 60px rgba(255, 106, 61, 0.15);
-    }
-  }
-}
-
-.services__card-number {
-  @include body-sm;
-  color: var(--brand-mocha);
-  margin-bottom: $spacing-3;
-  font-weight: $font-weight-medium;
-  font-size: $font-size-xs;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .services__card-title {
   @include heading-sm;
-  margin: 0 0 $spacing-2 0;
+  margin: 0 0 $spacing-3 0;
   color: var(--brand-text);
 }
 
 .services__card-description {
-  @include body-sm;
-  margin: 0 0 $spacing-6 0;
+  @include body-base;
+  color: var(--brand-sub);
+  margin: 0 0 $spacing-5 0;
   line-height: $line-height-relaxed;
 }
 
-.services__card-link {
-  @include body-sm;
-  color: var(--brand-tech-blue);
+.services__tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-2;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.services__tech-item {
+  background: var(--brand-card2);
+  border: 1px solid var(--brand-border);
+  border-radius: $radius-base;
+  padding: $spacing-1 $spacing-3;
+  font-size: $font-size-xs;
+  color: var(--brand-rust-gold);
   font-weight: $font-weight-medium;
-  text-decoration: none;
   transition: all $transition-fast;
-  display: inline-flex;
-  align-items: center;
-  gap: $spacing-1;
   
   &:hover {
-    color: var(--brand-text);
+    background: var(--brand-rust-gold);
+    color: var(--brand-bg);
+    border-color: var(--brand-rust-gold);
   }
+}
+
+.services__footer {
+  text-align: center;
+  padding: $spacing-8;
+  background: var(--brand-card);
+  border: 1px solid var(--brand-border);
+  border-radius: $radius-xl;
+}
+
+.services__pricing {
+  margin: 0 0 $spacing-3 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-3;
+}
+
+.services__pricing-label {
+  @include body-base;
+  color: var(--brand-sub);
+}
+
+.services__pricing-value {
+  font-family: $font-family-primary;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: var(--brand-rust-gold);
+}
+
+.services__note {
+  @include body-sm;
+  color: var(--brand-sub);
+  margin: 0;
 }
 
 @include mobile-only {
   .services__grid {
     grid-template-columns: 1fr;
-    gap: $spacing-4;
   }
   
   .services__card {
-    padding: $spacing-5;
+    padding: $spacing-6;
+  }
+  
+  .services__pricing-value {
+    font-size: $font-size-2xl;
   }
 }
