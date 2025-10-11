@@ -99,11 +99,33 @@ export class ContactComponent {
     const field = this.contactForm.get(fieldName);
     if (!field || !field.errors || !field.touched) return '';
 
-    if (field.errors['required']) return `${fieldName} ist erforderlich`;
-    if (field.errors['email']) return 'Bitte gültige E-Mail eingeben';
+    if (field.errors['required']) {
+      switch (fieldName) {
+        case 'name':
+          return 'Bitte gib deinen Namen an';
+        case 'email':
+          return 'Bitte gib deine E-Mail-Adresse an';
+        case 'message':
+          return 'Bitte beschreibe dein Projekt';
+        default:
+          return 'Dieses Feld ist erforderlich';
+      }
+    }
+
+    if (field.errors['email']) {
+      return 'Bitte gib eine gültige E-Mail-Adresse ein';
+    }
+
     if (field.errors['minlength']) {
       const minLength = field.errors['minlength'].requiredLength;
-      return `Mindestens ${minLength} Zeichen erforderlich`;
+      switch (fieldName) {
+        case 'name':
+          return 'Der Name muss mindestens 2 Zeichen haben';
+        case 'message':
+          return 'Die Nachricht muss mindestens 10 Zeichen haben';
+        default:
+          return `Mindestens ${minLength} Zeichen erforderlich`;
+      }
     }
 
     return 'Ungültige Eingabe';

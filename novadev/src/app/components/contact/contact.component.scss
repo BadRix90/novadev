@@ -227,3 +227,53 @@
     left: -9999px;
   }
 }
+
+.contact__input--error,
+.contact__textarea--error,
+.contact__select--error {
+  border-color: #e74c3c !important;
+  background: rgba(231, 76, 60, 0.05);
+
+  &:focus {
+    border-color: #e74c3c !important;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1) !important;
+  }
+}
+
+.contact__error {
+  display: block;
+  @include body-sm;
+  color: #e74c3c;
+  margin-top: $spacing-2;
+  font-size: $font-size-xs;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Honeypot - komplett unsichtbar
+.contact__honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  label,
+  input {
+    position: absolute;
+    left: -9999px;
+  }
+}

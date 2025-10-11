@@ -11,6 +11,8 @@
       <!-- Formular Links -->
       <div class="contact__form-wrapper">
         <form class="contact__form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          
+          <!-- Unternehmen (optional) -->
           <div class="contact__form-group">
             <label for="company" class="contact__label">Unternehmen</label>
             <input 
@@ -21,6 +23,7 @@
               placeholder="Deine Firma">
           </div>
 
+          <!-- Name (Pflichtfeld) -->
           <div class="contact__form-group">
             <label for="name" class="contact__label">Name *</label>
             <input 
@@ -28,10 +31,15 @@
               id="name" 
               formControlName="name"
               class="contact__input"
+              [class.contact__input--error]="isFieldInvalid('name')"
               placeholder="Dein Name"
               required>
+            @if (isFieldInvalid('name')) {
+              <span class="contact__error">{{ getFieldError('name') }}</span>
+            }
           </div>
 
+          <!-- E-Mail (Pflichtfeld) -->
           <div class="contact__form-group">
             <label for="email" class="contact__label">E-Mail *</label>
             <input 
@@ -39,21 +47,31 @@
               id="email" 
               formControlName="email"
               class="contact__input"
+              [class.contact__input--error]="isFieldInvalid('email')"
               placeholder="deine@email.de"
               required>
+            @if (isFieldInvalid('email')) {
+              <span class="contact__error">{{ getFieldError('email') }}</span>
+            }
           </div>
 
+          <!-- Projekt/Nachricht (Pflichtfeld) -->
           <div class="contact__form-group">
             <label for="project" class="contact__label">Projekt *</label>
             <textarea 
               id="project" 
               formControlName="message"
               class="contact__textarea"
+              [class.contact__textarea--error]="isFieldInvalid('message')"
               placeholder="Beschreibe kurz dein Projekt..."
               rows="5"
               required></textarea>
+            @if (isFieldInvalid('message')) {
+              <span class="contact__error">{{ getFieldError('message') }}</span>
+            }
           </div>
 
+          <!-- Budget (optional) -->
           <div class="contact__form-group">
             <label for="budget" class="contact__label">Budget-Rahmen</label>
             <select 
@@ -68,7 +86,7 @@
             </select>
           </div>
 
-          <!-- 🍯 HONEYPOT - Unsichtbar für Menschen, sichtbar für Bots -->
+          <!-- Honeypot - unsichtbar -->
           <div class="contact__honeypot">
             <label for="website">Website (bitte leer lassen)</label>
             <input 
@@ -80,6 +98,7 @@
               autocomplete="off">
           </div>
 
+          <!-- Submit Button -->
           <button 
             type="submit" 
             class="contact__submit"
@@ -87,6 +106,7 @@
             {{ isSubmitting ? 'Wird gesendet...' : 'Anfrage senden' }}
           </button>
 
+          <!-- Success/Error Message -->
           @if (submitMessage) {
             <div class="contact__message" [class.contact__message--success]="submitSuccess">
               {{ submitMessage }}
