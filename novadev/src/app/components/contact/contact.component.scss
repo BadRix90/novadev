@@ -33,7 +33,7 @@
 .contact__content {
   display: grid;
   gap: $spacing-10;
-  
+
   @include tablet-up {
     grid-template-columns: 1.5fr 1fr;
     gap: $spacing-12;
@@ -76,13 +76,13 @@
   padding: $spacing-3 $spacing-4;
   color: var(--brand-text);
   transition: all $transition-fast;
-  
+
   &:focus {
     outline: none;
     border-color: var(--brand-rust-gold);
     box-shadow: 0 0 0 3px rgba(192, 169, 122, 0.1);
   }
-  
+
   &::placeholder {
     color: var(--brand-sub);
   }
@@ -103,12 +103,12 @@
   border-radius: $radius-xl;
   padding: $spacing-3 $spacing-6;
   margin-top: $spacing-2;
-  
+
   &:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 12px 40px rgba(192, 169, 122, 0.4);
   }
-  
+
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
@@ -123,7 +123,7 @@
   background: var(--brand-card);
   border: 1px solid var(--brand-border);
   color: var(--brand-sub);
-  
+
   &--success {
     background: rgba(122, 156, 111, 0.1);
     border-color: #7a9c6f;
@@ -175,7 +175,7 @@
   color: var(--brand-rust-gold);
   font-weight: $font-weight-medium;
   transition: color $transition-fast;
-  
+
   &:hover {
     color: var(--brand-rust-brown);
   }
@@ -204,10 +204,26 @@
   .contact__content {
     grid-template-columns: 1fr;
   }
-  
+
   .contact__form-wrapper,
   .contact__info-card,
   .contact__info-note {
     padding: $spacing-6;
+  }
+}
+
+.contact__honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  label,
+  input {
+    position: absolute;
+    left: -9999px;
   }
 }

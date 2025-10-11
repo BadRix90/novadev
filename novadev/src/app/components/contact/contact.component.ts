@@ -16,7 +16,6 @@ export class ContactComponent {
   submitMessage = '';
   submitSuccess = false;
 
-
   private readonly mailEndpoint = 'https://saltcity-web.com/sendMail.php';
 
   constructor(
@@ -28,7 +27,8 @@ export class ContactComponent {
       email: ['', [Validators.required, Validators.email]],
       message: ['', [Validators.required, Validators.minLength(10)]],
       company: [''],
-      budget: [''] 
+      budget: [''],
+      website: [''] // ← HONEYPOT: Muss leer bleiben!
     });
   }
 
@@ -40,7 +40,10 @@ export class ContactComponent {
       const formData = {
         name: this.contactForm.value.name.trim(),
         email: this.contactForm.value.email.trim(),
-        message: this.contactForm.value.message.trim()
+        message: this.contactForm.value.message.trim(),
+        company: this.contactForm.value.company?.trim() || '',
+        budget: this.contactForm.value.budget || '',
+        website: this.contactForm.value.website || '' // ← Honeypot mitschicken
       };
 
       this.http.post<{ success: boolean; message?: string; error?: string }>(this.mailEndpoint, formData)

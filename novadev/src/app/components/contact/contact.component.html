@@ -68,6 +68,18 @@
             </select>
           </div>
 
+          <!-- 🍯 HONEYPOT - Unsichtbar für Menschen, sichtbar für Bots -->
+          <div class="contact__honeypot">
+            <label for="website">Website (bitte leer lassen)</label>
+            <input 
+              type="text" 
+              id="website" 
+              name="website"
+              formControlName="website"
+              tabindex="-1"
+              autocomplete="off">
+          </div>
+
           <button 
             type="submit" 
             class="contact__submit"
