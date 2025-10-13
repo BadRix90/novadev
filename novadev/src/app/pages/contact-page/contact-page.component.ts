@@ -17,6 +17,15 @@ export class ContactPageComponent {
   submitMessage = '';
   submitSuccess = false;
 
+  subjectOptions = [
+    { value: 'projektanfrage', label: 'Projektanfrage' },
+    { value: 'bestehendes-projekt', label: 'Frage zu bestehendem Projekt' },
+    { value: 'allgemeine-frage', label: 'Allgemeine Frage zur Arbeit' },
+    { value: 'technische-frage', label: 'Technische Frage' },
+    { value: 'sonstiges', label: 'Sonstiges' }
+  ];
+
+
   private readonly mailEndpoint = 'https://saltcity-web.com/sendMail.php';
 
   constructor(
@@ -26,10 +35,11 @@ export class ContactPageComponent {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
+      subject: ['', Validators.required],
       message: ['', [Validators.required, Validators.minLength(10)]],
       company: [''],
       budget: [''],
-      website: [''] // ← HONEYPOT: Muss leer bleiben!
+      website: ['']
     });
   }
 
@@ -41,6 +51,7 @@ export class ContactPageComponent {
       const formData = {
         name: this.contactForm.value.name.trim(),
         email: this.contactForm.value.email.trim(),
+        subject: this.contactForm.value.subject,
         message: this.contactForm.value.message.trim(),
         company: this.contactForm.value.company?.trim() || '',
         budget: this.contactForm.value.budget || '',
@@ -106,6 +117,8 @@ export class ContactPageComponent {
           return 'Bitte gib deinen Namen an';
         case 'email':
           return 'Bitte gib deine E-Mail-Adresse an';
+        case 'subject':
+          return 'Bitte wähle ein Thema aus';
         case 'message':
           return 'Bitte beschreibe dein Projekt';
         default:
