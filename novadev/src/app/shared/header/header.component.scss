@@ -22,7 +22,7 @@
   @include flex-between;
   padding-top: $spacing-4;
   padding-bottom: $spacing-4;
-  min-height: $nav-height-mobile;
+  height: $nav-height-mobile;
 
   @include tablet-up {
     min-height: $nav-height;
