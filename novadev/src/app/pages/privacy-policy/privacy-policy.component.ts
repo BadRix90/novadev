@@ -10,7 +10,7 @@ import { SeoService } from '../../services/seo.service';
   templateUrl: './privacy-policy.component.html',
   styleUrl: './privacy-policy.component.scss'
 })
-export class LegalNoticeComponent implements OnInit {
+export class PrivacyPolicyComponent implements OnInit {
   currentDate = new Date().toLocaleDateString('de-DE', {
     year: 'numeric',
     month: 'long',
