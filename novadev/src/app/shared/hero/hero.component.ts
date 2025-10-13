@@ -1,9 +1,11 @@
 import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })
@@ -29,27 +31,6 @@ export class HeroComponent implements OnInit {
       setTimeout(() => {
         heroSpotlight.classList.add('hero__spotlight--animate');
       }, 100);
-    }
-  }
-
-  scrollToSection(sectionId: string, event?: Event): void {
-    if (event) {
-      event.preventDefault();
-    }
-
-    if (isPlatformBrowser(this.platformId)) {
-      const element = document.getElementById(sectionId.replace('#', ''));
-
-      if (element) {
-        const headerOffset = 80;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
     }
   }
 

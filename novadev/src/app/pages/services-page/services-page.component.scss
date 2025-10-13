@@ -1,3 +1,240 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
 .services-page {
-  padding: 2rem;
+  min-height: 100vh;
+  padding-top: $nav-height;
+
+  @include mobile-only {
+    padding-top: $nav-height-mobile;
+  }
+}
+
+// Header Section
+.services-header {
+  padding: $spacing-16 0 $spacing-8 0;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(192, 169, 122, 0.05), rgba(140, 59, 26, 0.05));
+
+  @include mobile-only {
+    padding: $spacing-10 0 $spacing-6 0;
+  }
+}
+
+.services-header__container {
+  @include container;
+  max-width: 700px;
+}
+
+.services-header__title {
+  @include heading-lg;
+  margin: 0 0 $spacing-4 0;
+  color: var(--brand-text);
+
+  @include mobile-only {
+    font-size: $font-size-4xl;
+  }
+}
+
+.services-header__subtitle {
+  @include body-lg;
+  margin: 0;
+  color: var(--brand-sub);
+
+  @include mobile-only {
+    font-size: $font-size-base;
+  }
+}
+
+// Services Section
+.services {
+  @include section-padding;
+  position: relative;
+  background: var(--brand-card);
+}
+
+.services__container {
+  @include container;
+}
+
+.services__grid {
+  display: grid;
+  gap: $spacing-6;
+  
+  @include tablet-up {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-8;
+  }
+  
+  @include desktop-up {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-8;
+  }
+}
+
+.services__card {
+  background: var(--brand-card);
+  border: 1px solid var(--brand-border);
+  border-radius: $radius-xl;
+  padding: $spacing-8;
+  transition: all $transition-base;
+  
+  &:hover {
+    border-color: var(--brand-rust-gold);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(192, 169, 122, 0.15);
+  }
+
+  @include mobile-only {
+    padding: $spacing-6;
+  }
+}
+
+.services__card-title {
+  @include heading-sm;
+  margin: 0 0 $spacing-3 0;
+  color: var(--brand-text);
+}
+
+.services__card-description {
+  @include body-base;
+  color: var(--brand-sub);
+  margin: 0 0 $spacing-5 0;
+  line-height: $line-height-relaxed;
+}
+
+.services__tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-2;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.services__tech-item {
+  background: var(--brand-card2);
+  border: 1px solid var(--brand-border);
+  border-radius: $radius-base;
+  padding: $spacing-1 $spacing-3;
+  font-size: $font-size-xs;
+  color: var(--brand-rust-gold);
+  font-weight: $font-weight-medium;
+  transition: all $transition-fast;
+  
+  &:hover {
+    background: var(--brand-rust-gold);
+    color: var(--brand-bg);
+    border-color: var(--brand-rust-gold);
+  }
+}
+
+// Footer Section (Pricing)
+.services-footer {
+  padding: $spacing-12 0;
+  background: rgba(31, 31, 31, 0.3);
+
+  @include mobile-only {
+    padding: $spacing-8 0;
+  }
+}
+
+.services-footer__container {
+  @include container;
+  max-width: 800px;
+}
+
+.services-footer__content {
+  text-align: center;
+  padding: $spacing-8;
+  background: var(--brand-card);
+  border: 1px solid var(--brand-border);
+  border-radius: $radius-xl;
+
+  @include mobile-only {
+    padding: $spacing-6;
+  }
+}
+
+.services__pricing {
+  margin: 0 0 $spacing-3 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-3;
+}
+
+.services__pricing-label {
+  @include body-base;
+  color: var(--brand-sub);
+}
+
+.services__pricing-value {
+  font-family: $font-family-primary;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: var(--brand-rust-gold);
+
+  @include mobile-only {
+    font-size: $font-size-2xl;
+  }
+}
+
+.services__note {
+  @include body-sm;
+  color: var(--brand-sub);
+  margin: 0;
+}
+
+// CTA Section
+.cta-section {
+  padding: $spacing-20 0;
+
+  @include mobile-only {
+    padding: $spacing-12 0;
+  }
+}
+
+.cta-section__container {
+  @include container;
+  @include flex-column-center;
+  gap: $spacing-6;
+  text-align: center;
+}
+
+.cta-section__title {
+  @include heading-lg;
+  color: var(--brand-text);
+  margin: 0;
+
+  @include mobile-only {
+    font-size: $font-size-3xl;
+  }
+}
+
+.cta-section__text {
+  @include body-lg;
+  color: var(--brand-sub);
+  max-width: 600px;
+
+  @include mobile-only {
+    font-size: $font-size-base;
+  }
+}
+
+.cta-section__button {
+  @include button-primary;
+  padding: $spacing-4 $spacing-10;
+  font-size: $font-size-lg;
+  margin-top: $spacing-4;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 50px rgba(192, 169, 122, 0.4);
+  }
+
+  @include mobile-only {
+    width: 100%;
+    max-width: 300px;
+  }
 }

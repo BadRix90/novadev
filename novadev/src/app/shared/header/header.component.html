@@ -1,21 +1,23 @@
 <header class="header" [class.header--mobile-open]="isMobileMenuOpen" role="banner">
   <div class="header__container">
     <div class="header__brand">
-      <div class="header__logo" (click)="goToHome()" style="cursor: pointer;" aria-label="SaltCity Web - Zur Startseite">
+      <div class="header__logo" routerLink="/" style="cursor: pointer;" aria-label="SaltCity Web - Zur Startseite">
         <img src="assets/logo/SaltCityWeb_logo_500.webp" alt="SaltCity Web Logo" class="header__logo-image" loading="eager">
       </div>
     </div>
 
     <nav class="header__nav" aria-label="Hauptnavigation">
-      <a class="header__nav-link" href="/#services" (click)="onNavClick($event, 'services')">Leistungen</a>
-      <a class="header__nav-link" href="/#about" (click)="onNavClick($event, 'about')">Über uns</a>
-      <a class="header__nav-link" href="/#portfolio" (click)="onNavClick($event, 'portfolio')">Projekte</a>
-      <a class="header__nav-link" href="/#contact" (click)="onNavClick($event, 'contact')">Kontakt</a>
+      <a class="header__nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Start</a>
+      <a class="header__nav-link" routerLink="/leistungen" routerLinkActive="active">Leistungen</a>
+      <a class="header__nav-link" routerLink="/ueber-uns" routerLinkActive="active">Über uns</a>
+      <a class="header__nav-link" routerLink="/projekte" routerLinkActive="active">Projekte</a>
+      <a class="header__nav-link" routerLink="/kontakt" routerLinkActive="active">Kontakt</a>
     </nav>
 
-
-    <button class="header__mobile-toggle" [attr.aria-label]="isMobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'"
-      [attr.aria-expanded]="isMobileMenuOpen" (click)="toggleMobileMenu()">
+    <button class="header__mobile-toggle" 
+            [attr.aria-label]="isMobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'"
+            [attr.aria-expanded]="isMobileMenuOpen" 
+            (click)="toggleMobileMenu()">
       <img src="assets/img/icons/menu.webp" alt="Menu" class="header__menu-icon"
         [class.header__menu-icon--hidden]="isMobileMenuOpen" loading="eager">
       <img src="assets/img/icons/close.webp" alt="Close" class="header__close-icon"
@@ -25,11 +27,12 @@
 
   <div class="header__mobile-menu" [class.header__mobile-menu--open]="isMobileMenuOpen">
     <nav class="header__mobile-nav" aria-label="Mobile Navigation">
-      <a class="header__mobile-link" href="/#services" (click)="onNavClick($event, 'services')">Leistungen</a>
-      <a class="header__mobile-link" href="/#about" (click)="onNavClick($event, 'about')">Über uns</a>
-      <a class="header__mobile-link" href="/#portfolio" (click)="onNavClick($event, 'portfolio')">Projekte</a>
-      <a class="header__mobile-link" href="/#contact" (click)="onNavClick($event, 'contact')">Kontakt</a>
-      <a class="header__mobile-cta" href="/#contact" (click)="onNavClick($event, 'contact')">Projekt anfragen</a>
+      <a class="header__mobile-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">Start</a>
+      <a class="header__mobile-link" routerLink="/leistungen" routerLinkActive="active" (click)="closeMobileMenu()">Leistungen</a>
+      <a class="header__mobile-link" routerLink="/ueber-uns" routerLinkActive="active" (click)="closeMobileMenu()">Über uns</a>
+      <a class="header__mobile-link" routerLink="/projekte" routerLinkActive="active" (click)="closeMobileMenu()">Projekte</a>
+      <a class="header__mobile-link" routerLink="/kontakt" routerLinkActive="active" (click)="closeMobileMenu()">Kontakt</a>
+      <a class="header__mobile-cta" routerLink="/kontakt" (click)="closeMobileMenu()">Projekt anfragen</a>
     </nav>
   </div>
 </header>

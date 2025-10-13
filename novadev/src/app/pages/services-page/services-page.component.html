@@ -1,4 +1,58 @@
 <div class="services-page">
-  <h1>Leistungen</h1>
-  <p>Wird bald befüllt...</p>
+  <!-- Page Header -->
+  <section class="services-header">
+    <div class="services-header__container">
+      <h1 class="services-header__title">Leistungen</h1>
+      <p class="services-header__subtitle">
+        Fokussiert auf das Wesentliche - keine überladenen Pakete, sondern klare Expertise
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="services">
+    <div class="services__container">
+      <div class="services__grid">
+        @for (service of services; track service.id) {
+          <div class="services__card">
+            <h3 class="services__card-title">{{ service.title }}</h3>
+            <p class="services__card-description">{{ service.description }}</p>
+            <ul class="services__tech-list">
+              @for (tech of service.techStack; track tech) {
+                <li class="services__tech-item">{{ tech }}</li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Info -->
+  <section class="services-footer">
+    <div class="services-footer__container">
+      <div class="services-footer__content">
+        <p class="services__pricing">
+          <span class="services__pricing-label">Stundensatz:</span>
+          <span class="services__pricing-value">65€/h</span>
+        </p>
+        <p class="services__note">
+          Transparente Abrechnung - keine versteckten Kosten
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-section__container">
+      <h2 class="cta-section__title">Projekt anfragen</h2>
+      <p class="cta-section__text">
+        Lass uns über deine Anforderungen sprechen und gemeinsam die beste Lösung finden.
+      </p>
+      <button class="cta-section__button" routerLink="/kontakt">
+        Jetzt Kontakt aufnehmen
+      </button>
+    </div>
+  </section>
 </div>

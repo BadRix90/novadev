@@ -1,9 +1,11 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -20,46 +22,6 @@ export class HeaderComponent {
   closeMobileMenu(): void {
     this.isMobileMenuOpen = false;
     this.updateBodyScrollLock();
-  }
-
-  onNavClick(ev: Event, sectionId: string) {
-    if (!isPlatformBrowser(this.platformId)) return;
-
-    // Mobile Menu immer schließen
-    this.closeMobileMenu();
-
-    const path = window.location.pathname;
-    const onHome = path === '/' || path === '/index.html';
-
-    if (onHome) {
-      // Auf Hauptseite: Event verhindern und scrollen
-      ev.preventDefault();
-      setTimeout(() => {
-        this.scrollToSection(sectionId);
-      }, 300); // Kurz warten bis Menu geschlossen ist
-    }
-    // Auf anderen Seiten: Browser macht normale Navigation mit href
-  }
-
-  scrollToSection(sectionId: string): void {
-    if (!isPlatformBrowser(this.platformId)) return;
-    const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-
-  goToHome(): void {
-    if (!isPlatformBrowser(this.platformId)) return;
-
-    this.closeMobileMenu();
-    
-    const currentPath = window.location.pathname;
-    if (currentPath === '/impressum' || currentPath === '/datenschutz') {
-      setTimeout(() => {
-        window.location.href = '/';
-      }, 300);
-    }
   }
 
   private updateBodyScrollLock(): void {

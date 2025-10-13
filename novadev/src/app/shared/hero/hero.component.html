@@ -1,7 +1,7 @@
 <section class="hero" id="start">
   <div class="hero__container">
     <div class="hero__content">
-      
+
       <!-- ✨ LOGO - NEU! -->
       <div class="hero__logo">
         <img src="assets/logo/SaltCityWeb_logo_1000.webp" alt="SaltCity Web Logo" class="hero__logo-image">
@@ -45,14 +45,10 @@
       </div>
 
       <div class="hero__actions">
-        <a href="/#contact" 
-           class="hero__cta-primary" 
-           (click)="scrollToSection('contact', $event)">
+        <a routerLink="/kontakt" class="hero__cta-primary">
           Projekt besprechen
         </a>
-        <a href="/#services" 
-           class="hero__cta-secondary" 
-           (click)="scrollToSection('services', $event)">
+        <a routerLink="/leistungen" class="hero__cta-secondary">
           Leistungen ansehen
         </a>
       </div>

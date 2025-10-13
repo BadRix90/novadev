@@ -1,4 +1,66 @@
 <div class="home-page">
-  <h1>Home Page</h1>
-  <p>Wird bald befüllt...</p>
+  <!-- Hero Section -->
+  <app-hero></app-hero>
+
+  <!-- Quick Intro -->
+  <section class="intro">
+    <div class="intro__container">
+      <h2 class="intro__headline">Webentwicklung für KMU – klar, funktional, transparent</h2>
+      <p class="intro__text">
+        SaltCity Web entwickelt Angular-Lösungen ohne Schnickschnack. 
+        Für Unternehmen, die Wert auf Performance, Nachhaltigkeit und klare Kommunikation legen.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature Cards -->
+  <section class="features">
+    <div class="features__container">
+      <div class="feature-card">
+        <div class="feature-card__icon">⚙️</div>
+        <h3 class="feature-card__title">Was wir entwickeln</h3>
+        <p class="feature-card__description">
+          Angular SPAs, PWAs und responsive Umsetzungen mit Fokus auf Performance und Wartbarkeit.
+        </p>
+        <a routerLink="/leistungen" class="feature-card__link">
+          Leistungen ansehen →
+        </a>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">🚀</div>
+        <h3 class="feature-card__title">Unsere Projekte</h3>
+        <p class="feature-card__description">
+          Von Webapps bis Performance-Optimierung – schau dir an, was wir bereits umgesetzt haben.
+        </p>
+        <a routerLink="/projekte" class="feature-card__link">
+          Projekte entdecken →
+        </a>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">💬</div>
+        <h3 class="feature-card__title">Projekt starten</h3>
+        <p class="feature-card__description">
+          Lass uns über deine Anforderungen sprechen. Transparent, unverbindlich, auf Augenhöhe.
+        </p>
+        <a routerLink="/kontakt" class="feature-card__link">
+          Kontakt aufnehmen →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-section__container">
+      <h2 class="cta-section__headline">Bereit für dein Projekt?</h2>
+      <p class="cta-section__text">
+        Lass uns unverbindlich über deine Anforderungen sprechen.
+      </p>
+      <button class="cta-section__button" routerLink="/kontakt">
+        Jetzt anfragen
+      </button>
+    </div>
+  </section>
 </div>

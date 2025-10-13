@@ -81,7 +81,7 @@
 
   &:focus,
   &.active {
-    color: var(--brand-tech-blue);
+    color: var(--brand-rust-gold);
 
     &::after {
       content: '';
@@ -185,10 +185,6 @@
 }
 
 .header__nav-link:focus,
-.header__cta:focus {
-  outline: 2px solid var(--brand-tech-blue);
-  outline-offset: 2px;
-}
 
 // Mobile Toggle Button mit WebP Icons
 .header__mobile-toggle {
@@ -325,4 +321,3 @@
     display: none;
   }
 }
-
