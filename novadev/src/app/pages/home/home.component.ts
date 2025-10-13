@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from '../../shared/hero/hero.component';
+import { SeoService } from '../../services/seo.service';
 
 interface WhyCard {
   number: string;
@@ -24,13 +25,19 @@ interface FeatureCard {
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
-  // Intro Section
+  constructor(private seo: SeoService) { }
+
+  ngOnInit(): void {
+    this.seo.updateCanonicalUrl('https://saltcity-web.com/');
+    this.seo.updateMetaDescription('SaltCity Web – Angular Webentwicklung für KMU. Keine Lizenzkosten, keine Abhängigkeiten, keine Plugin-Schwachstellen. Performance statt Bloat.');
+    this.seo.updateTitle('SaltCity Web - Webentwicklung für KMU');
+  }
+
   introHeadline = 'Webentwicklung für KMU – klar, funktional, transparent';
   introText = 'SaltCity Web entwickelt Angular-Lösungen ohne Schnickschnack. Für Unternehmen, die Wert auf Performance, Nachhaltigkeit und klare Kommunikation legen.';
 
-  // Warum KMU Section
   whyKmuTitle = 'Warum speziell für KMU?';
   whyKmuLead = 'Kleine und mittlere Unternehmen brauchen keine aufgeblähten Systeme – sondern Lösungen, die funktionieren.';
 
@@ -67,7 +74,6 @@ export class HomeComponent {
     }
   ];
 
-  // Für wen nicht Section
   notForTitle = 'Für wen ist SaltCity Web nicht geeignet?';
   notForContent = {
     points: [
@@ -79,7 +85,6 @@ export class HomeComponent {
     conclusion: 'Aber wenn du eine performante, individuelle Webanwendung brauchst – ohne Lizenz-Chaos, ohne Plugin-Wirrwarr, ohne Agentur-Overhead – dann bist du hier richtig.'
   };
 
-  // Feature Cards
   featureCards: FeatureCard[] = [
     {
       icon: '⚙️',
@@ -104,9 +109,10 @@ export class HomeComponent {
     }
   ];
 
-  // CTA Section
   ctaHeadline = 'Bereit für dein Projekt?';
   ctaText = 'Lass uns unverbindlich über deine Anforderungen sprechen.';
   ctaButtonText = 'Jetzt anfragen';
+
+
 
 }

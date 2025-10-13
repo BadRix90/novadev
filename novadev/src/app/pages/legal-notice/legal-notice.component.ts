@@ -1,7 +1,8 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { isPlatformBrowser } from '@angular/common';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-legal-notice',
@@ -9,12 +10,19 @@ import { isPlatformBrowser } from '@angular/common';
   templateUrl: './legal-notice.component.html',
   styleUrl: './legal-notice.component.scss'
 })
-export class LegalNoticeComponent {
+export class LegalNoticeComponent implements OnInit {
   
   constructor(
     private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private seo: SeoService
   ) {}
+
+    ngOnInit(): void {
+    this.seo.updateCanonicalUrl('https://saltcity-web.com/impressum');
+    this.seo.updateMetaDescription('Impressum von SaltCity Web - Kay Dietrich. Angaben gemäß § 5 TMG. Webentwicklung aus Lüneburg.');
+    this.seo.updateTitle('Impressum - SaltCity Web');
+  }
 
   navigateToContact(event: Event): void {
     event.preventDefault();

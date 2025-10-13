@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { SeoService } from '../../services/seo.service';
 
 interface Service {
   id: number;
@@ -17,7 +18,16 @@ interface Service {
   templateUrl: './services-page.component.html',
   styleUrl: './services-page.component.scss'
 })
-export class ServicesPageComponent {
+export class ServicesPageComponent implements OnInit {
+
+  constructor(private seo: SeoService) { }
+
+  ngOnInit(): void {
+    this.seo.updateCanonicalUrl('https://saltcity-web.com/leistungen');
+    this.seo.updateMetaDescription('Angular Webentwicklung, Responsive Design, Performance-Optimierung und Code Cleanup. Spezialisiert auf KMU. Stundensatz: 65€/h netto.');
+    this.seo.updateTitle('Leistungen - SaltCity Web');
+  }
+
 
   services: Service[] = [
     {

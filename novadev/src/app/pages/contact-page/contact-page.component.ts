@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-contact-page',
@@ -10,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './contact-page.component.html',
   styleUrl: './contact-page.component.scss'
 })
-export class ContactPageComponent {
+export class ContactPageComponent implements OnInit {
 
   contactForm: FormGroup;
   isSubmitting = false;
@@ -30,7 +31,8 @@ export class ContactPageComponent {
 
   constructor(
     private fb: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
+    private seo: SeoService
   ) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
@@ -41,6 +43,12 @@ export class ContactPageComponent {
       budget: [''],
       website: ['']
     });
+  }
+
+  ngOnInit(): void {
+    this.seo.updateCanonicalUrl('https://saltcity-web.com/kontakt');
+    this.seo.updateMetaDescription('Kontaktiere SaltCity Web für dein Webprojekt. Projektanfrage, technische Fragen oder allgemeine Anfragen. Antwortzeit: 24h werktags.');
+    this.seo.updateTitle('Kontakt - SaltCity Web');
   }
 
   onSubmit(): void {
