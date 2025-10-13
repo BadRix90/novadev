@@ -69,7 +69,7 @@
 
 .header__nav-link {
   @include body-sm;
-  color: var(--brand-sub);
+  color: var(--brand-text);
   font-weight: $font-weight-medium;
   transition: color $transition-fast;
   padding: $spacing-2 0;
@@ -219,6 +219,7 @@
   transition: all $transition-base;
   position: absolute;
   opacity: 1;
+  filter: brightness(0) invert(1);
 
   &--hidden {
     opacity: 0;
@@ -235,6 +236,7 @@
   position: absolute;
   opacity: 0;
   transform: rotate(-90deg) scale(0.8);
+  filter: brightness(0) invert(1);
 
   &--visible {
     opacity: 1;
@@ -276,7 +278,7 @@
 
 .header__mobile-link {
   @include body-base;
-  color: var(--brand-sub);
+  color: var(--brand-text);
   font-weight: $font-weight-medium;
   padding: $spacing-3 $spacing-4;
   border-radius: $radius-lg;

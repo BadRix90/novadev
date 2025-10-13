@@ -28,15 +28,14 @@ export const routes: Routes = [
     title: "Kontakt - SaltCity Web",
   },
 
-  // Legal Pages (behalten wir)
   {
     path: "impressum",
-    loadComponent: () => import("./components/legal-notice/legal-notice.component").then((m) => m.LegalNoticeComponent),
+    loadComponent: () => import("./pages/legal-notice/legal-notice.component").then((m) => m.LegalNoticeComponent),
     title: "Impressum - SaltCity Web",
   },
   {
     path: "datenschutz",
-    loadComponent: () => import("./components/privacy-policy/privacy-policy.component").then((m) => m.PrivacyPolicyComponent),
+    loadComponent: () => import("./pages/privacy-policy/privacy-policy.component").then((m) => m.PrivacyPolicyComponent),
     title: "Datenschutz - SaltCity Web",
   },
 
