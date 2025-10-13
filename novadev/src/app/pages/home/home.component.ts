@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from '../../shared/hero/hero.component';
 import { SeoService } from '../../services/seo.service';
+import { JsonLdService } from '../../services/json-ld.service';
+import { organizationSchema, localBusinessSchema, websiteSchema } from '../../data/schemas';
 
 interface WhyCard {
   number: string;
@@ -25,14 +27,26 @@ interface FeatureCard {
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
-  constructor(private seo: SeoService) { }
+  constructor(private seo: SeoService, private jsonLd: JsonLdService) { }
 
   ngOnInit(): void {
+    // SEO Tags
     this.seo.updateCanonicalUrl('https://saltcity-web.com/');
     this.seo.updateMetaDescription('SaltCity Web – Angular Webentwicklung für KMU. Keine Lizenzkosten, keine Abhängigkeiten, keine Plugin-Schwachstellen. Performance statt Bloat.');
     this.seo.updateTitle('SaltCity Web - Webentwicklung für KMU');
+
+    // JSON-LD Structured Data
+    this.jsonLd.insertSchema(organizationSchema, 'organization-schema');
+    this.jsonLd.insertSchema(localBusinessSchema, 'localbusiness-schema');
+    this.jsonLd.insertSchema(websiteSchema, 'website-schema');
+  }
+
+  ngOnDestroy(): void {
+    this.jsonLd.removeSchema('organization-schema');
+    this.jsonLd.removeSchema('localbusiness-schema');
+    this.jsonLd.removeSchema('website-schema');
   }
 
   introHeadline = 'Webentwicklung für KMU – klar, funktional, transparent';
