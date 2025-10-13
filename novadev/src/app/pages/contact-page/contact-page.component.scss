@@ -1,3 +1,273 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
 .contact-page {
-  padding: 2rem;
+  min-height: 100vh;
+  padding-top: $nav-height;
+
+  @include mobile-only {
+    padding-top: $nav-height-mobile;
+  }
+}
+
+.contact {
+  @include section-padding;
+  background: var(--brand-card);
+}
+
+.contact__container {
+  @include container;
+}
+
+.contact__header {
+  text-align: center;
+  margin-bottom: $spacing-12;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact__title {
+  @include heading-lg;
+  margin: 0 0 $spacing-4 0;
+  color: var(--brand-text);
+}
+
+.contact__subtitle {
+  @include body-lg;
+  margin: 0;
+  color: var(--brand-sub);
+}
+
+.contact__content {
+  display: grid;
+  gap: $spacing-10;
+
+  @include tablet-up {
+    grid-template-columns: 1.5fr 1fr;
+    gap: $spacing-12;
+  }
+}
+
+// Formular
+.contact__form-wrapper {
+  background: var(--brand-bg);
+  border: 1px solid var(--brand-border);
+  border-radius: $radius-xl;
+  padding: $spacing-8;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+}
+
+.contact__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+}
+
+.contact__label {
+  @include body-sm;
+  color: var(--brand-text);
+  font-weight: $font-weight-medium;
+}
+
+.contact__input,
+.contact__textarea,
+.contact__select {
+  @include body-base;
+  background: var(--brand-card);
+  border: 1px solid var(--brand-border);
+  border-radius: $radius-base;
+  padding: $spacing-3 $spacing-4;
+  color: var(--brand-text);
+  transition: all $transition-fast;
+
+  &:focus {
+    outline: none;
+    border-color: var(--brand-rust-gold);
+    box-shadow: 0 0 0 3px rgba(192, 169, 122, 0.1);
+  }
+
+  &::placeholder {
+    color: var(--brand-sub);
+  }
+}
+
+.contact__textarea {
+  resize: vertical;
+  min-height: $textarea-min-height;
+  font-family: inherit;
+}
+
+.contact__select {
+  cursor: pointer;
+}
+
+.contact__submit {
+  @include button-primary;
+  border-radius: $radius-xl;
+  padding: $spacing-3 $spacing-6;
+  margin-top: $spacing-2;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(192, 169, 122, 0.4);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.contact__message {
+  padding: $spacing-4;
+  border-radius: $radius-base;
+  text-align: center;
+  font-size: $font-size-sm;
+  background: var(--brand-card);
+  border: 1px solid var(--brand-border);
+  color: var(--brand-sub);
+
+  &--success {
+    background: rgba(122, 156, 111, 0.1);
+    border-color: #7a9c6f;
+    color: #7a9c6f;
+  }
+}
+
+// Direktkontakt
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+}
+
+.contact__info-card {
+  background: var(--brand-bg);
+  border: 1px solid var(--brand-border);
+  border-radius: $radius-xl;
+  padding: $spacing-8;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+}
+
+.contact__info-title {
+  @include heading-sm;
+  margin: 0;
+  color: var(--brand-rust-gold);
+  padding-bottom: $spacing-3;
+  border-bottom: 2px solid var(--brand-border);
+}
+
+.contact__info-item {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-1;
+}
+
+.contact__info-label {
+  @include body-sm;
+  color: var(--brand-sub);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: $font-size-xs;
+}
+
+.contact__info-link {
+  @include body-base;
+  color: var(--brand-rust-gold);
+  font-weight: $font-weight-medium;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: var(--brand-rust-brown);
+  }
+}
+
+.contact__info-text {
+  @include body-base;
+  color: var(--brand-text);
+}
+
+.contact__info-note {
+  background: var(--brand-bg);
+  border: 1px solid var(--brand-border);
+  border-radius: $radius-xl;
+  padding: $spacing-6;
+}
+
+.contact__note-text {
+  @include body-sm;
+  color: var(--brand-sub);
+  margin: 0;
+  line-height: $line-height-relaxed;
+}
+
+@include mobile-only {
+  .contact__content {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__form-wrapper,
+  .contact__info-card,
+  .contact__info-note {
+    padding: $spacing-6;
+  }
+}
+
+// Honeypot - komplett unsichtbar
+.contact__honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  label,
+  input {
+    position: absolute;
+    left: -9999px;
+  }
+}
+
+// Error States
+.contact__input--error,
+.contact__textarea--error,
+.contact__select--error {
+  border-color: #e74c3c !important;
+  background: rgba(231, 76, 60, 0.05);
+
+  &:focus {
+    border-color: #e74c3c !important;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1) !important;
+  }
+}
+
+.contact__error {
+  display: block;
+  @include body-sm;
+  color: #e74c3c;
+  margin-top: $spacing-2;
+  font-size: $font-size-xs;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
