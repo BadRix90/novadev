@@ -24,7 +24,7 @@ export class ServicesPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.seo.updateCanonicalUrl('https://saltcity-web.com/leistungen');
-    this.seo.updateMetaDescription('Angular Webentwicklung, Responsive Design, Performance-Optimierung und Code Cleanup. Spezialisiert auf KMU. Stundensatz: 65€/h netto.');
+    this.seo.updateMetaDescription('Angular Webentwicklung, Performance-Optimierung, Responsive Design. Spezialisiert auf KMU. Transparenter Stundensatz: 65€/h netto.');
     this.seo.updateTitle('Leistungen - SaltCity Web');
   }
 

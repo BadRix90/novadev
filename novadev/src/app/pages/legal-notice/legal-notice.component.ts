@@ -20,7 +20,7 @@ export class LegalNoticeComponent implements OnInit {
 
     ngOnInit(): void {
     this.seo.updateCanonicalUrl('https://saltcity-web.com/impressum');
-    this.seo.updateMetaDescription('Impressum von SaltCity Web - Kay Dietrich. Angaben gemäß § 5 TMG. Webentwicklung aus Lüneburg.');
+    this.seo.updateMetaDescription('Impressum von SaltCity Web. Angaben gemäß § 5 TMG. Kay Dietrich, Webentwicklung, Lüneburg.');
     this.seo.updateTitle('Impressum - SaltCity Web');
   }
 

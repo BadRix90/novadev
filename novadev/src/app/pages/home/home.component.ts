@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     // SEO Tags
     this.seo.updateCanonicalUrl('https://saltcity-web.com/');
-    this.seo.updateMetaDescription('SaltCity Web – Angular Webentwicklung für KMU. Keine Lizenzkosten, keine Abhängigkeiten, keine Plugin-Schwachstellen. Performance statt Bloat.');
+    this.seo.updateMetaDescription('Angular-Entwicklung für KMU. Funktional, performant, auf den Punkt. Keine Lizenzkosten, keine Plugin-Abhängigkeiten. 65€/h aus Lüneburg.');
     this.seo.updateTitle('SaltCity Web - Webentwicklung für KMU');
 
     // JSON-LD Structured Data

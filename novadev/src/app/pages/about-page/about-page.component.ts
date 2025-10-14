@@ -14,7 +14,7 @@ export class AboutPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.seo.updateCanonicalUrl('https://saltcity-web.com/about');
-    this.seo.updateMetaDescription('Erfahre mehr über SaltCity Web und unser Leistungsspektrum in der Angular Webentwicklung.');
+    this.seo.updateMetaDescription('SaltCity Web aus Lüneburg. Seit 2024 spezialisiert auf Angular-Entwicklung für KMU. 12 Jahre IT-Erfahrung, klare Kommunikation, transparente Preise.');
     this.seo.updateTitle('Über uns - SaltCity Web');
   }
 

@@ -25,7 +25,7 @@ export class PrivacyPolicyComponent implements OnInit {
 
   ngOnInit(): void {
     this.seo.updateCanonicalUrl('https://saltcity-web.com/datenschutz');
-    this.seo.updateMetaDescription('Datenschutzerklärung von SaltCity Web. Informationen zur Erhebung, Verarbeitung und Nutzung personenbezogener Daten gemäß DSGVO.');
+    this.seo.updateMetaDescription('Datenschutzerklärung von SaltCity Web. Informationen zur Datenverarbeitung gemäß DSGVO.');
     this.seo.updateTitle('Datenschutz - SaltCity Web');
   }
 
