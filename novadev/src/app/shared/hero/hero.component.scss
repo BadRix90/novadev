@@ -38,29 +38,29 @@
   display: inline-flex;
   align-items: center;
   gap: $spacing-2;
-  background: var(--brand-card);
-  border: 1px solid var(--brand-border);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: $radius-full;
   padding: $spacing-1 $spacing-3;
   margin-bottom: $spacing-4;
   @include body-sm;
   font-size: $font-size-xs;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
 }
 
 .hero__badge-highlight {
-  color: var(--brand-rust-gold);
+  color: var(--color-accent);
   font-weight: $font-weight-medium;
 }
 
 .hero__badge-separator {
-  color: var(--brand-border);
+  color: var(--color-border);
 }
 
 .hero__headline {
   @include heading-xl;
   margin-bottom: $spacing-3;
-  color: var(--brand-text);
+  color: var(--color-text);
 
   @include tablet-up {
     font-size: $font-size-5xl;
@@ -69,7 +69,7 @@
 
 .hero__subline {
   @include heading-md;
-  color: var(--brand-rust-gold);
+  color: var(--color-accent);
   font-weight: $font-weight-normal;
   margin-bottom: $spacing-8;
   text-align: center;
@@ -93,13 +93,13 @@
   @include flex-column;
   gap: $spacing-1;
   padding: $spacing-3;
-  background: var(--brand-card);
-  border: 1px solid var(--brand-border);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: $radius-lg;
   transition: all $transition-base;
 
   &:hover {
-    border-color: var(--brand-rust-gold);
+    border-color: var(--color-accent);
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(192, 169, 122, 0.15);
   }
@@ -107,7 +107,7 @@
 
 .hero__fact-label {
   font-size: $font-size-xs;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -116,7 +116,7 @@
   font-family: $font-family-primary;
   font-size: $font-size-lg;
   font-weight: $font-weight-bold;
-  color: var(--brand-rust-gold);
+  color: var(--color-accent);
 }
 
 .hero__actions {
@@ -152,8 +152,8 @@
 
   &:hover {
     transform: translateY(-2px);
-    border-color: var(--brand-rust-gold);
-    color: var(--brand-rust-gold);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
   }
 }
 

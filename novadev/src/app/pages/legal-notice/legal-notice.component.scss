@@ -3,7 +3,7 @@
 
 .legal-page {
   min-height: 100vh;
-  background: var(--brand-bg);
+  background: var(--color-bg);
   padding: $spacing-8 0;
 
   @include mobile-only {
@@ -25,7 +25,7 @@
   text-align: center;
   margin-bottom: $spacing-8;
   padding-bottom: $spacing-6;
-  border-bottom: 2px solid var(--brand-border);
+  border-bottom: 2px solid var(--color-border);
 
   @include mobile-only {
     margin-bottom: $spacing-6;
@@ -35,13 +35,13 @@
 
 .legal-page__title {
   @include heading-xl;
-  color: var(--brand-text);
+  color: var(--color-text);
   margin: 0 0 $spacing-3 0;
 }
 
 .legal-page__subtitle {
   @include body-lg;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   margin: 0;
   font-style: italic;
 }
@@ -59,21 +59,21 @@
 
   h2 {
     @include heading-lg;
-    color: var(--brand-text);
+    color: var(--color-text);
     margin: 0 0 $spacing-4 0;
     padding-bottom: $spacing-2;
-    border-bottom: 1px solid var(--brand-border);
+    border-bottom: 1px solid var(--color-border);
   }
 
   h3 {
     @include heading-md;
-    color: var(--brand-text);
+    color: var(--color-text);
     margin: $spacing-5 0 $spacing-3 0;
   }
 
   p {
     @include body-base;
-    color: var(--brand-text);
+    color: var(--color-text);
     margin: 0 0 $spacing-4 0;
     text-align: justify;
   }
@@ -85,12 +85,12 @@
 
     li {
       @include body-base;
-      color: var(--brand-text);
+      color: var(--color-text);
       margin-bottom: $spacing-2;
       text-align: justify;
 
       strong {
-        color: var(--brand-rust-gold); // ✅ Rostgold
+        color: var(--color-accent); // ✅ Rostgold
         font-weight: $font-weight-semibold;
       }
     }
@@ -120,33 +120,33 @@
 }
 
 .legal-address {
-  background: var(--brand-card);
-  border: 1px solid var(--brand-border);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: $radius-md;
   padding: $spacing-4;
   margin: $spacing-4 0;
   font-style: normal;
 
   strong {
-    color: var(--brand-rust-gold); // ✅ Rostgold
+    color: var(--color-accent); // ✅ Rostgold
     display: block;
     margin-bottom: $spacing-1;
   }
 }
 
 .legal-link {
-  color: var(--brand-rust-gold); // ✅ Rostgold
+  color: var(--color-accent); // ✅ Rostgold
   text-decoration: underline;
   text-decoration-color: transparent;
   transition: all $transition-fast;
 
   &:hover {
-    color: var(--brand-rust-brown); // ✅ Rostbraun
+    color: var(--color-accent-dark); // ✅ Rostbraun
     text-decoration-color: current;
   }
 
   &:focus {
-    outline: 2px solid var(--brand-rust-gold); // ✅ Rostgold
+    outline: 2px solid var(--color-accent); // ✅ Rostgold
     outline-offset: 2px;
     border-radius: $radius-sm;
   }
@@ -157,8 +157,8 @@
   display: inline-flex;
   align-items: center;
   gap: $spacing-2;
-  background: var(--brand-rust-gold); // ✅ Rostgold
-  color: var(--brand-bg);
+  background: var(--color-accent); // ✅ Rostgold
+  color: var(--color-bg);
   padding: $spacing-3 $spacing-6;
   border-radius: $radius-md;
   text-decoration: none;
@@ -166,13 +166,13 @@
   transition: all $transition-fast;
 
   &:hover {
-    background: var(--brand-rust-brown); // ✅ Rostbraun
+    background: var(--color-accent-dark); // ✅ Rostbraun
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(192, 169, 122, 0.3); // ✅ Rostgold
   }
 
   &:focus {
-    outline: 2px solid var(--brand-rust-gold); // ✅ Rostgold
+    outline: 2px solid var(--color-accent); // ✅ Rostgold
     outline-offset: 2px;
   }
 
@@ -190,19 +190,19 @@
   display: inline-flex;
   align-items: center;
   gap: $spacing-1;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   text-decoration: none;
   font-size: $font-size-sm;
   font-weight: $font-weight-medium;
   transition: all $transition-fast;
 
   &:hover {
-    color: var(--brand-rust-gold); // ✅ Rostgold
+    color: var(--color-accent); // ✅ Rostgold
     transform: translateX(-2px);
   }
 
   &:focus {
-    outline: 2px solid var(--brand-rust-gold); // ✅ Rostgold
+    outline: 2px solid var(--color-accent); // ✅ Rostgold
     outline-offset: 2px;
     border-radius: $radius-sm;
   }

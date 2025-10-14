@@ -12,7 +12,7 @@
 
 .contact {
   @include section-padding;
-  background: var(--brand-card);
+  background: var(--color-surface);
 }
 
 .contact__container {
@@ -30,13 +30,13 @@
 .contact__title {
   @include heading-lg;
   margin: 0 0 $spacing-4 0;
-  color: var(--brand-text);
+  color: var(--color-text);
 }
 
 .contact__subtitle {
   @include body-lg;
   margin: 0;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
 }
 
 .contact__content {
@@ -51,8 +51,8 @@
 
 // Formular
 .contact__form-wrapper {
-  background: var(--brand-bg);
-  border: 1px solid var(--brand-border);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
   border-radius: $radius-xl;
   padding: $spacing-8;
 }
@@ -71,7 +71,7 @@
 
 .contact__label {
   @include body-sm;
-  color: var(--brand-text);
+  color: var(--color-text);
   font-weight: $font-weight-medium;
 }
 
@@ -79,21 +79,21 @@
 .contact__textarea,
 .contact__select {
   @include body-base;
-  background: var(--brand-card);
-  border: 1px solid var(--brand-border);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: $radius-base;
   padding: $spacing-3 $spacing-4;
-  color: var(--brand-text);
+  color: var(--color-text);
   transition: all $transition-fast;
 
   &:focus {
     outline: none;
-    border-color: var(--brand-rust-gold);
+    border-color: var(--color-accent);
     box-shadow: 0 0 0 3px rgba(192, 169, 122, 0.1);
   }
 
   &::placeholder {
-    color: var(--brand-sub);
+    color: var(--color-text-muted);
   }
 }
 
@@ -114,32 +114,32 @@
 
   // Option-Styling
   option {
-    background: var(--brand-card);
-    color: var(--brand-text);
+    background: var(--color-surface);
+    color: var(--color-text);
     padding: $spacing-2;
 
     &:disabled {
-      color: var(--brand-sub);
+      color: var(--color-text-muted);
     }
 
     &:hover {
-      background: var(--brand-rust-gold) !important;
-      color: var(--brand-bg) !important;
+      background: var(--color-accent) !important;
+      color: var(--color-bg) !important;
     }
 
     &:checked {
-      background: var(--brand-rust-gold);
-      color: var(--brand-bg);
+      background: var(--color-accent);
+      color: var(--color-bg);
     }
   }
 
   &:hover:not(:disabled) {
-    border-color: var(--brand-rust-gold);
+    border-color: var(--color-accent);
   }
   
   &:invalid,
   &[value=""] {
-    color: var(--brand-sub);
+    color: var(--color-text-muted);
   }
 }
 
@@ -165,9 +165,9 @@
   border-radius: $radius-base;
   text-align: center;
   font-size: $font-size-sm;
-  background: var(--brand-card);
-  border: 1px solid var(--brand-border);
-  color: var(--brand-sub);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
 
   &--success {
     background: rgba(122, 156, 111, 0.1);
@@ -184,8 +184,8 @@
 }
 
 .contact__info-card {
-  background: var(--brand-bg);
-  border: 1px solid var(--brand-border);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
   border-radius: $radius-xl;
   padding: $spacing-8;
   display: flex;
@@ -196,9 +196,9 @@
 .contact__info-title {
   @include heading-sm;
   margin: 0;
-  color: var(--brand-rust-gold);
+  color: var(--color-accent);
   padding-bottom: $spacing-3;
-  border-bottom: 2px solid var(--brand-border);
+  border-bottom: 2px solid var(--color-border);
 }
 
 .contact__info-item {
@@ -209,7 +209,7 @@
 
 .contact__info-label {
   @include body-sm;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: $font-size-xs;
@@ -217,30 +217,30 @@
 
 .contact__info-link {
   @include body-base;
-  color: var(--brand-rust-gold);
+  color: var(--color-accent);
   font-weight: $font-weight-medium;
   transition: color $transition-fast;
 
   &:hover {
-    color: var(--brand-rust-brown);
+    color: var(--color-accent-dark);
   }
 }
 
 .contact__info-text {
   @include body-base;
-  color: var(--brand-text);
+  color: var(--color-text);
 }
 
 .contact__info-note {
-  background: var(--brand-bg);
-  border: 1px solid var(--brand-border);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
   border-radius: $radius-xl;
   padding: $spacing-6;
 }
 
 .contact__note-text {
   @include body-sm;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   margin: 0;
   line-height: $line-height-relaxed;
 }

@@ -13,7 +13,7 @@
 .about {
   @include section-padding;
   position: relative;
-  background: var(--brand-card);
+  background: var(--color-surface);
 }
 
 .about__container {
@@ -31,13 +31,13 @@
 .about__title {
   @include heading-lg;
   margin: 0 0 $spacing-4 0;
-  color: var(--brand-text);
+  color: var(--color-text);
 }
 
 .about__subtitle {
   @include heading-md;
   margin: 0;
-  color: var(--brand-rust-gold);
+  color: var(--color-accent);
   font-weight: $font-weight-normal;
 }
 
@@ -70,8 +70,8 @@
   max-width: 300px;
   max-height: 400px; 
   aspect-ratio: 3 / 4;
-  background: var(--brand-card2);
-  border: 2px solid var(--brand-border);
+  background: var(--color-surface-elevated);
+  border: 2px solid var(--color-border);
   border-radius: $radius-xl;
   overflow: hidden;
   position: relative;
@@ -115,7 +115,7 @@
 .about__section-title {
   @include heading-sm;
   margin: 0;
-  color: var(--brand-rust-gold);
+  color: var(--color-accent);
   position: relative;
   padding-bottom: $spacing-2;
   
@@ -126,13 +126,13 @@
     left: 0;
     width: 3rem;
     height: 2px;
-    background: var(--brand-rust-gold);
+    background: var(--color-accent);
   }
 }
 
 .about__paragraph {
   @include body-base;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   margin: 0;
   line-height: $line-height-relaxed;
 }
@@ -148,7 +148,7 @@
 
 .about__list-item {
   @include body-base;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   padding-left: $spacing-5;
   position: relative;
   line-height: $line-height-relaxed;
@@ -157,12 +157,12 @@
     content: '→';
     position: absolute;
     left: 0;
-    color: var(--brand-rust-gold);
+    color: var(--color-accent);
     font-weight: $font-weight-bold;
   }
   
   strong {
-    color: var(--brand-text);
+    color: var(--color-text);
     font-weight: $font-weight-semibold;
   }
 }

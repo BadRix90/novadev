@@ -29,7 +29,7 @@
 .portfolio-header__title {
   @include heading-lg;
   margin: 0 0 $spacing-4 0;
-  color: var(--brand-text);
+  color: var(--color-text);
 
   @include mobile-only {
     font-size: $font-size-4xl;
@@ -39,7 +39,7 @@
 .portfolio-header__subtitle {
   @include body-lg;
   margin: 0;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
 
   @include mobile-only {
     font-size: $font-size-base;
@@ -50,7 +50,7 @@
 .portfolio {
   @include section-padding;
   position: relative;
-  background: var(--brand-bg);
+  background: var(--color-bg);
 }
 
 .portfolio__container {
@@ -70,8 +70,8 @@
 .portfolio__card {
   display: flex;
   flex-direction: column;
-  background: var(--brand-card);
-  border: 1px solid var(--brand-border);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: $radius-xl;
   padding: $spacing-8;
   transition: all $transition-base;
@@ -87,12 +87,12 @@
     left: 0;
     width: 4px;
     height: 0;
-    background: var(--brand-rust-gold);
+    background: var(--color-accent);
     transition: height $transition-base;
   }
   
   &:hover {
-    border-color: var(--brand-rust-gold);
+    border-color: var(--color-accent);
     transform: translateY(-4px);
     box-shadow: 0 15px 40px rgba(192, 169, 122, 0.15);
     
@@ -121,19 +121,19 @@
 .portfolio__card-title {
   @include heading-sm;
   margin: 0;
-  color: var(--brand-text);
+  color: var(--color-text);
 }
 
 .portfolio__card-icon {
   font-size: $font-size-2xl;
-  color: var(--brand-rust-gold);
+  color: var(--color-accent);
   transition: transform $transition-base;
   flex-shrink: 0;
 }
 
 .portfolio__card-description {
   @include body-base;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   margin: 0 0 $spacing-5 0;
   line-height: $line-height-relaxed;
 }
@@ -146,24 +146,24 @@
 }
 
 .portfolio__tech-badge {
-  background: var(--brand-card2);
-  border: 1px solid var(--brand-border);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
   border-radius: $radius-base;
   padding: $spacing-1 $spacing-3;
   font-size: $font-size-xs;
-  color: var(--brand-rust-gold);
+  color: var(--color-accent);
   font-weight: $font-weight-medium;
 }
 
 .portfolio__card-footer {
   margin-top: auto;
   padding-top: $spacing-4;
-  border-top: 1px solid var(--brand-border);
+  border-top: 1px solid var(--color-border);
 }
 
 .portfolio__link-text {
   @include body-sm;
-  color: var(--brand-rust-gold);
+  color: var(--color-accent);
   font-weight: $font-weight-medium;
   display: flex;
   align-items: center;
@@ -194,7 +194,7 @@
 
 .cta-section__title {
   @include heading-lg;
-  color: var(--brand-text);
+  color: var(--color-text);
   margin: 0;
 
   @include mobile-only {
@@ -204,7 +204,7 @@
 
 .cta-section__text {
   @include body-lg;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   max-width: 600px;
 
   @include mobile-only {

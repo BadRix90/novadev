@@ -29,7 +29,7 @@
 .services-header__title {
   @include heading-lg;
   margin: 0 0 $spacing-4 0;
-  color: var(--brand-text);
+  color: var(--color-text);
 
   @include mobile-only {
     font-size: $font-size-4xl;
@@ -39,7 +39,7 @@
 .services-header__subtitle {
   @include body-lg;
   margin: 0;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
 
   @include mobile-only {
     font-size: $font-size-base;
@@ -50,7 +50,7 @@
 .services {
   @include section-padding;
   position: relative;
-  background: var(--brand-card);
+  background: var(--color-surface);
 }
 
 .services__container {
@@ -73,14 +73,14 @@
 }
 
 .services__card {
-  background: var(--brand-card);
-  border: 1px solid var(--brand-border);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: $radius-xl;
   padding: $spacing-8;
   transition: all $transition-base;
   
   &:hover {
-    border-color: var(--brand-rust-gold);
+    border-color: var(--color-accent);
     transform: translateY(-4px);
     box-shadow: 0 15px 40px rgba(192, 169, 122, 0.15);
   }
@@ -93,12 +93,12 @@
 .services__card-title {
   @include heading-sm;
   margin: 0 0 $spacing-3 0;
-  color: var(--brand-text);
+  color: var(--color-text);
 }
 
 .services__card-description {
   @include body-base;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   margin: 0 0 $spacing-5 0;
   line-height: $line-height-relaxed;
 }
@@ -113,19 +113,19 @@
 }
 
 .services__tech-item {
-  background: var(--brand-card2);
-  border: 1px solid var(--brand-border);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
   border-radius: $radius-base;
   padding: $spacing-1 $spacing-3;
   font-size: $font-size-xs;
-  color: var(--brand-rust-gold);
+  color: var(--color-accent);
   font-weight: $font-weight-medium;
   transition: all $transition-fast;
   
   &:hover {
-    background: var(--brand-rust-gold);
-    color: var(--brand-bg);
-    border-color: var(--brand-rust-gold);
+    background: var(--color-accent);
+    color: var(--color-bg);
+    border-color: var(--color-accent);
   }
 }
 
@@ -147,8 +147,8 @@
 .services-footer__content {
   text-align: center;
   padding: $spacing-8;
-  background: var(--brand-card);
-  border: 1px solid var(--brand-border);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: $radius-xl;
 
   @include mobile-only {
@@ -166,14 +166,14 @@
 
 .services__pricing-label {
   @include body-base;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
 }
 
 .services__pricing-value {
   font-family: $font-family-primary;
   font-size: $font-size-3xl;
   font-weight: $font-weight-bold;
-  color: var(--brand-rust-gold);
+  color: var(--color-accent);
 
   @include mobile-only {
     font-size: $font-size-2xl;
@@ -182,7 +182,7 @@
 
 .services__note {
   @include body-sm;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   margin: 0;
 }
 
@@ -204,7 +204,7 @@
 
 .cta-section__title {
   @include heading-lg;
-  color: var(--brand-text);
+  color: var(--color-text);
   margin: 0;
 
   @include mobile-only {
@@ -214,7 +214,7 @@
 
 .cta-section__text {
   @include body-lg;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   max-width: 600px;
 
   @include mobile-only {

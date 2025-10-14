@@ -2,8 +2,8 @@
 @use '../../../styles/mixins' as *;
 
 .footer {
-  background: var(--brand-card);
-  border-top: 1px solid var(--brand-border);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
   margin-top: $spacing-16;
 }
 
@@ -59,13 +59,13 @@
   font-weight: $font-weight-semibold;
   font-size: $font-size-lg;
   letter-spacing: 0.05em;
-  color: var(--brand-text);
+  color: var(--color-text);
 }
 
 .footer__description {
   @include body-base;
   margin: 0 0 $spacing-6 0;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   line-height: $line-height-relaxed;
 }
 
@@ -78,16 +78,16 @@
   width: 2.5rem;
   height: 2.5rem;
   @include flex-center;
-  background: var(--brand-rust-gold);
-  border: 1px solid var(--brand-border);
+  background: var(--color-accent);
+  border: 1px solid var(--color-border);
   border-radius: $radius-base;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   transition: all $transition-fast;
 
   &:hover {
-    background: var(--brand-rust-gold);
-    border-color: var(--brand-rust-gold);
-    color: var(--brand-bg);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-bg);
     transform: translateY(-2px);
   }
 }
@@ -117,7 +117,7 @@
   @include heading-sm;
   font-size: $font-size-base;
   margin: 0;
-  color: var(--brand-rust-gold);
+  color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -130,18 +130,18 @@
 
 .footer__link {
   @include body-sm;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   transition: color $transition-fast;
   padding: $spacing-1 0;
 
   &:hover {
-    color: var(--brand-rust-gold);
+    color: var(--color-accent);
   }
 }
 
 .footer__bottom {
   padding: $spacing-6 0;
-  border-top: 1px solid var(--brand-border);
+  border-top: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -157,7 +157,7 @@
 .footer__copyright,
 .footer__made-with {
   @include body-sm;
-  color: var(--brand-sub);
+  color: var(--color-text-muted);
   margin: 0;
 }
 
@@ -179,13 +179,13 @@
 
 .footer__back-to-top {
   @include body-sm;
-  color: var(--brand-rust-gold);
+  color: var(--color-accent);
   font-weight: $font-weight-medium;
   transition: all $transition-fast;
   cursor: pointer;
 
   &:hover {
-    color: var(--brand-text);
+    color: var(--color-text);
     transform: translateY(-2px);
   }
 
@@ -197,7 +197,7 @@
 
 .footer__bottom {
   padding: $spacing-6 0;
-  border-top: 1px solid var(--brand-border);
+  border-top: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
   align-items: center;
