@@ -1,0 +1,70 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+.theme-toggle__track {
+  position: relative;
+  display: block;
+  width: 3.5rem;
+  height: 1.75rem;
+  background: var(--color-border);
+  border-radius: $radius-full;
+  transition: all $transition-base;
+  border: 2px solid var(--color-border-dark);
+
+  @include mobile-only {
+    width: 3rem;
+    height: 1.5rem;
+  }
+}
+
+.theme-toggle__thumb {
+  position: absolute;
+  top: 50%;
+  left: 0.25rem;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--color-text);
+  border-radius: $radius-full;
+  transition: all $transition-base;
+  box-shadow: var(--shadow-md);
+
+  @include mobile-only {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.theme-toggle:hover {
+  .theme-toggle__track {
+    background: var(--color-surface-elevated);
+    border-color: var(--color-accent);
+  }
+}
+
+.theme-toggle--dark {
+  .theme-toggle__track {
+    background: var(--color-accent);
+    border-color: var(--color-accent-dark);
+  }
+
+  .theme-toggle__thumb {
+    left: calc(100% - 1.5rem);
+    background: var(--color-surface);
+
+    @include mobile-only {
+      left: calc(100% - 1.25rem);
+    }
+  }
+}

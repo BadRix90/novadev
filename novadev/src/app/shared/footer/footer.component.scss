@@ -33,25 +33,11 @@
 }
 
 .footer__logo-icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  @include flex-center;
-  transition: all $transition-fast;
-
-  &:hover {
-    transform: scale(1.05);
-
-    .footer__logo-image {
-      filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.4));
-    }
-  }
-}
-
-.footer__logo-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: all $transition-fast;
+  font-family: 'Courier New', monospace;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: var(--color-accent);
+  letter-spacing: -0.05em;
 }
 
 .footer__brand-name {
@@ -190,7 +176,7 @@
   }
 
   @include mobile-only {
-    order: -1; 
+    order: -1;
     margin-bottom: $spacing-2;
   }
 }

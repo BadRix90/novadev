@@ -1,52 +1,35 @@
 :root {
-  // ============================================================================
-  // COLOR SYSTEM - Tech Modern Light
-  // ============================================================================
-  // Generische Variablen für flexible Theme-Switches
+  --color-bg: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #F1F5F9;
   
-  // Background Colors
-  --color-bg: #F8FAFC;           // Helles Grau-Blau (Haupthintergrund)
-  --color-surface: #FFFFFF;      // Weiß (Cards, Panels)
-  --color-surface-elevated: #F1F5F9; // Leicht getönt (Hover States)
+  --color-primary: #1E293B;
+  --color-primary-light: #334155;
+  --color-primary-dark: #0F172A;
   
-  // Primary Colors (Navy/Slate)
-  --color-primary: #1E293B;      // Dunkles Navy (Hauptfarbe)
-  --color-primary-light: #334155; // Helleres Navy
-  --color-primary-dark: #0F172A; // Tiefes Anthrazit
+  --color-accent: #3B82F6;
+  --color-accent-light: #60A5FA;
+  --color-accent-dark: #2563EB;
   
-  // Accent Colors (Tech Blue)
-  --color-accent: #3B82F6;       // Modernes Blau (CTAs, Links)
-  --color-accent-light: #60A5FA; // Helles Blau (Hover)
-  --color-accent-dark: #2563EB;  // Tiefes Blau (Active)
+  --color-text: #0F172A;
+  --color-text-muted: #64748B;
+  --color-text-subtle: #94A3B8;
+  --color-text-inverse: #FFFFFF;
   
-  // Text Colors
-  --color-text: #0F172A;         // Primärtext (sehr dunkel)
-  --color-text-muted: #64748B;   // Sekundärtext (Grau)
-  --color-text-subtle: #94A3B8;  // Tertiärtext (helles Grau)
-  --color-text-inverse: #FFFFFF; // Text auf dunklem Grund
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
   
-  // Semantic Colors
-  --color-success: #10B981;      // Grün (Erfolg)
-  --color-warning: #F59E0B;      // Orange (Warnung)
-  --color-error: #EF4444;        // Rot (Fehler)
-  --color-info: #3B82F6;         // Blau (Info)
+  --color-border: #E2E8F0;
+  --color-border-dark: #CBD5E1;
+  --color-divider: #F1F5F9;
   
-  // Border & Divider
-  --color-border: #E2E8F0;       // Hell-Grau (Standard Border)
-  --color-border-dark: #CBD5E1;  // Dunkleres Grau (Hover Border)
-  --color-divider: #F1F5F9;      // Sehr hell (Subtle Divider)
-  
-  // ============================================================================
-  // GRADIENTS - Tech Modern
-  // ============================================================================
   --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   --gradient-accent: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
   --gradient-hero: linear-gradient(180deg, var(--color-bg) 0%, #E0E7FF 100%);
   --gradient-bg-subtle: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.05), transparent 70%);
   
-  // ============================================================================
-  // SHADOWS & EFFECTS
-  // ============================================================================
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
@@ -54,35 +37,74 @@
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   
-  // Glow Effects (für CTAs)
   --glow-accent: 0 0 20px rgba(59, 130, 246, 0.3);
   --glow-hover: 0 0 30px rgba(59, 130, 246, 0.5);
   
-  // Backdrop
   --backdrop-blur: blur(12px);
   --backdrop-overlay: rgba(15, 23, 42, 0.5);
 }
 
-// ============================================================================
-// TYPOGRAPHY SCALE
-// ============================================================================
+[data-theme="dark"] {
+  --color-bg: #0F172A;
+  --color-surface: #1E293B;
+  --color-surface-elevated: #334155;
+  
+  --color-primary: #E2E8F0;
+  --color-primary-light: #F1F5F9;
+  --color-primary-dark: #CBD5E1;
+  
+  --color-accent: #60A5FA;
+  --color-accent-light: #93C5FD;
+  --color-accent-dark: #3B82F6;
+  
+  --color-text: #F1F5F9;
+  --color-text-muted: #94A3B8;
+  --color-text-subtle: #64748B;
+  --color-text-inverse: #0F172A;
+  
+  --color-success: #34D399;
+  --color-warning: #FBBF24;
+  --color-error: #F87171;
+  --color-info: #60A5FA;
+  
+  --color-border: #334155;
+  --color-border-dark: #475569;
+  --color-divider: #1E293B;
+  
+  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  --gradient-accent: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  --gradient-hero: linear-gradient(180deg, var(--color-bg) 0%, #1E293B 100%);
+  --gradient-bg-subtle: radial-gradient(circle at 50% 0%, rgba(96, 165, 250, 0.1), transparent 70%);
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  
+  --glow-accent: 0 0 20px rgba(96, 165, 250, 0.4);
+  --glow-hover: 0 0 30px rgba(96, 165, 250, 0.6);
+  
+  --backdrop-blur: blur(12px);
+  --backdrop-overlay: rgba(0, 0, 0, 0.7);
+}
+
 $font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 $font-family-secondary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-$font-family-accent: 'Oswald', 'Inter', sans-serif; // Für Headlines
+$font-family-accent: 'Oswald', 'Inter', sans-serif;
 
-// Font Sizes (rem-based for scalability)
-$font-size-xs: 0.75rem;    // 12px
-$font-size-sm: 0.875rem;   // 14px
-$font-size-base: 1rem;     // 16px
-$font-size-lg: 1.125rem;   // 18px
-$font-size-xl: 1.25rem;    // 20px
-$font-size-2xl: 1.5rem;    // 24px
-$font-size-3xl: 1.875rem;  // 30px
-$font-size-4xl: 2.25rem;   // 36px
-$font-size-5xl: 3rem;      // 48px
-$font-size-6xl: 3.75rem;   // 60px
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 1.875rem;
+$font-size-4xl: 2.25rem;
+$font-size-5xl: 3rem;
+$font-size-6xl: 3.75rem;
 
-// Font Weights
 $font-weight-normal: 400;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
@@ -90,66 +112,50 @@ $font-weight-bold: 700;
 $font-weight-extrabold: 800;
 $font-weight-black: 900;
 
-// Line Heights
 $line-height-tight: 1.25;
 $line-height-snug: 1.375;
 $line-height-normal: 1.5;
 $line-height-relaxed: 1.625;
 
-// ============================================================================
-// SPACING SCALE (8px base unit)
-// ============================================================================
-$spacing-1: 0.25rem;   // 4px
-$spacing-2: 0.5rem;    // 8px
-$spacing-3: 0.75rem;   // 12px
-$spacing-4: 1rem;      // 16px
-$spacing-5: 1.25rem;   // 20px
-$spacing-6: 1.5rem;    // 24px
-$spacing-8: 2rem;      // 32px
-$spacing-10: 2.5rem;   // 40px
-$spacing-12: 3rem;     // 48px
-$spacing-16: 4rem;     // 64px
-$spacing-20: 5rem;     // 80px
-$spacing-24: 6rem;     // 96px
-$spacing-32: 8rem;     // 128px
+$spacing-1: 0.25rem;
+$spacing-2: 0.5rem;
+$spacing-3: 0.75rem;
+$spacing-4: 1rem;
+$spacing-5: 1.25rem;
+$spacing-6: 1.5rem;
+$spacing-8: 2rem;
+$spacing-10: 2.5rem;
+$spacing-12: 3rem;
+$spacing-16: 4rem;
+$spacing-20: 5rem;
+$spacing-24: 6rem;
+$spacing-32: 8rem;
 
-// ============================================================================
-// LAYOUT & GRID
-// ============================================================================
 $max-width-sm: 640px;
 $max-width-md: 768px;
 $max-width-lg: 1024px;
 $max-width-xl: 1280px;
 $max-width-2xl: 1536px;
-$max-width-7xl: 1280px; // Main content width
+$max-width-7xl: 1280px;
 
-$container-padding: $spacing-5; // 20px default
-$container-padding-mobile: $spacing-4; // 16px on mobile
+$container-padding: $spacing-5;
+$container-padding-mobile: $spacing-4;
 
-// ============================================================================
-// BORDER RADIUS
-// ============================================================================
-$radius-sm: 0.375rem;   // 6px
-$radius-base: 0.5rem;   // 8px
-$radius-md: 0.75rem;    // 12px
-$radius-lg: 1rem;       // 16px
-$radius-xl: 1.5rem;     // 24px
-$radius-2xl: 2rem;      // 32px
-$radius-3xl: 3rem;      // 48px
+$radius-sm: 0.375rem;
+$radius-base: 0.5rem;
+$radius-md: 0.75rem;
+$radius-lg: 1rem;
+$radius-xl: 1.5rem;
+$radius-2xl: 2rem;
+$radius-3xl: 3rem;
 $radius-full: 9999px;
 
-// ============================================================================
-// BREAKPOINTS
-// ============================================================================
 $breakpoint-sm: 640px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
 $breakpoint-xl: 1280px;
 $breakpoint-2xl: 1536px;
 
-// ============================================================================
-// Z-INDEX SCALE
-// ============================================================================
 $z-index-dropdown: 10;
 $z-index-sticky: 20;
 $z-index-fixed: 30;
@@ -158,9 +164,6 @@ $z-index-modal: 50;
 $z-index-popover: 60;
 $z-index-tooltip: 70;
 
-// ============================================================================
-// ANIMATION & TRANSITIONS
-// ============================================================================
 $transition-fast: 0.15s ease-out;
 $transition-base: 0.3s ease-out;
 $transition-slow: 0.5s ease-out;
@@ -168,28 +171,20 @@ $transition-slow: 0.5s ease-out;
 $easing-in: cubic-bezier(0.4, 0, 1, 1);
 $easing-out: cubic-bezier(0, 0, 0.2, 1);
 $easing-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-$easing-custom: cubic-bezier(0.2, 0.8, 0.2, 1); // Smooth custom easing
+$easing-custom: cubic-bezier(0.2, 0.8, 0.2, 1);
 
-// ============================================================================
-// COMPONENT SPECIFIC VARIABLES
-// ============================================================================
-
-// Buttons
 $button-height-sm: 2rem;
 $button-height-base: 2.5rem;
 $button-height-lg: 3rem;
 $button-padding-x: $spacing-4;
 $button-padding-x-lg: $spacing-6;
 
-// Cards
 $card-padding: $spacing-6;
 $card-padding-lg: $spacing-8;
 
-// Forms
 $input-height: 3rem;
 $input-padding-x: $spacing-4;
 $textarea-min-height: 6rem;
 
-// Navigation
 $nav-height: 4rem;
 $nav-height-mobile: 3.5rem;
