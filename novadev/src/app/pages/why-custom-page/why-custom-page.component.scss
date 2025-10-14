@@ -1,0 +1,452 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.why-custom-page {
+  min-height: 100vh;
+  padding-top: $nav-height;
+
+  @include mobile-only {
+    padding-top: $nav-height-mobile;
+  }
+}
+
+// Header Section
+.why-custom-header {
+  padding: $spacing-16 0 $spacing-8 0;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
+
+  @include mobile-only {
+    padding: $spacing-10 0 $spacing-6 0;
+  }
+}
+
+.why-custom-header__container {
+  @include container;
+  max-width: 800px;
+}
+
+.why-custom-header__title {
+  @include heading-lg;
+  margin: 0 0 $spacing-4 0;
+  color: var(--color-text);
+
+  @include mobile-only {
+    font-size: $font-size-4xl;
+  }
+}
+
+.why-custom-header__subtitle {
+  @include body-lg;
+  margin: 0;
+  color: var(--color-text-muted);
+
+  @include mobile-only {
+    font-size: $font-size-base;
+  }
+}
+
+// Intro Section
+.intro {
+  padding: $spacing-12 0;
+  background: var(--color-surface);
+
+  @include mobile-only {
+    padding: $spacing-8 0;
+  }
+}
+
+.intro__container {
+  @include container;
+  max-width: 900px;
+  text-align: center;
+}
+
+.intro__text {
+  @include body-lg;
+  color: var(--color-text);
+  line-height: 1.8;
+  margin: 0;
+
+  @include mobile-only {
+    font-size: $font-size-base;
+  }
+}
+
+// Comparison Table
+.comparison {
+  padding: $spacing-20 0;
+  background: var(--color-bg);
+
+  @include mobile-only {
+    padding: $spacing-12 0;
+  }
+}
+
+.comparison__container {
+  @include container;
+}
+
+.comparison__title {
+  @include heading-lg;
+  text-align: center;
+  margin: 0 0 $spacing-12 0;
+  color: var(--color-text);
+
+  @include mobile-only {
+    font-size: $font-size-3xl;
+    margin-bottom: $spacing-8;
+  }
+}
+
+.comparison__table {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: $radius-xl;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.comparison__table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: var(--color-surface-elevated);
+  border-bottom: 2px solid var(--color-border);
+  font-weight: $font-weight-bold;
+
+  @include mobile-only {
+    grid-template-columns: 1fr;
+  }
+}
+
+.comparison__table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-bottom: 1px solid var(--color-border);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  @include mobile-only {
+    grid-template-columns: 1fr;
+    border-bottom: 2px solid var(--color-border);
+    margin-bottom: $spacing-4;
+  }
+}
+
+.comparison__table-cell {
+  padding: $spacing-5;
+  @include body-base;
+  color: var(--color-text);
+
+  @include mobile-only {
+    padding: $spacing-4;
+  }
+
+  &--feature {
+    font-weight: $font-weight-semibold;
+    background: var(--color-surface-elevated);
+
+    @include mobile-only {
+      background: var(--color-accent);
+      color: white;
+      text-align: center;
+    }
+
+    strong {
+      color: var(--color-text);
+
+      @include mobile-only {
+        color: white;
+      }
+    }
+  }
+
+  &--wp {
+    border-right: 1px solid var(--color-border);
+
+    @include mobile-only {
+      border-right: none;
+      border-bottom: 1px solid var(--color-border);
+    }
+  }
+
+  &--negative {
+    background: rgba(239, 68, 68, 0.05);
+    color: #DC2626;
+    position: relative;
+
+    &::before {
+      content: '❌';
+      margin-right: $spacing-2;
+    }
+  }
+
+  &--positive {
+    background: rgba(16, 185, 129, 0.05);
+    color: #059669;
+    position: relative;
+
+    &::before {
+      content: '✅';
+      margin-right: $spacing-2;
+    }
+  }
+}
+
+// ROI Section
+.roi {
+  padding: $spacing-20 0;
+  background: var(--color-surface);
+
+  @include mobile-only {
+    padding: $spacing-12 0;
+  }
+}
+
+.roi__container {
+  @include container;
+}
+
+.roi__title {
+  @include heading-lg;
+  text-align: center;
+  margin: 0 0 $spacing-4 0;
+  color: var(--color-text);
+
+  @include mobile-only {
+    font-size: $font-size-3xl;
+  }
+}
+
+.roi__lead {
+  @include body-lg;
+  text-align: center;
+  color: var(--color-text-muted);
+  margin: 0 0 $spacing-12 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mobile-only {
+    font-size: $font-size-base;
+    margin-bottom: $spacing-8;
+  }
+}
+
+.roi__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-6;
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-8;
+  }
+}
+
+.roi__card {
+  @include card-base;
+  padding: $spacing-8;
+  text-align: center;
+  transition: all $transition-base;
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-xl);
+  }
+
+  @include mobile-only {
+    padding: $spacing-6;
+  }
+}
+
+.roi__card-icon {
+  font-size: $font-size-6xl;
+  margin-bottom: $spacing-4;
+}
+
+.roi__card-metric {
+  @include body-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: $spacing-2;
+}
+
+.roi__card-value {
+  @include heading-md;
+  color: var(--color-accent);
+  margin-bottom: $spacing-4;
+
+  @include mobile-only {
+    font-size: $font-size-2xl;
+  }
+}
+
+.roi__card-description {
+  @include body-base;
+  color: var(--color-text);
+  margin: 0 0 $spacing-3 0;
+  line-height: 1.6;
+
+  @include mobile-only {
+    font-size: $font-size-sm;
+  }
+}
+
+.roi__card-source {
+  @include body-sm;
+  color: var(--color-text-muted);
+  font-size: $font-size-xs;
+  font-style: italic;
+}
+
+// Decision Section
+.decision {
+  padding: $spacing-20 0;
+  background: var(--color-bg);
+
+  @include mobile-only {
+    padding: $spacing-12 0;
+  }
+}
+
+.decision__container {
+  @include container;
+}
+
+.decision__grid {
+  display: grid;
+  gap: $spacing-8;
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-10;
+  }
+}
+
+.decision__card {
+  @include card-base;
+  padding: $spacing-10;
+
+  @include mobile-only {
+    padding: $spacing-6;
+  }
+}
+
+.decision__card-title {
+  @include heading-sm;
+  margin: 0 0 $spacing-6 0;
+  padding-bottom: $spacing-3;
+  border-bottom: 2px solid var(--color-border);
+
+  @include mobile-only {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-4;
+  }
+}
+
+.decision__card--wp {
+  .decision__card-title {
+    color: #DC2626;
+  }
+}
+
+.decision__card--custom {
+  .decision__card-title {
+    color: var(--color-accent);
+  }
+}
+
+.decision__card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3;
+
+  li {
+    @include body-base;
+    color: var(--color-text);
+    padding-left: $spacing-5;
+    position: relative;
+    line-height: 1.6;
+
+    &::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      font-weight: $font-weight-bold;
+    }
+
+    @include mobile-only {
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+.decision__card--wp li::before {
+  color: #DC2626;
+}
+
+.decision__card--custom li::before {
+  color: var(--color-accent);
+}
+
+// CTA Section
+.cta-section {
+  padding: $spacing-20 0;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
+
+  @include mobile-only {
+    padding: $spacing-12 0;
+  }
+}
+
+.cta-section__container {
+  @include container;
+  @include flex-column-center;
+  gap: $spacing-6;
+  text-align: center;
+}
+
+.cta-section__title {
+  @include heading-lg;
+  color: var(--color-text);
+  margin: 0;
+
+  @include mobile-only {
+    font-size: $font-size-3xl;
+  }
+}
+
+.cta-section__text {
+  @include body-lg;
+  color: var(--color-text);
+  max-width: 700px;
+
+  @include mobile-only {
+    font-size: $font-size-base;
+  }
+}
+
+.cta-section__button {
+  @include button-primary;
+  padding: $spacing-4 $spacing-10;
+  font-size: $font-size-lg;
+  margin-top: $spacing-4;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  @include mobile-only {
+    width: 100%;
+    max-width: 300px;
+  }
+}

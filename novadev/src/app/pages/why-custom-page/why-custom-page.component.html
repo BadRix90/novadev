@@ -1,0 +1,110 @@
+<div class="why-custom-page">
+  
+  <!-- Header Section -->
+  <section class="why-custom-header">
+    <div class="why-custom-header__container">
+      <h1 class="why-custom-header__title">Warum Custom Development?</h1>
+      <p class="why-custom-header__subtitle">WordPress vs. Individuelle Entwicklung – Ein ehrlicher Vergleich für KMU</p>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="intro">
+    <div class="intro__container">
+      <p class="intro__text">
+        WordPress ist praktisch, günstig im Einstieg und weit verbreitet. Aber ist es auch die richtige Wahl für dein Unternehmen?
+        Hier erfährst du, warum viele KMU auf maßgeschneiderte Lösungen setzen – und wann Custom Development wirklich Sinn macht.
+      </p>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="comparison">
+    <div class="comparison__container">
+      <h2 class="comparison__title">Der direkte Vergleich</h2>
+      
+      <div class="comparison__table">
+        <div class="comparison__table-header">
+          <div class="comparison__table-cell comparison__table-cell--feature">Kriterium</div>
+          <div class="comparison__table-cell comparison__table-cell--wp">WordPress + Plugins</div>
+          <div class="comparison__table-cell comparison__table-cell--custom">Custom Development</div>
+        </div>
+
+        <div class="comparison__table-row" *ngFor="let row of comparisonData">
+          <div class="comparison__table-cell comparison__table-cell--feature">
+            <strong>{{ row.feature }}</strong>
+          </div>
+          <div class="comparison__table-cell comparison__table-cell--wp" [class.comparison__table-cell--negative]="!row.wordpress.isGood">
+            {{ row.wordpress.text }}
+          </div>
+          <div class="comparison__table-cell comparison__table-cell--custom" [class.comparison__table-cell--positive]="row.custom.isGood">
+            {{ row.custom.text }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Metrics -->
+  <section class="roi">
+    <div class="roi__container">
+      <h2 class="roi__title">Die Zahlen sprechen für sich</h2>
+      <p class="roi__lead">Konkrete Metriken aus echten Projekten und Industry Reports</p>
+
+      <div class="roi__grid">
+        <div class="roi__card" *ngFor="let metric of roiMetrics">
+          <div class="roi__card-icon">{{ metric.icon }}</div>
+          <div class="roi__card-metric">{{ metric.metric }}</div>
+          <div class="roi__card-value">{{ metric.value }}</div>
+          <p class="roi__card-description">{{ metric.description }}</p>
+          <span class="roi__card-source" *ngIf="metric.source">{{ metric.source }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- When to Choose What -->
+  <section class="decision">
+    <div class="decision__container">
+      <div class="decision__grid">
+        
+        <!-- WordPress Column -->
+        <div class="decision__card decision__card--wp">
+          <h3 class="decision__card-title">WordPress macht Sinn, wenn...</h3>
+          <ul class="decision__card-list">
+            <li>Du einen Blog oder Content-Site brauchst</li>
+            <li>Budget unter 2.000€ liegt</li>
+            <li>Du selbst Inhalte pflegen willst (ohne Entwickler)</li>
+            <li>Standard-Features ausreichen</li>
+            <li>Schneller Launch wichtiger ist als Performance</li>
+          </ul>
+        </div>
+
+        <!-- Custom Column -->
+        <div class="decision__card decision__card--custom">
+          <h3 class="decision__card-title">Custom Development macht Sinn, wenn...</h3>
+          <ul class="decision__card-list">
+            <li>Du eine Web-App oder komplexes Tool brauchst</li>
+            <li>Performance & Sicherheit kritisch sind</li>
+            <li>Du individuelle Features benötigst</li>
+            <li>Langfristige Investition geplant ist</li>
+            <li>Keine monatlichen Lizenzkosten gewünscht</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-section__container">
+      <h2 class="cta-section__title">Nicht sicher, was das Richtige für dich ist?</h2>
+      <p class="cta-section__text">
+        Lass uns dein Projekt besprechen. Ich berate dich ehrlich – auch wenn WordPress die bessere Wahl wäre.
+      </p>
+      <a routerLink="/kontakt" class="cta-section__button">Kostenlose Beratung anfragen</a>
+    </div>
+  </section>
+
+</div>

@@ -29,6 +29,12 @@ export const routes: Routes = [
   },
 
   {
+    path: "warum-custom-development",
+    loadComponent: () => import("./pages/why-custom-page/why-custom-page.component").then((m) => m.WhyCustomPageComponent),
+    title: "Warum Custom Development? - SaltCity Web",
+  },
+
+  {
     path: "impressum",
     loadComponent: () => import("./pages/legal-notice/legal-notice.component").then((m) => m.LegalNoticeComponent),
     title: "Impressum - SaltCity Web",
