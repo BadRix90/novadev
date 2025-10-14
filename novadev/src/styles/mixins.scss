@@ -41,7 +41,7 @@
   margin: 0 auto;
   padding-left: $container-padding-mobile;
   padding-right: $container-padding-mobile;
-  
+
   @include tablet-up {
     padding-left: $container-padding;
     padding-right: $container-padding;
@@ -175,12 +175,12 @@
   transition: all $transition-base;
   user-select: none;
   white-space: nowrap;
-  
+
   &:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--color-accent);
   }
-  
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -189,21 +189,23 @@
 
 @mixin button-primary {
   @include button-base;
-  background: var(--gradient-accent);
-  color: var(--color-text);
+  background: var(--color-accent);
+  color: white;
   border-radius: $radius-xl;
   padding: $spacing-3 $spacing-5;
   font-size: $font-size-sm;
   height: $button-height-base;
-  box-shadow: var(--shadow-lg);
-  
+  box-shadow: var(--shadow-md);
+
   &:hover:not(:disabled) {
+    background: var(--color-accent-light);
     transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(255,106,61,.45);
+    box-shadow: var(--shadow-lg);
   }
-  
+
   &:active {
     transform: translateY(0);
+    background: var(--color-accent-dark);
   }
 }
 
@@ -216,7 +218,7 @@
   padding: $spacing-3 $spacing-5;
   font-size: $font-size-sm;
   height: $button-height-base;
-  
+
   &:hover:not(:disabled) {
     background: var(--color-surface-elevated);
     transform: translateY(-2px);
@@ -230,7 +232,7 @@
   border: none;
   padding: $spacing-2 $spacing-4;
   font-size: $font-size-sm;
-  
+
   &:hover:not(:disabled) {
     color: var(--color-text);
   }
@@ -253,7 +255,7 @@
 @mixin card-glow {
   box-shadow: var(--shadow-xl);
   position: relative;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -267,31 +269,32 @@
 }
 
 @mixin glassmorphism {
-  background: rgba(18, 22, 27, 0.8);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: var(--backdrop-blur);
   border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
 }
 
 @mixin input-base {
   width: 100%;
   height: $input-height;
   padding: 0 $input-padding-x;
-  background: transparent;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: $radius-xl;
   color: var(--color-text);
   font-family: $font-family-secondary;
   font-size: $font-size-base;
   transition: all $transition-base;
-  
+
   &::placeholder {
     color: var(--color-text-muted);
   }
-  
+
   &:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 2px rgba(107, 182, 255, 0.2);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
   }
 }
 
@@ -368,7 +371,7 @@
 
 @mixin aspect-ratio($width, $height) {
   aspect-ratio: $width / $height;
-  
+
   @supports not (aspect-ratio: 1) {
     &::before {
       content: '';
@@ -382,7 +385,7 @@
   background: var(--color-bg);
   position: relative;
   overflow: hidden;
-  
+
   &::before,
   &::after {
     content: '';
@@ -391,7 +394,7 @@
     z-index: -1;
     pointer-events: none;
   }
-  
+
   &::before {
     background: var(--gradient-bg-subtle);
     width: 60vh;
@@ -402,7 +405,7 @@
     top: -40vh;
     left: -40vh;
   }
-  
+
   &::after {
     background: var(--gradient-bg-subtle);
     width: 60vh;

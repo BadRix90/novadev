@@ -1,0 +1,133 @@
+<div class="contact-page">
+  <section class="contact">
+    <div class="contact__container">
+      <div class="contact__header">
+        <h1 class="contact__title">Kontakt</h1>
+        <p class="contact__subtitle">
+          Lass uns über dein Projekt sprechen
+        </p>
+      </div>
+
+      <div class="contact__content">
+        <!-- Formular Links -->
+        <div class="contact__form-wrapper">
+          <form class="contact__form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+            <!-- Unternehmen (optional) -->
+            <div class="contact__form-group">
+              <label for="company" class="contact__label">Unternehmen</label>
+              <input type="text" id="company" formControlName="company" class="contact__input"
+                placeholder="Deine Firma">
+            </div>
+
+            <div class="contact__form-group">
+              <label for="subject" class="contact__label">Thema *</label>
+              <select id="subject" formControlName="subject" class="contact__select"
+                [class.contact__select--error]="isFieldInvalid('subject')" required>
+                <option value="" disabled selected>Bitte wählen</option>
+                @for (option of subjectOptions; track option.value) {
+                <option [value]="option.value">{{ option.label }}</option>
+                }
+              </select>
+              @if (isFieldInvalid('subject')) {
+              <span class="contact__error">{{ getFieldError('subject') }}</span>
+              }
+            </div>
+
+            <!-- Name (Pflichtfeld) -->
+            <div class="contact__form-group">
+              <label for="name" class="contact__label">Name *</label>
+              <input type="text" id="name" formControlName="name" class="contact__input"
+                [class.contact__input--error]="isFieldInvalid('name')" placeholder="Dein Name" required>
+              @if (isFieldInvalid('name')) {
+              <span class="contact__error">{{ getFieldError('name') }}</span>
+              }
+            </div>
+
+            <!-- E-Mail (Pflichtfeld) -->
+            <div class="contact__form-group">
+              <label for="email" class="contact__label">E-Mail *</label>
+              <input type="email" id="email" formControlName="email" class="contact__input"
+                [class.contact__input--error]="isFieldInvalid('email')" placeholder="deine@email.de" required>
+              @if (isFieldInvalid('email')) {
+              <span class="contact__error">{{ getFieldError('email') }}</span>
+              }
+            </div>
+
+            <!-- Projekt/Nachricht (Pflichtfeld) -->
+            <div class="contact__form-group">
+              <label for="project" class="contact__label">Projekt *</label>
+              <textarea id="project" formControlName="message" class="contact__textarea"
+                [class.contact__textarea--error]="isFieldInvalid('message')"
+                placeholder="Beschreibe kurz dein Projekt..." rows="5" required></textarea>
+              @if (isFieldInvalid('message')) {
+              <span class="contact__error">{{ getFieldError('message') }}</span>
+              }
+            </div>
+
+            <!-- Budget (optional) -->
+            <div class="contact__form-group">
+              <label for="budget" class="contact__label">Budget-Rahmen</label>
+              <select id="budget" formControlName="budget" class="contact__select">
+                <option value="">Bitte wählen</option>
+                <option value="< 2.000€">
+                  < 2.000€</option>
+                <option value="2.000€ - 5.000€">2.000€ - 5.000€</option>
+                <option value="5.000€ - 10.000€">5.000€ - 10.000€</option>
+                <option value="> 10.000€">> 10.000€</option>
+              </select>
+            </div>
+
+            <!-- Honeypot - unsichtbar -->
+            <div class="contact__honeypot">
+              <label for="website">Website (bitte leer lassen)</label>
+              <input type="text" id="website" name="website" formControlName="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="contact__submit" [disabled]="!contactForm.valid || isSubmitting">
+              {{ isSubmitting ? 'Wird gesendet...' : 'Anfrage senden' }}
+            </button>
+
+            <!-- Success/Error Message -->
+            @if (submitMessage) {
+            <div class="contact__message" [class.contact__message--success]="submitSuccess">
+              {{ submitMessage }}
+            </div>
+            }
+          </form>
+        </div>
+
+        <!-- Direktkontakt Rechts -->
+        <div class="contact__info">
+          <div class="contact__info-card">
+            <h3 class="contact__info-title">Direktkontakt</h3>
+
+            <div class="contact__info-item">
+              <span class="contact__info-label">E-Mail</span>
+              <a href="mailto:kontakt@saltcity-web.com" class="contact__info-link">
+                kontakt&#64;saltcity-web.com
+              </a>
+            </div>
+
+            <div class="contact__info-item">
+              <span class="contact__info-label">Standort</span>
+              <span class="contact__info-text">Lüneburg, Niedersachsen</span>
+            </div>
+
+            <div class="contact__info-item">
+              <span class="contact__info-label">Antwortzeit</span>
+              <span class="contact__info-text">In der Regel innerhalb von 24 Stunden</span>
+            </div>
+          </div>
+
+          <div class="contact__info-note">
+            <p class="contact__note-text">
+              Ich arbeite remote, persönliche Termine in Lüneburg sind nach Absprache möglich.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

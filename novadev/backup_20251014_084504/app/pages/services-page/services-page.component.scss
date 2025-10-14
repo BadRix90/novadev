@@ -1,7 +1,7 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
-.portfolio-page {
+.services-page {
   min-height: 100vh;
   padding-top: $nav-height;
 
@@ -11,22 +11,22 @@
 }
 
 // Header Section
-.portfolio-header {
+.services-header {
   padding: $spacing-16 0 $spacing-8 0;
   text-align: center;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
+  background: linear-gradient(135deg, rgba(192, 169, 122, 0.05), rgba(140, 59, 26, 0.05));
 
   @include mobile-only {
     padding: $spacing-10 0 $spacing-6 0;
   }
 }
 
-.portfolio-header__container {
+.services-header__container {
   @include container;
   max-width: 700px;
 }
 
-.portfolio-header__title {
+.services-header__title {
   @include heading-lg;
   margin: 0 0 $spacing-4 0;
   color: var(--color-text);
@@ -36,7 +36,7 @@
   }
 }
 
-.portfolio-header__subtitle {
+.services-header__subtitle {
   @include body-lg;
   margin: 0;
   color: var(--color-text-muted);
@@ -46,18 +46,18 @@
   }
 }
 
-// Portfolio Section
-.portfolio {
+// Services Section
+.services {
   @include section-padding;
   position: relative;
-  background: var(--color-bg);
+  background: var(--color-surface);
 }
 
-.portfolio__container {
+.services__container {
   @include container;
 }
 
-.portfolio__grid {
+.services__grid {
   display: grid;
   gap: $spacing-6;
   
@@ -65,44 +65,24 @@
     grid-template-columns: repeat(2, 1fr);
     gap: $spacing-8;
   }
+  
+  @include desktop-up {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-8;
+  }
 }
 
-.portfolio__card {
-  display: flex;
-  flex-direction: column;
+.services__card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: $radius-xl;
   padding: $spacing-8;
   transition: all $transition-base;
-  text-decoration: none;
-  color: inherit;
-  position: relative;
-  overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 0;
-    background: var(--color-accent);
-    transition: height $transition-base;
-  }
   
   &:hover {
     border-color: var(--color-accent);
     transform: translateY(-4px);
-    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
-    
-    &::before {
-      height: 100%;
-    }
-    
-    .portfolio__card-icon {
-      transform: translateX(4px);
-    }
+    box-shadow: 0 15px 40px rgba(192, 169, 122, 0.15);
   }
 
   @include mobile-only {
@@ -110,42 +90,29 @@
   }
 }
 
-.portfolio__card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: $spacing-4;
-  gap: $spacing-3;
-}
-
-.portfolio__card-title {
+.services__card-title {
   @include heading-sm;
-  margin: 0;
+  margin: 0 0 $spacing-3 0;
   color: var(--color-text);
 }
 
-.portfolio__card-icon {
-  font-size: $font-size-2xl;
-  color: var(--color-accent);
-  transition: transform $transition-base;
-  flex-shrink: 0;
-}
-
-.portfolio__card-description {
+.services__card-description {
   @include body-base;
   color: var(--color-text-muted);
   margin: 0 0 $spacing-5 0;
   line-height: $line-height-relaxed;
 }
 
-.portfolio__tech-stack {
+.services__tech-list {
   display: flex;
   flex-wrap: wrap;
   gap: $spacing-2;
-  margin-bottom: $spacing-5;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.portfolio__tech-badge {
+.services__tech-item {
   background: var(--color-surface-elevated);
   border: 1px solid var(--color-border);
   border-radius: $radius-base;
@@ -153,32 +120,75 @@
   font-size: $font-size-xs;
   color: var(--color-accent);
   font-weight: $font-weight-medium;
+  transition: all $transition-fast;
+  
+  &:hover {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    border-color: var(--color-accent);
+  }
 }
 
-.portfolio__card-footer {
-  margin-top: auto;
-  padding-top: $spacing-4;
-  border-top: 1px solid var(--color-border);
+// Footer Section (Pricing)
+.services-footer {
+  padding: $spacing-12 0;
+  background: rgba(31, 31, 31, 0.3);
+
+  @include mobile-only {
+    padding: $spacing-8 0;
+  }
 }
 
-.portfolio__link-text {
-  @include body-sm;
-  color: var(--color-accent);
-  font-weight: $font-weight-medium;
+.services-footer__container {
+  @include container;
+  max-width: 800px;
+}
+
+.services-footer__content {
+  text-align: center;
+  padding: $spacing-8;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: $radius-xl;
+
+  @include mobile-only {
+    padding: $spacing-6;
+  }
+}
+
+.services__pricing {
+  margin: 0 0 $spacing-3 0;
   display: flex;
   align-items: center;
-  gap: $spacing-2;
-  
-  &::after {
-    content: '↗';
-    font-size: $font-size-lg;
+  justify-content: center;
+  gap: $spacing-3;
+}
+
+.services__pricing-label {
+  @include body-base;
+  color: var(--color-text-muted);
+}
+
+.services__pricing-value {
+  font-family: $font-family-primary;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: var(--color-accent);
+
+  @include mobile-only {
+    font-size: $font-size-2xl;
   }
+}
+
+.services__note {
+  @include body-sm;
+  color: var(--color-text-muted);
+  margin: 0;
 }
 
 // CTA Section
 .cta-section {
   padding: $spacing-20 0;
-  background: rgba(31, 31, 31, 0.3);
 
   @include mobile-only {
     padding: $spacing-12 0;
@@ -220,7 +230,7 @@
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 20px 50px rgba(192, 169, 122, 0.4);
   }
 
   @include mobile-only {

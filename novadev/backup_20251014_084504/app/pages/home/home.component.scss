@@ -76,7 +76,7 @@
   &:hover {
     transform: translateY(-8px);
     border-color: var(--color-accent);
-    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 20px 60px rgba(192, 169, 122, 0.2);
   }
 }
 
@@ -114,7 +114,7 @@
 // CTA Section
 .cta-section {
   padding: $spacing-20 0;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
+  background: linear-gradient(135deg, rgba(192, 169, 122, 0.05), rgba(140, 59, 26, 0.05));
 
   @include mobile-only {
     padding: $spacing-12 0;
@@ -156,7 +156,7 @@
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 20px 50px rgba(192, 169, 122, 0.4);
   }
 
   @include mobile-only {
@@ -242,7 +242,7 @@
   &:hover {
     border-color: var(--color-accent);
     transform: translateY(-4px);
-    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 15px 40px rgba(192, 169, 122, 0.2);
 
     &::before {
       height: 100%;
@@ -253,7 +253,7 @@
 .why-card__number {
   font-size: $font-size-4xl;
   font-weight: $font-weight-black;
-  color: rgba(59, 130, 246, 0.2);
+  color: rgba(192, 169, 122, 0.2);
   line-height: 1;
   margin-bottom: $spacing-3;
 }
@@ -337,7 +337,7 @@
   color: var(--color-accent);
   margin: 0;
   padding: $spacing-5;
-  background: rgba(59, 130, 246, 0.05);
+  background: rgba(192, 169, 122, 0.05);
   border: 1px solid var(--color-accent);
   border-radius: $radius-lg;
   text-align: center;

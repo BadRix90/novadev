@@ -98,9 +98,9 @@
 
   &--contact {
     background: linear-gradient(135deg,
-        rgba(192, 169, 122, 0.1) 0%,  // ✅ Rostgold
-        rgba(192, 169, 122, 0.05) 100%); // ✅ Rostgold
-    border: 1px solid rgba(192, 169, 122, 0.2); // ✅ Rostgold
+        rgba(59, 130, 246, 0.1) 0%,  // ✅ Rostgold
+        rgba(59, 130, 246, 0.05) 100%); // ✅ Rostgold
+    border: 1px solid rgba(59, 130, 246, 0.2); // ✅ Rostgold
     border-radius: $radius-lg;
     padding: $spacing-6;
     text-align: center;
@@ -168,7 +168,7 @@
   &:hover {
     background: var(--color-accent-dark); // ✅ Rostbraun
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(192, 169, 122, 0.3); // ✅ Rostgold
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3); // ✅ Rostgold
   }
 
   &:focus {

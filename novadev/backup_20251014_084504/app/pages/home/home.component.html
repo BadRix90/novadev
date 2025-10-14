@@ -1,0 +1,76 @@
+<div class="home-page">
+  <!-- Hero Section -->
+  <app-hero></app-hero>
+
+  <!-- Quick Intro -->
+  <section class="intro">
+    <div class="intro__container">
+      <h2 class="intro__headline">{{ introHeadline }}</h2>
+      <p class="intro__text">{{ introText }}</p>
+    </div>
+  </section>
+
+  <!-- Warum KMU? -->
+  <section class="why-kmu">
+    <div class="why-kmu__container">
+      <h2 class="why-kmu__title">{{ whyKmuTitle }}</h2>
+      <p class="why-kmu__lead">{{ whyKmuLead }}</p>
+      
+      <div class="why-kmu__grid">
+        @for (card of whyCards; track card.number) {
+          <div class="why-card">
+            <div class="why-card__number">{{ card.number }}</div>
+            <h3 class="why-card__title">{{ card.title }}</h3>
+            <p class="why-card__text">{{ card.text }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Für wen ist das NICHT? -->
+  <section class="not-for">
+    <div class="not-for__container">
+      <h2 class="not-for__title">{{ notForTitle.split('nicht')[0] }}<span class="highlight">nicht</span>{{ notForTitle.split('nicht')[1] }}</h2>
+      <div class="not-for__content">
+        <div class="not-for__points">
+          @for (point of notForContent.points; track point.question) {
+            <p class="not-for__point">
+              <strong>{{ point.question }}</strong> → {{ point.answer }}
+            </p>
+          }
+        </div>
+        <p class="not-for__conclusion">
+          <strong>{{ notForContent.conclusion }}</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Cards -->
+  <section class="features">
+    <div class="features__container">
+      @for (card of featureCards; track card.title) {
+        <div class="feature-card">
+          <div class="feature-card__icon">{{ card.icon }}</div>
+          <h3 class="feature-card__title">{{ card.title }}</h3>
+          <p class="feature-card__description">{{ card.description }}</p>
+          <a [routerLink]="card.link" class="feature-card__link">
+            {{ card.linkText }}
+          </a>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-section__container">
+      <h2 class="cta-section__headline">{{ ctaHeadline }}</h2>
+      <p class="cta-section__text">{{ ctaText }}</p>
+      <button class="cta-section__button" routerLink="/kontakt">
+        {{ ctaButtonText }}
+      </button>
+    </div>
+  </section>
+</div>
