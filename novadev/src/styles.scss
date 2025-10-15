@@ -226,9 +226,9 @@ video {
   }
 }
 
-a:not(.nav__link):not(.footer__link):not(.legal-link):not(.button-primary) {
+a:not(.nav__link):not(.footer__link):not(.legal-link):not(.button-primary):not(.nav__logo):not(.footer__social-link):not(.contact__info-link) {
   position: relative;
-
+  
   &::after {
     content: '';
     position: absolute;
@@ -239,7 +239,7 @@ a:not(.nav__link):not(.footer__link):not(.legal-link):not(.button-primary) {
     background: var(--color-accent);
     transition: width $transition-base;
   }
-
+  
   &:hover::after {
     width: 100%;
   }

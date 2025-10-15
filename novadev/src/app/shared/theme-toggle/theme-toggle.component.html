@@ -5,8 +5,12 @@
   [attr.aria-label]="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
   type="button">
   <span class="theme-toggle__track">
-    <span class="theme-toggle__thumb"></span>
-    <span class="theme-toggle__label theme-toggle__label--light">☀️</span>
-    <span class="theme-toggle__label theme-toggle__label--dark">🌙</span>
+    <span class="theme-toggle__thumb">
+      @if (isDark) {
+        <lucide-icon [img]="Moon" [size]="14" class="theme-toggle__icon"></lucide-icon>
+      } @else {
+        <lucide-icon [img]="Sun" [size]="14" class="theme-toggle__icon"></lucide-icon>
+      }
+    </span>
   </span>
 </button>
