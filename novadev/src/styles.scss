@@ -172,3 +172,53 @@ video {
 *:where(:not(:active):not(:focus-within)) {
   transition-property: background-color, color, border-color, box-shadow;
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Varianten für unterschiedliche Effekte
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+
+  &.reveal-visible {
+    opacity: 1;
+  }
+}
+
+.reveal-slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.reveal-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@for $i from 1 through 12 {
+  .reveal-delay-#{$i} {
+    transition-delay: #{$i * 0.1}s;
+  }
+}
+

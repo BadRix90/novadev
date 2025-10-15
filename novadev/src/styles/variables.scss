@@ -2,47 +2,47 @@
   --color-bg: #F8FAFC;
   --color-surface: #FFFFFF;
   --color-surface-elevated: #F1F5F9;
-  
+
   --color-primary: #1E293B;
   --color-primary-light: #334155;
   --color-primary-dark: #0F172A;
-  
+
   --color-accent: #3B82F6;
   --color-accent-light: #60A5FA;
   --color-accent-dark: #2563EB;
-  
+
   --color-text: #0F172A;
   --color-text-muted: #64748B;
   --color-text-subtle: #94A3B8;
   --color-text-inverse: #FFFFFF;
-  
+
   --color-success: #10B981;
   --color-warning: #F59E0B;
   --color-error: #EF4444;
   --color-info: #3B82F6;
-  
+
   --color-border: #E2E8F0;
   --color-border-dark: #CBD5E1;
   --color-divider: #F1F5F9;
-  
+
   --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   --gradient-accent: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
   --gradient-hero: linear-gradient(180deg, var(--color-bg) 0%, #E0E7FF 100%);
   --gradient-bg-subtle: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.05), transparent 70%);
-  
+
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  
+
   --glow-accent: 0 0 20px rgba(59, 130, 246, 0.3);
   --glow-hover: 0 0 30px rgba(59, 130, 246, 0.5);
-  
+
   --backdrop-blur: blur(12px);
   --backdrop-overlay: rgba(15, 23, 42, 0.5);
-  
+
   /* Glassmorphism-Variablen für Light Mode hinzugefügt */
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-bg-strong: rgba(255, 255, 255, 0.85);
@@ -54,47 +54,47 @@
   --color-bg: #0F172A;
   --color-surface: #1E293B;
   --color-surface-elevated: #334155;
-  
+
   --color-primary: #E2E8F0;
   --color-primary-light: #F1F5F9;
   --color-primary-dark: #CBD5E1;
-  
+
   --color-accent: #60A5FA;
   --color-accent-light: #93C5FD;
   --color-accent-dark: #3B82F6;
-  
+
   --color-text: #F1F5F9;
   --color-text-muted: #94A3B8;
   --color-text-subtle: #64748B;
   --color-text-inverse: #0F172A;
-  
+
   --color-success: #34D399;
   --color-warning: #FBBF24;
   --color-error: #F87171;
   --color-info: #60A5FA;
-  
+
   --color-border: #334155;
   --color-border-dark: #475569;
   --color-divider: #1E293B;
-  
+
   --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   --gradient-accent: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
   --gradient-hero: linear-gradient(180deg, var(--color-bg) 0%, #1E293B 100%);
   --gradient-bg-subtle: radial-gradient(circle at 50% 0%, rgba(96, 165, 250, 0.1), transparent 70%);
-  
+
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-  
+
   --glow-accent: 0 0 20px rgba(96, 165, 250, 0.4);
   --glow-hover: 0 0 30px rgba(96, 165, 250, 0.6);
-  
+
   --backdrop-blur: blur(12px);
   --backdrop-overlay: rgba(0, 0, 0, 0.7);
-  
+
   /* Glassmorphism-Variablen für Dark Mode hinzugefügt */
   --glass-bg: rgba(30, 41, 59, 0.6);
   --glass-bg-strong: rgba(30, 41, 59, 0.8);
@@ -200,3 +200,15 @@ $textarea-min-height: 6rem;
 
 $nav-height: 4rem;
 $nav-height-mobile: 3.5rem;
+
+@keyframes glassmorphismPulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}

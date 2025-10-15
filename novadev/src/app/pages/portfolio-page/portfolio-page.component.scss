@@ -15,6 +15,7 @@
   padding: $spacing-16 0 $spacing-8 0;
   text-align: center;
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
+  @include glassmorphism;
 
   @include mobile-only {
     padding: $spacing-10 0 $spacing-6 0;
@@ -51,6 +52,7 @@
   @include section-padding;
   position: relative;
   background: var(--color-bg);
+  
 }
 
 .portfolio__container {

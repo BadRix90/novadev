@@ -7,11 +7,12 @@ import { JsonLdService } from '../../services/json-ld.service';
 import { TextService } from '../../data/text.service';
 import { organizationSchema, localBusinessSchema, websiteSchema } from '../../data/schemas';
 import * as LucideIcons from 'lucide-angular';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, HeroComponent, CommonModule, LucideIcons.LucideAngularModule],
+  imports: [RouterLink, HeroComponent, CommonModule, LucideIcons.LucideAngularModule, ScrollRevealDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
