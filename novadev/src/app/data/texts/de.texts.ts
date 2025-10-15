@@ -288,6 +288,24 @@ export const DE_TEXTS = {
       },
       generic: 'Ungültige Eingabe'
     }
+  },
+  header: {
+    logo: {
+      alt: 'SaltCity Web Logo',
+      ariaLabel: 'SaltCity Web - Zur Startseite'
+    },
+    nav: [
+      { label: 'Leistungen', route: '/leistungen' },
+      { label: 'Warum Custom?', route: '/warum-custom-development' },
+      { label: 'Über uns', route: '/ueber-uns' },
+      { label: 'Projekte', route: '/projekte' },
+      { label: 'Kontakt', route: '/kontakt' }
+    ],
+    mobile: {
+      ariaLabelOpen: 'Menü öffnen',
+      ariaLabelClose: 'Menü schließen',
+      startLink: 'Start'
+    }
   }
 
 

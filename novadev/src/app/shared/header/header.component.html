@@ -1,16 +1,16 @@
 <div class="nav">
   <!-- Logo Links -->
-  <a routerLink="/" class="nav__logo" aria-label="NovaDev - Zur Startseite">
-    <img src="assets/logo/novadev_logo.png" alt="NovaDev Logo" class="nav__logo-img">
+  <a routerLink="/" class="nav__logo" [attr.aria-label]="texts.logo.ariaLabel">
+    <img src="assets/logo/novadev_logo.png" [alt]="texts.logo.alt" class="nav__logo-img">
   </a>
 
   <!-- Navigation Island (Mitte) - Desktop -->
   <nav class="nav__island" aria-label="Hauptnavigation">
-    <a class="nav__link" routerLink="/leistungen" routerLinkActive="active">Leistungen</a>
-    <a class="nav__link" routerLink="/warum-custom-development" routerLinkActive="active">Warum Custom?</a>
-    <a class="nav__link" routerLink="/ueber-uns" routerLinkActive="active">Über uns</a>
-    <a class="nav__link" routerLink="/projekte" routerLinkActive="active">Projekte</a>
-    <a class="nav__link" routerLink="/kontakt" routerLinkActive="active">Kontakt</a>
+    @for (link of texts.nav; track link.route) {
+      <a class="nav__link" [routerLink]="link.route" routerLinkActive="active">
+        {{ link.label }}
+      </a>
+    }
   </nav>
 
   <!-- Switches Rechts (Desktop) -->
@@ -21,7 +21,7 @@
 
   <!-- Mobile Menu Button -->
   <button class="nav__mobile-toggle" 
-    [attr.aria-label]="isMobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'"
+    [attr.aria-label]="isMobileMenuOpen ? texts.mobile.ariaLabelClose : texts.mobile.ariaLabelOpen"
     (click)="toggleMobileMenu()">
     <span class="nav__burger"></span>
     <span class="nav__burger"></span>
@@ -31,12 +31,14 @@
 
 <!-- Mobile Menu (außerhalb) -->
 <div class="nav__mobile" [class.nav__mobile--open]="isMobileMenuOpen">
-  <a class="nav__mobile-link" routerLink="/" (click)="closeMobileMenu()">Start</a>
-  <a class="nav__mobile-link" routerLink="/leistungen" (click)="closeMobileMenu()">Leistungen</a>
-  <a class="nav__mobile-link" routerLink="/warum-custom-development" (click)="closeMobileMenu()">Warum Custom?</a>
-  <a class="nav__mobile-link" routerLink="/ueber-uns" (click)="closeMobileMenu()">Über uns</a>
-  <a class="nav__mobile-link" routerLink="/projekte" (click)="closeMobileMenu()">Projekte</a>
-  <a class="nav__mobile-link" routerLink="/kontakt" (click)="closeMobileMenu()">Kontakt</a>
+  <a class="nav__mobile-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">
+    {{ texts.mobile.startLink }}
+  </a>
+  @for (link of texts.nav; track link.route) {
+    <a class="nav__mobile-link" [routerLink]="link.route" routerLinkActive="active" (click)="closeMobileMenu()">
+      {{ link.label }}
+    </a>
+  }
   
   <div class="nav__mobile-switches">
     <app-language-toggle></app-language-toggle>

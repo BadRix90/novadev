@@ -1,8 +1,9 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
 import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
+import { TextService } from '../../data/text.service';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,12 @@ import { LanguageToggleComponent } from '../language-toggle/language-toggle.comp
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+
+  textService = inject(TextService);
+
+  get texts() {
+    return this.textService.texts.header;
+  }
   isMobileMenuOpen = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
