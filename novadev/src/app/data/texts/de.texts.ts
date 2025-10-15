@@ -1,7 +1,7 @@
 export const DE_TEXTS = {
   seo: {
     home: {
-      title: 'SaltCity Web - Angular Webentwicklung für KMU',
+      title: 'NovaDev - Angular Webentwicklung für KMU',
       description: 'Angular-Entwicklung für KMU. Funktional, performant, auf den Punkt. Keine Lizenzkosten, keine Plugin-Abhängigkeiten. 65€/h aus Lüneburg.'
     }
   },
@@ -9,7 +9,7 @@ export const DE_TEXTS = {
     badge: {
       items: ['2025 Ready', 'PWA', 'KMU-fokussiert', 'DSGVO-clean']
     },
-    headline: 'SaltCity Web – Webentwicklung für KMU',
+    headline: 'NovaDev – Webentwicklung für KMU',
     subline: 'Funktionale Angular-Lösungen ohne unnötigen Ballast',
     facts: [
       { label: 'Stundensatz', value: '65€/h' },
@@ -129,7 +129,7 @@ export const DE_TEXTS = {
     },
     intro: {
       title: 'Die Geschichte',
-      text: 'SaltCity Web wurde 2025 in Kirchgellersen gegründet. Nach 12 Jahren Bundeswehr (8 Jahre IT, 4 Jahre Sicherheit) war klar: Zeit für echte, funktionierende Weblösungen. Ohne Schnickschnack, mit Verstand und Charakter.'
+      text: 'NovaDev wurde 2025 in Kirchgellersen gegründet. Nach 12 Jahren Bundeswehr (8 Jahre IT, 4 Jahre Sicherheit) war klar: Zeit für echte, funktionierende Weblösungen. Ohne Schnickschnack, mit Verstand und Charakter.'
     },
     approach: {
       title: 'Meine Arbeitsweise',
@@ -308,8 +308,8 @@ export const DE_TEXTS = {
   },
   header: {
     logo: {
-      alt: 'SaltCity Web Logo',
-      ariaLabel: 'SaltCity Web - Zur Startseite'
+      alt: 'NovaDev Logo',
+      ariaLabel: 'NovaDev - Zur Startseite'
     },
     nav: [
       { label: 'Leistungen', route: '/leistungen' },
@@ -326,7 +326,7 @@ export const DE_TEXTS = {
   },
   footer: {
     brand: {
-      name: 'SaltCity Web',
+      name: 'NovaDev',
       description: 'Angular-Entwicklung für KMU – aus Lüneburg. Funktional. Performant. Auf den Punkt.'
     },
     nav: {
@@ -348,7 +348,7 @@ export const DE_TEXTS = {
       ]
     },
     bottom: {
-      copyright: 'SaltCity Web. Alle Rechte vorbehalten.',
+      copyright: 'NovaDev. Alle Rechte vorbehalten.',
       backToTop: 'Nach oben'
     }
   }

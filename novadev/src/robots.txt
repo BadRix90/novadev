@@ -2,13 +2,14 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://saltcity-web.com/sitemap.xml
+Sitemap: https://novadev-edge.io/sitemap.xml
 
 # Wichtige Seiten crawlen lassen
-Allow: /#services
-Allow: /#portfolio
-Allow: /#contact
-Allow: /#faq
+Allow: /leistungen
+Allow: /ueber-uns
+Allow: /projekte
+Allow: /kontakt
+Allow: /warum-custom-development
 Allow: /impressum
 Allow: /datenschutz
 
