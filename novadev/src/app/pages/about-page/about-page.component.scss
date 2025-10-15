@@ -44,12 +44,12 @@
 .about__content {
   display: grid;
   gap: $spacing-10;
-  
+
   @include tablet-up {
     grid-template-columns: 300px 1fr;
     gap: $spacing-12;
   }
-  
+
   @include desktop-up {
     grid-template-columns: 350px 1fr;
     gap: $spacing-16;
@@ -59,7 +59,7 @@
 .about__image-wrapper {
   display: flex;
   justify-content: center;
-  
+
   @include tablet-up {
     justify-content: flex-start;
   }
@@ -68,19 +68,19 @@
 .about__image {
   width: 100%;
   max-width: 300px;
-  max-height: 400px; 
+  max-height: 400px;
   aspect-ratio: 3 / 4;
   background: var(--color-surface-elevated);
   border: 2px solid var(--color-border);
   border-radius: $radius-xl;
   overflow: hidden;
   position: relative;
-  
+
   @include desktop-up {
     max-width: 350px;
-    max-height: 450px; 
+    max-height: 450px;
   }
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -95,7 +95,7 @@
   height: 100%;
   object-fit: cover;
   transition: transform $transition-slow;
-  
+
   .about__image:hover & {
     transform: scale(1.05);
   }
@@ -118,7 +118,7 @@
   color: var(--color-accent);
   position: relative;
   padding-bottom: $spacing-2;
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -152,7 +152,7 @@
   padding-left: $spacing-5;
   position: relative;
   line-height: $line-height-relaxed;
-  
+
   &::before {
     content: '→';
     position: absolute;
@@ -160,7 +160,7 @@
     color: var(--color-accent);
     font-weight: $font-weight-bold;
   }
-  
+
   strong {
     color: var(--color-text);
     font-weight: $font-weight-semibold;
@@ -171,8 +171,53 @@
   .about__content {
     grid-template-columns: 1fr;
   }
-  
+
   .about__image {
     max-width: 250px;
   }
+}
+
+// Values Grid
+.about__values {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-6;
+  margin-top: $spacing-6;
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-8;
+  }
+}
+
+.value-card {
+  @include card-base;
+  padding: $spacing-6;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3;
+  transition: all $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-accent);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+  }
+}
+
+.value-card__icon {
+  color: var(--color-accent);
+}
+
+.value-card__title {
+  @include body-base;
+  font-weight: $font-weight-semibold;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.value-card__text {
+  @include body-sm;
+  color: var(--color-text-muted);
+  margin: 0;
 }

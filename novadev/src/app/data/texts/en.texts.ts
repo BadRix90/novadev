@@ -104,5 +104,41 @@ export const EN_TEXTS = {
       text: 'Let\'s discuss your requirements and find the best solution together.',
       button: 'Contact Now'
     }
+  },
+  about: {
+    header: {
+      title: 'About me',
+      subtitle: 'Code with character – since 2025'
+    },
+    intro: {
+      title: 'The Story',
+      text: 'SaltCity Web was founded in 2025 in Kirchgellersen. After 12 years in the German military (8 years IT, 4 years security), it was clear: time for real, working web solutions. No frills, with expertise and character.'
+    },
+    approach: {
+      title: 'How I Work',
+      text: 'Solo frontend developer. No backend, no page builders. Just clean code, clear design, and custom solutions. Remote from Lüneburg – in-person meetings possible.'
+    },
+    values: [
+      {
+        icon: 'shield',
+        title: 'Military Background',
+        text: 'Discipline, reliability, structure'
+      },
+      {
+        icon: 'user',
+        title: 'Personal & Direct',
+        text: 'No call center, no ticket system'
+      },
+      {
+        icon: 'code',
+        title: 'Frontend Expertise',
+        text: 'Angular, TypeScript, modern tools'
+      },
+      {
+        icon: 'mappin',
+        title: 'Local & Digital',
+        text: 'From Lüneburg, for all of Germany'
+      }
+    ]
   }
 };

@@ -104,6 +104,42 @@ export const DE_TEXTS = {
       text: 'Lass uns über deine Anforderungen sprechen und gemeinsam die beste Lösung finden.',
       button: 'Jetzt Kontakt aufnehmen'
     }
+  },
+  about: {
+    header: {
+      title: 'Über mich',
+      subtitle: 'Code mit Charakter – seit 2025'
+    },
+    intro: {
+      title: 'Die Geschichte',
+      text: 'SaltCity Web wurde 2025 in Kirchgellersen gegründet. Nach 12 Jahren Bundeswehr (8 Jahre IT, 4 Jahre Sicherheit) war klar: Zeit für echte, funktionierende Weblösungen. Ohne Schnickschnack, mit Verstand und Charakter.'
+    },
+    approach: {
+      title: 'Meine Arbeitsweise',
+      text: 'Solo Frontend-Entwickler. Kein Backend, kein Baukasten. Nur sauberer Code, klares Design und individuelle Lösungen. Remote aus Lüneburg – persönliche Termine möglich.'
+    },
+    values: [
+      {
+        icon: 'shield',
+        title: 'Militärischer Hintergrund',
+        text: 'Disziplin, Verlässlichkeit, Struktur'
+      },
+      {
+        icon: 'user',
+        title: 'Persönlich & direkt',
+        text: 'Kein Callcenter, kein Ticket-System'
+      },
+      {
+        icon: 'code',
+        title: 'Frontend-Expertise',
+        text: 'Angular, TypeScript, moderne Tools'
+      },
+      {
+        icon: 'mappin',
+        title: 'Lokal & digital',
+        text: 'Aus Lüneburg, für ganz Deutschland'
+      }
+    ]
   }
 
 
