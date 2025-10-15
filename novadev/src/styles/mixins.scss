@@ -189,6 +189,7 @@
 
 @mixin button-primary {
   @include button-base;
+  @include button-ripple;
   background: var(--color-accent);
   color: white;
   border-radius: $radius-xl;
@@ -206,6 +207,29 @@
   &:active {
     transform: translateY(0);
     background: var(--color-accent-dark);
+  }
+}
+
+@mixin button-ripple {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+
+  &:active::before {
+    width: 300px;
+    height: 300px;
   }
 }
 
