@@ -8,11 +8,12 @@ import { TextService } from '../../data/text.service';
 import { organizationSchema, localBusinessSchema, websiteSchema } from '../../data/schemas';
 import * as LucideIcons from 'lucide-angular';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
+import { CounterDirective } from '../../directives/counter.directive';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, HeroComponent, CommonModule, LucideIcons.LucideAngularModule, ScrollRevealDirective],
+  imports: [RouterLink, HeroComponent, CommonModule, LucideIcons.LucideAngularModule, ScrollRevealDirective, CounterDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

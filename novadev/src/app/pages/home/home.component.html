@@ -34,7 +34,15 @@
       <div class="stat-card" appScrollReveal animation="reveal-scale" [delay]="$index + 1">
         <lucide-icon [img]="icons[stat.icon]" class="stat-card__icon" [size]="40">
         </lucide-icon>
-        <div class="stat-card__value">{{ stat.value }}</div>
+        <div class="stat-card__value">
+          @if (stat.value === 'Lighthouse 95+') {
+          <span appCounter [target]="95" suffix="+">95+</span>
+          } @else if (stat.value === '65€/h') {
+          <span appCounter [target]="65" suffix="€/h">65€/h</span>
+          } @else {
+          {{ stat.value }}
+          }
+        </div>
         <div class="stat-card__label">{{ stat.label }}</div>
       </div>
       }
