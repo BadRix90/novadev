@@ -306,6 +306,34 @@ export const DE_TEXTS = {
       ariaLabelClose: 'Menü schließen',
       startLink: 'Start'
     }
+  },
+  footer: {
+    brand: {
+      name: 'SaltCity Web',
+      description: 'Angular-Entwicklung für KMU – aus Lüneburg. Funktional. Performant. Auf den Punkt.'
+    },
+    nav: {
+      title: 'Navigation',
+      links: [
+        { label: 'Start', route: '/' },
+        { label: 'Leistungen', route: '/leistungen' },
+        { label: 'Warum Custom?', route: '/warum-custom-development' },
+        { label: 'Über uns', route: '/ueber-uns' },
+        { label: 'Projekte', route: '/projekte' },
+        { label: 'Kontakt', route: '/kontakt' }
+      ]
+    },
+    legal: {
+      title: 'Legal',
+      links: [
+        { label: 'Impressum', route: '/impressum' },
+        { label: 'Datenschutz', route: '/datenschutz' }
+      ]
+    },
+    bottom: {
+      copyright: 'SaltCity Web. Alle Rechte vorbehalten.',
+      backToTop: 'Nach oben'
+    }
   }
 
 
