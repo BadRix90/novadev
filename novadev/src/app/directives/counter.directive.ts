@@ -1,4 +1,5 @@
-import { Directive, ElementRef, input, OnInit, OnDestroy } from '@angular/core';
+import { Directive, ElementRef, input, OnInit, OnDestroy, PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { CounterService } from '../services/counter.service';
 import { ScrollRevealService } from '../services/scroll-reveal.service';
 
@@ -9,10 +10,11 @@ import { ScrollRevealService } from '../services/scroll-reveal.service';
 export class CounterDirective implements OnInit, OnDestroy {
   target = input.required<number>();
   suffix = input<string>('');
-  duration = input<number>(2000); 
+  duration = input<number>(2000);
 
   private hasAnimated = false;
   private observer?: IntersectionObserver;
+  private platformId = inject(PLATFORM_ID); // <- NEU!
 
   constructor(
     private el: ElementRef,
@@ -21,9 +23,17 @@ export class CounterDirective implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    // Nur im Browser ausführen!
+    if (!isPlatformBrowser(this.platformId)) {
+      // Im SSR: Zeige direkt den Endwert
+      this.el.nativeElement.textContent = this.target() + this.suffix();
+      return;
+    }
 
+    // Initial auf 0 setzen
     this.el.nativeElement.textContent = '0' + this.suffix();
 
+    // Observer für Scroll-Trigger
     this.observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

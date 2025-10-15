@@ -10,6 +10,15 @@
   &:focus {
     outline: none;
   }
+
+  &:not(.theme-toggle--loaded) {
+
+    .theme-toggle__thumb,
+    .theme-toggle__track,
+    .theme-toggle__icon {
+      transition: none !important;
+    }
+  }
 }
 
 .theme-toggle__track {
@@ -48,14 +57,35 @@
 .theme-toggle__icon {
   color: white;
   transition: transform $transition-base;
-  display: flex; 
+  display: flex;
   align-items: center;
   justify-content: center;
   line-height: 0;
-  
+  position: absolute;
+
   @include mobile-only {
     width: 12px !important;
     height: 12px !important;
+  }
+}
+
+.theme-toggle:not(.theme-toggle--dark) {
+  .theme-toggle__icon--sun {
+    opacity: 1;
+  }
+
+  .theme-toggle__icon--moon {
+    opacity: 0;
+  }
+}
+
+.theme-toggle--dark {
+  .theme-toggle__icon--sun {
+    opacity: 0;
+  }
+
+  .theme-toggle__icon--moon {
+    opacity: 1;
   }
 }
 

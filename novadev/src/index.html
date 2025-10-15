@@ -3,6 +3,12 @@
 <head>
   <meta charset="utf-8">
   <title>NovaDev - Angular Webentwicklung für KMU</title>
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
   <meta name="description" content="NovaDev Edge – Angular-Entwicklung für KMU. Funktionale Weblösungen ohne Ballast. Performance statt Plugin-Chaos. Aus Lüneburg.">
   <meta name="keywords" content="Angular Entwicklung, Webapp Entwicklung, SSR, PWA, TypeScript, Performance Optimierung, KMU">
   <meta name="author" content="NovaDev Edge">

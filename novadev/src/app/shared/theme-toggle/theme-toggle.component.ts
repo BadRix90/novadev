@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../services/theme.service';
 import * as LucideIcons from 'lucide-angular';
@@ -10,17 +10,25 @@ import * as LucideIcons from 'lucide-angular';
   templateUrl: './theme-toggle.component.html',
   styleUrl: './theme-toggle.component.scss'
 })
-export class ThemeToggleComponent {
+export class ThemeToggleComponent implements OnInit {
   readonly Sun = LucideIcons.Sun;
   readonly Moon = LucideIcons.Moon;
-  
+
   themeService = inject(ThemeService);
+  private el = inject(ElementRef);
+  
+  isDark = false;
+
+  ngOnInit(): void {
+    this.isDark = this.themeService.currentTheme() === 'dark';
+
+    setTimeout(() => {
+      this.el.nativeElement.querySelector('.theme-toggle')?.classList.add('theme-toggle--loaded');
+    }, 100);
+  }
 
   toggleTheme(): void {
     this.themeService.toggleTheme();
-  }
-
-  get isDark(): boolean {
-    return this.themeService.currentTheme() === 'dark';
+    this.isDark = this.themeService.currentTheme() === 'dark';
   }
 }

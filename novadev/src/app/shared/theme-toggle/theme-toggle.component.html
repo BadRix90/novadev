@@ -1,16 +1,9 @@
-<button 
-  class="theme-toggle" 
-  (click)="toggleTheme()"
-  [class.theme-toggle--dark]="isDark"
-  [attr.aria-label]="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
-  type="button">
+<button class="theme-toggle" (click)="toggleTheme()" [class.theme-toggle--dark]="isDark"
+  [attr.aria-label]="isDark ? 'Switch to light mode' : 'Switch to dark mode'" type="button">
   <span class="theme-toggle__track">
     <span class="theme-toggle__thumb">
-      @if (isDark) {
-        <lucide-icon [img]="Moon" [size]="14" class="theme-toggle__icon"></lucide-icon>
-      } @else {
-        <lucide-icon [img]="Sun" [size]="14" class="theme-toggle__icon"></lucide-icon>
-      }
+      <lucide-icon [img]="Moon" [size]="14" class="theme-toggle__icon theme-toggle__icon--moon"></lucide-icon>
+      <lucide-icon [img]="Sun" [size]="14" class="theme-toggle__icon theme-toggle__icon--sun"></lucide-icon>
     </span>
   </span>
 </button>

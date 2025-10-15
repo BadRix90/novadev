@@ -8,6 +8,7 @@
   padding-bottom: $spacing-16;
   padding-top: calc($nav-height + $spacing-8);
   min-height: 85vh;
+  @include glassmorphism;
 
  &__background {
   position: absolute;
