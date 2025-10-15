@@ -1,8 +1,9 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { isPlatformBrowser } from '@angular/common';
 import { SeoService } from '../../services/seo.service';
+import { TextService } from '../../data/text.service';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -11,6 +12,16 @@ import { SeoService } from '../../services/seo.service';
   styleUrl: './privacy-policy.component.scss'
 })
 export class PrivacyPolicyComponent implements OnInit {
+  textService = inject(TextService);
+
+  get texts() {
+    return this.textService.texts.privacyPolicy;
+  }
+
+  get provider() {
+    return this.textService.texts.legalNotice.provider;
+  }
+
   currentDate = new Date().toLocaleDateString('de-DE', {
     year: 'numeric',
     month: 'long',
@@ -24,9 +35,9 @@ export class PrivacyPolicyComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.seo.updateCanonicalUrl('https://saltcity-web.com/datenschutz');
-    this.seo.updateMetaDescription('Datenschutzerklärung von SaltCity Web. Informationen zur Datenverarbeitung gemäß DSGVO.');
-    this.seo.updateTitle('Datenschutz - SaltCity Web');
+    this.seo.updateCanonicalUrl('https://novadev-edge.io/datenschutz');
+    this.seo.updateMetaDescription('Privacy Policy of NovaDev Edge. Information on data processing in accordance with GDPR.');
+    this.seo.updateTitle('Privacy - NovaDev Edge');
   }
 
   navigateToContact(event: Event): void {

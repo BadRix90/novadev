@@ -1,8 +1,9 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { isPlatformBrowser } from '@angular/common';
 import { SeoService } from '../../services/seo.service';
+import { TextService } from '../../data/text.service';
 
 @Component({
   selector: 'app-legal-notice',
@@ -11,6 +12,15 @@ import { SeoService } from '../../services/seo.service';
   styleUrl: './legal-notice.component.scss'
 })
 export class LegalNoticeComponent implements OnInit {
+  textService = inject(TextService); 
+
+  get texts() {
+    return this.textService.texts.legalNotice;
+  }
+
+  get provider() {
+    return this.texts.provider;
+  }
   
   constructor(
     private router: Router,
@@ -18,10 +28,10 @@ export class LegalNoticeComponent implements OnInit {
     private seo: SeoService
   ) {}
 
-    ngOnInit(): void {
-    this.seo.updateCanonicalUrl('https://saltcity-web.com/impressum');
-    this.seo.updateMetaDescription('Impressum von SaltCity Web. Angaben gemäß § 5 TMG. Kay Dietrich, Webentwicklung, Lüneburg.');
-    this.seo.updateTitle('Impressum - SaltCity Web');
+  ngOnInit(): void {
+    this.seo.updateCanonicalUrl('https://novadev-edge.io/impressum');
+    this.seo.updateMetaDescription('Legal Notice of NovaDev Edge. Information according to § 5 TMG. Kay Dietrich, Web Development, Lüneburg.');
+    this.seo.updateTitle('Legal Notice - NovaDev Edge');
   }
 
   navigateToContact(event: Event): void {
