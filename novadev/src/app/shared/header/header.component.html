@@ -1,56 +1,45 @@
-<header class="header" [class.header--mobile-open]="isMobileMenuOpen" role="banner">
-  <div class="header__container">
-    <div class="header__brand">
-      <a routerLink="/" class="header__logo-text" aria-label="SaltCity Web - Zur Startseite">
-        <span class="header__logo-icon">&lt;SC/&gt;</span>
-        <span class="header__logo-name">SaltCity Web</span>
-      </a>
-    </div>
+<div class="nav">
+  <!-- Logo Links -->
+  <a routerLink="/" class="nav__logo" aria-label="NovaDev - Zur Startseite">
+    <img src="assets/logo/novadev_logo.png" alt="NovaDev Logo" class="nav__logo-img">
+  </a>
 
-    <nav class="header__nav" aria-label="Hauptnavigation">
-      <a class="header__nav-link" routerLink="/leistungen" routerLinkActive="active">Leistungen</a>
-      <a class="header__nav-link" routerLink="/warum-custom-development" routerLinkActive="active">Warum Custom?</a>
-      <a class="header__nav-link" routerLink="/ueber-uns" routerLinkActive="active">Über uns</a>
-      <a class="header__nav-link" routerLink="/projekte" routerLinkActive="active">Projekte</a>
-      <a class="header__nav-link" routerLink="/kontakt" routerLinkActive="active">Kontakt</a>
-    </nav>
-    
-    <!-- Desktop Controls: Language + Theme Toggle -->
-    <div class="header__controls">
-      <app-language-toggle class="header__language-desktop"></app-language-toggle>
-      <app-theme-toggle class="header__theme-desktop"></app-theme-toggle>
-    </div>
+  <!-- Navigation Island (Mitte) - Desktop -->
+  <nav class="nav__island" aria-label="Hauptnavigation">
+    <a class="nav__link" routerLink="/leistungen" routerLinkActive="active">Leistungen</a>
+    <a class="nav__link" routerLink="/warum-custom-development" routerLinkActive="active">Warum Custom?</a>
+    <a class="nav__link" routerLink="/ueber-uns" routerLinkActive="active">Über uns</a>
+    <a class="nav__link" routerLink="/projekte" routerLinkActive="active">Projekte</a>
+    <a class="nav__link" routerLink="/kontakt" routerLinkActive="active">Kontakt</a>
+  </nav>
 
-    <button class="header__mobile-toggle" [attr.aria-label]="isMobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'"
-      [attr.aria-expanded]="isMobileMenuOpen" (click)="toggleMobileMenu()">
-      <img src="assets/img/icons/menu.webp" alt="Menu" class="header__menu-icon"
-        [class.header__menu-icon--hidden]="isMobileMenuOpen" loading="eager">
-      <img src="assets/img/icons/close.webp" alt="Close" class="header__close-icon"
-        [class.header__close-icon--visible]="isMobileMenuOpen" loading="eager">
-    </button>
+  <!-- Switches Rechts (Desktop) -->
+  <div class="nav__actions">
+    <app-language-toggle></app-language-toggle>
+    <app-theme-toggle></app-theme-toggle>
   </div>
 
-  <div class="header__mobile-menu" [class.header__mobile-menu--open]="isMobileMenuOpen">
-    <nav class="header__mobile-nav" aria-label="Mobile Navigation">
-      <a class="header__mobile-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-        (click)="closeMobileMenu()">Start</a>
-      <a class="header__mobile-link" routerLink="/leistungen" routerLinkActive="active"
-        (click)="closeMobileMenu()">Leistungen</a>
-      <a class="header__mobile-link" routerLink="/warum-custom-development" routerLinkActive="active"
-        (click)="closeMobileMenu()">Warum Custom?</a>
-      <a class="header__mobile-link" routerLink="/ueber-uns" routerLinkActive="active" (click)="closeMobileMenu()">Über
-        uns</a>
-      <a class="header__mobile-link" routerLink="/projekte" routerLinkActive="active"
-        (click)="closeMobileMenu()">Projekte</a>
-      <a class="header__mobile-link" routerLink="/kontakt" routerLinkActive="active"
-        (click)="closeMobileMenu()">Kontakt</a>
-      <a class="header__mobile-cta" routerLink="/kontakt" (click)="closeMobileMenu()">Projekt anfragen</a>
-      
-      <!-- Mobile Controls: Language + Theme Toggle -->
-      <div class="header__mobile-controls">
-        <app-language-toggle></app-language-toggle>
-        <app-theme-toggle></app-theme-toggle>
-      </div>
-    </nav>
+  <!-- Mobile Menu Button -->
+  <button class="nav__mobile-toggle" 
+    [attr.aria-label]="isMobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'"
+    (click)="toggleMobileMenu()">
+    <span class="nav__burger"></span>
+    <span class="nav__burger"></span>
+    <span class="nav__burger"></span>
+  </button>
+</div>
+
+<!-- Mobile Menu (außerhalb) -->
+<div class="nav__mobile" [class.nav__mobile--open]="isMobileMenuOpen">
+  <a class="nav__mobile-link" routerLink="/" (click)="closeMobileMenu()">Start</a>
+  <a class="nav__mobile-link" routerLink="/leistungen" (click)="closeMobileMenu()">Leistungen</a>
+  <a class="nav__mobile-link" routerLink="/warum-custom-development" (click)="closeMobileMenu()">Warum Custom?</a>
+  <a class="nav__mobile-link" routerLink="/ueber-uns" (click)="closeMobileMenu()">Über uns</a>
+  <a class="nav__mobile-link" routerLink="/projekte" (click)="closeMobileMenu()">Projekte</a>
+  <a class="nav__mobile-link" routerLink="/kontakt" (click)="closeMobileMenu()">Kontakt</a>
+  
+  <div class="nav__mobile-switches">
+    <app-language-toggle></app-language-toggle>
+    <app-theme-toggle></app-theme-toggle>
   </div>
-</header>
+</div>

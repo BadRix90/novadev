@@ -7,11 +7,11 @@
 
 // Quick Intro Section
 .intro {
-  padding: $spacing-16 0;
+  padding: $spacing-10 0;
   background: rgba(31, 31, 31, 0.3);
 
   @include mobile-only {
-    padding: $spacing-10 0;
+    padding: $spacing-8 0;
   }
 }
 
@@ -43,10 +43,10 @@
 
 // Feature Cards Section
 .features {
-  padding: $spacing-16 0;
+  padding: $spacing-12 0;
 
   @include mobile-only {
-    padding: $spacing-10 0;
+    padding: $spacing-8 0;
   }
 }
 
@@ -111,13 +111,12 @@
   }
 }
 
-// CTA Section
 .cta-section {
-  padding: $spacing-20 0;
+  padding: $spacing-12 0;
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
 
   @include mobile-only {
-    padding: $spacing-12 0;
+    padding: $spacing-10 0;
   }
 }
 
