@@ -2,10 +2,8 @@
   <!-- Page Header -->
   <section class="portfolio-header">
     <div class="portfolio-header__container">
-      <h1 class="portfolio-header__title">Projekte</h1>
-      <p class="portfolio-header__subtitle">
-        Ausgewählte Arbeiten - funktional, modern, durchdacht
-      </p>
+      <h1 class="portfolio-header__title">{{ texts.header.title }}</h1>
+      <p class="portfolio-header__subtitle">{{ texts.header.subtitle }}</p>
     </div>
   </section>
 
@@ -13,31 +11,30 @@
   <section class="portfolio">
     <div class="portfolio__container">
       <div class="portfolio__grid">
-        @for (project of projects; track project.id) {
-          <a 
-            [href]="project.url" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="portfolio__card"
-            (click)="trackProjectClick(project.title)">
-            
-            <div class="portfolio__card-header">
-              <h3 class="portfolio__card-title">{{ project.title }}</h3>
-              <span class="portfolio__card-icon">→</span>
-            </div>
-            
-            <p class="portfolio__card-description">{{ project.description }}</p>
-            
-            <div class="portfolio__tech-stack">
-              @for (tech of project.techStack; track tech) {
-                <span class="portfolio__tech-badge">{{ tech }}</span>
-              }
-            </div>
-            
-            <div class="portfolio__card-footer">
-              <span class="portfolio__link-text">{{ project.linkText }}</span>
-            </div>
-          </a>
+        @for (project of texts.projects; track project.title) {
+        <a [href]="project.url" target="_blank" rel="noopener noreferrer" class="portfolio__card"
+          (click)="trackProjectClick(project.title)">
+
+          <div class="portfolio__card-header">
+            <h3 class="portfolio__card-title">{{ project.title }}</h3>
+          </div>
+
+          <p class="portfolio__card-description">{{ project.description }}</p>
+
+          <div class="portfolio__tech-stack">
+            @for (tech of project.techStack; track tech) {
+            <span class="portfolio__tech-badge">{{ tech }}</span>
+            }
+          </div>
+
+          <div class="portfolio__card-footer">
+            <span class="portfolio__link-text">
+              {{ project.linkText }}
+              <lucide-icon [img]="ExternalLink" class="portfolio__link-icon" [size]="16">
+              </lucide-icon>
+            </span>
+          </div>
+        </a>
         }
       </div>
     </div>
@@ -46,12 +43,10 @@
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="cta-section__container">
-      <h2 class="cta-section__title">Eigenes Projekt starten?</h2>
-      <p class="cta-section__text">
-        Lass uns gemeinsam deine Idee in die Realität umsetzen.
-      </p>
+      <h2 class="cta-section__title">{{ texts.cta.title }}</h2>
+      <p class="cta-section__text">{{ texts.cta.text }}</p>
       <button class="cta-section__button" routerLink="/kontakt">
-        Projekt anfragen
+        {{ texts.cta.button }}
       </button>
     </div>
   </section>

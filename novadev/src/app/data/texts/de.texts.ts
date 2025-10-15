@@ -140,8 +140,34 @@ export const DE_TEXTS = {
         text: 'Aus Lüneburg, für ganz Deutschland'
       }
     ]
+  },
+  portfolio: {
+    header: {
+      title: 'Projekte',
+      subtitle: 'Ausgewählte Arbeiten - funktional, modern, durchdacht'
+    },
+    projects: [
+      {
+        title: 'Kay Dietrich Portfolio',
+        description: 'Persönliche Portfolio-Website mit Angular & Material Design. Moderne Präsentation von Frontend-Expertise.',
+        url: 'https://kaydietrich.com',
+        linkText: 'Live Demo ansehen',
+        techStack: ['Angular', 'Material Design', 'SCSS', 'TypeScript']
+      },
+      {
+        title: 'Join',
+        description: 'Task-Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop, weise Benutzer und Kategorien zu.',
+        url: 'https://kaydietrich.com/join/',
+        linkText: 'Projekt ansehen',
+        techStack: ['Angular', 'TypeScript', 'Drag & Drop', 'Kanban']
+      }
+    ],
+    cta: {
+      title: 'Eigenes Projekt starten?',
+      text: 'Lass uns gemeinsam deine Idee in die Realität umsetzen.',
+      button: 'Projekt anfragen'
+    }
   }
-
 
 
 

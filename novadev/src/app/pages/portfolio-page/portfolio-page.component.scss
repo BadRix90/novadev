@@ -60,7 +60,7 @@
 .portfolio__grid {
   display: grid;
   gap: $spacing-6;
-  
+
   @include tablet-up {
     grid-template-columns: repeat(2, 1fr);
     gap: $spacing-8;
@@ -79,27 +79,17 @@
   color: inherit;
   position: relative;
   overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 0;
-    background: var(--color-accent);
-    transition: height $transition-base;
-  }
-  
+
   &:hover {
     border-color: var(--color-accent);
-    transform: translateY(-4px);
-    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
-    
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
+    filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.2));
+
     &::before {
       height: 100%;
     }
-    
+
     .portfolio__card-icon {
       transform: translateX(4px);
     }
@@ -168,11 +158,6 @@
   display: flex;
   align-items: center;
   gap: $spacing-2;
-  
-  &::after {
-    content: '↗';
-    font-size: $font-size-lg;
-  }
 }
 
 // CTA Section

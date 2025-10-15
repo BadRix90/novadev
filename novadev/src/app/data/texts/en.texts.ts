@@ -140,5 +140,49 @@ export const EN_TEXTS = {
         text: 'From Lüneburg, for all of Germany'
       }
     ]
+  },
+  portfolio: {
+    header: {
+      title: 'Projects',
+      subtitle: 'Selected works - functional, modern, thoughtful'
+    },
+    projects: [
+      {
+        title: 'Kay Dietrich Portfolio',
+        description: 'Personal portfolio website with Angular & Material Design. Modern presentation of frontend expertise.',
+        url: 'https://kaydietrich.com',
+        linkText: 'View Live Demo',
+        techStack: ['Angular', 'Material Design', 'SCSS', 'TypeScript']
+      },
+      {
+        title: 'Join',
+        description: 'Task manager inspired by Kanban system. Create and organize tasks with drag-and-drop, assign users and categories.',
+        url: 'https://kaydietrich.com/join/',
+        linkText: 'View Project',
+        techStack: ['Angular', 'TypeScript', 'Drag & Drop', 'Kanban']
+      }
+    ],
+    cta: {
+      title: 'Start Your Own Project?',
+      text: 'Let\'s bring your idea to life together.',
+      button: 'Request Project'
+    }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 };
