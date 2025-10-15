@@ -167,6 +167,42 @@ export const EN_TEXTS = {
       text: 'Let\'s bring your idea to life together.',
       button: 'Request Project'
     }
+  },
+  whyCustom: {
+    header: {
+      title: 'Why Custom Development?',
+      subtitle: 'Tailored solutions for sustainable results'
+    },
+    intro: {
+      text: 'Custom development means: code tailored exactly to your requirements. No unnecessary features, no monthly licenses, no dependencies. Just what you really need.'
+    },
+    benefits: [
+      {
+        icon: 'zap',
+        title: '40% faster',
+        description: 'Custom Angular apps load 40% faster on average. Only the code you need – no bloat.'
+      },
+      {
+        icon: 'shield',
+        title: '96% more secure',
+        description: 'No plugin chaos, no known vulnerabilities. Your code, your security.'
+      },
+      {
+        icon: 'coins',
+        title: 'No license fees',
+        description: 'One-time investment instead of monthly fees. No vendor lock-in, no hidden costs.'
+      },
+      {
+        icon: 'wrench',
+        title: 'Full control',
+        description: 'Any desired feature can be implemented. No limitations from plugins or themes.'
+      }
+    ],
+    cta: {
+      title: 'Ready for a custom solution?',
+      text: 'Let\'s discuss your project and find out if custom development is the right choice.',
+      button: 'Request Free Consultation'
+    }
   }
 
 

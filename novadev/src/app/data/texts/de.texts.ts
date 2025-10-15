@@ -167,6 +167,42 @@ export const DE_TEXTS = {
       text: 'Lass uns gemeinsam deine Idee in die Realität umsetzen.',
       button: 'Projekt anfragen'
     }
+  },
+  whyCustom: {
+    header: {
+      title: 'Warum Custom Development?',
+      subtitle: 'Maßgeschneiderte Lösungen für nachhaltige Ergebnisse'
+    },
+    intro: {
+      text: 'Custom Development bedeutet: Code, der exakt auf deine Anforderungen zugeschnitten ist. Keine unnötigen Features, keine monatlichen Lizenzen, keine Abhängigkeiten. Nur das, was du wirklich brauchst.'
+    },
+    benefits: [
+      {
+        icon: 'zap',
+        title: '40% schneller',
+        description: 'Custom Angular Apps laden durchschnittlich 40% schneller. Nur der Code, den du brauchst – kein Ballast.'
+      },
+      {
+        icon: 'shield',
+        title: '96% sicherer',
+        description: 'Kein Plugin-Chaos, keine bekannten Schwachstellen. Dein Code, deine Sicherheit.'
+      },
+      {
+        icon: 'coins',
+        title: 'Keine Lizenzkosten',
+        description: 'Einmalige Investition statt monatlicher Gebühren. Kein Vendor Lock-in, keine versteckten Kosten.'
+      },
+      {
+        icon: 'wrench',
+        title: 'Volle Kontrolle',
+        description: 'Jede gewünschte Funktion umsetzbar. Keine Limitierungen durch Plugins oder Themes.'
+      }
+    ],
+    cta: {
+      title: 'Bereit für eine maßgeschneiderte Lösung?',
+      text: 'Lass uns dein Projekt besprechen und herausfinden, ob Custom Development die richtige Wahl ist.',
+      button: 'Kostenlose Beratung anfragen'
+    }
   }
 
 
