@@ -203,6 +203,91 @@ export const EN_TEXTS = {
       text: 'Let\'s discuss your project and find out if custom development is the right choice.',
       button: 'Request Free Consultation'
     }
+  },
+  contact: {
+    header: {
+      title: 'Contact',
+      subtitle: 'Let\'s talk about your project'
+    },
+    form: {
+      company: {
+        label: 'Company',
+        placeholder: 'Your company'
+      },
+      subject: {
+        label: 'Subject *',
+        placeholder: 'Please select',
+        options: [
+          { value: 'projektanfrage', label: 'Project inquiry' },
+          { value: 'bestehendes-projekt', label: 'Question about existing project' },
+          { value: 'allgemeine-frage', label: 'General question' },
+          { value: 'technische-frage', label: 'Technical question' },
+          { value: 'sonstiges', label: 'Other' }
+        ]
+      },
+      name: {
+        label: 'Name *',
+        placeholder: 'Your name'
+      },
+      email: {
+        label: 'Email *',
+        placeholder: 'your@email.com'
+      },
+      message: {
+        label: 'Project *',
+        placeholder: 'Briefly describe your project...'
+      },
+      budget: {
+        label: 'Budget Range',
+        placeholder: 'Please select',
+        options: [
+          '< €2,000',
+          '€2,000 - €5,000',
+          '€5,000 - €10,000',
+          '> €10,000'
+        ]
+      },
+      submit: {
+        idle: 'Send inquiry',
+        sending: 'Sending...'
+      },
+      success: 'Thank you! Your message has been sent. I will get back to you within 24 hours.',
+      error: 'Sorry, an error occurred while sending. Please try again or contact me directly.'
+    },
+    info: {
+      title: 'Direct Contact',
+      email: {
+        label: 'Email',
+        value: 'kontakt@saltcity-web.com'
+      },
+      location: {
+        label: 'Location',
+        value: 'Lüneburg, Lower Saxony'
+      },
+      responseTime: {
+        label: 'Response time',
+        value: 'Usually within 24 hours'
+      },
+      note: 'I work remotely, in-person meetings in Lüneburg are possible by arrangement.'
+    },
+    errors: {
+      name: {
+        required: 'Name is required',
+        minlength: 'Name too short'
+      },
+      email: {
+        required: 'Email is required',
+        invalid: 'Please enter a valid email address'
+      },
+      subject: {
+        required: 'Subject is required'
+      },
+      message: {
+        required: 'Message is required',
+        minlength: 'Message too short (min. 10 characters)'
+      },
+      generic: 'Invalid input'
+    }
   }
 
 

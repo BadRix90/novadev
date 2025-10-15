@@ -203,8 +203,92 @@ export const DE_TEXTS = {
       text: 'Lass uns dein Projekt besprechen und herausfinden, ob Custom Development die richtige Wahl ist.',
       button: 'Kostenlose Beratung anfragen'
     }
+  },
+  contact: {
+    header: {
+      title: 'Kontakt',
+      subtitle: 'Lass uns über dein Projekt sprechen'
+    },
+    form: {
+      company: {
+        label: 'Unternehmen',
+        placeholder: 'Deine Firma'
+      },
+      subject: {
+        label: 'Thema *',
+        placeholder: 'Bitte wählen',
+        options: [
+          { value: 'projektanfrage', label: 'Projektanfrage' },
+          { value: 'bestehendes-projekt', label: 'Frage zu bestehendem Projekt' },
+          { value: 'allgemeine-frage', label: 'Allgemeine Frage zur Arbeit' },
+          { value: 'technische-frage', label: 'Technische Frage' },
+          { value: 'sonstiges', label: 'Sonstiges' }
+        ]
+      },
+      name: {
+        label: 'Name *',
+        placeholder: 'Dein Name'
+      },
+      email: {
+        label: 'E-Mail *',
+        placeholder: 'deine@email.de'
+      },
+      message: {
+        label: 'Projekt *',
+        placeholder: 'Beschreibe kurz dein Projekt...'
+      },
+      budget: {
+        label: 'Budget-Rahmen',
+        placeholder: 'Bitte wählen',
+        options: [
+          '< 2.000€',
+          '2.000€ - 5.000€',
+          '5.000€ - 10.000€',
+          '> 10.000€'
+        ]
+      },
+      submit: {
+        idle: 'Anfrage senden',
+        sending: 'Wird gesendet...'
+      },
+      success: 'Vielen Dank! Deine Nachricht wurde gesendet. Ich melde mich innerhalb von 24 Stunden bei dir.',
+      error: 'Entschuldigung, beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut oder kontaktiere mich direkt.'
+    },
+    info: {
+      title: 'Direktkontakt',
+      email: {
+        label: 'E-Mail',
+        value: 'kontakt@saltcity-web.com'
+      },
+      location: {
+        label: 'Standort',
+        value: 'Lüneburg, Niedersachsen'
+      },
+      responseTime: {
+        label: 'Antwortzeit',
+        value: 'In der Regel innerhalb von 24 Stunden'
+      },
+      note: 'Ich arbeite remote, persönliche Termine in Lüneburg sind nach Absprache möglich.'
+    },
+    errors: {
+      name: {
+        required: 'Name ist erforderlich',
+        minlength: 'Name zu kurz'
+      },
+      email: {
+        required: 'E-Mail ist erforderlich',
+        invalid: 'Bitte gib eine gültige E-Mail-Adresse ein'
+      },
+      subject: {
+        required: 'Thema ist erforderlich'
+      },
+      message: {
+        required: 'Nachricht ist erforderlich',
+        minlength: 'Nachricht zu kurz (min. 10 Zeichen)'
+      },
+      generic: 'Ungültige Eingabe'
+    }
   }
-
 
 
 

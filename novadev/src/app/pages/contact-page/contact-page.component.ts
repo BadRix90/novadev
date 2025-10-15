@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { SeoService } from '../../services/seo.service';
+import { TextService } from '../../data/text.service';
 
 @Component({
   selector: 'app-contact-page',
@@ -13,19 +14,20 @@ import { SeoService } from '../../services/seo.service';
 })
 export class ContactPageComponent implements OnInit {
 
+  textService = inject(TextService);
+
+  get texts() {
+    return this.textService.texts.contact;
+  }
+
+  get subjectOptions() {
+    return this.texts.form.subject.options;
+  }
+
   contactForm: FormGroup;
   isSubmitting = false;
   submitMessage = '';
   submitSuccess = false;
-
-  subjectOptions = [
-    { value: 'projektanfrage', label: 'Projektanfrage' },
-    { value: 'bestehendes-projekt', label: 'Frage zu bestehendem Projekt' },
-    { value: 'allgemeine-frage', label: 'Allgemeine Frage zur Arbeit' },
-    { value: 'technische-frage', label: 'Technische Frage' },
-    { value: 'sonstiges', label: 'Sonstiges' }
-  ];
-
 
   private readonly mailEndpoint = 'https://saltcity-web.com/sendMail.php';
 
@@ -119,37 +121,38 @@ export class ContactPageComponent implements OnInit {
     const field = this.contactForm.get(fieldName);
     if (!field || !field.errors || !field.touched) return '';
 
+    const errors = this.texts.errors;
+
     if (field.errors['required']) {
       switch (fieldName) {
         case 'name':
-          return 'Bitte gib deinen Namen an';
+          return errors.name.required;
         case 'email':
-          return 'Bitte gib deine E-Mail-Adresse an';
+          return errors.email.required;
         case 'subject':
-          return 'Bitte wähle ein Thema aus';
+          return errors.subject.required;
         case 'message':
-          return 'Bitte beschreibe dein Projekt';
+          return errors.message.required;
         default:
-          return 'Dieses Feld ist erforderlich';
+          return errors.generic;
       }
     }
 
     if (field.errors['email']) {
-      return 'Bitte gib eine gültige E-Mail-Adresse ein';
+      return errors.email.invalid;
     }
 
     if (field.errors['minlength']) {
-      const minLength = field.errors['minlength'].requiredLength;
       switch (fieldName) {
         case 'name':
-          return 'Der Name muss mindestens 2 Zeichen haben';
+          return errors.name.minlength;
         case 'message':
-          return 'Die Nachricht muss mindestens 10 Zeichen haben';
+          return errors.message.minlength;
         default:
-          return `Mindestens ${minLength} Zeichen erforderlich`;
+          return errors.generic;
       }
     }
 
-    return 'Ungültige Eingabe';
+    return errors.generic;
   }
 }
