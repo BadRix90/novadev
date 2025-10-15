@@ -60,12 +60,12 @@
 .services__grid {
   display: grid;
   gap: $spacing-6;
-  
+
   @include tablet-up {
     grid-template-columns: repeat(2, 1fr);
     gap: $spacing-8;
   }
-  
+
   @include desktop-up {
     grid-template-columns: repeat(2, 1fr);
     gap: $spacing-8;
@@ -78,7 +78,7 @@
   border-radius: $radius-xl;
   padding: $spacing-8;
   transition: all $transition-base;
-  
+
   &:hover {
     border-color: var(--color-accent);
     transform: translateY(-4px);
@@ -88,6 +88,19 @@
   @include mobile-only {
     padding: $spacing-6;
   }
+}
+
+.services__card-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--color-accent);
+  margin-bottom: $spacing-4;
+  transition: all $transition-base;
+}
+
+.services__card:hover .services__card-icon {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.5));
 }
 
 .services__card-title {
@@ -121,7 +134,7 @@
   color: var(--color-accent);
   font-weight: $font-weight-medium;
   transition: all $transition-fast;
-  
+
   &:hover {
     background: var(--color-accent);
     color: var(--color-bg);

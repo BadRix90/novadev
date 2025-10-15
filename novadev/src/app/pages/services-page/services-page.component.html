@@ -2,10 +2,8 @@
   <!-- Page Header -->
   <section class="services-header">
     <div class="services-header__container">
-      <h1 class="services-header__title">Leistungen</h1>
-      <p class="services-header__subtitle">
-        Fokussiert auf das Wesentliche - keine überladenen Pakete, sondern klare Expertise
-      </p>
+      <h1 class="services-header__title">{{ texts.header.title }}</h1>
+      <p class="services-header__subtitle">{{ texts.header.subtitle }}</p>
     </div>
   </section>
 
@@ -13,16 +11,18 @@
   <section class="services">
     <div class="services__container">
       <div class="services__grid">
-        @for (service of services; track service.id) {
-          <div class="services__card">
-            <h3 class="services__card-title">{{ service.title }}</h3>
-            <p class="services__card-description">{{ service.description }}</p>
-            <ul class="services__tech-list">
-              @for (tech of service.techStack; track tech) {
-                <li class="services__tech-item">{{ tech }}</li>
-              }
-            </ul>
-          </div>
+        @for (service of texts.items; track service.title) {
+        <div class="services__card">
+          <lucide-icon [img]="icons[service.icon]" class="services__card-icon" [size]="48">
+          </lucide-icon>
+          <h3 class="services__card-title">{{ service.title }}</h3>
+          <p class="services__card-description">{{ service.description }}</p>
+          <ul class="services__tech-list">
+            @for (tech of service.techStack; track tech) {
+            <li class="services__tech-item">{{ tech }}</li>
+            }
+          </ul>
+        </div>
         }
       </div>
     </div>
@@ -33,25 +33,20 @@
     <div class="services-footer__container">
       <div class="services-footer__content">
         <p class="services__pricing">
-          <span class="services__pricing-label">Stundensatz:</span>
-          <span class="services__pricing-value">65€/h</span>
+          <span class="services__pricing-label">{{ texts.pricing.label }}</span>
+          <span class="services__pricing-value">{{ texts.pricing.value }}</span>
         </p>
-        <p class="services__note">
-          Transparente Abrechnung - keine versteckten Kosten
-        </p>
+        <p class="services__note">{{ texts.pricing.note }}</p>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
   <section class="cta-section">
     <div class="cta-section__container">
-      <h2 class="cta-section__title">Projekt anfragen</h2>
-      <p class="cta-section__text">
-        Lass uns über deine Anforderungen sprechen und gemeinsam die beste Lösung finden.
-      </p>
+      <h2 class="cta-section__title">{{ texts.cta.title }}</h2>
+      <p class="cta-section__text">{{ texts.cta.text }}</p>
       <button class="cta-section__button" routerLink="/kontakt">
-        Jetzt Kontakt aufnehmen
+        {{ texts.cta.button }}
       </button>
     </div>
   </section>

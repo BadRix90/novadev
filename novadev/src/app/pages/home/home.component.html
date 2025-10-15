@@ -14,14 +14,29 @@
   <section class="features">
     <div class="features__container">
       @for (card of texts.features; track card.title) {
-        <div class="feature-card">
-          <div class="feature-card__icon">{{ card.icon }}</div>
-          <h3 class="feature-card__title">{{ card.title }}</h3>
-          <p class="feature-card__description">{{ card.description }}</p>
-          <a [routerLink]="card.link" class="feature-card__link">
-            {{ card.linkText }}
-          </a>
-        </div>
+      <div class="feature-card">
+        <lucide-icon [img]="icons[card.icon]" class="feature-card__icon" [size]="48">
+        </lucide-icon>
+        <h3 class="feature-card__title">{{ card.title }}</h3>
+        <p class="feature-card__description">{{ card.description }}</p>
+        <a [routerLink]="card.link" class="feature-card__link">
+          {{ card.linkText }}
+        </a>
+      </div>
+      }
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stats__container">
+      @for (stat of texts.stats; track stat.value) {
+      <div class="stat-card">
+        <lucide-icon [img]="icons[stat.icon]" class="stat-card__icon" [size]="40">
+        </lucide-icon>
+        <div class="stat-card__value">{{ stat.value }}</div>
+        <div class="stat-card__label">{{ stat.label }}</div>
+      </div>
       }
     </div>
   </section>

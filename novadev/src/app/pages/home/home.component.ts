@@ -6,32 +6,39 @@ import { SeoService } from '../../services/seo.service';
 import { JsonLdService } from '../../services/json-ld.service';
 import { TextService } from '../../data/text.service';
 import { organizationSchema, localBusinessSchema, websiteSchema } from '../../data/schemas';
-// import { gsap } from 'gsap'; <- RAUS
-// import { ScrollTrigger } from 'gsap/ScrollTrigger'; <- RAUS
+import * as LucideIcons from 'lucide-angular';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, HeroComponent, CommonModule],
+  imports: [RouterLink, HeroComponent, CommonModule, LucideIcons.LucideAngularModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit, OnDestroy { // <- AfterViewInit RAUS
+export class HomeComponent implements OnInit, OnDestroy {
   textService = inject(TextService);
-  
+
+  icons: Record<string, any> = {
+    sparkles: LucideIcons.Sparkles,
+    zap: LucideIcons.Zap,
+    target: LucideIcons.Target,
+    calculator: LucideIcons.Calculator,
+    gauge: LucideIcons.Gauge,
+    euro: LucideIcons.Euro
+  };
+
   get texts() {
     return this.textService.texts.home;
   }
 
   constructor(
-    private seo: SeoService, 
+    private seo: SeoService,
     private jsonLd: JsonLdService
-    // @Inject(PLATFORM_ID) private platformId: Object <- RAUS
   ) { }
 
   ngOnInit(): void {
     const seoTexts = this.textService.texts.seo.home;
-    
+
     this.seo.updateCanonicalUrl('https://saltcity-web.com/');
     this.seo.updateMetaDescription(seoTexts.description);
     this.seo.updateTitle(seoTexts.title);
@@ -40,9 +47,6 @@ export class HomeComponent implements OnInit, OnDestroy { // <- AfterViewInit RA
     this.jsonLd.insertSchema(localBusinessSchema, 'localbusiness-schema');
     this.jsonLd.insertSchema(websiteSchema, 'website-schema');
   }
-
-  // ngAfterViewInit() LÖSCHEN
-  // initScrollAnimations() LÖSCHEN
 
   ngOnDestroy(): void {
     this.jsonLd.removeSchema('organization-schema');

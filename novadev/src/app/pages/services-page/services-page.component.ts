@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { SeoService } from '../../services/seo.service';
+import { TextService } from '../../data/text.service';
+import * as LucideIcons from 'lucide-angular';
 
 interface Service {
   id: number;
@@ -14,11 +16,24 @@ interface Service {
 @Component({
   selector: 'app-services-page',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, LucideIcons.LucideAngularModule],
   templateUrl: './services-page.component.html',
   styleUrl: './services-page.component.scss'
 })
 export class ServicesPageComponent implements OnInit {
+
+  textService = inject(TextService);
+
+  icons: Record<string, any> = {
+    code2: LucideIcons.Code2,
+    smartphone: LucideIcons.Smartphone,
+    gauge: LucideIcons.Gauge,
+    wrench: LucideIcons.Wrench
+  };
+
+  get texts() {
+    return this.textService.texts.services;
+  }
 
   constructor(private seo: SeoService) { }
 
@@ -27,37 +42,5 @@ export class ServicesPageComponent implements OnInit {
     this.seo.updateMetaDescription('Angular Webentwicklung, Performance-Optimierung, Responsive Design. Spezialisiert auf KMU. Transparenter Stundensatz: 65€/h netto.');
     this.seo.updateTitle('Leistungen - SaltCity Web');
   }
-
-
-  services: Service[] = [
-    {
-      id: 1,
-      icon: '',
-      title: 'Angular Webentwicklung',
-      description: 'Moderne Single Page Applications mit Angular 20, TypeScript und Progressive Web App Features.',
-      techStack: ['Angular 20', 'TypeScript', 'PWA', 'RxJS']
-    },
-    {
-      id: 2,
-      icon: '',
-      title: 'Responsive Umsetzung',
-      description: 'Mobile-First Design mit Container Queries und modernen CSS-Techniken fuer alle Endgeraete.',
-      techStack: ['Mobile-First', 'Container Queries', 'SCSS', 'Flexbox/Grid']
-    },
-    {
-      id: 3,
-      icon: '',
-      title: 'Performance-Optimierung',
-      description: 'Core Web Vitals Optimierung, Server-Side Rendering und schnelle Ladezeiten fuer bessere Rankings.',
-      techStack: ['Core Web Vitals', 'SSR', 'Lazy Loading', 'Caching']
-    },
-    {
-      id: 4,
-      icon: '',
-      title: 'Vibe Code Cleanup',
-      description: 'Legacy Code modernisieren und wartbar machen. Alte Projekte auf aktuelle Standards bringen und technische Schulden abbauen.',
-      techStack: ['Refactoring', 'Code Quality', 'Legacy Migration', 'Clean Code']
-    }
-  ];
 
 }

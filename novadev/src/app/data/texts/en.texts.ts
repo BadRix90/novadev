@@ -12,28 +12,28 @@ export const EN_TEXTS = {
     },
     features: [
       {
-        icon: '🚀',
+        icon: 'sparkles',
         title: 'No License Fees',
         description: 'Open-source Angular – no monthly plugin fees. Pay once and keep full control.',
         link: '/leistungen',
         linkText: 'Learn more'
       },
       {
-        icon: '⚡',
+        icon: 'zap',
         title: 'Performance-First',
         description: 'Lighthouse 95+ score guaranteed. Faster than 90% of competitors. Core Web Vitals optimized.',
         link: '/leistungen',
         linkText: 'Learn more'
       },
       {
-        icon: '🎯',
+        icon: 'target',
         title: 'SME Focus',
         description: 'Specialized in small and medium businesses. No enterprise overhead, pragmatic solutions.',
         link: '/leistungen',
         linkText: 'Learn more'
       },
       {
-        icon: '💰',
+        icon: 'calculator',
         title: 'Transparent Pricing',
         description: '€65/h fixed rate. No hidden costs. Clear time estimates. Fair billing.',
         link: '/kontakt',
@@ -44,6 +44,65 @@ export const EN_TEXTS = {
       headline: 'Ready for your project?',
       text: 'Let\'s discuss in a free initial consultation whether Angular is the right solution for you.',
       buttonText: 'Contact now'
+    },
+    stats: [
+      {
+        icon: 'gauge',
+        value: 'Lighthouse 95+',
+        label: 'Performance Guaranteed'
+      },
+      {
+        icon: 'euro',
+        value: '€65/h',
+        label: 'Transparent Fixed Rate'
+      },
+      {
+        icon: 'target',
+        value: 'SME Focus',
+        label: 'Specialized since 2024'
+      }
+    ]
+  },
+  services: {
+    header: {
+      title: 'Services',
+      subtitle: 'Focused on the essentials - no bloated packages, just clear expertise'
+    },
+    items: [
+      {
+        icon: 'code2',
+        title: 'Angular Web Development',
+        description: 'Modern Single Page Applications with Angular 20, TypeScript and Progressive Web App features.',
+        techStack: ['Angular 20', 'TypeScript', 'PWA', 'RxJS']
+      },
+      {
+        icon: 'smartphone',
+        title: 'Responsive Implementation',
+        description: 'Mobile-first design with Container Queries and modern CSS techniques for all devices.',
+        techStack: ['Mobile-First', 'Container Queries', 'SCSS', 'Flexbox/Grid']
+      },
+      {
+        icon: 'gauge',
+        title: 'Performance Optimization',
+        description: 'Core Web Vitals optimization, Server-Side Rendering and fast load times for better rankings.',
+        techStack: ['Core Web Vitals', 'SSR', 'Lazy Loading', 'Caching']
+      },
+      {
+        icon: 'wrench',
+        title: 'Code Cleanup',
+        description: 'Modernize legacy code and make it maintainable. Bring old projects to current standards.',
+        techStack: ['Refactoring', 'Code Quality', 'Legacy Migration', 'Clean Code']
+      }
+    ],
+    pricing: {
+      label: 'Hourly Rate:',
+      value: '€65/h',
+      note: 'Transparent billing - no hidden costs'
+    },
+    cta: {
+      title: 'Start a Project',
+      text: 'Let\'s discuss your requirements and find the best solution together.',
+      button: 'Contact Now'
     }
   }
 };
