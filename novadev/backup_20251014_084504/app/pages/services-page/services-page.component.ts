@@ -23,7 +23,7 @@ export class ServicesPageComponent implements OnInit {
   constructor(private seo: SeoService) { }
 
   ngOnInit(): void {
-    this.seo.updateCanonicalUrl('https://saltcity-web.com/leistungen');
+    this.seo.updateCanonicalUrl('https://novadev-edge.io/Leistungen');
     this.seo.updateMetaDescription('Angular Webentwicklung, Responsive Design, Performance-Optimierung und Code Cleanup. Spezialisiert auf KMU. Stundensatz: 65€/h netto.');
     this.seo.updateTitle('Leistungen - SaltCity Web');
   }

@@ -3,8 +3,7 @@
     <div class="footer__content">
       <div class="footer__brand">
         <div class="footer__logo">
-          <span class="footer__logo-icon">&lt;SC/&gt;</span>
-          <span class="footer__brand-name">{{ texts.brand.name }}</span>
+          <img src="assets/logo/novadev_logo.png" alt="NovaDev Edge Logo" class="footer__logo-img">
         </div>
 
         <p class="footer__description">{{ texts.brand.description }}</p>
@@ -37,7 +36,7 @@
           <h3 class="footer__links-title">{{ texts.nav.title }}</h3>
           <nav class="footer__nav">
             @for (link of texts.nav.links; track link.route) {
-              <a [routerLink]="link.route" class="footer__link">{{ link.label }}</a>
+            <a [routerLink]="link.route" class="footer__link">{{ link.label }}</a>
             }
           </nav>
         </div>
@@ -46,7 +45,7 @@
           <h3 class="footer__links-title">{{ texts.legal.title }}</h3>
           <nav class="footer__nav">
             @for (link of texts.legal.links; track link.route) {
-              <a [routerLink]="link.route" class="footer__link">{{ link.label }}</a>
+            <a [routerLink]="link.route" class="footer__link">{{ link.label }}</a>
             }
           </nav>
         </div>

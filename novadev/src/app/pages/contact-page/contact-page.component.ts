@@ -29,7 +29,7 @@ export class ContactPageComponent implements OnInit {
   submitMessage = '';
   submitSuccess = false;
 
-  private readonly mailEndpoint = 'https://saltcity-web.com/sendMail.php';
+  private readonly mailEndpoint = 'https://novadev-edge.io/sendMail.php';
 
   constructor(
     private fb: FormBuilder,
@@ -48,7 +48,7 @@ export class ContactPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.seo.updateCanonicalUrl('https://saltcity-web.com/kontakt');
+    this.seo.updateCanonicalUrl('https://novadev-edge.io/kontakt');
     this.seo.updateMetaDescription('Kontakt zu SaltCity Web. Kostenlose Erstberatung für dein Angular-Projekt. Antwortzeit: 24h werktags. Aus Lüneburg für ganz Deutschland.');
     this.seo.updateTitle('Kontakt - SaltCity Web');
   }

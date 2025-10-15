@@ -25,7 +25,7 @@ export class PortfolioPageComponent implements OnInit {
   constructor(private seo: SeoService) { }
 
   ngOnInit(): void {
-    this.seo.updateCanonicalUrl('https://saltcity-web.com/projekte');
+    this.seo.updateCanonicalUrl('https://novadev-edge.io/projekte');
     this.seo.updateMetaDescription('Ausgewählte Projekte von SaltCity Web: Kay Dietrich Portfolio, Gefechtsstand Reserve. Angular SPAs, PWAs und moderne Webanwendungen.');
     this.seo.updateTitle('Projekte - SaltCity Web');
   }

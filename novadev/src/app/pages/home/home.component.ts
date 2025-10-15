@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     const seoTexts = this.textService.texts.seo.home;
 
-    this.seo.updateCanonicalUrl('https://saltcity-web.com/');
+    this.seo.updateCanonicalUrl('https://novadev-edge.io/');
     this.seo.updateMetaDescription(seoTexts.description);
     this.seo.updateTitle(seoTexts.title);
 

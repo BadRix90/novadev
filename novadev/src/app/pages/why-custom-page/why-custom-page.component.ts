@@ -29,7 +29,7 @@ export class WhyCustomPageComponent implements OnInit {
   constructor(private seo: SeoService) { }
 
   ngOnInit(): void {
-    this.seo.updateCanonicalUrl('https://saltcity-web.com/warum-custom-development');
+    this.seo.updateCanonicalUrl('https://novadev-edge.io/warum-custom-development');
     this.seo.updateMetaDescription('Warum Custom Development? 40% schneller, 96% sicherer, keine Lizenzkosten. Maßgeschneiderte Angular-Lösungen für KMU.');
     this.seo.updateTitle('Warum Custom Development? - SaltCity Web');
   }

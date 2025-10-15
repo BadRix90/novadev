@@ -32,21 +32,18 @@
   margin-bottom: $spacing-4;
 }
 
-.footer__logo-icon {
-  font-family: 'Courier New', monospace;
-  font-size: $font-size-xl;
-  font-weight: $font-weight-bold;
-  color: var(--color-accent);
-  letter-spacing: -0.05em;
+.footer__logo-img {
+  height: 2.5rem;
+  width: auto;
+  transition: filter $transition-base;
+
+  filter: brightness(0);
 }
 
-.footer__brand-name {
-  font-family: $font-family-primary;
-  font-weight: $font-weight-semibold;
-  font-size: $font-size-lg;
-  letter-spacing: 0.05em;
-  color: var(--color-text);
+:host-context([data-theme="dark"]) .footer__logo-img {
+  filter: none;
 }
+
 
 .footer__description {
   @include body-base;
@@ -196,4 +193,3 @@
     gap: $spacing-4;
   }
 }
-

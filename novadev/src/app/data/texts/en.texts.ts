@@ -275,7 +275,7 @@ export const EN_TEXTS = {
       title: 'Direct Contact',
       email: {
         label: 'Email',
-        value: 'kontakt@saltcity-web.com'
+        value: 'info@novadev-edge.io'
       },
       location: {
         label: 'Location',

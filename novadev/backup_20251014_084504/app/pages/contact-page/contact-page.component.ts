@@ -46,7 +46,7 @@ export class ContactPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.seo.updateCanonicalUrl('https://saltcity-web.com/kontakt');
+    this.seo.updateCanonicalUrl('https://novadev-edge.io/kontakt');
     this.seo.updateMetaDescription('Kontaktiere SaltCity Web für dein Webprojekt. Projektanfrage, technische Fragen oder allgemeine Anfragen. Antwortzeit: 24h werktags.');
     this.seo.updateTitle('Kontakt - SaltCity Web');
   }
