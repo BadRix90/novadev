@@ -4,6 +4,8 @@
 </app-splash-screen>
 
 <div *ngIf="!showSplash">
+  <app-particles-background />
+  
   <app-header />
   <main class="main-content">
     <router-outlet />

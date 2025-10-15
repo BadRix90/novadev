@@ -1,36 +1,38 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { SplashScreenComponent } from './shared/splash-screen/splash-screen.component';
+import { Component } from "@angular/core"
+import { CommonModule } from "@angular/common"
+import { RouterOutlet } from "@angular/router"
+import { HeaderComponent } from "./shared/header/header.component"
+import { FooterComponent } from "./shared/footer/footer.component"
+import { SplashScreenComponent } from "./shared/splash-screen/splash-screen.component"
+import { ParticlesBackgroundComponent } from "./shared/particles-background/particles-background.component"
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   standalone: true,
   imports: [
     CommonModule,
     RouterOutlet,
     HeaderComponent,
     FooterComponent,
-    SplashScreenComponent
+    SplashScreenComponent,
+    ParticlesBackgroundComponent,
   ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  templateUrl: "./app.component.html",
+  styleUrl: "./app.component.scss",
 })
 export class AppComponent {
-  title = 'novadev';
-  showSplash = true;
+  title = "novadev"
+  showSplash = true
 
   constructor() {
     setTimeout(() => {
       if (this.showSplash) {
-        this.showSplash = false;
+        this.showSplash = false
       }
-    }, 3500);
+    }, 3500)
   }
 
   onSplashComplete(): void {
-    this.showSplash = false;
+    this.showSplash = false
   }
 }

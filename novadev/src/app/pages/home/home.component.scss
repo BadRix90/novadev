@@ -8,7 +8,7 @@
 // Quick Intro Section
 .intro {
   padding: $spacing-10 0;
-  background: rgba(31, 31, 31, 0.3);
+  @include glassmorphism;
 
   @include mobile-only {
     padding: $spacing-8 0;
