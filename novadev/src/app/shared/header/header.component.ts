@@ -55,4 +55,20 @@ export class HeaderComponent {
       body.classList.remove('mobile-menu-open');
     }
   }
+
+  scrollToSection(sectionId: string, event: Event): void {
+    event.preventDefault();
+    const element = document.getElementById(sectionId);
+
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
 }
