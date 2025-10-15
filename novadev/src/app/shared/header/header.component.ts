@@ -2,11 +2,12 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
+import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive,ThemeToggleComponent],
+  imports: [RouterLink, RouterLinkActive, ThemeToggleComponent, LanguageToggleComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

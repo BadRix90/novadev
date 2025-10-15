@@ -117,6 +117,16 @@
   }
 }
 
+.header__controls {
+  display: none;
+  
+  @include tablet-up {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+  }
+}
+
 .header__cta {
   @include button-primary;
   font-size: $font-size-sm;
@@ -347,23 +357,25 @@
   }
 }
 
+.header__language-desktop,
 .header__theme-desktop {
-  display: flex;
-  align-items: center;
-  margin-left: $spacing-4;
+  display: none;
 
-  @media (max-width: #{$breakpoint-md - 1px}) {
-    display: none !important;
+  @include tablet-up {
+    display: block;
   }
 }
 
-.header__mobile-theme {
-  @include flex-center;
-  padding: $spacing-4 0;
+.header__mobile-controls {
+  display: flex;
+  align-items: center;
+  gap: $spacing-4;
+  justify-content: center;
+  margin-top: $spacing-6;
+  padding-top: $spacing-6;
   border-top: 1px solid var(--color-border);
-  margin-top: $spacing-4;
 
-  @media (min-width: $breakpoint-md) {
-    display: none !important;
+  @include tablet-up {
+    display: none;
   }
 }

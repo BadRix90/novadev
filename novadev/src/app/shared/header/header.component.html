@@ -14,7 +14,12 @@
       <a class="header__nav-link" routerLink="/projekte" routerLinkActive="active">Projekte</a>
       <a class="header__nav-link" routerLink="/kontakt" routerLinkActive="active">Kontakt</a>
     </nav>
-    <app-theme-toggle class="header__theme-desktop"></app-theme-toggle>
+    
+    <!-- Desktop Controls: Language + Theme Toggle -->
+    <div class="header__controls">
+      <app-language-toggle class="header__language-desktop"></app-language-toggle>
+      <app-theme-toggle class="header__theme-desktop"></app-theme-toggle>
+    </div>
 
     <button class="header__mobile-toggle" [attr.aria-label]="isMobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'"
       [attr.aria-expanded]="isMobileMenuOpen" (click)="toggleMobileMenu()">
@@ -40,7 +45,10 @@
       <a class="header__mobile-link" routerLink="/kontakt" routerLinkActive="active"
         (click)="closeMobileMenu()">Kontakt</a>
       <a class="header__mobile-cta" routerLink="/kontakt" (click)="closeMobileMenu()">Projekt anfragen</a>
-      <div class="header__mobile-theme">
+      
+      <!-- Mobile Controls: Language + Theme Toggle -->
+      <div class="header__mobile-controls">
+        <app-language-toggle></app-language-toggle>
         <app-theme-toggle></app-theme-toggle>
       </div>
     </nav>

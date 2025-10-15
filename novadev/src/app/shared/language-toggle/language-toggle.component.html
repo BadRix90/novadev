@@ -1,0 +1,15 @@
+<button 
+  class="language-toggle" 
+  (click)="toggleLanguage()"
+  [class.language-toggle--en]="currentLanguage === 'en'"
+  [attr.aria-label]="'Switch to ' + (currentLanguage === 'de' ? 'English' : 'German')"
+  type="button">
+  <span class="language-toggle__track">
+    <span class="language-toggle__thumb">
+      <img 
+        [src]="currentLanguage === 'de' ? 'assets/img/flags/ger_toggle.png' : 'assets/img/flags/en_toggle.png'" 
+        [alt]="currentLanguage === 'de' ? 'German' : 'English'"
+        class="language-toggle__flag">
+    </span>
+  </span>
+</button>
