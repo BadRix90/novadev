@@ -1,5 +1,12 @@
-<app-header></app-header>
+<app-splash-screen 
+  *ngIf="showSplash" 
+  (animationComplete)="onSplashComplete()">
+</app-splash-screen>
 
-<router-outlet />
-
-<app-footer></app-footer>
+<div *ngIf="!showSplash">
+  <app-header />
+  <main class="main-content">
+    <router-outlet />
+  </main>
+  <app-footer />
+</div>
