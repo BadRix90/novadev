@@ -8,48 +8,35 @@
     <div #heroContent class="hero__content">
 
       <div class="hero__badge">
-        <span class="hero__badge-highlight">2025 Ready</span>
-        <span class="hero__badge-separator">·</span>
-        <span>PWA</span>
-        <span class="hero__badge-separator">·</span>
-        <span>KMU-fokussiert</span>
-        <span class="hero__badge-separator">·</span>
-        <span>DSGVO-clean</span>
+        @for (item of texts.badge.items; track item; let i = $index) {
+          @if (i === 0) {
+            <span class="hero__badge-highlight">{{ item }}</span>
+          } @else {
+            <span class="hero__badge-separator">·</span>
+            <span>{{ item }}</span>
+          }
+        }
       </div>
 
-      <h1 class="hero__headline">
-        SaltCity Web - Webentwicklung für KMU
-      </h1>
+      <h1 class="hero__headline">{{ texts.headline }}</h1>
 
-      <p class="hero__subline">
-        Funktionale Angular-Lösungen ohne unnötigen Ballast
-      </p>
+      <p class="hero__subline">{{ texts.subline }}</p>
 
       <div class="hero__key-facts">
-        <div class="hero__fact">
-          <span class="hero__fact-label">Stundensatz</span>
-          <span class="hero__fact-value">65€/h</span>
-        </div>
-        <div class="hero__fact">
-          <span class="hero__fact-label">Fokus</span>
-          <span class="hero__fact-value">KMU</span>
-        </div>
-        <div class="hero__fact">
-          <span class="hero__fact-label">Tech</span>
-          <span class="hero__fact-value">Angular 20</span>
-        </div>
-        <div class="hero__fact">
-          <span class="hero__fact-label">Seit</span>
-          <span class="hero__fact-value">2025</span>
-        </div>
+        @for (fact of texts.facts; track fact.label) {
+          <div class="hero__fact">
+            <span class="hero__fact-label">{{ fact.label }}</span>
+            <span class="hero__fact-value">{{ fact.value }}</span>
+          </div>
+        }
       </div>
 
       <div class="hero__actions">
         <a routerLink="/kontakt" class="hero__cta-primary">
-          Projekt besprechen
+          {{ texts.cta.primary }}
         </a>
         <a routerLink="/leistungen" class="hero__cta-secondary">
-          Leistungen ansehen
+          {{ texts.cta.secondary }}
         </a>
       </div>
     </div>

@@ -1,8 +1,9 @@
-import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID, ViewChild, ElementRef, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TextService } from '../../data/text.service';
 
 @Component({
   selector: 'app-hero',
@@ -12,6 +13,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent implements OnInit, AfterViewInit {
+
+  textService = inject(TextService);
+
+  get texts() {
+    return this.textService.texts.hero;
+  }
   @ViewChild('heroBackground') heroBackground!: ElementRef;
   @ViewChild('heroContent') heroContent!: ElementRef;
 

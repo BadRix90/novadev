@@ -5,6 +5,23 @@ export const DE_TEXTS = {
       description: 'Angular-Entwicklung für KMU. Funktional, performant, auf den Punkt. Keine Lizenzkosten, keine Plugin-Abhängigkeiten. 65€/h aus Lüneburg.'
     }
   },
+  hero: {
+    badge: {
+      items: ['2025 Ready', 'PWA', 'KMU-fokussiert', 'DSGVO-clean']
+    },
+    headline: 'SaltCity Web – Webentwicklung für KMU',
+    subline: 'Funktionale Angular-Lösungen ohne unnötigen Ballast',
+    facts: [
+      { label: 'Stundensatz', value: '65€/h' },
+      { label: 'Fokus', value: 'KMU' },
+      { label: 'Tech', value: 'Angular 20' },
+      { label: 'Seit', value: '2025' }
+    ],
+    cta: {
+      primary: 'Projekt besprechen',
+      secondary: 'Leistungen ansehen'
+    }
+  },
   home: {
     intro: {
       headline: 'Webentwicklung für KMU – klar, funktional, transparent',

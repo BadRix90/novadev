@@ -5,6 +5,23 @@ export const EN_TEXTS = {
       description: 'Angular development for SMEs. Functional, performant, to the point. No license fees, no plugin dependencies. €65/h from Lüneburg, Germany.'
     }
   },
+  hero: {
+    badge: {
+      items: ['2025 Ready', 'PWA', 'SME-focused', 'GDPR-compliant']
+    },
+    headline: 'SaltCity Web – Web Development for SMEs',
+    subline: 'Functional Angular solutions without unnecessary bloat',
+    facts: [
+      { label: 'Hourly Rate', value: '€65/h' },
+      { label: 'Focus', value: 'SME' },
+      { label: 'Tech', value: 'Angular 20' },
+      { label: 'Since', value: '2025' }
+    ],
+    cta: {
+      primary: 'Discuss Project',
+      secondary: 'View Services'
+    }
+  },
   home: {
     intro: {
       headline: 'Web Development for SMEs – Clear, Functional, Transparent',
