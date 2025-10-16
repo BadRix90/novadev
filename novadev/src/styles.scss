@@ -179,24 +179,6 @@ video {
   }
 }
 
-a:not(.nav__link):not(.footer__link):not(.legal-link):not(.button-primary):not(.nav__logo):not(.footer__social-link):not(.contact__info-link) {
-  position: relative;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--color-accent);
-    transition: width $transition-base;
-  }
-  
-  &:hover::after {
-    width: 100%;
-  }
-}
 
 @keyframes iconBounce {
 

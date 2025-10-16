@@ -20,18 +20,20 @@
     <app-theme-toggle></app-theme-toggle>
   </div>
 
-  <!-- Mobile Menu Button -->
   <button class="nav__mobile-toggle"
     [attr.aria-label]="isMobileMenuOpen ? texts.mobile.ariaLabelClose : texts.mobile.ariaLabelOpen"
     (click)="toggleMobileMenu()">
-    <span class="nav__burger"></span>
-    <span class="nav__burger"></span>
-    <span class="nav__burger"></span>
+    <img src="assets/img/icons/menu.webp" alt="Menu" class="nav__burger">
   </button>
 </div>
 
 <!-- Mobile Menu (außerhalb) -->
 <div class="nav__mobile" [class.nav__mobile--open]="isMobileMenuOpen">
+
+  <button class="nav__mobile-close" (click)="closeMobileMenu()" aria-label="Menü schließen">
+    <img src="assets/img/icons/close.webp" alt="Schließen" class="nav__mobile-close-icon">
+  </button>
+
   <a class="nav__mobile-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
     (click)="closeMobileMenu()">
     {{ texts.mobile.startLink }}
