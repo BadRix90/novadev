@@ -1,15 +1,16 @@
 <div class="nav">
   <!-- Logo Links -->
   <a routerLink="/" class="nav__logo" [attr.aria-label]="texts.logo.ariaLabel">
-    <img src="assets/logo/novadev_logo.png" [alt]="texts.logo.alt" class="nav__logo-img">
+    <img [src]="isDark ? 'assets/logo/SVG/light.svg' : 'assets/logo/SVG/dark.svg'" [alt]="texts.logo.alt"
+      class="nav__logo-img">
   </a>
 
   <!-- Navigation Island (Mitte) - Desktop -->
   <nav class="nav__island" aria-label="Hauptnavigation">
     @for (link of texts.nav; track link.route) {
-      <a class="nav__link" [routerLink]="link.route" routerLinkActive="active">
-        {{ link.label }}
-      </a>
+    <a class="nav__link" [routerLink]="link.route" routerLinkActive="active">
+      {{ link.label }}
+    </a>
     }
   </nav>
 
@@ -20,7 +21,7 @@
   </div>
 
   <!-- Mobile Menu Button -->
-  <button class="nav__mobile-toggle" 
+  <button class="nav__mobile-toggle"
     [attr.aria-label]="isMobileMenuOpen ? texts.mobile.ariaLabelClose : texts.mobile.ariaLabelOpen"
     (click)="toggleMobileMenu()">
     <span class="nav__burger"></span>
@@ -31,15 +32,16 @@
 
 <!-- Mobile Menu (außerhalb) -->
 <div class="nav__mobile" [class.nav__mobile--open]="isMobileMenuOpen">
-  <a class="nav__mobile-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">
+  <a class="nav__mobile-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+    (click)="closeMobileMenu()">
     {{ texts.mobile.startLink }}
   </a>
   @for (link of texts.nav; track link.route) {
-    <a class="nav__mobile-link" [routerLink]="link.route" routerLinkActive="active" (click)="closeMobileMenu()">
-      {{ link.label }}
-    </a>
+  <a class="nav__mobile-link" [routerLink]="link.route" routerLinkActive="active" (click)="closeMobileMenu()">
+    {{ link.label }}
+  </a>
   }
-  
+
   <div class="nav__mobile-switches">
     <app-language-toggle></app-language-toggle>
     <app-theme-toggle></app-theme-toggle>

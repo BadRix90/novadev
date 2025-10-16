@@ -19,6 +19,15 @@ export class HeaderComponent {
   get texts() {
     return this.textService.texts.header;
   }
+
+  get isDark(): boolean {
+    if (typeof document !== 'undefined') {
+      return document.documentElement.getAttribute('data-theme') === 'dark';
+    }
+    return true;
+  }
+
+
   isMobileMenuOpen = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }

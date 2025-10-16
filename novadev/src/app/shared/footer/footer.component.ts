@@ -17,6 +17,14 @@ export class FooterComponent {
   get texts() {
     return this.textService.texts.footer;
   }
+
+  get isDark(): boolean {
+    if (typeof document !== 'undefined') {
+      return document.documentElement.getAttribute('data-theme') === 'dark';
+    }
+    return true;
+  }
+
   currentYear = new Date().getFullYear();
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
