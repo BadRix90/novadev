@@ -1,17 +1,31 @@
 <div class="nav">
-  <!-- Logo Links -->
-  <a routerLink="/" class="nav__logo" [attr.aria-label]="texts.logo.ariaLabel">
+  <!-- Logo Links - nur Desktop -->
+  <a routerLink="/" class="nav__logo nav__logo--desktop" [attr.aria-label]="texts.logo.ariaLabel">
     <img [src]="isDark ? 'assets/logo/SVG/light.svg' : 'assets/logo/SVG/dark.svg'" [alt]="texts.logo.alt"
       class="nav__logo-img">
   </a>
 
-  <!-- Navigation Island (Mitte) - Desktop -->
+  <!-- Navigation Island (Mitte/Mobile Container) -->
   <nav class="nav__island" aria-label="Hauptnavigation">
+    <!-- Logo - nur Mobile in Island -->
+    <a routerLink="/" class="nav__logo nav__logo--mobile" [attr.aria-label]="texts.logo.ariaLabel">
+      <img [src]="isDark ? 'assets/logo/SVG/light.svg' : 'assets/logo/SVG/dark.svg'" [alt]="texts.logo.alt"
+        class="nav__logo-img nav__logo-img--small">
+    </a>
+
+    <!-- Navigation Links - nur Desktop -->
     @for (link of texts.nav; track link.route) {
     <a class="nav__link" [routerLink]="link.route" routerLinkActive="active">
       {{ link.label }}
     </a>
     }
+
+    <!-- Mobile Menu Toggle - nur Mobile in Island -->
+    <button class="nav__mobile-toggle"
+      [attr.aria-label]="isMobileMenuOpen ? texts.mobile.ariaLabelClose : texts.mobile.ariaLabelOpen"
+      (click)="toggleMobileMenu()">
+      <img src="assets/img/icons/menu.webp" alt="Menu" class="nav__burger">
+    </button>
   </nav>
 
   <!-- Switches Rechts (Desktop) -->
@@ -20,32 +34,21 @@
     <app-theme-toggle></app-theme-toggle>
   </div>
 
-  <button class="nav__mobile-toggle"
-    [attr.aria-label]="isMobileMenuOpen ? texts.mobile.ariaLabelClose : texts.mobile.ariaLabelOpen"
-    (click)="toggleMobileMenu()">
-    <img src="assets/img/icons/menu.webp" alt="Menu" class="nav__burger">
-  </button>
-</div>
+  <!-- Mobile Menu - INNERHALB .nav! -->
+  <div class="nav__mobile" [class.nav__mobile--open]="isMobileMenuOpen">
+    <a class="nav__mobile-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+      (click)="closeMobileMenu()">
+      {{ texts.mobile.startLink }}
+    </a>
+    @for (link of texts.nav; track link.route) {
+    <a class="nav__mobile-link" [routerLink]="link.route" routerLinkActive="active" (click)="closeMobileMenu()">
+      {{ link.label }}
+    </a>
+    }
 
-<!-- Mobile Menu (außerhalb) -->
-<div class="nav__mobile" [class.nav__mobile--open]="isMobileMenuOpen">
-
-  <button class="nav__mobile-close" (click)="closeMobileMenu()" aria-label="Menü schließen">
-    <img src="assets/img/icons/close.webp" alt="Schließen" class="nav__mobile-close-icon">
-  </button>
-
-  <a class="nav__mobile-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-    (click)="closeMobileMenu()">
-    {{ texts.mobile.startLink }}
-  </a>
-  @for (link of texts.nav; track link.route) {
-  <a class="nav__mobile-link" [routerLink]="link.route" routerLinkActive="active" (click)="closeMobileMenu()">
-    {{ link.label }}
-  </a>
-  }
-
-  <div class="nav__mobile-switches">
-    <app-language-toggle></app-language-toggle>
-    <app-theme-toggle></app-theme-toggle>
+    <div class="nav__mobile-switches">
+      <app-language-toggle></app-language-toggle>
+      <app-theme-toggle></app-theme-toggle>
+    </div>
   </div>
 </div>

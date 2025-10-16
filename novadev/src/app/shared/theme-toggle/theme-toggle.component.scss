@@ -47,11 +47,13 @@
   border-radius: 50%;
   transition: transform $transition-base;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-
-
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include mobile-only {
+    top: 0;
+  }
 }
 
 .theme-toggle__icon {
