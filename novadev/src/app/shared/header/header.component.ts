@@ -1,4 +1,4 @@
-import { Component, Inject, PLATFORM_ID, inject, ChangeDetectorRef } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, inject, ChangeDetectorRef, HostListener } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
@@ -29,9 +29,20 @@ export class HeaderComponent {
   isMobileMenuOpen = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    // Theme initial setzen
     if (typeof document !== 'undefined') {
       this._isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    }
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    if (!this.isMobileMenuOpen) return;
+
+    const target = event.target as HTMLElement;
+    const clickedInside = target.closest('.nav__mobile') || target.closest('.nav__mobile-toggle');
+
+    if (!clickedInside) {
+      this.closeMobileMenu();
     }
   }
 
