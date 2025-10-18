@@ -1,0 +1,47 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.tools-page {
+  min-height: 100vh;
+  padding-top: $nav-height;
+
+  @include mobile-only {
+    padding-top: $nav-height-mobile;
+  }
+}
+
+// Header Section
+.tools-header {
+  padding: $spacing-16 0 $spacing-8 0;
+  text-align: center;
+  background: var(--gradient-bg-subtle);
+
+  @include mobile-only {
+    padding: $spacing-10 0 $spacing-6 0;
+  }
+}
+
+.tools-header__container {
+  @include container;
+  max-width: 700px;
+}
+
+.tools-header__title {
+  @include heading-xl;
+  margin: 0 0 $spacing-4 0;
+  color: var(--color-text);
+
+  @include mobile-only {
+    font-size: $font-size-4xl;
+  }
+}
+
+.tools-header__subtitle {
+  @include body-lg;
+  margin: 0;
+  color: var(--color-text-muted);
+
+  @include mobile-only {
+    font-size: $font-size-base;
+  }
+}

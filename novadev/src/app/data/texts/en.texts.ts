@@ -316,6 +316,7 @@ export const EN_TEXTS = {
       { label: 'Why Custom?', route: '/warum-custom-development' },
       { label: 'About', route: '/ueber-uns' },
       { label: 'Projects', route: '/projekte' },
+      { label: 'AI-Tools', route: '/tools' },
       { label: 'Contact', route: '/kontakt' }
     ],
     mobile: {
@@ -604,6 +605,56 @@ export const EN_TEXTS = {
       title: 'Questions about Privacy?',
       text: 'If you have any questions about the processing of your data or exercising your rights, I am happy to help.',
       button: 'Get in touch'
+    }
+  },
+  aiTools: {
+    header: {
+      badge: 'AI-POWERED TOOLS',
+      title: 'Tools for Your Website',
+      subtitle: 'Professional tools to optimize your web presence. Test for free or secure early access.'
+    },
+    tools: [
+      {
+        icon: 'zap',
+        title: 'Website Speed Tester',
+        description: 'Analyze your website with Google Lighthouse. Performance, SEO, Accessibility and Best Practices in seconds.',
+        status: 'live',
+        price: 'Free',
+        badge: 'NEW',
+        link: '/tools/speed-test',
+        cta: 'Test Now'
+      },
+      {
+        icon: 'fileText',
+        title: 'AI Content Generator',
+        description: 'SEO-optimized texts for your website. Blog posts, product descriptions and meta tags created with AI.',
+        status: 'coming-soon',
+        price: '29€/month',
+        cta: 'Early Access'
+      },
+      {
+        icon: 'image',
+        title: 'Image Optimizer',
+        description: 'Automatically compress images and convert to WebP. Including AI-generated alt texts for better SEO.',
+        status: 'coming-soon',
+        price: '19€/month',
+        cta: 'Early Access'
+      },
+      {
+        icon: 'search',
+        title: 'SEO Analyzer',
+        description: 'Comprehensive SEO analysis of your website. On-page optimization, keywords and technical SEO checks.',
+        status: 'coming-soon',
+        price: 'Coming Soon',
+        cta: 'Early Access'
+      }
+    ],
+    emailForm: {
+      title: 'Secure Early Access',
+      subtitle: 'Be one of the first to get access to our new AI tools!',
+      placeholder: 'your@email.com',
+      button: 'Join Waitlist',
+      note: 'No spam. You can unsubscribe anytime.'
     }
   }
 

@@ -29,6 +29,12 @@ export const routes: Routes = [
   },
 
   {
+    path: 'tools',
+    loadComponent: () => import('./pages/tools-page/tools-page.component').then((m) => m.ToolsPageComponent),
+    title: 'AI-Tools - SaltCity Web',
+  },
+
+  {
     path: "warum-custom-development",
     loadComponent: () => import("./pages/why-custom-page/why-custom-page.component").then((m) => m.WhyCustomPageComponent),
     title: "Warum Custom Development? - SaltCity Web",

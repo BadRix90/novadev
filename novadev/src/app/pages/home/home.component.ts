@@ -9,11 +9,12 @@ import { organizationSchema, localBusinessSchema, websiteSchema } from '../../da
 import * as LucideIcons from 'lucide-angular';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 import { CounterDirective } from '../../directives/counter.directive';
+import { AiToolsComponent } from '../../components/ai-tools/ai-tools.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, HeroComponent, CommonModule, LucideIcons.LucideAngularModule, ScrollRevealDirective, CounterDirective],
+  imports: [RouterLink, HeroComponent, CommonModule, LucideIcons.LucideAngularModule, ScrollRevealDirective, CounterDirective, AiToolsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

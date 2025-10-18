@@ -1,0 +1,68 @@
+<section class="ai-tools-section">
+  <div class="ai-tools__container">
+    
+    <!-- Header -->
+    <div class="ai-tools__header">
+      <span class="ai-tools__badge">{{ texts.header.badge }}</span>
+      <h2 class="ai-tools__title">{{ texts.header.title }}</h2>
+      <p class="ai-tools__subtitle">{{ texts.header.subtitle }}</p>
+    </div>
+
+    <!-- Tools Grid -->
+    <div class="ai-tools__grid">
+      @for (tool of texts.tools; track tool.title) {
+        <div class="tool-card" [class.tool-card--live]="tool.status === 'live'">
+          
+          <!-- Icon & Badge -->
+          <div class="tool-card__header">
+            <lucide-icon [img]="icons[tool.icon]" class="tool-card__icon" [size]="48"></lucide-icon>
+            @if (tool.badge) {
+              <span class="tool-card__badge">{{ tool.badge }}</span>
+            }
+          </div>
+
+          <!-- Content -->
+          <h3 class="tool-card__title">{{ tool.title }}</h3>
+          <p class="tool-card__description">{{ tool.description }}</p>
+
+          <!-- Footer -->
+          <div class="tool-card__footer">
+            <span class="tool-card__price">{{ tool.price }}</span>
+            
+            @if (tool.status === 'live' && tool.link) {
+              <a [routerLink]="tool.link" class="tool-card__btn tool-card__btn--primary">
+                {{ tool.cta }}
+              </a>
+            } @else {
+              <button class="tool-card__btn tool-card__btn--secondary" (click)="toggleEmailForm()">
+                {{ tool.cta }}
+              </button>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Email Form Overlay -->
+    @if (showEmailForm) {
+      <div class="email-overlay" (click)="toggleEmailForm()">
+        <div class="email-form" (click)="$event.stopPropagation()">
+          <button class="email-form__close" (click)="toggleEmailForm()">✕</button>
+          
+          <h3 class="email-form__title">{{ texts.emailForm.title }}</h3>
+          <p class="email-form__subtitle">{{ texts.emailForm.subtitle }}</p>
+          
+          <form>
+            <input type="email" [placeholder]="texts.emailForm.placeholder" required>
+            <button type="submit" class="email-form__submit">
+              {{ texts.emailForm.button }}
+            </button>
+          </form>
+          
+          <small class="email-form__note">{{ texts.emailForm.note }}</small>
+        </div>
+      </div>
+    }
+
+  </div>
+</section>

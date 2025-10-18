@@ -316,6 +316,7 @@ export const DE_TEXTS = {
       { label: 'Warum Custom?', route: '/warum-custom-development' },
       { label: 'Über uns', route: '/ueber-uns' },
       { label: 'Projekte', route: '/projekte' },
+      { label: 'AI-Tools', route: '/tools' },
       { label: 'Kontakt', route: '/kontakt' }
     ],
     mobile: {
@@ -604,6 +605,56 @@ export const DE_TEXTS = {
       title: 'Fragen zum Datenschutz?',
       text: 'Bei Fragen zur Verarbeitung Ihrer Daten oder zur Ausübung Ihrer Rechte stehe ich Ihnen gerne zur Verfügung.',
       button: 'Kontakt aufnehmen'
+    }
+  },
+  aiTools: {
+    header: {
+      badge: 'AI-POWERED TOOLS',
+      title: 'Werkzeuge für deine Website',
+      subtitle: 'Professionelle Tools zur Optimierung deiner Web-Präsenz. Kostenlos testen oder Early Access sichern.'
+    },
+    tools: [
+      {
+        icon: 'zap',
+        title: 'Website Speed Tester',
+        description: 'Analysiere deine Website mit Google Lighthouse. Performance, SEO, Accessibility und Best Practices in Sekunden.',
+        status: 'live',
+        price: 'Kostenlos',
+        badge: 'NEU',
+        link: '/tools/speed-test',
+        cta: 'Jetzt testen'
+      },
+      {
+        icon: 'fileText',
+        title: 'AI Content Generator',
+        description: 'SEO-optimierte Texte für deine Website. Blog-Posts, Produktbeschreibungen und Meta-Tags mit KI erstellen.',
+        status: 'coming-soon',
+        price: '29€/Monat',
+        cta: 'Early Access'
+      },
+      {
+        icon: 'image',
+        title: 'Image Optimizer',
+        description: 'Bilder automatisch komprimieren und in WebP konvertieren. Inklusive AI-generierte Alt-Texte für besseres SEO.',
+        status: 'coming-soon',
+        price: '19€/Monat',
+        cta: 'Early Access'
+      },
+      {
+        icon: 'search',
+        title: 'SEO Analyzer',
+        description: 'Umfassende SEO-Analyse deiner Website. On-Page Optimierung, Keywords und technische SEO-Checks.',
+        status: 'coming-soon',
+        price: 'Coming Soon',
+        cta: 'Early Access'
+      }
+    ],
+    emailForm: {
+      title: 'Early Access sichern',
+      subtitle: 'Sei einer der Ersten, die Zugriff auf unsere neuen AI-Tools bekommen!',
+      placeholder: 'deine@email.de',
+      button: 'Auf Warteliste setzen',
+      note: 'Kein Spam. Du kannst dich jederzeit abmelden.'
     }
   }
 
