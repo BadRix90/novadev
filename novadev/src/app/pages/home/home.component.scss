@@ -8,7 +8,7 @@
 // Quick Intro Section
 .intro {
   padding: $spacing-10 0;
-  @include glassmorphism;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
 
   @include mobile-only {
     padding: $spacing-8 0;
@@ -44,6 +44,7 @@
 // Feature Cards Section
 .features {
   padding: $spacing-12 0;
+  background: var(--color-surface);  // ← NEU
 
   @include mobile-only {
     padding: $spacing-8 0;
@@ -74,22 +75,22 @@
   transition: all $transition-base;
 
   &:hover {
-    transform: translateY(-8px);
+    transform: translateY(-4px);  // ← ÄNDERN von -8px
     border-color: var(--color-accent);
-    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);  // ← ÄNDERN
   }
 }
 
 .feature-card__icon {
-  width: 60px;
-  height: 60px;
+  width: 48px;  // ← ÄNDERN von 60px
+  height: 48px;  // ← ÄNDERN von 60px
   color: var(--color-accent);
   transition: all $transition-base;
 }
 
 .feature-card:hover .feature-card__icon {
   transform: scale(1.1) rotate(5deg);
-  filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.5));
+  filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.5));  // ← ÄNDERN
 }
 
 .feature-card__title {
@@ -118,64 +119,14 @@
   }
 }
 
-.cta-section {
-  padding: $spacing-12 0;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
-  @include glassmorphism;
+// Stats Section
+.stats {
+  padding: $spacing-16 0;
+  background: var(--color-bg);  // ← ÄNDERN von var(--color-surface)
 
   @include mobile-only {
     padding: $spacing-10 0;
   }
-}
-
-.cta-section__container {
-  @include container;
-  @include flex-column-center;
-  gap: $spacing-6;
-  text-align: center;
-}
-
-.cta-section__headline {
-  @include heading-lg;
-  color: var(--color-text);
-  margin: 0;
-
-  @include mobile-only {
-    font-size: $font-size-3xl;
-  }
-}
-
-.cta-section__text {
-  @include body-lg;
-  color: var(--color-text);
-  max-width: 600px;
-
-  @include mobile-only {
-    font-size: $font-size-base;
-  }
-}
-
-.cta-section__button {
-  @include button-primary;
-  padding: $spacing-4 $spacing-10;
-  font-size: $font-size-lg;
-  margin-top: $spacing-4;
-
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4);
-  }
-
-  @include mobile-only {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-.stats {
-  padding: $spacing-16 0;
-  background: var(--color-surface);
-  @include glassmorphism;
 }
 
 .stats__container {
@@ -211,4 +162,57 @@
 .stat-card__label {
   @include body-base;
   color: var(--color-text-muted);
+}
+
+// CTA Section
+.cta-section {
+  padding: $spacing-20 0;  // ← ÄNDERN von $spacing-12
+
+  @include mobile-only {
+    padding: $spacing-12 0;  // ← ÄNDERN von $spacing-10
+  }
+}
+
+.cta-section__container {
+  @include container;
+  @include flex-column-center;
+  gap: $spacing-6;
+  text-align: center;
+}
+
+.cta-section__headline {
+  @include heading-lg;
+  color: var(--color-text);
+  margin: 0;
+
+  @include mobile-only {
+    font-size: $font-size-3xl;
+  }
+}
+
+.cta-section__text {
+  @include body-lg;
+  color: var(--color-text-muted);  // ← ÄNDERN von var(--color-text)
+  max-width: 600px;
+
+  @include mobile-only {
+    font-size: $font-size-base;
+  }
+}
+
+.cta-section__button {
+  @include button-primary;
+  padding: $spacing-4 $spacing-10;
+  font-size: $font-size-lg;
+  margin-top: $spacing-4;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4);
+  }
+
+  @include mobile-only {
+    width: 100%;
+    max-width: 300px;
+  }
 }
