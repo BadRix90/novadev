@@ -45,3 +45,8 @@ Thumbs.db
 sendMail.php
 robots.txt
 sitemap.xml
+
+# Environment files (API Keys schützen!)
+/src/environments/environment.ts
+/src/environments/environment.prod.ts
+/src/environments/*.ts
