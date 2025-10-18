@@ -24,59 +24,59 @@ export const DE_TEXTS = {
   },
   home: {
     intro: {
-      headline: 'Webentwicklung für KMU – klar, funktional, transparent',
-      text: 'Angular-Lösungen ohne Schnickschnack. Für Unternehmen, die Wert auf Performance, Nachhaltigkeit und klare Kommunikation legen.'
+      headline: 'Willkommen bei NovaDev – Websites, die für dein Business arbeiten',
+      text: 'Du brauchst eine professionelle Website, aber keine Agentur-Preise? Wir entwickeln moderne Webanwendungen speziell für kleine und mittelständische Unternehmen. Transparent, ohne Schnickschnack, zum fairen Preis.'
     },
     features: [
       {
         icon: 'sparkles',
-        title: 'Keine Lizenzkosten',
-        description: 'Open-Source Angular – keine monatlichen Plugin-Gebühren. Du zahlst einmal und behältst die volle Kontrolle.',
-        link: '/leistungen',
-        linkText: 'Mehr erfahren'
+        title: 'Keine monatlichen Kosten',
+        description: 'Einmal bezahlen, für immer nutzen. Keine Plugin-Abos, keine versteckten Kosten. Du besitzt deine Website zu 100%.',
+        link: '/warum-custom-development',
+        linkText: 'Warum das wichtig ist'
       },
       {
         icon: 'zap',
-        title: 'Performance-First',
-        description: 'Lighthouse 95+ Score garantiert. Schneller als 90% der Konkurrenz. Core Web Vitals optimiert.',
+        title: 'Schneller als die Konkurrenz',
+        description: 'Deine Website lädt in unter 2 Sekunden. Kein WordPress-Chaos, kein Technik-Overkill. Nur sauberer, moderner Code.',
         link: '/leistungen',
         linkText: 'Mehr erfahren'
       },
       {
         icon: 'target',
-        title: 'KMU-Fokus',
-        description: 'Spezialisiert auf kleine und mittlere Unternehmen. Keine Enterprise-Overhead, sondern pragmatische Lösungen.',
-        link: '/leistungen',
-        linkText: 'Mehr erfahren'
+        title: 'Persönlich & Transparent',
+        description: 'Du arbeitest direkt mit dem Entwickler. Keine Umwege, keine Sales-Calls. Klarer Festpreis: 65€/Stunde netto.',
+        link: '/ueber-uns',
+        linkText: 'So arbeiten wir'
       },
       {
         icon: 'calculator',
-        title: 'Transparent kalkuliert',
-        description: '65€/h Festpreis. Keine versteckten Kosten. Klare Zeitschätzungen. Faire Abrechnung.',
+        title: 'Fair & Ehrlich kalkuliert',
+        description: '65€/h Festpreis. Keine versteckten Kosten. Klare Zeitschätzungen vor Projektstart. Faire Abrechnung nach Aufwand.',
         link: '/kontakt',
         linkText: 'Projekt anfragen'
       }
     ],
     cta: {
-      headline: 'Bereit für dein Projekt?',
-      text: 'Lass uns in einem kostenlosen Erstgespräch klären, ob Angular die richtige Lösung für dich ist.',
-      buttonText: 'Jetzt Kontakt aufnehmen'
+      headline: 'Bereit für eine Website ohne Ballast?',
+      text: 'Lass uns unverbindlich über dein Projekt sprechen. In 15 Minuten weißt du, ob wir zusammenpassen.',
+      buttonText: 'Kostenloses Erstgespräch'
     },
     stats: [
       {
         icon: 'gauge',
         value: 'Lighthouse 95+',
-        label: 'Performance-Garantie'
+        label: 'Performance-Score'
       },
       {
         icon: 'euro',
         value: '65€/h',
-        label: 'Transparenter Festpreis'
+        label: 'Transparenter Preis'
       },
       {
         icon: 'target',
-        value: 'KMU-Fokus',
-        label: 'Spezialisiert seit 2024'
+        value: '0€',
+        label: 'Monatliche Kosten'
       }
     ]
   },

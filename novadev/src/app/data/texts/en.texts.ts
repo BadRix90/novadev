@@ -24,59 +24,59 @@ export const EN_TEXTS = {
   },
   home: {
     intro: {
-      headline: 'Web Development for SMEs – Clear, Functional, Transparent',
-      text: 'Angular solutions without bloat. For companies that value performance, sustainability, and clear communication.'
+      headline: 'Welcome to NovaDev – Websites that work for your business',
+      text: 'Need a professional website without agency prices? We develop modern web applications specifically for small and medium-sized businesses. Transparent, no-nonsense, at a fair price.'
     },
     features: [
       {
         icon: 'sparkles',
-        title: 'No License Fees',
-        description: 'Open-source Angular – no monthly plugin fees. Pay once and keep full control.',
-        link: '/leistungen',
-        linkText: 'Learn more'
+        title: 'No monthly fees',
+        description: 'Pay once, use forever. No plugin subscriptions, no hidden costs. You own your website 100%.',
+        link: '/warum-custom-development',
+        linkText: 'Why this matters'
       },
       {
         icon: 'zap',
-        title: 'Performance-First',
-        description: 'Lighthouse 95+ score guaranteed. Faster than 90% of competitors. Core Web Vitals optimized.',
+        title: 'Faster than competitors',
+        description: 'Your website loads in under 2 seconds. No WordPress chaos, no tech overkill. Just clean, modern code.',
         link: '/leistungen',
         linkText: 'Learn more'
       },
       {
         icon: 'target',
-        title: 'SME Focus',
-        description: 'Specialized in small and medium businesses. No enterprise overhead, pragmatic solutions.',
-        link: '/leistungen',
-        linkText: 'Learn more'
+        title: 'Personal & Transparent',
+        description: 'Work directly with the developer. No detours, no sales calls. Clear fixed rate: €65/hour net.',
+        link: '/ueber-uns',
+        linkText: 'How we work'
       },
       {
         icon: 'calculator',
-        title: 'Transparent Pricing',
-        description: '€65/h fixed rate. No hidden costs. Clear time estimates. Fair billing.',
+        title: 'Fair & Honest pricing',
+        description: '€65/h fixed rate. No hidden costs. Clear time estimates before project start. Fair billing based on actual work.',
         link: '/kontakt',
         linkText: 'Start project'
       }
     ],
     cta: {
-      headline: 'Ready for your project?',
-      text: 'Let\'s discuss in a free initial consultation whether Angular is the right solution for you.',
-      buttonText: 'Contact now'
+      headline: 'Ready for a website without bloat?',
+      text: 'Let\'s talk about your project without obligation. In 15 minutes you\'ll know if we\'re a good match.',
+      buttonText: 'Free Initial Consultation'
     },
     stats: [
       {
         icon: 'gauge',
         value: 'Lighthouse 95+',
-        label: 'Performance Guaranteed'
+        label: 'Performance Score'
       },
       {
         icon: 'euro',
         value: '€65/h',
-        label: 'Transparent Fixed Rate'
+        label: 'Transparent Rate'
       },
       {
         icon: 'target',
-        value: 'SME Focus',
-        label: 'Specialized since 2024'
+        value: '€0',
+        label: 'Monthly Costs'
       }
     ]
   },
