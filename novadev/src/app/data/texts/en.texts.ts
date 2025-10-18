@@ -656,6 +656,50 @@ export const EN_TEXTS = {
       button: 'Join Waitlist',
       note: 'No spam. You can unsubscribe anytime.'
     }
+  },
+  speedTest: {
+    header: {
+      title: 'Website Speed Tester',
+      subtitle: 'Analyze your website performance for free with Google Lighthouse'
+    },
+    input: {
+      label: 'Website URL',
+      placeholder: 'https://your-website.com',
+      button: 'Analyze Now',
+      info: 'Analysis takes approximately 30-60 seconds'
+    },
+    loading: {
+      title: 'Analyzing your website...',
+      subtitle: 'Please wait while we test your website with Google Lighthouse',
+      steps: [
+        'Measuring performance',
+        'Checking SEO',
+        'Testing accessibility',
+        'Analyzing best practices'
+      ]
+    },
+    results: {
+      title: 'Your Results',
+      subtitle: 'Here is the analysis of your website',
+      scores: {
+        performance: 'Performance',
+        seo: 'SEO',
+        accessibility: 'Accessibility',
+        bestPractices: 'Best Practices'
+      },
+      metrics: {
+        title: 'Core Web Vitals',
+        fcp: 'First Contentful Paint',
+        lcp: 'Largest Contentful Paint',
+        tbt: 'Total Blocking Time',
+        cls: 'Cumulative Layout Shift'
+      },
+      actions: {
+        newTest: 'New Analysis',
+        share: 'Share Result',
+        copied: 'Link copied!'
+      }
+    }
   }
 
 

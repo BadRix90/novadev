@@ -1,0 +1,82 @@
+import { Component, OnInit, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { SeoService } from '../../services/seo.service';
+import { TextService } from '../../data/text.service';
+import { PagespeedService } from '../../services/pagespeed.service';
+
+@Component({
+  selector: 'app-speed-test-page',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  templateUrl: './speed-test-page.component.html',
+  styleUrl: './speed-test-page.component.scss'
+})
+export class SpeedTestPageComponent implements OnInit {
+  textService = inject(TextService);
+  pagespeedService = inject(PagespeedService);
+
+  get texts() {
+    return this.textService.texts.speedTest;
+  }
+
+  websiteUrl = '';
+  isLoading = false;
+  showResults = false;
+  errorMessage = '';
+
+  // Results
+  scores = {
+    performance: 0,
+    seo: 0,
+    accessibility: 0,
+    bestPractices: 0
+  };
+
+  constructor(private seo: SeoService) {}
+
+  ngOnInit(): void {
+    this.seo.updateCanonicalUrl('https://novadev-edge.io/tools/speed-test');
+    this.seo.updateMetaDescription('Teste die Performance deiner Website kostenlos mit Google Lighthouse');
+    this.seo.updateTitle('Speed Tester - NovaDev');
+  }
+
+  isValidUrl(): boolean {
+    const urlPattern = /^https?:\/\/.+\..+/;
+    return urlPattern.test(this.websiteUrl);
+  }
+
+  onSubmit() {
+    if (this.isValidUrl()) {
+      this.isLoading = true;
+      this.errorMessage = '';
+
+      this.pagespeedService.testWebsite(this.websiteUrl).subscribe({
+        next: (result) => {
+          const categories = result.lighthouseResult.categories;
+          
+          this.scores = {
+            performance: Math.round(categories.performance.score * 100),
+            seo: Math.round(categories.seo.score * 100),
+            accessibility: Math.round(categories.accessibility.score * 100),
+            bestPractices: Math.round(categories['best-practices'].score * 100)
+          };
+
+          this.isLoading = false;
+          this.showResults = true;
+        },
+        error: (error) => {
+          console.error('API Error:', error);
+          this.errorMessage = 'Fehler beim Laden der Daten. Bitte versuche es erneut.';
+          this.isLoading = false;
+        }
+      });
+    }
+  }
+
+  startNewTest() {
+    this.showResults = false;
+    this.websiteUrl = '';
+    this.errorMessage = '';
+  }
+}

@@ -1,0 +1,122 @@
+<div class="speed-test-page">
+
+    <!-- Page Header (wie Services!) -->
+    <section class="speed-test-header">
+        <div class="speed-test-header__container">
+            <h1 class="speed-test-header__title">{{ texts.header.title }}</h1>
+            <p class="speed-test-header__subtitle">{{ texts.header.subtitle }}</p>
+        </div>
+    </section>
+
+    <!-- Input Section -->
+    @if (!isLoading && !showResults) {
+    <section class="speed-test-input">
+        <div class="speed-test-input__container">
+            <form class="speed-test-form" (ngSubmit)="onSubmit()">
+                <div class="speed-test-form__group">
+                    <label class="speed-test-form__label">{{ texts.input.label }}</label>
+                    <input type="url" [(ngModel)]="websiteUrl" name="url" class="speed-test-form__input"
+                        [placeholder]="texts.input.placeholder" required>
+                </div>
+                <button type="submit" class="speed-test-form__button" [disabled]="!isValidUrl()">
+                    {{ texts.input.button }}
+                </button>
+                <p class="speed-test-form__info">{{ texts.input.info }}</p>
+            </form>
+        </div>
+    </section>
+    }
+
+    <!-- Loading Section -->
+    @if (isLoading) {
+    <section class="speed-test-loading">
+        <div class="speed-test-loading__container">
+            <div class="speed-test-loading__spinner"></div>
+            <h2 class="speed-test-loading__title">{{ texts.loading.title }}</h2>
+            <p class="speed-test-loading__subtitle">{{ texts.loading.subtitle }}</p>
+            <ul class="speed-test-loading__steps">
+                @for (step of texts.loading.steps; track step) {
+                <li>{{ step }}</li>
+                }
+            </ul>
+        </div>
+    </section>
+    }
+
+    <!-- Results Section (ECHTE DATEN!) -->
+    @if (showResults) {
+    <section class="speed-test-results">
+        <div class="speed-test-results__container">
+            <h2 class="speed-test-results__title">{{ texts.results.title }}</h2>
+            <p class="speed-test-results__subtitle">{{ texts.results.subtitle }}</p>
+
+            <!-- ECHTE Scores Grid -->
+            <div class="speed-test-scores">
+                <div class="score-card">
+                    <div class="score-card__circle" [ngClass]="{
+                   'score-card__circle--good': scores.performance >= 90,
+                   'score-card__circle--average': scores.performance >= 50 && scores.performance < 90,
+                   'score-card__circle--poor': scores.performance < 50
+                 }">
+                        {{ scores.performance }}
+                    </div>
+                    <h3 class="score-card__label">{{ texts.results.scores.performance }}</h3>
+                </div>
+                <div class="score-card">
+                    <div class="score-card__circle" [ngClass]="{
+                   'score-card__circle--good': scores.seo >= 90,
+                   'score-card__circle--average': scores.seo >= 50 && scores.seo < 90,
+                   'score-card__circle--poor': scores.seo < 50
+                 }">
+                        {{ scores.seo }}
+                    </div>
+                    <h3 class="score-card__label">{{ texts.results.scores.seo }}</h3>
+                </div>
+                <div class="score-card">
+                    <div class="score-card__circle" [ngClass]="{
+                   'score-card__circle--good': scores.accessibility >= 90,
+                   'score-card__circle--average': scores.accessibility >= 50 && scores.accessibility < 90,
+                   'score-card__circle--poor': scores.accessibility < 50
+                 }">
+                        {{ scores.accessibility }}
+                    </div>
+                    <h3 class="score-card__label">{{ texts.results.scores.accessibility }}</h3>
+                </div>
+                <div class="score-card">
+                    <div class="score-card__circle" [ngClass]="{
+                   'score-card__circle--good': scores.bestPractices >= 90,
+                   'score-card__circle--average': scores.bestPractices >= 50 && scores.bestPractices < 90,
+                   'score-card__circle--poor': scores.bestPractices < 50
+                 }">
+                        {{ scores.bestPractices }}
+                    </div>
+                    <h3 class="score-card__label">{{ texts.results.scores.bestPractices }}</h3>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="speed-test-actions">
+                <button class="speed-test-actions__button speed-test-actions__button--primary" (click)="startNewTest()">
+                    {{ texts.results.actions.newTest }}
+                </button>
+                <button class="speed-test-actions__button speed-test-actions__button--secondary">
+                    {{ texts.results.actions.share }}
+                </button>
+            </div>
+        </div>
+    </section>
+    }
+
+    <!-- Error Message -->
+    @if (errorMessage) {
+    <section class="speed-test-error">
+        <div class="speed-test-error__container">
+            <p class="speed-test-error__message">{{ errorMessage }}</p>
+            <button class="speed-test-actions__button speed-test-actions__button--primary" (click)="startNewTest()">
+                Zurück
+            </button>
+        </div>
+    </section>
+    }
+
+</div>

@@ -35,6 +35,12 @@ export const routes: Routes = [
   },
 
   {
+    path: 'tools/speed-test',
+    loadComponent: () => import('./pages/speed-test-page/speed-test-page.component').then((m) => m.SpeedTestPageComponent),
+    title: 'Speed Tester - NovaDev',
+  },
+
+  {
     path: "warum-custom-development",
     loadComponent: () => import("./pages/why-custom-page/why-custom-page.component").then((m) => m.WhyCustomPageComponent),
     title: "Warum Custom Development? - SaltCity Web",

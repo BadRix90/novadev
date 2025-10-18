@@ -656,6 +656,50 @@ export const DE_TEXTS = {
       button: 'Auf Warteliste setzen',
       note: 'Kein Spam. Du kannst dich jederzeit abmelden.'
     }
+  },
+  speedTest: {
+    header: {
+      title: 'Website Speed Tester',
+      subtitle: 'Analysiere die Performance deiner Website kostenlos mit Google Lighthouse'
+    },
+    input: {
+      label: 'Website URL',
+      placeholder: 'https://deine-website.de',
+      button: 'Jetzt analysieren',
+      info: 'Die Analyse dauert ca. 30-60 Sekunden'
+    },
+    loading: {
+      title: 'Analysiere deine Website...',
+      subtitle: 'Bitte warten, während wir deine Website mit Google Lighthouse testen',
+      steps: [
+        'Performance wird gemessen',
+        'SEO wird überprüft',
+        'Accessibility wird getestet',
+        'Best Practices werden analysiert'
+      ]
+    },
+    results: {
+      title: 'Deine Ergebnisse',
+      subtitle: 'Hier ist die Analyse deiner Website',
+      scores: {
+        performance: 'Performance',
+        seo: 'SEO',
+        accessibility: 'Barrierefreiheit',
+        bestPractices: 'Best Practices'
+      },
+      metrics: {
+        title: 'Core Web Vitals',
+        fcp: 'First Contentful Paint',
+        lcp: 'Largest Contentful Paint',
+        tbt: 'Total Blocking Time',
+        cls: 'Cumulative Layout Shift'
+      },
+      actions: {
+        newTest: 'Neue Analyse',
+        share: 'Ergebnis teilen',
+        copied: 'Link kopiert!'
+      }
+    }
   }
 
 
