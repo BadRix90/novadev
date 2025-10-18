@@ -94,6 +94,33 @@
                 </div>
             </div>
 
+            <div class="speed-test-metrics">
+                <h3 class="speed-test-metrics__title">{{ texts.results.metrics.title }}</h3>
+                <div class="speed-test-metrics__grid">
+
+                    <div class="metric-card">
+                        <div class="metric-card__value">{{ metrics.fcp }}</div>
+                        <div class="metric-card__label">{{ texts.results.metrics.fcp }}</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-card__value">{{ metrics.lcp }}</div>
+                        <div class="metric-card__label">{{ texts.results.metrics.lcp }}</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-card__value">{{ metrics.tbt }}</div>
+                        <div class="metric-card__label">{{ texts.results.metrics.tbt }}</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-card__value">{{ metrics.cls }}</div>
+                        <div class="metric-card__label">{{ texts.results.metrics.cls }}</div>
+                    </div>
+
+                </div>
+            </div>
+
             <!-- Actions -->
             <div class="speed-test-actions">
                 <button class="speed-test-actions__button speed-test-actions__button--primary" (click)="startNewTest()">

@@ -33,7 +33,14 @@ export class SpeedTestPageComponent implements OnInit {
     bestPractices: 0
   };
 
-  constructor(private seo: SeoService) {}
+  metrics = {
+    fcp: '',
+    lcp: '',
+    tbt: '',
+    cls: ''
+  };
+
+  constructor(private seo: SeoService) { }
 
   ngOnInit(): void {
     this.seo.updateCanonicalUrl('https://novadev-edge.io/tools/speed-test');
@@ -54,12 +61,20 @@ export class SpeedTestPageComponent implements OnInit {
       this.pagespeedService.testWebsite(this.websiteUrl).subscribe({
         next: (result) => {
           const categories = result.lighthouseResult.categories;
-          
+
           this.scores = {
             performance: Math.round(categories.performance.score * 100),
             seo: Math.round(categories.seo.score * 100),
             accessibility: Math.round(categories.accessibility.score * 100),
             bestPractices: Math.round(categories['best-practices'].score * 100)
+          };
+
+          const audits = result.lighthouseResult.audits;
+          this.metrics = {
+            fcp: audits['first-contentful-paint']?.displayValue || 'N/A',
+            lcp: audits['largest-contentful-paint']?.displayValue || 'N/A',
+            tbt: audits['total-blocking-time']?.displayValue || 'N/A',
+            cls: audits['cumulative-layout-shift']?.displayValue || 'N/A'
           };
 
           this.isLoading = false;
