@@ -43,6 +43,12 @@ export class SpeedTestPageComponent implements OnInit {
     cls: ''
   };
 
+  suggestions: Array<{
+    title: string;
+    description: string;
+    priority: 'high' | 'medium' | 'low';
+  }> = [];
+
   constructor(private seo: SeoService) { }
 
   ngOnInit(): void {
@@ -56,6 +62,7 @@ export class SpeedTestPageComponent implements OnInit {
         this.onSubmit();
       }
     });
+    this.textService.texts;
   }
 
   isValidUrl(): boolean {
@@ -86,6 +93,20 @@ export class SpeedTestPageComponent implements OnInit {
             tbt: audits['total-blocking-time']?.displayValue || 'N/A',
             cls: audits['cumulative-layout-shift']?.displayValue || 'N/A'
           };
+
+          this.suggestions = Object.values(audits)
+            .filter((audit: any) =>
+              audit.score !== null &&
+              audit.score < 0.9 &&
+              audit.title &&
+              audit.description
+            )
+            .slice(0, 5)
+            .map((audit: any) => ({
+              title: audit.title,
+              description: audit.description,
+              priority: audit.score < 0.5 ? 'high' : audit.score < 0.8 ? 'medium' : 'low'
+            }));
 
           this.isLoading = false;
           this.showResults = true;

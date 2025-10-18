@@ -26,13 +26,13 @@ export interface PageSpeedResult {
 export class PagespeedService {
   private apiUrl = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   testWebsite(url: string): Observable<PageSpeedResult> {
     const params = {
       url: url,
       key: environment.googlePageSpeedApiKey,
-      category: ['performance', 'seo', 'accessibility', 'best-practices']
+      category: ['performance', 'seo', 'accessibility', 'best-practices'],
     };
 
     return this.http.get<PageSpeedResult>(this.apiUrl, { params });

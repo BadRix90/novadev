@@ -121,6 +121,33 @@
                 </div>
             </div>
 
+            <div class="speed-test-suggestions">
+                <h3 class="speed-test-suggestions__title">{{ texts.results.suggestions.title }}</h3>
+                <p class="speed-test-suggestions__subtitle">{{ texts.results.suggestions.subtitle }}</p>
+
+                @if (suggestions.length > 0) {
+                <div class="suggestions-list">
+                    @for (suggestion of suggestions; track suggestion.title) {
+                    <div class="suggestion-card" [attr.data-priority]="suggestion.priority">
+                        <div class="suggestion-card__header">
+                            <span class="suggestion-card__priority" [ngClass]="{
+                            'suggestion-card__priority--high': suggestion.priority === 'high',
+                            'suggestion-card__priority--medium': suggestion.priority === 'medium',
+                            'suggestion-card__priority--low': suggestion.priority === 'low'
+                          }">
+                                {{ texts.results.suggestions.priority[suggestion.priority] }}
+                            </span>
+                        </div>
+                        <h4 class="suggestion-card__title">{{ suggestion.title }}</h4>
+                        <p class="suggestion-card__description">{{ suggestion.description }}</p>
+                    </div>
+                    }
+                </div>
+                } @else {
+                <p class="speed-test-suggestions__empty">{{ texts.results.suggestions.empty }}</p>
+                }
+            </div>
+
             <!-- Actions -->
             <div class="speed-test-actions">
                 <button class="speed-test-actions__button speed-test-actions__button--primary" (click)="startNewTest()">

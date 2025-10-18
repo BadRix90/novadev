@@ -9,12 +9,12 @@ type Language = 'de' | 'en';
 })
 export class TextService {
   private currentLanguage = signal<Language>('de');
-  
+
   get texts() {
     return this.currentLanguage() === 'de' ? DE_TEXTS : EN_TEXTS;
   }
 
-  get language() {
+  get language(): Language {
     return this.currentLanguage();
   }
 

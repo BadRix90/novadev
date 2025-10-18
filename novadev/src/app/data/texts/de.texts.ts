@@ -694,6 +694,16 @@ export const DE_TEXTS = {
         tbt: 'Total Blocking Time',
         cls: 'Cumulative Layout Shift'
       },
+      suggestions: { 
+        title: 'Verbesserungsvorschläge',
+        subtitle: 'Diese Optimierungen würden deine Website schneller machen',
+        priority: {
+          high: 'Hohe Priorität',
+          medium: 'Mittlere Priorität',
+          low: 'Niedrige Priorität'
+        },
+        empty: 'Keine Verbesserungen nötig - perfekt! 🎉'
+      },
       actions: {
         newTest: 'Neue Analyse',
         share: 'Ergebnis teilen',
