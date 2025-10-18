@@ -3,7 +3,7 @@
 
 .ai-tools-section {
   @include section-padding;
-  background: var(--color-bg);
+  background: var(--color-surface);
   position: relative;
   overflow: hidden;
 
@@ -255,8 +255,13 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
@@ -264,6 +269,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

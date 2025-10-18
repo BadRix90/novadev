@@ -1,51 +1,56 @@
 <div class="about-page">
-  <section class="about">
-    <div class="about__container">
-      <!-- Header -->
-      <div class="about__header">
-        <h1 class="about__title">{{ texts.header.title }}</h1>
-        <p class="about__subtitle">{{ texts.header.subtitle }}</p>
-      </div>
+  <!-- Page Header (wie Services!) -->
+  <section class="about-header">
+    <div class="about-header__container">
+      <h1 class="about-header__title">{{ texts.header.title }}</h1>
+      <p class="about-header__subtitle">{{ texts.header.subtitle }}</p>
+    </div>
+  </section>
 
-      <!-- Content -->
-      <div class="about__content">
-        <!-- Image -->
-        <div class="about__image-wrapper">
-          <div class="about__image">
-            <img src="assets/img/kay.webp" alt="Gründer SaltCity Web" class="about__profile-image" loading="lazy">
+  <!-- Content Section -->
+  <section class="about-content">
+    <div class="about-content__container">
+      
+      <!-- Bild + Text Grid -->
+      <div class="about-layout">
+        <!-- Bild links -->
+        <div class="about-image-wrapper">
+          <div class="about-image">
+            <img src="assets/img/kay.webp" alt="Founder Novadev" class="about-profile-image" loading="lazy">
           </div>
         </div>
 
-        <!-- Text -->
-        <div class="about__text">
+        <!-- Content rechts -->
+        <div class="about-text">
           <!-- Intro -->
-          <div class="about__section">
-            <h2 class="about__section-title">{{ texts.intro.title }}</h2>
-            <p class="about__paragraph">{{ texts.intro.text }}</p>
+          <div class="about-card">
+            <h2 class="about-card__title">{{ texts.intro.title }}</h2>
+            <p class="about-card__text">{{ texts.intro.text }}</p>
           </div>
 
           <!-- Approach -->
-          <div class="about__section">
-            <h2 class="about__section-title">{{ texts.approach.title }}</h2>
-            <p class="about__paragraph">{{ texts.approach.text }}</p>
-          </div>
-
-          <!-- Values Grid -->
-          <div class="about__values">
-            @for (value of texts.values; track value.title) {
-              <div class="value-card">
-                <lucide-icon 
-                  [img]="icons[value.icon]" 
-                  class="value-card__icon"
-                  [size]="32">
-                </lucide-icon>
-                <h3 class="value-card__title">{{ value.title }}</h3>
-                <p class="value-card__text">{{ value.text }}</p>
-              </div>
-            }
+          <div class="about-card">
+            <h2 class="about-card__title">{{ texts.approach.title }}</h2>
+            <p class="about-card__text">{{ texts.approach.text }}</p>
           </div>
         </div>
       </div>
+
+      <!-- Values Grid -->
+      <div class="about-values-grid">
+        @for (value of texts.values; track value.title) {
+          <div class="about-card">
+            <lucide-icon 
+              [img]="icons[value.icon]" 
+              class="about-card__icon"
+              [size]="48">
+            </lucide-icon>
+            <h3 class="about-card__title">{{ value.title }}</h3>
+            <p class="about-card__text">{{ value.text }}</p>
+          </div>
+        }
+      </div>
+
     </div>
   </section>
 </div>

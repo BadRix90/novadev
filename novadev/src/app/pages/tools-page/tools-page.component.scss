@@ -10,11 +10,11 @@
   }
 }
 
-// Header Section
+// Header Section (wie Services!)
 .tools-header {
   padding: $spacing-16 0 $spacing-8 0;
   text-align: center;
-  background: var(--gradient-bg-subtle);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
 
   @include mobile-only {
     padding: $spacing-10 0 $spacing-6 0;
@@ -27,7 +27,7 @@
 }
 
 .tools-header__title {
-  @include heading-xl;
+  @include heading-lg;
   margin: 0 0 $spacing-4 0;
   color: var(--color-text);
 

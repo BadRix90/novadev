@@ -10,12 +10,11 @@
   }
 }
 
-// Header Section
+// Header Section (wie Services!)
 .portfolio-header {
   padding: $spacing-16 0 $spacing-8 0;
   text-align: center;
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
-  @include glassmorphism;
 
   @include mobile-only {
     padding: $spacing-10 0 $spacing-6 0;
@@ -51,8 +50,7 @@
 .portfolio {
   @include section-padding;
   position: relative;
-  background: var(--color-bg);
-  
+  background: var(--color-surface);
 }
 
 .portfolio__container {
@@ -79,22 +77,11 @@
   transition: all $transition-base;
   text-decoration: none;
   color: inherit;
-  position: relative;
-  overflow: hidden;
 
   &:hover {
     border-color: var(--color-accent);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
-    filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.2));
-
-    &::before {
-      height: 100%;
-    }
-
-    .portfolio__card-icon {
-      transform: translateX(4px);
-    }
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
   }
 
   @include mobile-only {
@@ -114,13 +101,6 @@
   @include heading-sm;
   margin: 0;
   color: var(--color-text);
-}
-
-.portfolio__card-icon {
-  font-size: $font-size-2xl;
-  color: var(--color-accent);
-  transition: transform $transition-base;
-  flex-shrink: 0;
 }
 
 .portfolio__card-description {
@@ -145,6 +125,13 @@
   font-size: $font-size-xs;
   color: var(--color-accent);
   font-weight: $font-weight-medium;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    border-color: var(--color-accent);
+  }
 }
 
 .portfolio__card-footer {
@@ -162,10 +149,17 @@
   gap: $spacing-2;
 }
 
-// CTA Section
+.portfolio__link-icon {
+  transition: transform $transition-base;
+}
+
+.portfolio__card:hover .portfolio__link-icon {
+  transform: translateX(4px);
+}
+
+// CTA Section (wie Services!)
 .cta-section {
   padding: $spacing-20 0;
-  background: rgba(31, 31, 31, 0.3);
 
   @include mobile-only {
     padding: $spacing-12 0;
