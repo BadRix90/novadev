@@ -126,7 +126,8 @@
                 <button class="speed-test-actions__button speed-test-actions__button--primary" (click)="startNewTest()">
                     {{ texts.results.actions.newTest }}
                 </button>
-                <button class="speed-test-actions__button speed-test-actions__button--secondary">
+                <button class="speed-test-actions__button speed-test-actions__button--secondary"
+                    (click)="shareResults()">
                     {{ texts.results.actions.share }}
                 </button>
             </div>
@@ -144,6 +145,13 @@
             </button>
         </div>
     </section>
+    }
+
+    @if (showToast) {
+    <div class="toast">
+        <span class="toast__icon">✓</span>
+        <span class="toast__text">{{ texts.results.actions.copied }}</span>
+    </div>
     }
 
 </div>

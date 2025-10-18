@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { SeoService } from '../../services/seo.service';
 import { TextService } from '../../data/text.service';
 import { PagespeedService } from '../../services/pagespeed.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-speed-test-page',
@@ -15,6 +16,7 @@ import { PagespeedService } from '../../services/pagespeed.service';
 export class SpeedTestPageComponent implements OnInit {
   textService = inject(TextService);
   pagespeedService = inject(PagespeedService);
+  private route = inject(ActivatedRoute);
 
   get texts() {
     return this.textService.texts.speedTest;
@@ -24,6 +26,7 @@ export class SpeedTestPageComponent implements OnInit {
   isLoading = false;
   showResults = false;
   errorMessage = '';
+  showToast = false;
 
   // Results
   scores = {
@@ -46,6 +49,13 @@ export class SpeedTestPageComponent implements OnInit {
     this.seo.updateCanonicalUrl('https://novadev-edge.io/tools/speed-test');
     this.seo.updateMetaDescription('Teste die Performance deiner Website kostenlos mit Google Lighthouse');
     this.seo.updateTitle('Speed Tester - NovaDev');
+
+    this.route.queryParams.subscribe(params => {
+      if (params['url']) {
+        this.websiteUrl = params['url'];
+        this.onSubmit();
+      }
+    });
   }
 
   isValidUrl(): boolean {
@@ -93,5 +103,18 @@ export class SpeedTestPageComponent implements OnInit {
     this.showResults = false;
     this.websiteUrl = '';
     this.errorMessage = '';
+
+  }
+
+  shareResults() {
+    const shareUrl = `${window.location.origin}/tools/speed-test?url=${encodeURIComponent(this.websiteUrl)}`;
+
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      this.showToast = true;
+      setTimeout(() => {
+        this.showToast = false;
+      }, 3000);
+    }).catch(err => {
+    });
   }
 }
