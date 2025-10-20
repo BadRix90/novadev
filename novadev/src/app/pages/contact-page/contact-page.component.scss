@@ -1,49 +1,25 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
+@use '../../../styles/page-layouts' as *;
 
 .contact-page {
-  min-height: 100vh;
-  padding-top: $nav-height;
-
-  @include mobile-only {
-    padding-top: $nav-height-mobile;
-  }
+  @extend %page-base;
 }
 
-// Header Section (wie Services!)
 .contact-header {
-  padding: $spacing-16 0 $spacing-8 0;
-  text-align: center;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
-
-  @include mobile-only {
-    padding: $spacing-10 0 $spacing-6 0;
-  }
+  @extend %page-header;
 }
 
 .contact-header__container {
-  @include container;
-  max-width: 700px;
+  @extend %page-header-container;
 }
 
 .contact-header__title {
-  @include heading-lg;
-  margin: 0 0 $spacing-4 0;
-  color: var(--color-text);
-
-  @include mobile-only {
-    font-size: $font-size-4xl;
-  }
+  @extend %page-header-title;
 }
 
 .contact-header__subtitle {
-  @include body-lg;
-  margin: 0;
-  color: var(--color-text-muted);
-
-  @include mobile-only {
-    font-size: $font-size-base;
-  }
+  @extend %page-header-subtitle;
 }
 
 // Contact Section

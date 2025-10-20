@@ -1,5 +1,6 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
+@use '../../../styles/page-layouts' as *;
 
 .home-page {
   min-height: 100vh;
@@ -68,17 +69,9 @@
 }
 
 .feature-card {
-  @include card-base;
+  @extend %card-hover;
   @include flex-column;
   gap: $spacing-4;
-  padding: $spacing-8;
-  transition: all $transition-base;
-
-  &:hover {
-    transform: translateY(-4px);  // ← ÄNDERN von -8px
-    border-color: var(--color-accent);
-    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);  // ← ÄNDERN
-  }
 }
 
 .feature-card__icon {

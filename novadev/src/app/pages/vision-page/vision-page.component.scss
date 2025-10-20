@@ -1,13 +1,9 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
+@use '../../../styles/page-layouts' as *;
 
 .vision-page {
-    min-height: 100vh;
-    padding-top: $nav-height;
-
-    @include mobile-only {
-        padding-top: $nav-height-mobile;
-    }
+    @extend %page-base;
 }
 
 // Header Section
@@ -175,22 +171,10 @@
 }
 
 .principle-card {
-    @include card-base;
+    @extend %card-hover;
     @include flex-column;
     gap: $spacing-4;
-    padding: $spacing-8;
     text-align: center;
-    transition: all $transition-base;
-
-    &:hover {
-        transform: translateY(-4px);
-        border-color: var(--color-accent);
-        box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
-    }
-
-    @include mobile-only {
-        padding: $spacing-6;
-    }
 }
 
 .principle-card__icon {
@@ -326,19 +310,7 @@
 }
 
 .timeline-phase__content {
-    @include card-base;
-    padding: $spacing-8;
-    transition: all $transition-base;
-
-    &:hover {
-        transform: translateX(4px);
-        border-color: var(--color-accent);
-        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
-    }
-
-    @include mobile-only {
-        padding: $spacing-6;
-    }
+    @extend %card-hover;
 }
 
 .timeline-phase__title {
@@ -433,17 +405,10 @@
 }
 
 .community-value {
-    @include card-base;
+    @extend %card-hover;
     padding: $spacing-6;
     display: flex;
     gap: $spacing-4;
-    transition: all $transition-base;
-
-    &:hover {
-        transform: translateY(-4px);
-        border-color: var(--color-accent);
-        box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
-    }
 }
 
 .community-value__icon {

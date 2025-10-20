@@ -1,49 +1,26 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
+@use '../../../styles/page-layouts' as *;
 
 .about-page {
-  min-height: 100vh;
-  padding-top: $nav-height;
-
-  @include mobile-only {
-    padding-top: $nav-height-mobile;
-  }
+  @extend %page-base;
 }
 
-// Header Section (wie Services!)
+// Header Section
 .about-header {
-  padding: $spacing-16 0 $spacing-8 0;
-  text-align: center;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
-
-  @include mobile-only {
-    padding: $spacing-10 0 $spacing-6 0;
-  }
+  @extend %page-header;
 }
 
 .about-header__container {
-  @include container;
-  max-width: 700px;
+  @extend %page-header-container;
 }
 
 .about-header__title {
-  @include heading-lg;
-  margin: 0 0 $spacing-4 0;
-  color: var(--color-text);
-
-  @include mobile-only {
-    font-size: $font-size-4xl;
-  }
+  @extend %page-header-title;
 }
 
 .about-header__subtitle {
-  @include body-lg;
-  margin: 0;
-  color: var(--color-text-muted);
-
-  @include mobile-only {
-    font-size: $font-size-base;
-  }
+  @extend %page-header-subtitle;
 }
 
 // Content Section
@@ -123,23 +100,9 @@
   gap: $spacing-6;
 }
 
-// Cards (wie Services!)
+// Cards
 .about-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: $radius-xl;
-  padding: $spacing-8;
-  transition: all $transition-base;
-
-  &:hover {
-    border-color: var(--color-accent);
-    transform: translateY(-4px);
-    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
-  }
-
-  @include mobile-only {
-    padding: $spacing-6;
-  }
+  @extend %card-hover;
 }
 
 .about-card__icon {
@@ -168,7 +131,7 @@
   line-height: $line-height-relaxed;
 }
 
-// Values Grid (wie Services!)
+// Values Grid
 .about-values-grid {
   display: grid;
   gap: $spacing-6;
