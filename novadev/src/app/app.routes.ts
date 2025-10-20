@@ -19,7 +19,8 @@ export const routes: Routes = [
   },
   {
     path: "projekte",
-    loadComponent: () => import("./pages/portfolio-page/portfolio-page.component").then((m) => m.PortfolioPageComponent),
+    loadComponent: () =>
+      import("./pages/portfolio-page/portfolio-page.component").then((m) => m.PortfolioPageComponent),
     title: "Projekte - SaltCity Web",
   },
   {
@@ -29,20 +30,28 @@ export const routes: Routes = [
   },
 
   {
-    path: 'tools',
-    loadComponent: () => import('./pages/tools-page/tools-page.component').then((m) => m.ToolsPageComponent),
-    title: 'AI-Tools - SaltCity Web',
+    path: "tools",
+    loadComponent: () => import("./pages/tools-page/tools-page.component").then((m) => m.ToolsPageComponent),
+    title: "AI-Tools - SaltCity Web",
   },
 
   {
-    path: 'tools/speed-test',
-    loadComponent: () => import('./pages/speed-test-page/speed-test-page.component').then((m) => m.SpeedTestPageComponent),
-    title: 'Speed Tester - NovaDev',
+    path: "tools/speed-test",
+    loadComponent: () =>
+      import("./pages/speed-test-page/speed-test-page.component").then((m) => m.SpeedTestPageComponent),
+    title: "Speed Tester - NovaDev",
+  },
+
+  {
+    path: "vision",
+    loadComponent: () => import("./pages/vision-page/vision-page.component").then((m) => m.VisionPageComponent),
+    title: "Vision & Roadmap - NovaDev OASIS",
   },
 
   {
     path: "warum-custom-development",
-    loadComponent: () => import("./pages/why-custom-page/why-custom-page.component").then((m) => m.WhyCustomPageComponent),
+    loadComponent: () =>
+      import("./pages/why-custom-page/why-custom-page.component").then((m) => m.WhyCustomPageComponent),
     title: "Warum Custom Development? - SaltCity Web",
   },
 
@@ -53,7 +62,8 @@ export const routes: Routes = [
   },
   {
     path: "datenschutz",
-    loadComponent: () => import("./pages/privacy-policy/privacy-policy.component").then((m) => m.PrivacyPolicyComponent),
+    loadComponent: () =>
+      import("./pages/privacy-policy/privacy-policy.component").then((m) => m.PrivacyPolicyComponent),
     title: "Datenschutz - SaltCity Web",
   },
 

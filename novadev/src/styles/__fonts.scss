@@ -86,3 +86,21 @@
   font-style: normal;
   font-display: swap;
 }
+
+// Audiowide - Special Headings
+@font-face {
+  font-family: 'Audiowide';
+  src: url('/assets/fonts/Audiowide/Audiowide-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Molgan - Decorative
+@font-face {
+  font-family: 'Molgan';
+  src: url('/assets/fonts/Molgan/MolganRegular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
