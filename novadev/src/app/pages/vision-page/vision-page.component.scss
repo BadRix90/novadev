@@ -2,551 +2,557 @@
 @use '../../../styles/mixins' as *;
 
 .vision-page {
-  min-height: 100vh;
-  padding-top: $nav-height;
+    min-height: 100vh;
+    padding-top: $nav-height;
 
-  @include mobile-only {
-    padding-top: $nav-height-mobile;
-  }
+    @include mobile-only {
+        padding-top: $nav-height-mobile;
+    }
 }
 
 // Header Section
 .vision-header {
-  padding: $spacing-16 0 $spacing-12 0;
-  text-align: center;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
-  position: relative;
-  overflow: hidden;
+    padding: $spacing-16 0 $spacing-12 0;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
+    position: relative;
+    overflow: hidden;
 
-  @include mobile-only {
-    padding: $spacing-10 0 $spacing-8 0;
-  }
+    @include mobile-only {
+        padding: $spacing-10 0 $spacing-8 0;
+    }
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 1200px;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1), transparent 70%);
-    pointer-events: none;
-  }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 1200px;
+        height: 100%;
+        background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1), transparent 70%);
+        pointer-events: none;
+    }
 }
 
 .vision-header__container {
-  @include container;
-  max-width: 800px;
-  position: relative;
-  z-index: 1;
+    @include container;
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
 }
 
-.vision-header__badge {
-  display: inline-block;
-  padding: $spacing-2 $spacing-4;
-  background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  border-radius: $radius-full;
-  color: var(--color-accent);
-  font-size: $font-size-sm;
-  font-weight: $font-weight-semibold;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: $spacing-6;
+// ✅ NEU:
+.vision-header__logo-main {
+    height: clamp(8rem, 15vw, 12rem);
+    width: auto;
+    margin: 0 auto $spacing-8 auto;
+    display: block;
+    filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.3));
+    transition: all $transition-base;
+
+    &:hover {
+        filter: drop-shadow(0 0 50px rgba(59, 130, 246, 0.5));
+        transform: scale(1.05);
+    }
+
+    @include mobile-only {
+        height: clamp(6rem, 20vw, 8rem);
+        margin-bottom: $spacing-6;
+    }
 }
 
 .vision-header__title {
-  @include heading-xl;
-  margin: 0 0 $spacing-6 0;
-  color: var(--color-text);
-  font-weight: $font-weight-black;
+    @include heading-xl;
+    margin: 0 0 $spacing-6 0;
+    color: var(--color-text);
+    font-family: $font-family-accent;
 
-  @include mobile-only {
-    font-size: $font-size-4xl;
-  }
+    @include mobile-only {
+        font-size: $font-size-4xl;
+    }
 }
 
 .vision-header__title-highlight {
-  font-family: $font-family-molgan;
-  color: var(--color-accent);
-  letter-spacing: 0.02em;
-  text-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+    font-family: $font-family-molgan;
+    color: var(--color-accent);
+    letter-spacing: 0.02em;
+    text-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
 }
 
 .vision-header__subtitle {
-  @include body-lg;
-  margin: 0;
-  color: var(--color-text-muted);
-  line-height: $line-height-relaxed;
+    @include body-lg;
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: $line-height-relaxed;
 
-  @include mobile-only {
-    font-size: $font-size-base;
-  }
+    @include mobile-only {
+        font-size: $font-size-base;
+    }
 }
 
 // Intro Section
 .vision-intro {
-  padding: $spacing-12 0;
-  background: var(--color-surface);
+    padding: $spacing-12 0;
+    background: var(--color-surface);
 
-  @include mobile-only {
-    padding: $spacing-8 0;
-  }
+    @include mobile-only {
+        padding: $spacing-8 0;
+    }
 }
 
 .vision-intro__container {
-  @include container;
-  max-width: 900px;
+    @include container;
+    max-width: 900px;
 }
 
 .vision-intro__text {
-  @include body-lg;
-  color: var(--color-text);
-  line-height: $line-height-relaxed;
-  text-align: center;
-  margin: 0;
+    @include body-lg;
+    color: var(--color-text);
+    line-height: $line-height-relaxed;
+    text-align: center;
+    margin: 0;
 
-  @include mobile-only {
-    font-size: $font-size-base;
-    text-align: left;
-  }
+    @include mobile-only {
+        font-size: $font-size-base;
+        text-align: left;
+    }
 }
 
 // Principles Section
 .vision-principles {
-  padding: $spacing-16 0;
-  background: var(--color-bg);
+    padding: $spacing-16 0;
+    background: var(--color-bg);
 
-  @include mobile-only {
-    padding: $spacing-10 0;
-  }
+    @include mobile-only {
+        padding: $spacing-10 0;
+    }
 }
 
 .vision-principles__container {
-  @include container;
+    @include container;
 }
 
 .vision-principles__title {
-  @include heading-lg;
-  text-align: center;
-  margin: 0 0 $spacing-4 0;
-  color: var(--color-text);
+    @include heading-lg;
+    text-align: center;
+    margin: 0 0 $spacing-4 0;
+    color: var(--color-text);
 
-  @include mobile-only {
-    font-size: $font-size-3xl;
-  }
+    @include mobile-only {
+        font-size: $font-size-3xl;
+    }
 }
 
 .vision-principles__subtitle {
-  @include body-lg;
-  text-align: center;
-  margin: 0 0 $spacing-12 0;
-  color: var(--color-text-muted);
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+    @include body-lg;
+    text-align: center;
+    margin: 0 0 $spacing-12 0;
+    color: var(--color-text-muted);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 
-  @include mobile-only {
-    font-size: $font-size-base;
-    margin-bottom: $spacing-8;
-  }
+    @include mobile-only {
+        font-size: $font-size-base;
+        margin-bottom: $spacing-8;
+    }
 }
 
 .principles-grid {
-  display: grid;
-  gap: $spacing-6;
+    display: grid;
+    gap: $spacing-6;
 
-  @include tablet-up {
-    grid-template-columns: repeat(2, 1fr);
-    gap: $spacing-8;
-  }
+    @include tablet-up {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-8;
+    }
 
-  @include desktop-up {
-    grid-template-columns: repeat(4, 1fr);
-  }
+    @include desktop-up {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .principle-card {
-  @include card-base;
-  @include flex-column;
-  gap: $spacing-4;
-  padding: $spacing-8;
-  text-align: center;
-  transition: all $transition-base;
+    @include card-base;
+    @include flex-column;
+    gap: $spacing-4;
+    padding: $spacing-8;
+    text-align: center;
+    transition: all $transition-base;
 
-  &:hover {
-    transform: translateY(-4px);
-    border-color: var(--color-accent);
-    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
-  }
+    &:hover {
+        transform: translateY(-4px);
+        border-color: var(--color-accent);
+        box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+    }
 
-  @include mobile-only {
-    padding: $spacing-6;
-  }
+    @include mobile-only {
+        padding: $spacing-6;
+    }
 }
 
 .principle-card__icon {
-  width: 48px;
-  height: 48px;
-  color: var(--color-accent);
-  margin: 0 auto;
-  transition: all $transition-base;
+    width: 48px;
+    height: 48px;
+    color: var(--color-accent);
+    margin: 0 auto;
+    transition: all $transition-base;
 }
 
 .principle-card:hover .principle-card__icon {
-  transform: scale(1.1) rotate(5deg);
-  filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.5));
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.5));
 }
 
 .principle-card__title {
-  @include heading-sm;
-  margin: 0;
-  color: var(--color-text);
+    @include heading-sm;
+    margin: 0;
+    color: var(--color-text);
 }
 
 .principle-card__description {
-  @include body-base;
-  margin: 0;
-  color: var(--color-text-muted);
-  line-height: $line-height-relaxed;
+    @include body-base;
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: $line-height-relaxed;
 }
 
 // Roadmap Section
 .vision-roadmap {
-  padding: $spacing-16 0;
-  background: var(--color-surface);
+    padding: $spacing-16 0;
+    background: var(--color-surface);
 
-  @include mobile-only {
-    padding: $spacing-10 0;
-  }
+    @include mobile-only {
+        padding: $spacing-10 0;
+    }
 }
 
 .vision-roadmap__container {
-  @include container;
-  max-width: 1000px;
+    @include container;
+    max-width: 1000px;
 }
 
 .vision-roadmap__title {
-  @include heading-lg;
-  text-align: center;
-  margin: 0 0 $spacing-4 0;
-  color: var(--color-text);
+    @include heading-lg;
+    text-align: center;
+    margin: 0 0 $spacing-4 0;
+    color: var(--color-text);
 
-  @include mobile-only {
-    font-size: $font-size-3xl;
-  }
+    @include mobile-only {
+        font-size: $font-size-3xl;
+    }
 }
 
 .vision-roadmap__subtitle {
-  @include body-lg;
-  text-align: center;
-  margin: 0 0 $spacing-12 0;
-  color: var(--color-text-muted);
+    @include body-lg;
+    text-align: center;
+    margin: 0 0 $spacing-12 0;
+    color: var(--color-text-muted);
 
-  @include mobile-only {
-    font-size: $font-size-base;
-    margin-bottom: $spacing-8;
-  }
+    @include mobile-only {
+        font-size: $font-size-base;
+        margin-bottom: $spacing-8;
+    }
 }
 
 .roadmap-timeline {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-8;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-8;
 
-  // Timeline line
-  &::before {
-    content: '';
-    position: absolute;
-    left: 30px;
-    top: 40px;
-    bottom: 40px;
-    width: 2px;
-    background: linear-gradient(180deg, var(--color-accent), rgba(59, 130, 246, 0.3));
+    // Timeline line
+    &::before {
+        content: '';
+        position: absolute;
+        left: 30px;
+        top: 40px;
+        bottom: 40px;
+        width: 2px;
+        background: linear-gradient(180deg, var(--color-accent), rgba(59, 130, 246, 0.3));
 
-    @include mobile-only {
-      left: 20px;
+        @include mobile-only {
+            left: 20px;
+        }
     }
-  }
 }
 
 .timeline-phase {
-  position: relative;
-  display: grid;
-  gap: $spacing-6;
-  padding-left: $spacing-16;
+    position: relative;
+    display: grid;
+    gap: $spacing-6;
+    padding-left: $spacing-16;
 
-  @include tablet-up {
-    grid-template-columns: 120px 1fr;
-    gap: $spacing-8;
-    padding-left: $spacing-20;
-  }
-
-  @include mobile-only {
-    padding-left: $spacing-12;
-  }
-
-  // Timeline dot
-  &::before {
-    content: '';
-    position: absolute;
-    left: 22px;
-    top: 8px;
-    width: 16px;
-    height: 16px;
-    background: var(--color-accent);
-    border: 3px solid var(--color-surface);
-    border-radius: $radius-full;
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+    @include tablet-up {
+        grid-template-columns: 120px 1fr;
+        gap: $spacing-8;
+        padding-left: $spacing-20;
+    }
 
     @include mobile-only {
-      left: 12px;
+        padding-left: $spacing-12;
     }
-  }
+
+    // Timeline dot
+    &::before {
+        content: '';
+        position: absolute;
+        left: 22px;
+        top: 8px;
+        width: 16px;
+        height: 16px;
+        background: var(--color-accent);
+        border: 3px solid var(--color-surface);
+        border-radius: $radius-full;
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+
+        @include mobile-only {
+            left: 12px;
+        }
+    }
 }
 
 .timeline-phase__year {
-  font-size: $font-size-2xl;
-  font-weight: $font-weight-black;
-  color: var(--color-accent);
-  font-family: $font-family-accent;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-black;
+    color: var(--color-accent);
+    font-family: $font-family-accent;
 
-  @include mobile-only {
-    font-size: $font-size-xl;
-  }
+    @include mobile-only {
+        font-size: $font-size-xl;
+    }
 }
 
 .timeline-phase__content {
-  @include card-base;
-  padding: $spacing-8;
-  transition: all $transition-base;
+    @include card-base;
+    padding: $spacing-8;
+    transition: all $transition-base;
 
-  &:hover {
-    transform: translateX(4px);
-    border-color: var(--color-accent);
-    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
-  }
+    &:hover {
+        transform: translateX(4px);
+        border-color: var(--color-accent);
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+    }
 
-  @include mobile-only {
-    padding: $spacing-6;
-  }
+    @include mobile-only {
+        padding: $spacing-6;
+    }
 }
 
 .timeline-phase__title {
-  @include heading-sm;
-  margin: 0 0 $spacing-3 0;
-  color: var(--color-text);
+    @include heading-sm;
+    margin: 0 0 $spacing-3 0;
+    color: var(--color-text);
 }
 
 .timeline-phase__description {
-  @include body-base;
-  margin: 0 0 $spacing-4 0;
-  color: var(--color-text-muted);
-  line-height: $line-height-relaxed;
+    @include body-base;
+    margin: 0 0 $spacing-4 0;
+    color: var(--color-text-muted);
+    line-height: $line-height-relaxed;
 }
 
 .timeline-phase__milestones {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-2;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2;
 
-  li {
-    @include body-sm;
-    color: var(--color-text);
-    padding-left: $spacing-6;
-    position: relative;
+    li {
+        @include body-sm;
+        color: var(--color-text);
+        padding-left: $spacing-6;
+        position: relative;
 
-    &::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--color-accent);
-      font-weight: $font-weight-bold;
+        &::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: $font-weight-bold;
+        }
     }
-  }
 }
 
 // Community Section
 .vision-community {
-  padding: $spacing-16 0;
-  background: var(--color-bg);
+    padding: $spacing-16 0;
+    background: var(--color-bg);
 
-  @include mobile-only {
-    padding: $spacing-10 0;
-  }
+    @include mobile-only {
+        padding: $spacing-10 0;
+    }
 }
 
 .vision-community__container {
-  @include container;
+    @include container;
 }
 
 .vision-community__title {
-  @include heading-lg;
-  text-align: center;
-  margin: 0 0 $spacing-4 0;
-  color: var(--color-text);
+    @include heading-lg;
+    text-align: center;
+    margin: 0 0 $spacing-4 0;
+    color: var(--color-text);
 
-  @include mobile-only {
-    font-size: $font-size-3xl;
-  }
+    @include mobile-only {
+        font-size: $font-size-3xl;
+    }
 }
 
 .vision-community__subtitle {
-  @include body-lg;
-  text-align: center;
-  margin: 0 0 $spacing-12 0;
-  color: var(--color-text-muted);
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+    @include body-lg;
+    text-align: center;
+    margin: 0 0 $spacing-12 0;
+    color: var(--color-text-muted);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 
-  @include mobile-only {
-    font-size: $font-size-base;
-    margin-bottom: $spacing-8;
-  }
+    @include mobile-only {
+        font-size: $font-size-base;
+        margin-bottom: $spacing-8;
+    }
 }
 
 .community-values {
-  display: grid;
-  gap: $spacing-6;
+    display: grid;
+    gap: $spacing-6;
 
-  @include tablet-up {
-    grid-template-columns: repeat(2, 1fr);
-    gap: $spacing-8;
-  }
+    @include tablet-up {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-8;
+    }
 
-  @include desktop-up {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    @include desktop-up {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .community-value {
-  @include card-base;
-  padding: $spacing-6;
-  display: flex;
-  gap: $spacing-4;
-  transition: all $transition-base;
+    @include card-base;
+    padding: $spacing-6;
+    display: flex;
+    gap: $spacing-4;
+    transition: all $transition-base;
 
-  &:hover {
-    transform: translateY(-4px);
-    border-color: var(--color-accent);
-    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
-  }
+    &:hover {
+        transform: translateY(-4px);
+        border-color: var(--color-accent);
+        box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+    }
 }
 
 .community-value__icon {
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  color: var(--color-accent);
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    color: var(--color-accent);
 }
 
 .community-value__title {
-  @include body-base;
-  font-weight: $font-weight-semibold;
-  margin: 0 0 $spacing-2 0;
-  color: var(--color-text);
+    @include body-base;
+    font-weight: $font-weight-semibold;
+    margin: 0 0 $spacing-2 0;
+    color: var(--color-text);
 }
 
 .community-value__text {
-  @include body-sm;
-  margin: 0;
-  color: var(--color-text-muted);
-  line-height: $line-height-relaxed;
+    @include body-sm;
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: $line-height-relaxed;
 }
 
 // CTA Section
 .vision-cta {
-  padding: $spacing-20 0;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
+    padding: $spacing-20 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.05));
 
-  @include mobile-only {
-    padding: $spacing-12 0;
-  }
+    @include mobile-only {
+        padding: $spacing-12 0;
+    }
 }
 
 .vision-cta__container {
-  @include container;
-  @include flex-column-center;
-  gap: $spacing-6;
-  text-align: center;
-  max-width: 700px;
+    @include container;
+    @include flex-column-center;
+    gap: $spacing-6;
+    text-align: center;
+    max-width: 700px;
 }
 
 .vision-cta__title {
-  @include heading-lg;
-  color: var(--color-text);
-  margin: 0;
+    @include heading-lg;
+    color: var(--color-text);
+    margin: 0;
 
-  @include mobile-only {
-    font-size: $font-size-3xl;
-  }
+    @include mobile-only {
+        font-size: $font-size-3xl;
+    }
 }
 
 .vision-cta__text {
-  @include body-lg;
-  color: var(--color-text-muted);
-  margin: 0;
+    @include body-lg;
+    color: var(--color-text-muted);
+    margin: 0;
 
-  @include mobile-only {
-    font-size: $font-size-base;
-  }
+    @include mobile-only {
+        font-size: $font-size-base;
+    }
 }
 
 .vision-cta__buttons {
-  display: flex;
-  gap: $spacing-4;
-  margin-top: $spacing-4;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    gap: $spacing-4;
+    margin-top: $spacing-4;
+    flex-wrap: wrap;
+    justify-content: center;
 
-  @include mobile-only {
-    flex-direction: column;
-    width: 100%;
-  }
+    @include mobile-only {
+        flex-direction: column;
+        width: 100%;
+    }
 }
 
 .vision-cta__button {
-  @include button-base;
-  padding: $spacing-4 $spacing-8;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-semibold;
-  border-radius: $radius-lg;
-  transition: all $transition-base;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    @include button-base;
+    padding: $spacing-4 $spacing-8;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    border-radius: $radius-lg;
+    transition: all $transition-base;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-  @include mobile-only {
-    width: 100%;
-  }
-
-  &--primary {
-    @include button-primary;
-
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4);
+    @include mobile-only {
+        width: 100%;
     }
-  }
 
-  &--secondary {
-    background: transparent;
-    color: var(--color-accent);
-    border: 2px solid var(--color-accent);
+    &--primary {
+        @include button-primary;
 
-    &:hover {
-      background: var(--color-accent);
-      color: var(--color-bg);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4);
+        }
     }
-  }
+
+    &--secondary {
+        background: transparent;
+        color: var(--color-accent);
+        border: 2px solid var(--color-accent);
+
+        &:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+    }
 }

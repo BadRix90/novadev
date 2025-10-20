@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core"
+import { Component, inject, Inject, PLATFORM_ID } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { RouterLink } from "@angular/router"
 import { LucideAngularModule, Rocket, Users, Code2, Target, Calendar, Zap, Shield, Heart } from "lucide-angular"
@@ -25,7 +25,23 @@ export class VisionPageComponent {
     heart: Heart,
   }
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   get texts() {
     return this.textService.texts.vision
+  }
+
+  // ✅ Live-Check bei jedem Change Detection
+  get isDark(): boolean {
+    if (typeof document !== 'undefined') {
+      return document.documentElement.getAttribute('data-theme') === 'dark';
+    }
+    return true;
+  }
+
+  get logoSrc(): string {
+    return this.isDark
+      ? 'assets/logo/4x/vision_white@4x.png'
+      : 'assets/logo/4x/vision_black@4x.png';
   }
 }

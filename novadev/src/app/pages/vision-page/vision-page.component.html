@@ -2,12 +2,13 @@
     <!-- Page Header -->
     <section class="vision-header">
         <div class="vision-header__container">
-            <div class="vision-header__badge">{{ texts.header.badge }}</div>
-            <!-- Split title to apply Audiowide font only to "VISION" -->
+            <img [src]="isDark ? 'assets/logo/4x/vision_white@4x.png' : 'assets/logo/4x/vision_black@4x.png'"
+                alt="NovaDev OASIS Vision" class="vision-header__logo-main" />
+
             <h1 class="vision-header__title">
-                <span class="vision-header__title-highlight">VISION</span> <br>
                 <span>Roadmap</span>
             </h1>
+
             <p class="vision-header__subtitle">{{ texts.header.subtitle }}</p>
         </div>
     </section>
