@@ -191,7 +191,7 @@
   @include button-base;
   @include button-ripple;
   background: var(--color-accent);
-  color: white;
+  color: var(--color-text-inverse);
   border-radius: $radius-xl;
   padding: $spacing-3 $spacing-5;
   font-size: $font-size-sm;

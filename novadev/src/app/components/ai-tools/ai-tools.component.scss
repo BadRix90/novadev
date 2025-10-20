@@ -87,7 +87,6 @@
 
 // Tool Card
 .tool-card {
-  @include glassmorphism;
   @include card-base;
   display: flex;
   flex-direction: column;
