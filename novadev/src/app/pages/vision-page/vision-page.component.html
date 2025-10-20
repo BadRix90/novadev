@@ -1,105 +1,101 @@
 <div class="vision-page">
-  <!-- Page Header -->
-  <section class="vision-header">
-    <div class="vision-header__container">
-      <div class="vision-header__badge">{{ texts.header.badge }}</div>
-      <!-- Split title to apply Audiowide font only to "VISION" -->
-      <h1 class="vision-header__title">
-        <span class="vision-header__title-highlight">VISION</span> & Roadmap
-      </h1>
-      <p class="vision-header__subtitle">{{ texts.header.subtitle }}</p>
-    </div>
-  </section>
+    <!-- Page Header -->
+    <section class="vision-header">
+        <div class="vision-header__container">
+            <div class="vision-header__badge">{{ texts.header.badge }}</div>
+            <!-- Split title to apply Audiowide font only to "VISION" -->
+            <h1 class="vision-header__title">
+                <span class="vision-header__title-highlight">VISION</span> <br>
+                <span>Roadmap</span>
+            </h1>
+            <p class="vision-header__subtitle">{{ texts.header.subtitle }}</p>
+        </div>
+    </section>
 
-  <!-- Intro Section -->
-  <section class="vision-intro">
-    <div class="vision-intro__container">
-      <p class="vision-intro__text">{{ texts.intro.text }}</p>
-    </div>
-  </section>
+    <!-- Intro Section -->
+    <section class="vision-intro">
+        <div class="vision-intro__container">
+            <p class="vision-intro__text">{{ texts.intro.text }}</p>
+        </div>
+    </section>
 
-  <!-- Halliday Principles -->
-  <section class="vision-principles">
-    <div class="vision-principles__container">
-      <h2 class="vision-principles__title">{{ texts.principles.title }}</h2>
-      <p class="vision-principles__subtitle">{{ texts.principles.subtitle }}</p>
-      
-      <div class="principles-grid">
-        @for (principle of texts.principles.items; track principle.title) {
-          <div class="principle-card">
-            <lucide-icon 
-              [img]="icons[principle.icon]" 
-              class="principle-card__icon"
-              [size]="48">
-            </lucide-icon>
-            <h3 class="principle-card__title">{{ principle.title }}</h3>
-            <p class="principle-card__description">{{ principle.description }}</p>
-          </div>
-        }
-      </div>
-    </div>
-  </section>
+    <!-- Halliday Principles -->
+    <section class="vision-principles">
+        <div class="vision-principles__container">
+            <h2 class="vision-principles__title">{{ texts.principles.title }}</h2>
+            <p class="vision-principles__subtitle">{{ texts.principles.subtitle }}</p>
 
-  <!-- Roadmap Timeline -->
-  <section class="vision-roadmap">
-    <div class="vision-roadmap__container">
-      <h2 class="vision-roadmap__title">{{ texts.roadmap.title }}</h2>
-      <p class="vision-roadmap__subtitle">{{ texts.roadmap.subtitle }}</p>
-
-      <div class="roadmap-timeline">
-        @for (phase of texts.roadmap.phases; track phase.year) {
-          <div class="timeline-phase">
-            <div class="timeline-phase__year">{{ phase.year }}</div>
-            <div class="timeline-phase__content">
-              <h3 class="timeline-phase__title">{{ phase.title }}</h3>
-              <p class="timeline-phase__description">{{ phase.description }}</p>
-              <ul class="timeline-phase__milestones">
-                @for (milestone of phase.milestones; track milestone) {
-                  <li>{{ milestone }}</li>
+            <div class="principles-grid">
+                @for (principle of texts.principles.items; track principle.title) {
+                <div class="principle-card">
+                    <lucide-icon [img]="icons[principle.icon]" class="principle-card__icon" [size]="48">
+                    </lucide-icon>
+                    <h3 class="principle-card__title">{{ principle.title }}</h3>
+                    <p class="principle-card__description">{{ principle.description }}</p>
+                </div>
                 }
-              </ul>
             </div>
-          </div>
-        }
-      </div>
-    </div>
-  </section>
+        </div>
+    </section>
 
-  <!-- Community & Values -->
-  <section class="vision-community">
-    <div class="vision-community__container">
-      <h2 class="vision-community__title">{{ texts.community.title }}</h2>
-      <p class="vision-community__subtitle">{{ texts.community.subtitle }}</p>
-      
-      <div class="community-values">
-        @for (value of texts.community.values; track value.title) {
-          <div class="community-value">
-            <lucide-icon 
-              [img]="icons[value.icon]" 
-              class="community-value__icon"
-              [size]="32">
-            </lucide-icon>
-            <h3 class="community-value__title">{{ value.title }}</h3>
-            <p class="community-value__text">{{ value.text }}</p>
-          </div>
-        }
-      </div>
-    </div>
-  </section>
+    <!-- Roadmap Timeline -->
+    <section class="vision-roadmap">
+        <div class="vision-roadmap__container">
+            <h2 class="vision-roadmap__title">{{ texts.roadmap.title }}</h2>
+            <p class="vision-roadmap__subtitle">{{ texts.roadmap.subtitle }}</p>
 
-  <!-- CTA Section -->
-  <section class="vision-cta">
-    <div class="vision-cta__container">
-      <h2 class="vision-cta__title">{{ texts.cta.title }}</h2>
-      <p class="vision-cta__text">{{ texts.cta.text }}</p>
-      <div class="vision-cta__buttons">
-        <a href="{{ texts.cta.discord }}" target="_blank" rel="noopener" class="vision-cta__button vision-cta__button--primary">
-          {{ texts.cta.discordText }}
-        </a>
-        <button class="vision-cta__button vision-cta__button--secondary" routerLink="/kontakt">
-          {{ texts.cta.newsletterText }}
-        </button>
-      </div>
-    </div>
-  </section>
+            <div class="roadmap-timeline">
+                @for (phase of texts.roadmap.phases; track phase.year) {
+                <div class="timeline-phase">
+                    <div class="timeline-phase__year">{{ phase.year }}</div>
+                    <div class="timeline-phase__content">
+                        <h3 class="timeline-phase__title">{{ phase.title }}</h3>
+                        <p class="timeline-phase__description">{{ phase.description }}</p>
+                        <ul class="timeline-phase__milestones">
+                            @for (milestone of phase.milestones; track milestone) {
+                            <li>{{ milestone }}</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Community & Values -->
+    <section class="vision-community">
+        <div class="vision-community__container">
+            <h2 class="vision-community__title">{{ texts.community.title }}</h2>
+            <p class="vision-community__subtitle">{{ texts.community.subtitle }}</p>
+
+            <div class="community-values">
+                @for (value of texts.community.values; track value.title) {
+                <div class="community-value">
+                    <lucide-icon [img]="icons[value.icon]" class="community-value__icon" [size]="32">
+                    </lucide-icon>
+                    <h3 class="community-value__title">{{ value.title }}</h3>
+                    <p class="community-value__text">{{ value.text }}</p>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="vision-cta">
+        <div class="vision-cta__container">
+            <h2 class="vision-cta__title">{{ texts.cta.title }}</h2>
+            <p class="vision-cta__text">{{ texts.cta.text }}</p>
+            <div class="vision-cta__buttons">
+                <a href="{{ texts.cta.discord }}" target="_blank" rel="noopener"
+                    class="vision-cta__button vision-cta__button--primary">
+                    {{ texts.cta.discordText }}
+                </a>
+                <button class="vision-cta__button vision-cta__button--secondary" routerLink="/kontakt">
+                    {{ texts.cta.newsletterText }}
+                </button>
+            </div>
+        </div>
+    </section>
 </div>
