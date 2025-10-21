@@ -1,9 +1,9 @@
-import { Component, Inject, PLATFORM_ID, inject, ChangeDetectorRef, HostListener } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID, inject, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
 import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
 import { TextService } from '../../data/text.service';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -14,33 +14,25 @@ import { TextService } from '../../data/text.service';
 })
 export class HeaderComponent {
   textService = inject(TextService);
-  private cdr = inject(ChangeDetectorRef);
-
-  private _isDark: boolean = true;
+  themeService = inject(ThemeService);
 
   get texts() {
     return this.textService.texts.header;
   }
 
   get isDark(): boolean {
-    return this._isDark;
+    return this.themeService.currentTheme() === 'dark';
   }
 
   isMobileMenuOpen = false;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    if (typeof document !== 'undefined') {
-      this._isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    }
-  }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
     if (!this.isMobileMenuOpen) return;
-
     const target = event.target as HTMLElement;
     const clickedInside = target.closest('.nav__mobile') || target.closest('.nav__mobile-toggle');
-
     if (!clickedInside) {
       this.closeMobileMenu();
     }
@@ -52,21 +44,5 @@ export class HeaderComponent {
 
   closeMobileMenu(): void {
     this.isMobileMenuOpen = false;
-  }
-
-  scrollToSection(sectionId: string, event: Event): void {
-    event.preventDefault();
-    const element = document.getElementById(sectionId);
-
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
   }
 }

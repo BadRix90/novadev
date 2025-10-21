@@ -2,6 +2,7 @@ import { Component, Inject, PLATFORM_ID, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { TextService } from '../../data/text.service';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-footer',
@@ -11,27 +12,20 @@ import { TextService } from '../../data/text.service';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-
   textService = inject(TextService);
-
-  private _isDark: boolean = true;
+  themeService = inject(ThemeService);
 
   get texts() {
     return this.textService.texts.footer;
   }
 
   get isDark(): boolean {
-    return this._isDark;
+    return this.themeService.currentTheme() === 'dark';
   }
 
   currentYear = new Date().getFullYear();
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-
-    if (typeof document !== 'undefined') {
-      this._isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    }
-  }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   scrollToTop(): void {
     if (isPlatformBrowser(this.platformId)) {
