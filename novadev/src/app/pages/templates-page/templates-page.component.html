@@ -1,0 +1,30 @@
+<section class="templates-hero">
+  <h1>{{ texts.hero.title }}</h1>
+  <p>{{ texts.hero.subtitle }}</p>
+</section>
+
+<section class="templates-grid">
+  @for (template of texts.items; track template.id) {
+    <article class="template-card">
+      <div class="template-image">
+        <img [src]="'/assets/templates/' + template.id + '.png'" [alt]="template.title">
+      </div>
+      
+      <div class="template-content">
+        <h2>{{ template.title }}</h2>
+        <p class="subtitle">{{ template.subtitle }}</p>
+        
+        <ul class="features">
+          @for (feature of template.features; track feature) {
+            <li>✓ {{ feature }}</li>
+          }
+        </ul>
+        
+        <div class="template-footer">
+          <span class="price">{{ template.price }}</span>
+          <a [routerLink]="['/contact']" class="btn-primary">Anfragen</a>
+        </div>
+      </div>
+    </article>
+  }
+</section>

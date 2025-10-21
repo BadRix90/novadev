@@ -13,15 +13,14 @@ export const routes: Routes = [
     title: "Leistungen - SaltCity Web",
   },
   {
+    path: "templates",
+    loadComponent: () => import("./pages/templates-page/templates-page.component").then((m) => m.TemplatesPageComponent),
+    title: "Dashboard Templates - NovaDev Edge",
+  },
+  {
     path: "ueber-uns",
     loadComponent: () => import("./pages/about-page/about-page.component").then((m) => m.AboutPageComponent),
     title: "Über uns - SaltCity Web",
-  },
-  {
-    path: "projekte",
-    loadComponent: () =>
-      import("./pages/portfolio-page/portfolio-page.component").then((m) => m.PortfolioPageComponent),
-    title: "Projekte - SaltCity Web",
   },
   {
     path: "kontakt",

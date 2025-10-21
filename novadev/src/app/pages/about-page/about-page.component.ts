@@ -1,4 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { SeoService } from '../../services/seo.service';
 import { TextService } from '../../data/text.service';
 import * as LucideIcons from 'lucide-angular';
@@ -6,19 +7,18 @@ import * as LucideIcons from 'lucide-angular';
 @Component({
   selector: 'app-about-page',
   standalone: true,
-  imports: [LucideIcons.LucideAngularModule],
+  imports: [LucideIcons.LucideAngularModule, RouterLink],
   templateUrl: './about-page.component.html',
   styleUrl: './about-page.component.scss'
 })
 export class AboutPageComponent implements OnInit {
-
   textService = inject(TextService);
 
   icons: Record<string, any> = {
-    shield: LucideIcons.Shield,
+    layout: LucideIcons.Layout,
+    target: LucideIcons.Target,
     user: LucideIcons.User,
-    code: LucideIcons.Code2,
-    mappin: LucideIcons.MapPin
+    code2: LucideIcons.Code2
   };
 
   get texts() {
@@ -28,9 +28,8 @@ export class AboutPageComponent implements OnInit {
   constructor(private seo: SeoService) { }
 
   ngOnInit(): void {
-    this.seo.updateCanonicalUrl('https://novadev-edge.io/about');
-    this.seo.updateMetaDescription('SaltCity Web aus Lüneburg. Seit 2024 spezialisiert auf Angular-Entwicklung für KMU. 12 Jahre IT-Erfahrung, klare Kommunikation, transparente Preise.');
-    this.seo.updateTitle('Über uns - SaltCity Web');
+    this.seo.updateCanonicalUrl('https://novadev-edge.io/ueber-uns');
+    this.seo.updateMetaDescription('Kay Dietrich - NovaDev Gründer. 12 Jahre Bundeswehr IT-Erfahrung. Spezialisiert auf SaaS-Dashboards für KMU.');
+    this.seo.updateTitle('Über uns - NovaDev Edge');
   }
-
 }

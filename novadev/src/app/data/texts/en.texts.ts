@@ -127,39 +127,48 @@ export const EN_TEXTS = {
   },
   about: {
     header: {
-      title: "About me",
-      subtitle: "Code with character – since 2025",
+      title: "About Me",
+      subtitle: "Dashboards with structure – from someone who knows systems",
     },
     intro: {
-      title: "The Story",
-      text: "NovaDev was founded in 2025 in Kirchgellersen. After 12 years in the German military (8 years IT, 4 years security), it was clear: time for real, working web solutions. No frills, with expertise and character.",
+      title: "Who's behind NovaDev?",
+      text: "My name is Kay Dietrich, founder of NovaDev. After 12 years in the German military – 8 years in IT – I know: Complex systems need clear structures. That's exactly what I bring to developing business dashboards and internal tools for SMEs.",
     },
     approach: {
-      title: "How I Work",
-      text: "Solo frontend developer. No backend, no page builders. Just clean code, clear design, and custom solutions. Remote from Lüneburg – in-person meetings possible.",
+      title: "My Focus",
+      text: "I develop SaaS dashboards and internal management tools that automate business processes: HR dashboards, service portals, e-commerce backends. Tech stack: Angular 20, TypeScript, Django, PostgreSQL.",
     },
     values: [
       {
-        icon: "shield",
-        title: "Military Background",
-        text: "Discipline, reliability, structure",
+        icon: "layout",
+        title: "Productized",
+        text: "Template-based instead of reinventing – faster, cheaper",
+      },
+      {
+        icon: "target",
+        title: "Transparent",
+        text: "Fixed prices, clear scope, no hidden costs",
       },
       {
         icon: "user",
-        title: "Personal & Direct",
-        text: "No call center, no ticket system",
+        title: "Personal",
+        text: "Direct line to the developer, no agency overhead",
       },
       {
-        icon: "code",
-        title: "Frontend Expertise",
-        text: "Angular, TypeScript, modern tools",
-      },
-      {
-        icon: "mappin",
-        title: "Local & Digital",
-        text: "From Lüneburg, for all of Germany",
+        icon: "code2",
+        title: "Maintainable",
+        text: "Clean code, documentation, long-term support",
       },
     ],
+    vision: {
+      title: "My Vision: NovaDev OASIS",
+      text: "In parallel, I'm building OASIS – a community platform for Angular freelancers and SMEs. Thought leadership instead of marketing blabla. Quality over quantity."
+    },
+    cta: {
+      title: "Why NovaDev?",
+      text: "You get a sparring partner who thinks along – not just code, but solutions for real business problems.",
+      button: "Let's talk"
+    }
   },
   portfolio: {
     header: {
@@ -315,7 +324,7 @@ export const EN_TEXTS = {
       { label: "Services", route: "/leistungen" },
       { label: "Why Custom?", route: "/warum-custom-development" },
       { label: "About", route: "/ueber-uns" },
-      { label: "Projects", route: "/projekte" },
+      { label: "Templates", route: "/templates" },
       { label: "AI-Tools", route: "/tools" },
       { label: "Contact", route: "/kontakt" },
     ],
@@ -846,4 +855,24 @@ export const EN_TEXTS = {
       newsletterText: "Subscribe to Newsletter",
     },
   },
+  templates: {
+    hero: {
+      title: "Dashboard Templates",
+      subtitle: "Ready-made solutions, tailored to your business"
+    },
+    items: [
+      {
+        id: 'hr-dashboard',
+        title: 'HR Dashboard Essential',
+        subtitle: 'Automated vacation planning & time tracking',
+        price: 'from €12,000',
+        features: [
+          'Digital vacation requests with workflow',
+          'Time tracking with project assignment',
+          'Employee management (up to 50 users)',
+          'GDPR compliant & DATEV ready'
+        ]
+      }
+    ]
+  }
 }

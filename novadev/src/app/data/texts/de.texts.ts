@@ -130,38 +130,47 @@ export const DE_TEXTS = {
   about: {
     header: {
       title: "Über mich",
-      subtitle: "Code mit Charakter – seit 2025",
+      subtitle: "Dashboards mit System – von einem, der Struktur kennt",
     },
     intro: {
-      title: "Die Geschichte",
-      text: "NovaDev wurde 2025 in Kirchgellersen gegründet. Nach 12 Jahren Bundeswehr (8 Jahre IT, 4 Jahre Sicherheit) war klar: Zeit für echte, funktionierende Weblösungen. Ohne Schnickschnack, mit Verstand und Charakter.",
+      title: "Wer steckt hinter NovaDev?",
+      text: "Mein Name ist Kay Dietrich, Gründer von NovaDev. Nach 12 Jahren Bundeswehr – davon 8 Jahre im IT-Bereich – weiß ich: Komplexe Systeme brauchen klare Strukturen. Genau das bringe ich in die Entwicklung von Business-Dashboards und internen Tools für KMU.",
     },
     approach: {
-      title: "Meine Arbeitsweise",
-      text: "Solo Frontend-Entwickler. Kein Backend, kein Baukasten. Nur sauberer Code, klares Design und individuelle Lösungen. Remote aus Lüneburg – persönliche Termine möglich.",
+      title: "Mein Fokus",
+      text: "Ich entwickle SaaS-Dashboards und interne Management-Tools, die Geschäftsprozesse automatisieren: HR-Dashboards, Service-Portale, E-Commerce-Backends. Tech-Stack: Angular 20, TypeScript, Django, PostgreSQL.",
     },
     values: [
       {
-        icon: "shield",
-        title: "Militärischer Hintergrund",
-        text: "Disziplin, Verlässlichkeit, Struktur",
+        icon: "layout",
+        title: "Produktisiert",
+        text: "Template-basiert statt Neuerfindung – schneller, günstiger",
+      },
+      {
+        icon: "target",
+        title: "Transparent",
+        text: "Festpreise, klarer Scope, keine versteckten Kosten",
       },
       {
         icon: "user",
-        title: "Persönlich & direkt",
-        text: "Kein Callcenter, kein Ticket-System",
+        title: "Persönlich",
+        text: "Direkter Draht zum Entwickler, kein Agentur-Overhead",
       },
       {
-        icon: "code",
-        title: "Frontend-Expertise",
-        text: "Angular, TypeScript, moderne Tools",
-      },
-      {
-        icon: "mappin",
-        title: "Lokal & digital",
-        text: "Aus Lüneburg, für ganz Deutschland",
+        icon: "code2",
+        title: "Wartbar",
+        text: "Sauberer Code, Dokumentation, langfristig pflegbar",
       },
     ],
+    vision: {
+      title: "Meine Vision: NovaDev OASIS",
+      text: "Parallel baue ich OASIS – eine Community-Plattform für Angular-Freelancer und KMU. Thought Leadership statt Marketing-Blabla. Qualität vor Quantität."
+    },
+    cta: {
+      title: "Warum NovaDev?",
+      text: "Du bekommst einen Sparringspartner, der mitdenkt – nicht nur Code, sondern Lösungen für echte Business-Probleme.",
+      button: "Lass uns sprechen"
+    }
   },
   portfolio: {
     header: {
@@ -319,10 +328,10 @@ export const DE_TEXTS = {
       { label: "Leistungen", route: "/leistungen" },
       { label: "Warum Custom?", route: "/warum-custom-development" },
       { label: "Über uns", route: "/ueber-uns" },
-      { label: "Projekte", route: "/projekte" },
+      { label: "Templates", route: "/templates" },
       { label: "AI-Tools", route: "/tools" },
       { label: "Kontakt", route: "/kontakt" },
-      { label: "Vision", route: "/vision" }, // Added Vision to nav
+      { label: "Vision", route: "/vision" },
     ],
     mobile: {
       ariaLabelOpen: "Menü öffnen",
@@ -858,4 +867,24 @@ export const DE_TEXTS = {
       newsletterText: "Newsletter abonnieren",
     },
   },
+  templates: {
+    hero: {
+      title: "Dashboard-Templates",
+      subtitle: "Fertige Lösungen, angepasst auf dein Business"
+    },
+    items: [
+      {
+        id: 'hr-dashboard',
+        title: 'HR-Dashboard Essential',
+        subtitle: 'Urlaubsplanung & Zeiterfassung automatisiert',
+        price: 'ab 12.000€',
+        features: [
+          'Digitale Urlaubsanträge mit Workflow',
+          'Zeiterfassung mit Projektzuordnung',
+          'Mitarbeiter-Verwaltung (bis 50 User)',
+          'DSGVO-konform & DATEV-ready'
+        ]
+      }
+    ]
+  }
 }

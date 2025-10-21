@@ -1,5 +1,5 @@
 <div class="about-page">
-  <!-- Page Header (wie Services!) -->
+  <!-- Page Header -->
   <section class="about-header">
     <div class="about-header__container">
       <h1 class="about-header__title">{{ texts.header.title }}</h1>
@@ -10,25 +10,21 @@
   <!-- Content Section -->
   <section class="about-content">
     <div class="about-content__container">
-      
+
       <!-- Bild + Text Grid -->
       <div class="about-layout">
-        <!-- Bild links -->
         <div class="about-image-wrapper">
           <div class="about-image">
             <img src="assets/img/kay.webp" alt="Founder Novadev" class="about-profile-image" loading="lazy">
           </div>
         </div>
 
-        <!-- Content rechts -->
         <div class="about-text">
-          <!-- Intro -->
           <div class="about-card">
             <h2 class="about-card__title">{{ texts.intro.title }}</h2>
             <p class="about-card__text">{{ texts.intro.text }}</p>
           </div>
 
-          <!-- Approach -->
           <div class="about-card">
             <h2 class="about-card__title">{{ texts.approach.title }}</h2>
             <p class="about-card__text">{{ texts.approach.text }}</p>
@@ -39,18 +35,32 @@
       <!-- Values Grid -->
       <div class="about-values-grid">
         @for (value of texts.values; track value.title) {
-          <div class="about-card">
-            <lucide-icon 
-              [img]="icons[value.icon]" 
-              class="about-card__icon"
-              [size]="48">
-            </lucide-icon>
-            <h3 class="about-card__title">{{ value.title }}</h3>
-            <p class="about-card__text">{{ value.text }}</p>
-          </div>
+        <div class="about-card">
+          <lucide-icon [img]="icons[value.icon]" class="about-card__icon" [size]="48">
+          </lucide-icon>
+          <h3 class="about-card__title">{{ value.title }}</h3>
+          <p class="about-card__text">{{ value.text }}</p>
+        </div>
         }
       </div>
 
+      <!-- Vision Section -->
+      <div class="about-vision">
+        <h2 class="about-vision__title">{{ texts.vision.title }}</h2>
+        <p class="about-vision__text">{{ texts.vision.text }}</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-section__container">
+      <h2 class="cta-section__title">{{ texts.cta.title }}</h2>
+      <p class="cta-section__text">{{ texts.cta.text }}</p>
+      <a routerLink="/kontakt" class="cta-section__button">
+        {{ texts.cta.button }}
+      </a>
     </div>
   </section>
 </div>
