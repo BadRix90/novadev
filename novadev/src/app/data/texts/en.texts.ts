@@ -1,10 +1,9 @@
 export const EN_TEXTS = {
   seo: {
     home: {
-      title: "NovaDev - Angular Web Development for SMEs",
-      description:
-        "Angular development for SMEs. Functional, performant, to the point. No license fees, no plugin dependencies. €65/h from Lüneburg, Germany.",
-    },
+      title: "NovaDev - SaaS Dashboards for SMEs",
+      description: "Dashboard development for SMEs. HR dashboards, service portals, e-commerce backends. Template-based from €12,000. €80/h from Lüneburg."
+    }
   },
   hero: {
     badge: {

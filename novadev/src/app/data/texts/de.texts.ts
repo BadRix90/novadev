@@ -1,10 +1,9 @@
 export const DE_TEXTS = {
   seo: {
     home: {
-      title: "NovaDev - Angular Webentwicklung für KMU",
-      description:
-        "Angular-Entwicklung für KMU. Funktional, performant, auf den Punkt. Keine Lizenzkosten, keine Plugin-Abhängigkeiten. 65€/h aus Lüneburg.",
-    },
+      title: "NovaDev - SaaS-Dashboards für KMU",
+      description: "Dashboard-Entwicklung für KMU. HR-Dashboards, Service-Portale, E-Commerce-Backends. Template-basiert ab 12.000€. 80€/h aus Lüneburg."
+    }
   },
   hero: {
     badge: {
