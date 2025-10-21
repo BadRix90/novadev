@@ -8,122 +8,120 @@ export const EN_TEXTS = {
   },
   hero: {
     badge: {
-      items: ["2025 Ready", "PWA", "SME-focused", "GDPR-compliant"],
+      items: ["2025 Ready", "PWA", "Dashboard-focused", "GDPR-clean"],
     },
-    headline: "NovaDev – Web Development for SMEs",
-    subline: "Functional Angular solutions without unnecessary bloat",
+    headline: "SaaS Dashboards for SMEs",
+    subline: "HR, Service & E-Commerce – Template-based instead of Custom-Chaos",
     facts: [
-      { label: "Hourly Rate", value: "€65/h" },
-      { label: "Focus", value: "SME" },
+      { label: "Hourly Rate", value: "€80/h" },
+      { label: "Templates from", value: "€12k" },
       { label: "Tech", value: "Angular 20" },
       { label: "Since", value: "2025" },
     ],
     cta: {
-      primary: "Discuss Project",
-      secondary: "View Services",
+      primary: "Request Dashboard",
+      secondary: "View Templates",
     },
   },
   home: {
     intro: {
-      headline: "Welcome to NovaDev – Websites that work for your business",
-      text: "Need a professional website without agency prices? We develop modern web applications specifically for small and medium-sized businesses. Transparent, no-nonsense, at a fair price.",
+      headline: "Dashboards that work for your business",
+      text: "You don't need another CMS. You need a dashboard that automates processes. HR management, service portals, e-commerce backends – productized, maintainable, scalable.",
     },
     features: [
       {
-        icon: "sparkles",
-        title: "No monthly fees",
-        description: "Pay once, use forever. No plugin subscriptions, no hidden costs. You own your website 100%.",
-        link: "/warum-custom-development",
-        linkText: "Why this matters",
+        icon: "layout",
+        title: "Template-based",
+        description: "80% finished code from day one. Faster launch, predictable costs, proven architecture.",
+        link: "/templates",
+        linkText: "View templates",
       },
       {
         icon: "zap",
-        title: "Faster than competitors",
-        description:
-          "Your website loads in under 2 seconds. No WordPress chaos, no tech overkill. Just clean, modern code.",
+        title: "Productized instead of Custom",
+        description: "No more 6-month projects. Dashboard live in 6-8 weeks. Margins increase with each sale.",
         link: "/leistungen",
         linkText: "Learn more",
       },
       {
         icon: "target",
-        title: "Personal & Transparent",
-        description: "Work directly with the developer. No detours, no sales calls. Clear fixed rate: €65/hour net.",
+        title: "Recurring Revenue ready",
+        description: "Maintenance, support, features – all subscription-based. Predictable income for both sides.",
         link: "/ueber-uns",
         linkText: "How we work",
       },
       {
         icon: "calculator",
-        title: "Fair & Honest pricing",
-        description:
-          "€65/h fixed rate. No hidden costs. Clear time estimates before project start. Fair billing based on actual work.",
+        title: "Fairly calculated",
+        description: "€80/h hourly rate or fixed price from €12,000. Templates pay off after 3-5 sales.",
         link: "/kontakt",
-        linkText: "Start project",
+        linkText: "Request project",
       },
     ],
     cta: {
-      headline: "Ready for a website without bloat?",
-      text: "Let's talk about your project without obligation. In 15 minutes you'll know if we're a good match.",
+      headline: "Ready for template-based dashboards?",
+      text: "Let's talk about your dashboard project without obligation. In 15 minutes you'll know if it fits.",
       buttonText: "Free Initial Consultation",
     },
     stats: [
       {
         icon: "gauge",
-        value: "Lighthouse 95+",
-        label: "Performance Score",
+        value: "6-8 weeks",
+        label: "Time-to-Market",
       },
       {
         icon: "euro",
-        value: "€65/h",
+        value: "€80/h",
         label: "Transparent Rate",
       },
       {
         icon: "target",
-        value: "€0",
-        label: "Monthly Costs",
+        value: "€12k+",
+        label: "Template Projects",
       },
     ],
   },
   services: {
     header: {
       title: "Services",
-      subtitle: "Focused on the essentials - no bloated packages, just clear expertise",
+      subtitle: "Dashboard development for medium-sized businesses"
     },
     items: [
       {
+        icon: "layout",
+        title: "HR Dashboards",
+        description: "Vacation management, time tracking and employee administration. GDPR compliant and DATEV ready for SMEs with 20+ employees.",
+        techStack: ["Angular 20", "Django REST", "PostgreSQL", "DATEV Export"]
+      },
+      {
+        icon: "briefcase",
+        title: "Service Portals",
+        description: "CRM, order management and mobile time tracking for service providers. Perfect for crafts and consulting.",
+        techStack: ["PWA", "Offline-First", "Mobile Tracking", "PDF Export"]
+      },
+      {
+        icon: "shoppingcart",
+        title: "E-Commerce Backend",
+        description: "Multi-channel management, inventory management and analytics. Central control of all sales channels.",
+        techStack: ["REST APIs", "Real-time Sync", "Multi-Warehouse", "Analytics"]
+      },
+      {
         icon: "code2",
-        title: "Angular Web Development",
-        description: "Modern Single Page Applications with Angular 20, TypeScript and Progressive Web App features.",
-        techStack: ["Angular 20", "TypeScript", "PWA", "RxJS"],
-      },
-      {
-        icon: "smartphone",
-        title: "Responsive Implementation",
-        description: "Mobile-first design with Container Queries and modern CSS techniques for all devices.",
-        techStack: ["Mobile-First", "Container Queries", "SCSS", "Flexbox/Grid"],
-      },
-      {
-        icon: "gauge",
-        title: "Performance Optimization",
-        description: "Core Web Vitals optimization, Server-Side Rendering and fast load times for better rankings.",
-        techStack: ["Core Web Vitals", "SSR", "Lazy Loading", "Caching"],
-      },
-      {
-        icon: "wrench",
-        title: "Code Cleanup",
-        description: "Modernize legacy code and make it maintainable. Bring old projects to current standards.",
-        techStack: ["Refactoring", "Code Quality", "Legacy Migration", "Clean Code"],
-      },
+        title: "Custom Dashboards",
+        description: "Individual business intelligence solutions. From data visualization to workflow automation.",
+        techStack: ["D3.js", "Chart.js", "Custom APIs", "Automation"]
+      }
     ],
     pricing: {
       label: "Hourly Rate:",
-      value: "€65/h",
-      note: "Transparent billing - no hidden costs",
+      value: "€80/h",
+      note: "Template-based projects from €12,000 fixed price"
     },
     cta: {
-      title: "Start a Project",
-      text: "Let's discuss your requirements and find the best solution together.",
-      button: "Contact Now",
-    },
+      title: "Start Dashboard Project?",
+      text: "Let's talk about your requirements and find the right solution.",
+      button: "Contact Now"
+    }
   },
   about: {
     header: {

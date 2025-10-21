@@ -8,124 +8,120 @@ export const DE_TEXTS = {
   },
   hero: {
     badge: {
-      items: ["2025 Ready", "PWA", "KMU-fokussiert", "DSGVO-clean"],
+      items: ["2025 Ready", "PWA", "Dashboard-fokussiert", "DSGVO-clean"],
     },
-    headline: "NovaDev – Webentwicklung für KMU",
-    subline: "Funktionale Angular-Lösungen ohne unnötigen Ballast",
+    headline: "SaaS-Dashboards für KMU",
+    subline: "HR, Service & E-Commerce – Template-basiert statt Custom-Chaos",
     facts: [
-      { label: "Stundensatz", value: "65€/h" },
-      { label: "Fokus", value: "KMU" },
+      { label: "Stundensatz", value: "80€/h" },
+      { label: "Templates ab", value: "12k€" },
       { label: "Tech", value: "Angular 20" },
       { label: "Seit", value: "2025" },
     ],
     cta: {
-      primary: "Projekt besprechen",
-      secondary: "Leistungen ansehen",
+      primary: "Dashboard anfragen",
+      secondary: "Templates ansehen",
     },
   },
   home: {
     intro: {
-      headline: "Willkommen bei NovaDev – Websites, die für dein Business arbeiten",
-      text: "Du brauchst eine professionelle Website, aber keine Agentur-Preise? Wir entwickeln moderne Webanwendungen speziell für kleine und mittelständische Unternehmen. Transparent, ohne Schnickschnack, zum fairen Preis.",
+      headline: "Dashboards, die für dein Business arbeiten",
+      text: "Du brauchst kein weiteres CMS. Du brauchst ein Dashboard, das Prozesse automatisiert. HR-Management, Service-Portale, E-Commerce-Backends – produktisiert, wartbar, skalierbar.",
     },
     features: [
       {
-        icon: "sparkles",
-        title: "Keine monatlichen Kosten",
-        description:
-          "Einmal bezahlen, für immer nutzen. Keine Plugin-Abos, keine versteckten Kosten. Du besitzt deine Website zu 100%.",
-        link: "/warum-custom-development",
-        linkText: "Warum das wichtig ist",
+        icon: "layout",
+        title: "Template-basiert",
+        description: "80% fertiger Code ab dem ersten Tag. Schneller Launch, planbare Kosten, bewährte Architektur.",
+        link: "/templates",
+        linkText: "Templates ansehen",
       },
       {
         icon: "zap",
-        title: "Schneller als die Konkurrenz",
-        description:
-          "Deine Website lädt in unter 2 Sekunden. Kein WordPress-Chaos, kein Technik-Overkill. Nur sauberer, moderner Code.",
+        title: "Produktisiert statt Custom",
+        description: "Keine 6-Monatsprojekte mehr. Dashboard in 6-8 Wochen live. Margen steigen mit jedem Verkauf.",
         link: "/leistungen",
         linkText: "Mehr erfahren",
       },
       {
         icon: "target",
-        title: "Persönlich & Transparent",
-        description:
-          "Du arbeitest direkt mit dem Entwickler. Keine Umwege, keine Sales-Calls. Klarer Festpreis: 65€/Stunde netto.",
+        title: "Recurring Revenue ready",
+        description: "Wartung, Support, Features – alles auf Subscription-Basis. Planbare Einnahmen für beide Seiten.",
         link: "/ueber-uns",
         linkText: "So arbeiten wir",
       },
       {
         icon: "calculator",
-        title: "Fair & Ehrlich kalkuliert",
-        description:
-          "65€/h Festpreis. Keine versteckten Kosten. Klare Zeitschätzungen vor Projektstart. Faire Abrechnung nach Aufwand.",
+        title: "Fair kalkuliert",
+        description: "80€/h Stundensatz oder Festpreis ab 12.000€. Templates amortisieren sich nach 3-5 Verkäufen.",
         link: "/kontakt",
         linkText: "Projekt anfragen",
       },
     ],
     cta: {
-      headline: "Bereit für eine Website ohne Ballast?",
-      text: "Lass uns unverbindlich über dein Projekt sprechen. In 15 Minuten weißt du, ob wir zusammenpassen.",
+      headline: "Bereit für Template-basierte Dashboards?",
+      text: "Lass uns unverbindlich über dein Dashboard-Projekt sprechen. In 15 Minuten weißt du, ob es passt.",
       buttonText: "Kostenloses Erstgespräch",
     },
     stats: [
       {
         icon: "gauge",
-        value: "Lighthouse 95+",
-        label: "Performance-Score",
+        value: "6-8 Wochen",
+        label: "Time-to-Market",
       },
       {
         icon: "euro",
-        value: "65€/h",
+        value: "80€/h",
         label: "Transparenter Preis",
       },
       {
         icon: "target",
-        value: "0€",
-        label: "Monatliche Kosten",
+        value: "12k€+",
+        label: "Template-Projekte",
       },
     ],
   },
   services: {
     header: {
       title: "Leistungen",
-      subtitle: "Fokussiert auf das Wesentliche - keine überladenen Pakete, sondern klare Expertise",
+      subtitle: "Dashboard-Entwicklung für mittelständische Unternehmen"
     },
     items: [
       {
+        icon: "layout",
+        title: "HR-Dashboards",
+        description: "Urlaubsmanagement, Zeiterfassung und Mitarbeiterverwaltung. DSGVO-konform und DATEV-ready für KMU ab 20 Mitarbeitern.",
+        techStack: ["Angular 20", "Django REST", "PostgreSQL", "DATEV-Export"]
+      },
+      {
+        icon: "briefcase",
+        title: "Service-Portale",
+        description: "CRM, Auftragsmanagement und mobile Zeiterfassung für Dienstleister. Perfekt für Handwerk und Beratung.",
+        techStack: ["PWA", "Offline-First", "Mobile Tracking", "PDF-Export"]
+      },
+      {
+        icon: "shoppingcart",
+        title: "E-Commerce Backend",
+        description: "Multi-Channel-Verwaltung, Inventar-Management und Analytics. Zentrale Steuerung aller Verkaufskanäle.",
+        techStack: ["REST APIs", "Real-time Sync", "Multi-Warehouse", "Analytics"]
+      },
+      {
         icon: "code2",
-        title: "Angular Webentwicklung",
-        description: "Moderne Single Page Applications mit Angular 20, TypeScript und Progressive Web App Features.",
-        techStack: ["Angular 20", "TypeScript", "PWA", "RxJS"],
-      },
-      {
-        icon: "smartphone",
-        title: "Responsive Umsetzung",
-        description: "Mobile-First Design mit Container Queries und modernen CSS-Techniken für alle Endgeräte.",
-        techStack: ["Mobile-First", "Container Queries", "SCSS", "Flexbox/Grid"],
-      },
-      {
-        icon: "gauge",
-        title: "Performance-Optimierung",
-        description: "Core Web Vitals Optimierung, Server-Side Rendering und schnelle Ladezeiten für bessere Rankings.",
-        techStack: ["Core Web Vitals", "SSR", "Lazy Loading", "Caching"],
-      },
-      {
-        icon: "wrench",
-        title: "Code Cleanup",
-        description: "Legacy Code modernisieren und wartbar machen. Alte Projekte auf aktuelle Standards bringen.",
-        techStack: ["Refactoring", "Code Quality", "Legacy Migration", "Clean Code"],
-      },
+        title: "Custom Dashboards",
+        description: "Individuelle Business-Intelligence-Lösungen. Von Datenvisualisierung bis Workflow-Automation.",
+        techStack: ["D3.js", "Chart.js", "Custom APIs", "Automation"]
+      }
     ],
     pricing: {
       label: "Stundensatz:",
-      value: "65€/h",
-      note: "Transparente Abrechnung - keine versteckten Kosten",
+      value: "80€/h",
+      note: "Template-basierte Projekte ab 12.000€ Festpreis"
     },
     cta: {
-      title: "Projekt anfragen",
-      text: "Lass uns über deine Anforderungen sprechen und gemeinsam die beste Lösung finden.",
-      button: "Jetzt Kontakt aufnehmen",
-    },
+      title: "Dashboard-Projekt starten?",
+      text: "Lass uns über deine Anforderungen sprechen und die passende Lösung finden.",
+      button: "Jetzt Kontakt aufnehmen"
+    }
   },
   about: {
     header: {

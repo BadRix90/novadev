@@ -3,87 +3,114 @@
 @use '../../../styles/page-layouts' as *;
 
 .templates-page {
-    @extend %page-base;
+  @extend %page-base;
 }
 
-.templates-hero {
-    @extend %page-header;
-
-    h1 {
-        @extend %page-header-title;
-    }
-
-    p {
-        @extend %page-header-subtitle;
-    }
+// Header Section (Standard wie alle!)
+.templates-header {
+  @extend %page-header;
 }
 
+.templates-header__container {
+  @extend %page-header-container;
+}
+
+.templates-header__title {
+  @extend %page-header-title;
+}
+
+.templates-header__subtitle {
+  @extend %page-header-subtitle;
+}
+
+// Templates Section
 .templates-grid {
-    @include section-padding;
-    @include container;
-    @include grid-responsive(320px, $spacing-8);
+  @include section-padding;
+  background: var(--color-surface);
+}
+
+.templates-grid__container {
+  @include container;
+  display: grid;
+  gap: $spacing-8;
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop-up {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .template-card {
-    @extend %card-hover;
-    display: flex;
-    flex-direction: column;
+  @extend %card-hover;
+  display: flex;
+  flex-direction: column;
 }
 
 .template-image {
-    @include aspect-ratio(16, 9);
-    border-radius: $radius-lg;
-    overflow: hidden;
-    margin-bottom: $spacing-6;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+  @include aspect-ratio(16, 9);
+  border-radius: $radius-lg;
+  overflow: hidden;
+  margin-bottom: $spacing-6;
+  background: var(--color-surface-elevated);
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .template-content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 
-    h2 {
-        @include heading-sm;
-        margin: 0 0 $spacing-2 0;
-    }
+  h2 {
+    @include heading-sm;
+    margin: 0 0 $spacing-2 0;
+    color: var(--color-text);
+  }
 
-    .subtitle {
-        @include body-base;
-        color: var(--color-text-muted);
-        margin: 0 0 $spacing-6 0;
-    }
+  .subtitle {
+    @include body-base;
+    color: var(--color-text-muted);
+    margin: 0 0 $spacing-6 0;
+  }
 }
 
 .features {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 $spacing-6 0;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 $spacing-6 0;
 
-    li {
-        @include body-sm;
-        padding: $spacing-2 0;
-        border-bottom: 1px solid var(--color-border);
+  li {
+    @include body-sm;
+    padding: $spacing-2 0;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-muted);
 
-        &:last-child {
-            border-bottom: none;
-        }
+    &:last-child {
+      border-bottom: none;
     }
+  }
 }
 
 .template-footer {
-    @include flex-between;
-    margin-top: auto;
-    padding-top: $spacing-6;
-    border-top: 1px solid var(--color-border);
+  @include flex-between;
+  margin-top: auto;
+  padding-top: $spacing-6;
+  border-top: 1px solid var(--color-border);
 
-    .price {
-        @include heading-sm;
-        color: var(--color-accent);
-    }
+  .price {
+    @include heading-sm;
+    color: var(--color-accent);
+  }
+
+  .btn-primary {
+    @include button-primary;
+    padding: $spacing-3 $spacing-6;
+  }
 }

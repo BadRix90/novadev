@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, inject } from '@angular/core'; // <- AfterViewInit RAUS
+import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from '../../shared/hero/hero.component';
@@ -9,12 +9,11 @@ import { organizationSchema, localBusinessSchema, websiteSchema } from '../../da
 import * as LucideIcons from 'lucide-angular';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 import { CounterDirective } from '../../directives/counter.directive';
-import { AiToolsComponent } from '../../components/ai-tools/ai-tools.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, HeroComponent, CommonModule, LucideIcons.LucideAngularModule, ScrollRevealDirective, CounterDirective, AiToolsComponent],
+  imports: [RouterLink, HeroComponent, CommonModule, LucideIcons.LucideAngularModule, ScrollRevealDirective, CounterDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -22,7 +21,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   textService = inject(TextService);
 
   icons: Record<string, any> = {
-    sparkles: LucideIcons.Sparkles,
+    layout: LucideIcons.Layout,
     zap: LucideIcons.Zap,
     target: LucideIcons.Target,
     calculator: LucideIcons.Calculator,
