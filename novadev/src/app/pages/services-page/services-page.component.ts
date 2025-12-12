@@ -16,10 +16,9 @@ export class ServicesPageComponent implements OnInit {
   textService = inject(TextService);
 
   icons: Record<string, any> = {
-    layout: LucideIcons.Layout,
-    briefcase: LucideIcons.Briefcase,
-    shoppingcart: LucideIcons.ShoppingCart,
-    code2: LucideIcons.Code2
+    'file-text': LucideIcons.FileText,
+    shield: LucideIcons.Shield,
+    link: LucideIcons.Link
   };
 
   get texts() {
@@ -30,7 +29,7 @@ export class ServicesPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.seo.updateCanonicalUrl('https://novadev-edge.io/leistungen');
-    this.seo.updateMetaDescription('Dashboard-Entwicklung für KMU: HR-Dashboards, Service-Portale, E-Commerce-Backends. Template-basiert ab 12.000€.');
-    this.seo.updateTitle('Leistungen - NovaDev Edge');
+    this.seo.updateMetaDescription('Compliance-Automation für KMUs: E-Invoice Ready, CyberSafe NIS2, SAP Connect. Festpreise ab 1.997€.');
+    this.seo.updateTitle('Lösungen - NovaDev Edge');
   }
 }

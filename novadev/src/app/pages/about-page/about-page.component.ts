@@ -15,10 +15,10 @@ export class AboutPageComponent implements OnInit {
   textService = inject(TextService);
 
   icons: Record<string, any> = {
-    layout: LucideIcons.Layout,
-    target: LucideIcons.Target,
-    user: LucideIcons.User,
-    code2: LucideIcons.Code2
+    'check-circle': LucideIcons.CheckCircle,
+    zap: LucideIcons.Zap,
+    star: LucideIcons.Star,
+    clock: LucideIcons.Clock
   };
 
   get texts() {
@@ -29,7 +29,7 @@ export class AboutPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.seo.updateCanonicalUrl('https://novadev-edge.io/ueber-uns');
-    this.seo.updateMetaDescription('Kay Dietrich - NovaDev Gründer. 12 Jahre Bundeswehr IT-Erfahrung. Spezialisiert auf SaaS-Dashboards für KMU.');
+    this.seo.updateMetaDescription('Kay Dietrich - NovaDev Gründer. 12 Jahre Bundeswehr IT-Erfahrung. Spezialisiert auf Compliance-Automation für KMUs.');
     this.seo.updateTitle('Über uns - NovaDev Edge');
   }
 }
