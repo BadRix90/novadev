@@ -1,373 +1,297 @@
 export const DE_TEXTS = {
   seo: {
     home: {
-      title: "NovaDev - SaaS-Dashboards für KMU",
-      description: "Dashboard-Entwicklung für KMU. HR-Dashboards, Service-Portale, E-Commerce-Backends. Template-basiert ab 12.000€. 80€/h aus Lüneburg."
+      title: "NovaDev Edge - Compliance-Automation für KMU | E-Rechnung, NIS2, SAP",
+      description: "Technische Compliance-Lösungen für KMUs. E-Rechnungs-Setup ab 1.997€, NIS2-Readiness ab 7.997€, SAP-Integration ab 7.997€. Fachinformatiker mit Bundeswehr-Erfahrung."
     }
   },
   hero: {
     badge: {
-      items: ["2025 Ready", "PWA", "Dashboard-fokussiert", "DSGVO-clean"],
+      items: ["Fachinformatiker IHK", "Bundeswehr-Erfahrung", "VS-NfD-ready", "DSGVO-konform"]
     },
-    headline: "SaaS-Dashboards für KMU",
-    subline: "HR, Service & E-Commerce – Template-basiert statt Custom-Chaos",
+    headline: "Compliance ohne Kopfschmerzen",
+    subline: "E-Rechnung, NIS2, SAP-Integration – technisch umgesetzt in 7-30 Tagen",
     facts: [
-      { label: "Stundensatz", value: "80€/h" },
-      { label: "Templates ab", value: "12k€" },
-      { label: "Tech", value: "Angular 20" },
-      { label: "Seit", value: "2025" },
+      { label: "E-Invoice", value: "ab 1.997€" },
+      { label: "NIS2", value: "ab 7.997€" },
+      { label: "SAP Connect", value: "ab 7.997€" },
+      { label: "Delivery", value: "7-30 Tage" }
     ],
     cta: {
-      primary: "Dashboard anfragen",
-      secondary: "Templates ansehen",
-    },
+      primary: "Kostenloses Erstgespräch",
+      secondary: "Lösungen ansehen"
+    }
   },
   home: {
     intro: {
-      headline: "Dashboards, die für dein Business arbeiten",
-      text: "Du brauchst kein weiteres CMS. Du brauchst ein Dashboard, das Prozesse automatisiert. HR-Management, Service-Portale, E-Commerce-Backends – produktisiert, wartbar, skalierbar.",
+      headline: "Regulatorik kostet Sie Zeit und Nerven",
+      text: "E-Rechnungspflicht seit Januar 2025. NIS2 betrifft 29.850 Unternehmen. SAP S/4HANA-Migration bis 2027. Wir automatisieren Ihre Compliance – technisch umgesetzt, nicht nur beraten.",
     },
     features: [
       {
-        icon: "layout",
-        title: "Template-basiert",
-        description: "80% fertiger Code ab dem ersten Tag. Schneller Launch, planbare Kosten, bewährte Architektur.",
-        link: "/templates",
-        linkText: "Templates ansehen",
-      },
-      {
-        icon: "zap",
-        title: "Produktisiert statt Custom",
-        description: "Keine 6-Monatsprojekte mehr. Dashboard in 6-8 Wochen live. Margen steigen mit jedem Verkauf.",
-        link: "/leistungen",
+        icon: "file-text",
+        title: "E-Invoice Ready",
+        description: "XRechnung/ZUGFeRD-Setup in 7 Tagen. Integration in DATEV, Lexoffice, Sage. GoBD-konforme Archivierung inklusive.",
+        link: "/loesungen#e-rechnung",
         linkText: "Mehr erfahren",
       },
       {
-        icon: "target",
-        title: "Recurring Revenue ready",
-        description: "Wartung, Support, Features – alles auf Subscription-Basis. Planbare Einnahmen für beide Seiten.",
-        link: "/ueber-uns",
-        linkText: "So arbeiten wir",
+        icon: "shield",
+        title: "CyberSafe NIS2",
+        description: "NIS2-Gap-Analyse, Compliance-Dashboard, Incident-Response-Plan. Strafen bis 10 Mio.€ vermeiden.",
+        link: "/loesungen#nis2",
+        linkText: "Mehr erfahren",
       },
       {
-        icon: "calculator",
-        title: "Fair kalkuliert",
-        description: "80€/h Stundensatz oder Festpreis ab 12.000€. Templates amortisieren sich nach 3-5 Verkäufen.",
+        icon: "link",
+        title: "SAP Connect",
+        description: "SAP ↔ Shopify/Shopware Integration. Produkte, Bestellungen, Lagerbestände in Echtzeit synchronisiert.",
+        link: "/loesungen#sap",
+        linkText: "Mehr erfahren",
+      },
+      {
+        icon: "clock",
+        title: "Schnelle Lieferung",
+        description: "Keine 6-Monatsprojekte. E-Rechnung in 7 Tagen, NIS2 in 30 Tagen, SAP in 30 Tagen live.",
         link: "/kontakt",
         linkText: "Projekt anfragen",
       },
     ],
     cta: {
-      headline: "Bereit für Template-basierte Dashboards?",
-      text: "Lass uns unverbindlich über dein Dashboard-Projekt sprechen. In 15 Minuten weißt du, ob es passt.",
-      buttonText: "Kostenloses Erstgespräch",
+      headline: "Bereit für Compliance?",
+      text: "Buchen Sie ein kostenloses 15-Minuten-Gespräch. Keine Verkaufspitch – nur technische Beratung.",
+      buttonText: "Termin buchen",
     },
     stats: [
       {
         icon: "gauge",
-        value: "6-8 Wochen",
-        label: "Time-to-Market",
+        value: "7-30 Tage",
+        label: "Delivery-Zeit",
       },
       {
-        icon: "euro",
-        value: "80€/h",
-        label: "Transparenter Preis",
+        icon: "shield-check",
+        value: "45%",
+        label: "KMUs nicht E-Rechnung-ready",
       },
       {
-        icon: "target",
-        value: "12k€+",
-        label: "Template-Projekte",
+        icon: "users",
+        value: "29.850",
+        label: "Unternehmen NIS2-betroffen",
       },
     ],
   },
   services: {
     header: {
-      title: "Leistungen",
-      subtitle: "Dashboard-Entwicklung für mittelständische Unternehmen"
+      title: "Lösungen",
+      subtitle: "Technische Compliance-Automation für KMUs (50-500 Mitarbeiter)"
     },
     items: [
       {
-        icon: "layout",
-        title: "HR-Dashboards",
-        description: "Urlaubsmanagement, Zeiterfassung und Mitarbeiterverwaltung. DSGVO-konform und DATEV-ready für KMU ab 20 Mitarbeitern.",
-        techStack: ["Angular 20", "Django REST", "PostgreSQL", "DATEV-Export"]
+        icon: "file-text",
+        title: "E-Invoice Ready",
+        description: "XRechnung/ZUGFeRD-Setup in 7 Tagen. Integration in DATEV, Lexoffice, Sage. GoBD-konforme Archivierung inklusive. Preise: Standard 1.997€, Professional 2.997€, Enterprise 4.997€.",
+        techStack: ["Angular 20", "Django 5.0", "PostgreSQL", "lxml", "reportlab"]
       },
       {
-        icon: "briefcase",
-        title: "Service-Portale",
-        description: "CRM, Auftragsmanagement und mobile Zeiterfassung für Dienstleister. Perfekt für Handwerk und Beratung.",
-        techStack: ["PWA", "Offline-First", "Mobile Tracking", "PDF-Export"]
+        icon: "shield",
+        title: "CyberSafe NIS2",
+        description: "NIS2-Compliance in 30 Tagen. Gap-Analyse, Compliance-Dashboard, Incident-Response-Plan. Strafen bis 10 Mio.€ vermeiden. Preise: Assessment 997€, Full Implementation 7.997€, Managed 499€/Monat.",
+        techStack: ["Angular 20", "Django 5.0", "PostgreSQL", "Sentry", "BPMN"]
       },
       {
-        icon: "shoppingcart",
-        title: "E-Commerce Backend",
-        description: "Multi-Channel-Verwaltung, Inventar-Management und Analytics. Zentrale Steuerung aller Verkaufskanäle.",
-        techStack: ["REST APIs", "Real-time Sync", "Multi-Warehouse", "Analytics"]
-      },
-      {
-        icon: "code2",
-        title: "Custom Dashboards",
-        description: "Individuelle Business-Intelligence-Lösungen. Von Datenvisualisierung bis Workflow-Automation.",
-        techStack: ["D3.js", "Chart.js", "Custom APIs", "Automation"]
+        icon: "link",
+        title: "SAP Connect",
+        description: "SAP ↔ E-Commerce Integration in 30 Tagen. Bi-direktionale Synchronisation für Produkte, Bestellungen, Lagerbestände. 90% günstiger als SAP Commerce Cloud. Preise: Shopify 7.997€, Shopware 9.997€, Custom 12.997€.",
+        techStack: ["Angular 20", "Django REST", "Celery", "Redis", "SAP RFC", "Shopify API"]
       }
     ],
     pricing: {
-      label: "Stundensatz:",
-      value: "80€/h",
-      note: "Template-basierte Projekte ab 12.000€ Festpreis"
+      label: "Festpreise:",
+      value: "ab 1.997€",
+      note: "Alle Projekte mit Wartungsverträgen verfügbar (149-499€/Monat)"
     },
     cta: {
-      title: "Dashboard-Projekt starten?",
-      text: "Lass uns über deine Anforderungen sprechen und die passende Lösung finden.",
-      button: "Jetzt Kontakt aufnehmen"
+      title: "Bereit zu starten?",
+      text: "Buchen Sie ein kostenloses 15-Minuten-Gespräch. Wir klären, welche Lösung für Sie passt.",
+      button: "Termin buchen"
     }
   },
   about: {
     header: {
       title: "Über mich",
-      subtitle: "Dashboards mit System – von einem, der Struktur kennt",
+      subtitle: "Fachinformatiker mit Bundeswehr-Hintergrund"
     },
     intro: {
-      title: "Wer steckt hinter NovaDev?",
-      text: "Mein Name ist Kay Dietrich, Gründer von NovaDev. Nach 12 Jahren Bundeswehr – davon 8 Jahre im IT-Bereich – weiß ich: Komplexe Systeme brauchen klare Strukturen. Genau das bringe ich in die Entwicklung von Business-Dashboards und internen Tools für KMU.",
+      title: "Wer steckt hinter NovaDev Edge?",
+      text: "Mein Name ist Kay Dietrich, Gründer von NovaDev Edge. Nach 12 Jahren bei der Bundeswehr habe ich 2024 meine Fachinformatiker-Ausbildung (IHK) abgeschlossen. Meine militärische Erfahrung hat mir Disziplin, Zuverlässigkeit und ein tiefes Verständnis für Sicherheitsanforderungen gegeben – Eigenschaften, die ich heute in die Entwicklung von Compliance-Lösungen einbringe."
     },
     approach: {
       title: "Mein Fokus",
-      text: "Ich entwickle SaaS-Dashboards und interne Management-Tools, die Geschäftsprozesse automatisieren: HR-Dashboards, Service-Portale, E-Commerce-Backends. Tech-Stack: Angular 20, TypeScript, Django, PostgreSQL.",
+      text: "Ich entwickle technische Compliance-Automation für KMUs: E-Rechnungs-Setup, NIS2-Compliance, SAP-Integration. Meine Spezialisierung liegt in der Schnittstelle zwischen modernen Web-Technologien (Angular, Django) und Legacy-Systemen (SAP, DATEV). Tech-Stack: Angular 20, TypeScript, Django 5.0, Python, PostgreSQL."
     },
     values: [
       {
-        icon: "layout",
-        title: "Produktisiert",
-        text: "Template-basiert statt Neuerfindung – schneller, günstiger",
+        icon: "check-circle",
+        title: "Ehrlichkeit",
+        text: "Ich sage Ihnen, ob ich der Richtige für Ihr Projekt bin – oder nicht."
       },
-      {
-        icon: "target",
-        title: "Transparent",
-        text: "Festpreise, klarer Scope, keine versteckten Kosten",
-      },
-      {
-        icon: "user",
-        title: "Persönlich",
-        text: "Direkter Draht zum Entwickler, kein Agentur-Overhead",
-      },
-      {
-        icon: "code2",
-        title: "Wartbar",
-        text: "Sauberer Code, Dokumentation, langfristig pflegbar",
-      },
-    ],
-    vision: {
-      title: "Meine Vision: NovaDev OASIS",
-      text: "Parallel baue ich OASIS – eine Community-Plattform für Angular-Freelancer und KMU. Thought Leadership statt Marketing-Blabla. Qualität vor Quantität."
-    },
-    cta: {
-      title: "Warum NovaDev?",
-      text: "Du bekommst einen Sparringspartner, der mitdenkt – nicht nur Code, sondern Lösungen für echte Business-Probleme.",
-      button: "Lass uns sprechen"
-    }
-  },
-  portfolio: {
-    header: {
-      title: "Projekte",
-      subtitle: "Ausgewählte Arbeiten - funktional, modern, durchdacht",
-    },
-    projects: [
-      {
-        title: "Kay Dietrich Portfolio",
-        description:
-          "Persönliche Portfolio-Website mit Angular & Material Design. Moderne Präsentation von Frontend-Expertise.",
-        url: "https://kaydietrich.com",
-        linkText: "Live Demo ansehen",
-        techStack: ["Angular", "Material Design", "SCSS", "TypeScript"],
-      },
-      {
-        title: "Join",
-        description:
-          "Task-Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop, weise Benutzer und Kategorien zu.",
-        url: "https://kaydietrich.com/join/",
-        linkText: "Projekt ansehen",
-        techStack: ["Angular", "TypeScript", "Drag & Drop", "Kanban"],
-      },
-    ],
-    cta: {
-      title: "Eigenes Projekt starten?",
-      text: "Lass uns gemeinsam deine Idee in die Realität umsetzen.",
-      button: "Projekt anfragen",
-    },
-  },
-  whyCustom: {
-    header: {
-      title: "Warum Custom Development?",
-      subtitle: "Maßgeschneiderte Lösungen für nachhaltige Ergebnisse",
-    },
-    intro: {
-      text: "Custom Development bedeutet: Code, der exakt auf deine Anforderungen zugeschnitten ist. Keine unnötigen Features, keine monatlichen Lizenzen, keine Abhängigkeiten. Nur das, was du wirklich brauchst.",
-    },
-    benefits: [
       {
         icon: "zap",
-        title: "40% schneller",
-        description:
-          "Custom Angular Apps laden durchschnittlich 40% schneller. Nur der Code, den du brauchst – kein Ballast.",
+        title: "Pragmatismus",
+        text: "Keine Buzzwords. Keine Über-Engineering. Nur Lösungen, die funktionieren."
       },
       {
-        icon: "shield",
-        title: "96% sicherer",
-        description: "Kein Plugin-Chaos, keine bekannten Schwachstellen. Dein Code, deine Sicherheit.",
+        icon: "star",
+        title: "Qualität",
+        text: "Code, den ich selbst in 5 Jahren noch verstehen will. Dokumentation, die tatsächlich hilft."
       },
       {
-        icon: "coins",
-        title: "Keine Lizenzkosten",
-        description: "Einmalige Investition statt monatlicher Gebühren. Kein Vendor Lock-in, keine versteckten Kosten.",
-      },
-      {
-        icon: "wrench",
-        title: "Volle Kontrolle",
-        description: "Jede gewünschte Funktion umsetzbar. Keine Limitierungen durch Plugins oder Themes.",
-      },
+        icon: "clock",
+        title: "Zuverlässigkeit",
+        text: "Militärische Disziplin trifft moderne Entwicklung. Deadlines sind heilig."
+      }
     ],
-    cta: {
-      title: "Bereit für eine maßgeschneiderte Lösung?",
-      text: "Lass uns dein Projekt besprechen und herausfinden, ob Custom Development die richtige Wahl ist.",
-      button: "Kostenlose Beratung anfragen",
+    vision: {
+      title: "Warum Compliance-Automation?",
+      text: "Regulatorik wird nicht verschwinden – aber der Stress damit kann. Ich glaube an Compliance as Code: Automatisierung statt Administration. Software, die Pflichten erfüllt, bevor sie zu Problemen werden."
     },
+    cta: {
+      title: "Lernen Sie mich kennen",
+      text: "Buchen Sie ein 15-Minuten-Gespräch. Kostenlos, unverbindlich, technisch.",
+      button: "Termin buchen"
+    }
   },
   contact: {
     header: {
       title: "Kontakt",
-      subtitle: "Lass uns über dein Projekt sprechen",
+      subtitle: "Lassen Sie uns über Ihren Compliance-Bedarf sprechen"
     },
     form: {
       company: {
         label: "Unternehmen",
-        placeholder: "Deine Firma",
+        placeholder: "Ihre Firma"
       },
       subject: {
         label: "Thema *",
         placeholder: "Bitte wählen",
         options: [
-          { value: "projektanfrage", label: "Projektanfrage" },
-          { value: "bestehendes-projekt", label: "Frage zu bestehendem Projekt" },
-          { value: "allgemeine-frage", label: "Allgemeine Frage zur Arbeit" },
-          { value: "technische-frage", label: "Technische Frage" },
-          { value: "sonstiges", label: "Sonstiges" },
-        ],
+          { value: "e-rechnung", label: "E-Invoice Ready (ab 1.997€)" },
+          { value: "nis2", label: "CyberSafe NIS2 (ab 7.997€)" },
+          { value: "sap", label: "SAP Connect (ab 7.997€)" },
+          { value: "beratung", label: "Allgemeine Beratung" },
+          { value: "sonstiges", label: "Sonstiges" }
+        ]
       },
       name: {
         label: "Name *",
-        placeholder: "Dein Name",
+        placeholder: "Ihr Name"
       },
       email: {
         label: "E-Mail *",
-        placeholder: "deine@email.de",
+        placeholder: "ihre@email.de"
       },
       message: {
-        label: "Projekt *",
-        placeholder: "Beschreibe kurz dein Projekt...",
+        label: "Ihre Anfrage *",
+        placeholder: "Beschreiben Sie kurz Ihren Compliance-Bedarf..."
       },
       budget: {
         label: "Budget-Rahmen",
         placeholder: "Bitte wählen",
-        options: ["< 2.000€", "2.000€ - 5.000€", "5.000€ - 10.000€", "> 10.000€"],
+        options: ["< 2.000€", "2.000€ - 5.000€", "5.000€ - 10.000€", "> 10.000€"]
       },
       submit: {
         idle: "Anfrage senden",
-        sending: "Wird gesendet...",
+        sending: "Wird gesendet..."
       },
-      success: "Vielen Dank! Deine Nachricht wurde gesendet. Ich melde mich innerhalb von 24 Stunden bei dir.",
-      error:
-        "Entschuldigung, beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut oder kontaktiere mich direkt.",
+      success: "Vielen Dank! Ihre Nachricht wurde gesendet. Ich melde mich innerhalb von 24 Stunden bei Ihnen.",
+      error: "Entschuldigung, beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie mich direkt."
     },
     info: {
       title: "Direktkontakt",
       email: {
         label: "E-Mail",
-        value: "info@novadev-edge.io",
+        value: "info@novadev-edge.io"
       },
       location: {
         label: "Standort",
-        value: "Lüneburg, Niedersachsen",
+        value: "Lüneburg, Deutschland"
       },
       responseTime: {
         label: "Antwortzeit",
-        value: "In der Regel innerhalb von 24 Stunden",
+        value: "In der Regel innerhalb von 24 Stunden"
       },
-      note: "Ich arbeite remote, persönliche Termine in Lüneburg sind nach Absprache möglich.",
+      note: "Remote-Arbeit deutschlandweit. Persönliche Termine in Lüneburg/Hamburg nach Absprache möglich."
     },
     errors: {
       name: {
         required: "Name ist erforderlich",
-        minlength: "Name zu kurz",
+        minlength: "Name zu kurz"
       },
       email: {
         required: "E-Mail ist erforderlich",
-        invalid: "Bitte gib eine gültige E-Mail-Adresse ein",
+        invalid: "Bitte geben Sie eine gültige E-Mail-Adresse ein"
       },
       subject: {
-        required: "Thema ist erforderlich",
+        required: "Thema ist erforderlich"
       },
       message: {
         required: "Nachricht ist erforderlich",
-        minlength: "Nachricht zu kurz (min. 10 Zeichen)",
+        minlength: "Nachricht zu kurz (min. 10 Zeichen)"
       },
-      generic: "Ungültige Eingabe",
-    },
+      generic: "Ungültige Eingabe"
+    }
   },
   header: {
     logo: {
-      alt: "NovaDev Logo",
-      ariaLabel: "NovaDev - Zur Startseite",
+      alt: "NovaDev Edge Logo",
+      ariaLabel: "NovaDev Edge - Zur Startseite"
     },
     nav: [
-      { label: "Leistungen", route: "/leistungen" },
-      { label: "Warum Custom?", route: "/warum-custom-development" },
-      { label: "Über uns", route: "/ueber-uns" },
-      { label: "Templates", route: "/templates" },
-      { label: "AI-Tools", route: "/tools" },
-      { label: "Kontakt", route: "/kontakt" },
-      { label: "Vision", route: "/vision" },
+      { label: "Lösungen", route: "/loesungen" },
+      { label: "Über mich", route: "/ueber-uns" },
+      { label: "Kontakt", route: "/kontakt" }
     ],
     mobile: {
       ariaLabelOpen: "Menü öffnen",
       ariaLabelClose: "Menü schließen",
-      startLink: "Start",
+      startLink: "Start"
     },
+    cta: {
+      label: "Termin buchen",
+      route: "/kontakt"
+    }
   },
   footer: {
     brand: {
-      name: "NovaDev",
-      description: "Angular-Entwicklung für KMU – aus Lüneburg. Funktional. Performant. Auf den Punkt.",
+      name: "NovaDev Edge",
+      description: "Technische Compliance-Lösungen für den deutschen Mittelstand. E-Rechnung, NIS2, SAP-Integration."
     },
     nav: {
       title: "Navigation",
       links: [
-        { label: "Start", route: "/" },
-        { label: "Leistungen", route: "/leistungen" },
-        { label: "Warum Custom?", route: "/warum-custom-development" },
-        { label: "Über uns", route: "/ueber-uns" },
-        { label: "Projekte", route: "/projekte" },
-        { label: "Kontakt", route: "/kontakt" },
-        { label: "Vision", route: "/vision" }, // Added Vision to footer nav
-      ],
+        { label: "Home", route: "/" },
+        { label: "Lösungen", route: "/loesungen" },
+        { label: "Über mich", route: "/ueber-uns" },
+        { label: "Kontakt", route: "/kontakt" }
+      ]
     },
     legal: {
-      title: "Legal",
+      title: "Rechtliches",
       links: [
         { label: "Impressum", route: "/impressum" },
-        { label: "Datenschutz", route: "/datenschutz" },
-      ],
+        { label: "Datenschutz", route: "/datenschutz" }
+      ]
     },
     bottom: {
-      copyright: "NovaDev. Alle Rechte vorbehalten.",
-      backToTop: "Nach oben",
-    },
+      copyright: "NovaDev Edge. Alle Rechte vorbehalten.",
+      backToTop: "Nach oben"
+    }
   },
   legalNotice: {
     backLink: "Zurück zur Startseite",
     header: {
       title: "Impressum",
-      subtitle: "Angaben gemäß § 5 TMG",
+      subtitle: "Angaben gemäß § 5 TMG"
     },
     provider: {
       title: "Diensteanbieter",
@@ -375,125 +299,131 @@ export const DE_TEXTS = {
       company: "NovaDev Edge",
       street: "Lüneburger Str. 27",
       city: "21394 Kirchgellersen",
-      country: "Deutschland",
+      country: "Deutschland"
     },
     contact: {
       title: "Kontaktmöglichkeiten",
       email: "E-Mail-Adresse:",
+      emailValue: "info@novadev-edge.io",
       emailLink: "Über das",
       emailLinkText: "Kontaktformular",
       phone: "Telefon:",
-      phoneText: "Auf Anfrage über das Kontaktformular",
+      phoneText: "Auf Anfrage über das Kontaktformular"
     },
     profession: {
       title: "Berufsbezeichnung und berufsrechtliche Regelungen",
       designation: "Berufsbezeichnung:",
-      designationText: "Selbstständiger Webentwickler und Softwareentwickler",
+      designationText: "Fachinformatiker (IHK) – Selbstständiger IT-Dienstleister, Spezialisierung: Compliance-Automation",
       chamber: "Zuständige Kammer:",
       chamberText: "Nicht kammerpflichtig",
       granted: "Verliehen in:",
-      grantedText: "Deutschland",
+      grantedText: "Deutschland"
     },
     insurance: {
       title: "Angaben zur Berufshaftpflichtversicherung",
       company: "Name und Sitz der Gesellschaft:",
       companyText: "Details auf Anfrage verfügbar",
       coverage: "Geltungsraum der Versicherung:",
-      coverageText: "Deutschland, Europa",
+      coverageText: "Deutschland, Europa"
     },
     responsible: {
       title: "Redaktionell verantwortlich",
+      name: "Kay Dietrich"
     },
     euDispute: {
       title: "EU-Streitschlichtung",
       text: "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:",
-      link: "Europäische Kommission - Online-Streitbeilegung",
-      emailNote: "Unsere E-Mail-Adresse finden Sie oben im Impressum.",
+      link: "https://ec.europa.eu/consumers/odr",
+      linkText: "Europäische Kommission - Online-Streitbeilegung",
+      emailNote: "Unsere E-Mail-Adresse finden Sie oben im Impressum."
     },
     consumerDispute: {
       title: "Verbraucherstreitbeilegung/Universalschlichtungsstelle",
-      text: "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+      text: "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
     },
     copyright: {
       title: "Urheberrechte",
       p1: "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.",
       p2: "Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.",
-      p3: "Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.",
+      p3: "Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir diese Inhalte umgehend entfernen."
     },
     disclaimer: {
       title: "Haftungsausschluss (Disclaimer)",
       content: {
         title: "Haftung für Inhalte",
         p1: "Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht unter der Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
-        p2: "Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.",
+        p2: "Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen."
       },
       links: {
         title: "Haftung für Links",
         p1: "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.",
-        p2: "Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.",
-      },
+        p2: "Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen."
+      }
     },
     technologies: {
       title: "Verwendete Technologien",
       intro: "Diese Website wurde entwickelt mit:",
       items: [
-        { name: "Angular:", description: "Frontend-Framework" },
+        { name: "Angular 20:", description: "Frontend-Framework" },
         { name: "TypeScript:", description: "Programmiersprache" },
         { name: "SCSS:", description: "CSS-Präprozessor" },
-        { name: "Responsive Design:", description: "Für optimale Darstellung auf allen Geräten" },
+        { name: "Responsive Design:", description: "Für optimale Darstellung auf allen Geräten" }
       ],
-      note: "Alle verwendeten Technologien entsprechen aktuellen Web-Standards und Barrierefreiheits-Richtlinien.",
+      note: "Alle verwendeten Technologien entsprechen aktuellen Web-Standards und Barrierefreiheits-Richtlinien."
     },
     privacy: {
       title: "Datenschutz",
       text: "Informationen zur Erhebung, Verarbeitung und Nutzung Ihrer personenbezogenen Daten finden Sie in unserer",
-      linkText: "Datenschutzerklärung",
+      linkText: "Datenschutzerklärung"
     },
     cta: {
       title: "Fragen zum Impressum?",
       text: "Bei rechtlichen Fragen oder Anmerkungen zu diesem Impressum stehe ich Ihnen gerne zur Verfügung.",
-      button: "Kontakt aufnehmen",
-    },
+      button: "Kontakt aufnehmen"
+    }
   },
   privacyPolicy: {
     backLink: "Zurück zur Startseite",
     header: {
       title: "Datenschutzerklärung",
-      subtitle: "Stand:",
+      subtitle: "Stand: Dezember 2025"
     },
     responsible: {
       title: "1. Verantwortlicher",
       intro: "Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:",
+      name: "Kay Dietrich",
+      company: "NovaDev Edge",
+      street: "Lüneburger Str. 27",
+      city: "21394 Kirchgellersen",
+      email: "info@novadev-edge.io",
       contact: "Bei Fragen zum Datenschutz können Sie mich über das",
       contactLink: "Kontaktformular",
-      contactEnd: "erreichen.",
+      contactEnd: "erreichen."
     },
     overview: {
       title: "2. Überblick über die Datenverarbeitung",
-      intro:
-        "Die nachfolgende Übersicht fasst die wichtigsten Punkte der Datenverarbeitung zusammen und dient als schnelle Orientierung. Detaillierte Informationen finden Sie in den entsprechenden Abschnitten dieser Datenschutzerklärung.",
+      intro: "Die nachfolgende Übersicht fasst die wichtigsten Punkte der Datenverarbeitung zusammen und dient als schnelle Orientierung. Detaillierte Informationen finden Sie in den entsprechenden Abschnitten dieser Datenschutzerklärung.",
       dataProcessed: {
         title: "Was für Daten verarbeiten wir?",
         items: [
-          "Kontaktdaten (Name, E-Mail-Adresse, Telefonnummer)",
-          "Projektdaten (Anforderungen, Briefings, Design-Assets)",
+          "Kontaktdaten (Name, E-Mail-Adresse, Telefonnummer, Unternehmen)",
+          "Projektdaten (Compliance-Anforderungen, technische Spezifikationen)",
           "Technische Daten (IP-Adresse, Browser-Informationen)",
-          "Von Ihnen bereitgestellte Unternehmensdaten für Projekte",
-        ],
+          "Von Ihnen bereitgestellte Unternehmensdaten für Compliance-Projekte"
+        ]
       },
       legalBasis: {
         title: "Auf welcher Rechtsgrundlage?",
         items: [
           "Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)",
           "Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO)",
-          "Berechtigte Interessen (Art. 6 Abs. 1 lit. f DSGVO)",
-        ],
-      },
+          "Berechtigte Interessen (Art. 6 Abs. 1 lit. f DSGVO)"
+        ]
+      }
     },
     contact: {
       title: "3. Kontaktaufnahme",
-      intro:
-        "Bei der Kontaktaufnahme über das Kontaktformular oder E-Mail werden die von Ihnen mitgeteilten Daten zur Bearbeitung Ihrer Anfrage und für den Fall von Anschlussfragen bei mir gespeichert.",
+      intro: "Bei der Kontaktaufnahme über das Kontaktformular oder E-Mail werden die von Ihnen mitgeteilten Daten zur Bearbeitung Ihrer Anfrage und für den Fall von Anschlussfragen bei mir gespeichert.",
       dataProcessed: {
         title: "Verarbeitete Daten:",
         items: [
@@ -501,28 +431,28 @@ export const DE_TEXTS = {
           "E-Mail-Adresse",
           "Telefonnummer (optional)",
           "Unternehmen (optional)",
+          "Thema der Anfrage (E-Invoice, NIS2, SAP, etc.)",
           "Nachrichteninhalt",
-          "Zeitpunkt der Anfrage",
-        ],
+          "Zeitpunkt der Anfrage"
+        ]
       },
       legalBasis: "Rechtsgrundlage:",
       legalBasisText: "Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung)",
       storage: "Speicherdauer:",
-      storageText: "Bis zur vollständigen Bearbeitung Ihrer Anfrage, längstens 3 Jahre nach letztem Kontakt",
+      storageText: "Bis zur vollständigen Bearbeitung Ihrer Anfrage, längstens 3 Jahre nach letztem Kontakt"
     },
     projectData: {
       title: "4. Projektdaten und Kundendaten",
-      intro:
-        "Im Rahmen der Erbringung meiner Dienstleistungen (Webentwicklung, Design, Beratung) verarbeite ich verschiedene Arten von Daten, die für die Projektdurchführung erforderlich sind.",
+      intro: "Im Rahmen der Erbringung meiner Dienstleistungen (Compliance-Automation, E-Rechnungs-Setup, NIS2-Compliance, SAP-Integration) verarbeite ich verschiedene Arten von Daten, die für die Projektdurchführung erforderlich sind.",
       categories: {
         title: "Kategorien verarbeiteter Daten:",
         items: [
-          { label: "Projektanforderungen:", text: "Briefings, Spezifikationen, Zielgruppendaten" },
-          { label: "Design-Assets:", text: "Logos, Bilder, Texte, Corporate Design Elemente" },
-          { label: "Unternehmensdaten:", text: "Firmeninformationen, Produktdaten, Service-Beschreibungen" },
-          { label: "Mockups und Prototypen:", text: "Entwickelte Designs und Konzepte" },
-          { label: "Technische Daten:", text: "Domain-Informationen, Hosting-Details, API-Zugänge" },
-        ],
+          { label: "Projektanforderungen:", text: "Compliance-Anforderungen, technische Spezifikationen, Zielgruppendaten" },
+          { label: "Compliance-Daten:", text: "E-Rechnungs-Konfigurationen, NIS2-Gap-Analysen, SAP-Systemdaten" },
+          { label: "Unternehmensdaten:", text: "Firmeninformationen, Organisationsstrukturen, Geschäftsprozesse" },
+          { label: "Technische Daten:", text: "API-Zugänge, Systemkonfigurationen, Integrations-Details" },
+          { label: "Dokumentation:", text: "Entwickelte Konzepte, Implementierungspläne, Compliance-Reports" }
+        ]
       },
       handling: {
         title: "Umgang mit Ihren Daten:",
@@ -531,19 +461,18 @@ export const DE_TEXTS = {
           "Verwendung ausschließlich für das vereinbarte Projekt",
           "Sichere Speicherung auf verschlüsselten Systemen",
           "Keine Weitergabe an Dritte ohne Ihre ausdrückliche Zustimmung",
-          "Löschung nach Projektabschluss (sofern nicht anders vereinbart)",
-        ],
+          "VS-NfD-konforme Handhabung bei entsprechenden Projekten",
+          "Löschung nach Projektabschluss (sofern nicht anders vereinbart)"
+        ]
       },
       legalBasis: "Rechtsgrundlage:",
       legalBasisText: "Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung)",
       storage: "Speicherdauer:",
-      storageText:
-        "Für die Dauer des Projekts plus 3 Jahre für Gewährleistungszwecke, oder nach vertraglicher Vereinbarung",
+      storageText: "Für die Dauer des Projekts plus 3 Jahre für Gewährleistungszwecke, oder nach vertraglicher Vereinbarung"
     },
     websiteUsage: {
       title: "5. Website-Nutzung und technische Daten",
-      intro:
-        "Bei jedem Zugriff auf diese Website werden automatisch Informationen erfasst, die Ihr Browser übermittelt.",
+      intro: "Bei jedem Zugriff auf diese Website werden automatisch Informationen erfasst, die Ihr Browser übermittelt.",
       dataCollected: {
         title: "Erfasste Daten:",
         items: [
@@ -552,33 +481,31 @@ export const DE_TEXTS = {
           "Browser-Typ und -Version",
           "Betriebssystem",
           "Referrer URL",
-          "Aufgerufene Seiten",
-        ],
+          "Aufgerufene Seiten"
+        ]
       },
       legalBasis: "Rechtsgrundlage:",
       legalBasisText: "Art. 6 Abs. 1 lit. f DSGVO (berechtigte Interessen)",
       purpose: "Zweck:",
       purposeText: "Technische Bereitstellung und Sicherheit der Website",
       storage: "Speicherdauer:",
-      storageText: "7 Tage",
+      storageText: "7 Tage"
     },
     cookies: {
       title: "6. Cookies und ähnliche Technologien",
-      intro:
-        "Diese Website verwendet minimal notwendige Cookies für die grundlegende Funktionalität. Tracking-Cookies oder Analyse-Tools werden nicht eingesetzt.",
+      intro: "Diese Website verwendet minimal notwendige Cookies für die grundlegende Funktionalität. Tracking-Cookies oder Analyse-Tools werden nicht eingesetzt.",
       used: {
         title: "Verwendete Cookies:",
         items: [
           { label: "Session-Cookies:", text: "Für die Navigation und Formular-Funktionalität" },
-          { label: "Präferenz-Cookies:", text: "Speicherung Ihrer Cookie-Einstellungen" },
-        ],
+          { label: "Präferenz-Cookies:", text: "Speicherung Ihrer Cookie-Einstellungen und Theme-Präferenzen" }
+        ]
       },
-      note: "Sie können Cookies in Ihren Browser-Einstellungen deaktivieren. Dies kann jedoch die Funktionalität der Website beeinträchtigen.",
+      note: "Sie können Cookies in Ihren Browser-Einstellungen deaktivieren. Dies kann jedoch die Funktionalität der Website beeinträchtigen."
     },
     security: {
       title: "7. Datensicherheit",
-      intro:
-        "Ich setze technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre Daten vor Verlust, Manipulation und unberechtigtem Zugriff zu schützen.",
+      intro: "Ich setze technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre Daten vor Verlust, Manipulation und unberechtigtem Zugriff zu schützen. Dies ist besonders wichtig bei Compliance-Projekten.",
       measures: {
         title: "Sicherheitsmaßnahmen:",
         items: [
@@ -587,8 +514,9 @@ export const DE_TEXTS = {
           "Regelmäßige Sicherheitsupdates aller Systeme",
           "Zugriffsbeschränkungen und Authentifizierung",
           "Regelmäßige Datensicherungen",
-        ],
-      },
+          "VS-NfD-konforme Sicherheitsmaßnahmen bei entsprechenden Projekten"
+        ]
+      }
     },
     rights: {
       title: "8. Ihre Rechte",
@@ -600,286 +528,29 @@ export const DE_TEXTS = {
         { label: "Einschränkung (Art. 18 DSGVO):", text: "Einschränkung der Verarbeitung" },
         { label: "Übertragbarkeit (Art. 20 DSGVO):", text: "Übertragung Ihrer Daten" },
         { label: "Widerspruch (Art. 21 DSGVO):", text: "Widerspruch gegen die Verarbeitung" },
-        { label: "Widerruf der Einwilligung:", text: "Jederzeit mit Wirkung für die Zukunft" },
+        { label: "Widerruf der Einwilligung:", text: "Jederzeit mit Wirkung für die Zukunft" }
       ],
       contact: "Zur Ausübung Ihrer Rechte kontaktieren Sie mich über das",
-      contactLink: "Kontaktformular",
+      contactLink: "Kontaktformular"
     },
     complaint: {
       title: "9. Beschwerderecht",
-      intro:
-        "Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten durch mich zu beschweren.",
+      intro: "Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten durch mich zu beschweren.",
       authority: "Zuständige Aufsichtsbehörde:",
       name: "Die Landesbeauftragte für den Datenschutz Niedersachsen",
       street: "Prinzenstraße 5",
       city: "30159 Hannover",
+      website: "https://lfd.niedersachsen.de"
     },
     changes: {
       title: "10. Änderungen der Datenschutzerklärung",
       text: "Diese Datenschutzerklärung kann bei Änderungen der Website oder rechtlichen Anforderungen angepasst werden. Die aktuelle Version ist stets auf dieser Seite verfügbar.",
-      lastUpdate: "Letzte Aktualisierung:",
+      lastUpdate: "Letzte Aktualisierung: Dezember 2025"
     },
     cta: {
       title: "Fragen zum Datenschutz?",
       text: "Bei Fragen zur Verarbeitung Ihrer Daten oder zur Ausübung Ihrer Rechte stehe ich Ihnen gerne zur Verfügung.",
-      button: "Kontakt aufnehmen",
-    },
+      button: "Kontakt aufnehmen"
+    }
   },
-  aiTools: {
-    header: {
-      badge: "AI-POWERED TOOLS",
-      title: "Werkzeuge für deine Website",
-      subtitle: "Professionelle Tools zur Optimierung deiner Web-Präsenz. Kostenlos testen oder Early Access sichern.",
-    },
-    tools: [
-      {
-        icon: "zap",
-        title: "Website Speed Tester",
-        description:
-          "Analysiere deine Website mit Google Lighthouse. Performance, SEO, Accessibility und Best Practices in Sekunden.",
-        status: "live",
-        price: "Kostenlos",
-        badge: "NEU",
-        link: "/tools/speed-test",
-        cta: "Jetzt testen",
-      },
-      {
-        icon: "fileText",
-        title: "AI Content Generator",
-        description:
-          "SEO-optimierte Texte für deine Website. Blog-Posts, Produktbeschreibungen und Meta-Tags mit KI erstellen.",
-        status: "coming-soon",
-        price: "29€/Monat",
-        cta: "Early Access",
-      },
-      {
-        icon: "image",
-        title: "Image Optimizer",
-        description:
-          "Bilder automatisch komprimieren und in WebP konvertieren. Inklusive AI-generierte Alt-Texte für besseres SEO.",
-        status: "coming-soon",
-        price: "19€/Monat",
-        cta: "Early Access",
-      },
-      {
-        icon: "search",
-        title: "SEO Analyzer",
-        description: "Umfassende SEO-Analyse deiner Website. On-Page Optimierung, Keywords und technische SEO-Checks.",
-        status: "coming-soon",
-        price: "Coming Soon",
-        cta: "Early Access",
-      },
-    ],
-    emailForm: {
-      title: "Early Access sichern",
-      subtitle: "Sei einer der Ersten, die Zugriff auf unsere neuen AI-Tools bekommen!",
-      placeholder: "deine@email.de",
-      button: "Auf Warteliste setzen",
-      note: "Kein Spam. Du kannst dich jederzeit abmelden.",
-    },
-  },
-  speedTest: {
-    header: {
-      title: "Website Speed Tester",
-      subtitle: "Analysiere die Performance deiner Website kostenlos mit Google Lighthouse",
-    },
-    input: {
-      label: "Website URL",
-      placeholder: "https://deine-website.de",
-      button: "Jetzt analysieren",
-      info: "Die Analyse dauert ca. 30-60 Sekunden",
-    },
-    loading: {
-      title: "Analysiere deine Website...",
-      subtitle: "Bitte warten, während wir deine Website mit Google Lighthouse testen",
-      steps: [
-        "Performance wird gemessen",
-        "SEO wird überprüft",
-        "Accessibility wird getestet",
-        "Best Practices werden analysiert",
-      ],
-    },
-    results: {
-      title: "Deine Ergebnisse",
-      subtitle: "Hier ist die Analyse deiner Website",
-      scores: {
-        performance: "Performance",
-        seo: "SEO",
-        accessibility: "Barrierefreiheit",
-        bestPractices: "Best Practices",
-      },
-      metrics: {
-        title: "Core Web Vitals",
-        fcp: "First Contentful Paint",
-        lcp: "Largest Contentful Paint",
-        tbt: "Total Blocking Time",
-        cls: "Cumulative Layout Shift",
-      },
-      suggestions: {
-        title: "Verbesserungsvorschläge",
-        subtitle: "Diese Optimierungen würden deine Website schneller machen",
-        priority: {
-          high: "Hohe Priorität",
-          medium: "Mittlere Priorität",
-          low: "Niedrige Priorität",
-        },
-        empty: "Keine Verbesserungen nötig - perfekt! 🎉",
-      },
-      actions: {
-        newTest: "Neue Analyse",
-        share: "Ergebnis teilen",
-        copied: "Link kopiert!",
-      },
-    },
-  },
-  vision: {
-    header: {
-      title: "Vision Roadmap",
-      subtitle: "Die Plattform für Angular-Freelancer und KMU – transparent und community-driven",
-    },
-    intro: {
-      text: "Mit VISION entsteht ein zentrales Ökosystem für Angular-Entwickler und Unternehmen: Eine Plattform, auf der Projekte, Kommunikation und Innovation zusammenfließen. Unsere Roadmap zeigt transparent jeden Schritt – nach dem Halliday-Prinzip: Community-First, kein VC-Druck, volle Unabhängigkeit.",
-    },
-    principles: {
-      title: "Das Halliday-Prinzip",
-      subtitle: "Unsere Grundwerte für nachhaltigen Erfolg",
-      items: [
-        {
-          icon: "users",
-          title: "Community First",
-          description:
-            "Keine Investoren-Agenda. Wir bauen für Entwickler und KMU, nicht für Exit-Strategien.",
-        },
-        {
-          icon: "shield",
-          title: "100% Unabhängig",
-          description:
-            "Volle Kontrolle über Produkt und Zukunft. Keine Abhängigkeiten von externen Geldgebern.",
-        },
-        {
-          icon: "heart",
-          title: "Qualität vor Quantität",
-          description: "Lieber 100 zufriedene User als 10.000 frustrierte. Jedes Feature wird durchdacht.",
-        },
-        {
-          icon: "target",
-          title: "Radikale Transparenz",
-          description: "Öffentliche Roadmap, ehrliche Updates. Du siehst jeden Schritt unserer Entwicklung.",
-        },
-      ],
-    },
-    roadmap: {
-      title: "Die Roadmap",
-      subtitle: "Vier Phasen zum vollständigen Ökosystem",
-      phases: [
-        {
-          year: "2026",
-          title: "Phase 1: Foundation",
-          description: "Community-Aufbau und erste Prototypen",
-          milestones: [
-            "100+ Angular-Freelancer in Discord",
-            "50+ Newsletter-Subscriber, aktiver Blog",
-            "20+ validierte User-Interviews mit KMU",
-            "Funktionierender MVP mit 10 Beta-Testern",
-          ],
-        },
-        {
-          year: "2027",
-          title: "Phase 2: Launch",
-          description: "Öffentlicher Start der Plattform",
-          milestones: [
-            "Marketplace: Freelancer & KMU matchen",
-            "DevHub: Zeit-Tracking & Invoicing live",
-            "ClientHub: White-Label-Portale für Agenturen",
-            "200+ aktive User, erste erfolgreiche Projekte",
-          ],
-        },
-        {
-          year: "2028",
-          title: "Phase 3: Growth",
-          description: "Feature-Ausbau und Community-Tools",
-          milestones: [
-            "Template-Marketplace mit 10+ Premium-Templates",
-            "Mobile App (iOS/Android) für Devs & Clients",
-            "Mentoring-Programm für Junior-Entwickler",
-            "400+ User, etablierte Community-Events",
-          ],
-        },
-        {
-          year: "2029+",
-          title: "Phase 4: Ecosystem",
-          description: "Das vollständige Ökosystem für Angular-Entwicklung",
-          milestones: [
-            "Plugin-Marketplace: Community baut Extensions",
-            "Internationale Expansion (EN, FR, ES)",
-            "Advanced-Features nach Community-Vote",
-            "Selbsttragende Community-Moderation",
-          ],
-        },
-      ],
-    },
-    community: {
-      title: "Community & Werte",
-      subtitle: "Was uns wichtig ist und wie wir zusammenarbeiten",
-      values: [
-        {
-          icon: "users",
-          title: "Echte Beziehungen",
-          text: "Keine anonymen Transaktionen, sondern langfristige Partnerschaften zwischen Devs und KMU",
-        },
-        {
-          icon: "zap",
-          title: "Schnelle Iteration",
-          text: "Feedback wird gehört und innerhalb von 2-4 Wochen umgesetzt – versprochen",
-        },
-        {
-          icon: "shield",
-          title: "Deine Daten, deine Kontrolle",
-          text: "Export-Funktion für alle Daten. Keine Vendor-Lock-ins, keine versteckten Kosten",
-        },
-        {
-          icon: "target",
-          title: "Fokus auf Qualität",
-          text: "Lieber 5 durchdachte Features als 50 halbfertige. Jedes Update wird getestet",
-        },
-        {
-          icon: "heart",
-          title: "Respektvoller Umgang",
-          text: "Code of Conduct für alle. Toxisches Verhalten hat bei uns keinen Platz",
-        },
-        {
-          icon: "code2",
-          title: "Open Development",
-          text: "Öffentliche Roadmap auf GitHub. Du kannst Features vorschlagen und mitvoten",
-        },
-      ],
-    },
-    cta: {
-      title: "Werde Teil der Bewegung",
-      text: "Tritt unserer Community bei und gestalte die Zukunft mit. Kein Spam, nur echte Updates alle 2 Wochen.",
-      discord: "https://discord.gg/novadev-edge",
-      discordText: "Discord beitreten",
-      newsletterText: "Newsletter abonnieren",
-    },
-  },
-  templates: {
-    hero: {
-      title: "Dashboard-Templates",
-      subtitle: "Fertige Lösungen, angepasst auf dein Business"
-    },
-    items: [
-      {
-        id: 'hr-dashboard',
-        title: 'HR-Dashboard Essential',
-        subtitle: 'Urlaubsplanung & Zeiterfassung automatisiert',
-        price: 'ab 12.000€',
-        features: [
-          'Digitale Urlaubsanträge mit Workflow',
-          'Zeiterfassung mit Projektzuordnung',
-          'Mitarbeiter-Verwaltung (bis 50 User)',
-          'DSGVO-konform & DATEV-ready'
-        ]
-      }
-    ]
-  }
 }

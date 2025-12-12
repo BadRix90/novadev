@@ -13,11 +13,6 @@ export const routes: Routes = [
     title: "Leistungen - SaltCity Web",
   },
   {
-    path: "templates",
-    loadComponent: () => import("./pages/templates-page/templates-page.component").then((m) => m.TemplatesPageComponent),
-    title: "Dashboard Templates - NovaDev Edge",
-  },
-  {
     path: "ueber-uns",
     loadComponent: () => import("./pages/about-page/about-page.component").then((m) => m.AboutPageComponent),
     title: "Über uns - SaltCity Web",
@@ -27,33 +22,6 @@ export const routes: Routes = [
     loadComponent: () => import("./pages/contact-page/contact-page.component").then((m) => m.ContactPageComponent),
     title: "Kontakt - SaltCity Web",
   },
-
-  {
-    path: "tools",
-    loadComponent: () => import("./pages/tools-page/tools-page.component").then((m) => m.ToolsPageComponent),
-    title: "AI-Tools - SaltCity Web",
-  },
-
-  {
-    path: "tools/speed-test",
-    loadComponent: () =>
-      import("./pages/speed-test-page/speed-test-page.component").then((m) => m.SpeedTestPageComponent),
-    title: "Speed Tester - NovaDev",
-  },
-
-  {
-    path: "vision",
-    loadComponent: () => import("./pages/vision-page/vision-page.component").then((m) => m.VisionPageComponent),
-    title: "Vision & Roadmap - NovaDev OASIS",
-  },
-
-  {
-    path: "warum-custom-development",
-    loadComponent: () =>
-      import("./pages/why-custom-page/why-custom-page.component").then((m) => m.WhyCustomPageComponent),
-    title: "Warum Custom Development? - SaltCity Web",
-  },
-
   {
     path: "impressum",
     loadComponent: () => import("./pages/legal-notice/legal-notice.component").then((m) => m.LegalNoticeComponent),

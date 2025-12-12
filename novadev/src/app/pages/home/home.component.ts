@@ -21,12 +21,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   textService = inject(TextService);
 
   icons: Record<string, any> = {
-    layout: LucideIcons.Layout,
-    zap: LucideIcons.Zap,
-    target: LucideIcons.Target,
-    calculator: LucideIcons.Calculator,
+    // Feature Icons
+    'file-text': LucideIcons.FileText,
+    shield: LucideIcons.Shield,
+    link: LucideIcons.Link,
+    clock: LucideIcons.Clock,
+    // Stats Icons
     gauge: LucideIcons.Gauge,
-    euro: LucideIcons.Euro
+    'shield-check': LucideIcons.ShieldCheck,
+    users: LucideIcons.Users
   };
 
   get texts() {
