@@ -5,17 +5,17 @@ import { isPlatformBrowser } from '@angular/common';
   providedIn: 'root'
 })
 export class ThemeService {
-  
-  private readonly THEME_KEY = 'saltcity-theme';
+
+  private readonly THEME_KEY = 'novadev-theme';
   private platformId = inject(PLATFORM_ID);
   private isBrowser = isPlatformBrowser(this.platformId);
-  
+
   currentTheme = signal<'light' | 'dark'>('light');
 
   constructor() {
     if (this.isBrowser) {
       this.initTheme();
-      
+
       effect(() => {
         const theme = this.currentTheme();
         this.applyTheme(theme);
@@ -26,7 +26,7 @@ export class ThemeService {
 
   private initTheme(): void {
     const savedTheme = localStorage.getItem(this.THEME_KEY) as 'light' | 'dark' | null;
-    
+
     if (savedTheme) {
       this.currentTheme.set(savedTheme);
     } else {

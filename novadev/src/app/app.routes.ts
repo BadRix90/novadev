@@ -1,40 +1,40 @@
 import type { Routes } from "@angular/router"
 
 export const routes: Routes = [
-  // Hauptseiten (Multi-Page)
+  // Hauptseiten
   {
     path: "",
     loadComponent: () => import("./pages/home/home.component").then((m) => m.HomeComponent),
-    title: "SaltCity Web - Angular Webentwicklung für KMU",
+    title: "NovaDev Edge - Compliance-Automation für KMU | E-Rechnung, NIS2, SAP",
   },
   {
-    path: "leistungen",
+    path: "loesungen",
     loadComponent: () => import("./pages/services-page/services-page.component").then((m) => m.ServicesPageComponent),
-    title: "Leistungen - SaltCity Web",
+    title: "Lösungen - NovaDev Edge",
   },
   {
     path: "ueber-uns",
     loadComponent: () => import("./pages/about-page/about-page.component").then((m) => m.AboutPageComponent),
-    title: "Über uns - SaltCity Web",
+    title: "Über mich - NovaDev Edge",
   },
   {
     path: "kontakt",
     loadComponent: () => import("./pages/contact-page/contact-page.component").then((m) => m.ContactPageComponent),
-    title: "Kontakt - SaltCity Web",
+    title: "Kontakt - NovaDev Edge",
   },
   {
     path: "impressum",
     loadComponent: () => import("./pages/legal-notice/legal-notice.component").then((m) => m.LegalNoticeComponent),
-    title: "Impressum - SaltCity Web",
+    title: "Impressum - NovaDev Edge",
   },
   {
     path: "datenschutz",
     loadComponent: () =>
       import("./pages/privacy-policy/privacy-policy.component").then((m) => m.PrivacyPolicyComponent),
-    title: "Datenschutz - SaltCity Web",
+    title: "Datenschutz - NovaDev Edge",
   },
 
-  // 404 Redirect (alle ungültigen Routen)
+  // 404 Redirect
   {
     path: "**",
     redirectTo: "",
